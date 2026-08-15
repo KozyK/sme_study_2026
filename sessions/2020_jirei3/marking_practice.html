@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>事例Ⅲ 与件文マーキング練習 — 4色ボールペン読解法</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #d32f2f;
+    --red-bg: rgba(211,47,47,.12);
+    --red-border: rgba(211,47,47,.35);
+    --blue: #1565c0;
+    --blue-bg: rgba(21,101,192,.12);
+    --blue-border: rgba(21,101,192,.35);
+    --green: #2e7d32;
+    --green-bg: rgba(46,125,50,.12);
+    --green-border: rgba(46,125,50,.35);
+    --yellow: #f9a825;
+    --yellow-bg: rgba(249,168,37,.15);
+    --yellow-border: rgba(249,168,37,.50);
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #22262f;
+    --text: #e0e2e8;
+    --text-dim: #9098a8;
+    --border: #2c313d;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+
+  /* ─── Header ─── */
+  .hero {
+    background: linear-gradient(135deg, #1a1d27 0%, #1e2233 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 2.5rem 2rem 2rem;
+    text-align: center;
+  }
+  .hero h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    margin-bottom: .5rem;
+  }
+  .hero p { color: var(--text-dim); font-size: .88rem; }
+
+  /* ─── Legend ─── */
+  .legend-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(15,17,23,.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: .75rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem 1.4rem;
+    justify-content: center;
+    align-items: center;
+    font-size: .82rem;
+  }
+  .legend-item {
+    display: flex; align-items: center; gap: .35rem;
+    cursor: pointer;
+    transition: opacity .2s;
+    user-select: none;
+  }
+  .legend-item:hover { opacity: .8; }
+  .legend-item.active { opacity: 1; }
+  .legend-item:not(.active) { opacity: .45; }
+  .legend-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .legend-dot.red    { background: var(--red); }
+  .legend-dot.blue   { background: var(--blue); }
+  .legend-dot.green  { background: var(--green); }
+  .legend-dot.yellow { background: var(--yellow); }
+
+  .legend-bar .mode-label {
+    color: var(--text-dim);
+    font-size: .75rem;
+    margin-right: .2rem;
+  }
+  .btn-reset {
+    margin-left: auto;
+    padding: .3rem .8rem;
+    font-size: .78rem;
+    background: var(--surface2);
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all .2s;
+  }
+  .btn-reset:hover { background: #2d3340; color: var(--text); }
+
+  /* ─── Toggle Buttons ─── */
+  .view-toggle {
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+    padding: 1rem;
+  }
+  .view-toggle button {
+    padding: .45rem 1.2rem;
+    font-size: .82rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all .2s;
+    background: var(--surface);
+    color: var(--text-dim);
+  }
+  .view-toggle button.active {
+    background: linear-gradient(135deg, #2a3050, #1e2545);
+    color: #fff;
+    border-color: #4a5580;
+  }
+
+  /* ─── Main Content ─── */
+  .container { max-width: 860px; margin: 0 auto; padding: 0 1.2rem 4rem; }
+
+  .section-label {
+    font-size: .72rem;
+    font-weight: 700;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    margin: 2rem 0 .8rem;
+    padding-left: .2rem;
+  }
+
+  /* ─── Yoken Text ─── */
+  .yoken-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem 1.6rem;
+    margin-bottom: 1rem;
+    font-family: 'Noto Serif JP', serif;
+    font-size: .92rem;
+    line-height: 2;
+    position: relative;
+  }
+  .yoken-block p { margin-bottom: 1em; }
+  .yoken-block p:last-child { margin-bottom: 0; }
+
+  /* ─── Markable Spans ─── */
+  .markable {
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 0 2px;
+    transition: all .25s ease;
+    position: relative;
+  }
+  .markable:hover {
+    background: rgba(255,255,255,.06);
+  }
+
+  /* Marked states */
+  .markable.mark-red {
+    background: var(--red-bg);
+    border-bottom: 2px solid var(--red);
+    color: #f5bfbf;
+  }
+  .markable.mark-blue {
+    background: var(--blue-bg);
+    border-bottom: 2px solid var(--blue);
+    color: #b0ccee;
+  }
+  .markable.mark-green {
+    background: var(--green-bg);
+    border-bottom: 2px solid var(--green);
+    color: #b0ddb3;
+  }
+  .markable.mark-yellow {
+    background: var(--yellow-bg);
+    border-bottom: 2px solid var(--yellow);
+    color: #f0dfa0;
+  }
+
+  /* ─── Tooltip ─── */
+  .markable[data-tip]::after {
+    content: attr(data-tip);
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%) scale(.92);
+    background: #2a2e3a;
+    color: #e4e6ec;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: .75rem;
+    line-height: 1.5;
+    white-space: nowrap;
+    padding: .4rem .7rem;
+    border-radius: 6px;
+    border: 1px solid #3a3f50;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .2s, transform .2s;
+    z-index: 50;
+  }
+  .markable[data-tip]:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+
+  /* ─── Answer Model Reveal ─── */
+  .answer-hint {
+    display: none;
+    margin-top: .5rem;
+    padding: .6rem 1rem;
+    border-left: 3px solid;
+    border-radius: 0 6px 6px 0;
+    font-size: .82rem;
+    line-height: 1.7;
+    background: var(--surface2);
+  }
+  .answer-hint.show { display: block; }
+  .answer-hint.red    { border-color: var(--red); }
+  .answer-hint.blue   { border-color: var(--blue); }
+  .answer-hint.green  { border-color: var(--green); }
+  .answer-hint.yellow { border-color: var(--yellow); }
+
+  /* ─── Questions Section ─── */
+  .question-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.2rem 1.4rem;
+    margin-bottom: .8rem;
+  }
+  .question-card h3 {
+    font-size: .88rem;
+    font-weight: 700;
+    margin-bottom: .6rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+  }
+  .q-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 22px; height: 22px;
+    border-radius: 6px;
+    font-size: .7rem;
+    font-weight: 700;
+    color: #fff;
+    padding: 0 6px;
+  }
+  .q-badge.red    { background: var(--red); }
+  .q-badge.blue   { background: var(--blue); }
+  .q-badge.green  { background: var(--green); }
+  .q-badge.yellow { background: var(--yellow); }
+  .question-card .q-text {
+    font-size: .85rem;
+    color: var(--text-dim);
+    margin-bottom: .6rem;
+  }
+  .btn-reveal {
+    display: inline-flex;
+    align-items: center;
+    gap: .3rem;
+    padding: .3rem .8rem;
+    font-size: .76rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--surface2);
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all .2s;
+  }
+  .btn-reveal:hover { background: #2d3340; color: var(--text); }
+  .btn-reveal .arrow { transition: transform .2s; }
+  .btn-reveal.open .arrow { transform: rotate(90deg); }
+
+  /* ─── Stats ─── */
+  .stats-bar {
+    display: flex;
+    gap: .6rem;
+    flex-wrap: wrap;
+    margin: 1.2rem 0;
+    justify-content: center;
+  }
+  .stat-chip {
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+    padding: .25rem .7rem;
+    border-radius: 20px;
+    font-size: .76rem;
+    font-weight: 500;
+    border: 1px solid;
+  }
+  .stat-chip.red    { border-color: var(--red-border); color: #f5bfbf; background: rgba(211,47,47,.06); }
+  .stat-chip.blue   { border-color: var(--blue-border); color: #b0ccee; background: rgba(21,101,192,.06); }
+  .stat-chip.green  { border-color: var(--green-border); color: #b0ddb3; background: rgba(46,125,50,.06); }
+  .stat-chip.yellow { border-color: var(--yellow-border); color: #f0dfa0; background: rgba(249,168,37,.06); }
+
+  /* ─── Instructor Panel ─── */
+  .instructor-panel {
+    background: linear-gradient(135deg, #1c2030, #1a1f2e);
+    border: 1px solid #2d3350;
+    border-radius: 14px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+  }
+  .instructor-panel h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+  }
+  .step-list { list-style: none; }
+  .step-list li {
+    display: flex;
+    gap: .8rem;
+    margin-bottom: 1rem;
+    font-size: .85rem;
+    line-height: 1.7;
+  }
+  .step-num {
+    flex-shrink: 0;
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .72rem;
+    font-weight: 700;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    margin-top: 2px;
+  }
+
+  /* ─── Responsive ─── */
+  @media (max-width: 640px) {
+    .hero h1 { font-size: 1.2rem; }
+    .yoken-block { padding: 1rem 1.1rem; font-size: .86rem; }
+    .legend-bar { font-size: .74rem; gap: .4rem .8rem; }
+    .container { padding: 0 .8rem 3rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>🖊️ 事例Ⅲ 4色ボールペン読解法</h1>
+  <p>令和2年度（2020年度）与件文を使ったマーキング練習ツール</p>
+</div>
+
+<div class="legend-bar" id="legendBar">
+  <span class="mode-label">現在のペン：</span>
+  <div class="legend-item active" data-color="red" onclick="setColor('red')">
+    <span class="legend-dot red"></span>
+    <span><strong style="color:var(--red)">赤</strong> 強み (S)・コア技術</span>
+  </div>
+  <div class="legend-item" data-color="blue" onclick="setColor('blue')">
+    <span class="legend-dot blue"></span>
+    <span><strong style="color:var(--blue)">青</strong> 弱み (W)・問題点</span>
+  </div>
+  <div class="legend-item" data-color="green" onclick="setColor('green')">
+    <span class="legend-dot green"></span>
+    <span><strong style="color:var(--green)">緑</strong> 機会 (O)・成長の種</span>
+  </div>
+  <div class="legend-item" data-color="yellow" onclick="setColor('yellow')">
+    <span class="legend-dot yellow"></span>
+    <span><strong style="color:var(--yellow)">黄</strong> 制約・注意条件</span>
+  </div>
+  <button class="btn-reset" onclick="resetAll()">リセット</button>
+</div>
+
+<div class="container">
+
+  <!-- Instructor Panel -->
+  <div class="instructor-panel">
+    <h2>📖 4色ボールペン読解法とは</h2>
+    <p style="font-size:.85rem; color:var(--text-dim); margin-bottom:1rem;">
+      事例Ⅲの与件文を読む際、下記の4色で情報を「色分け」しながら読みます。<br>
+      これにより、80分の制限時間の中で「どの情報をどの設問に使うか」が一目でわかるようになります。
+    </p>
+    <ol class="step-list">
+      <li>
+        <span class="step-num">1</span>
+        <div><strong>先に設問文を読む</strong>（5分）。「何を問われているか」を頭に入れてから与件文に入る。設問の横に対応する色のメモを書いておく。</div>
+      </li>
+      <li>
+        <span class="step-num">2</span>
+        <div><strong style="color:var(--red)">赤ペン</strong>で<strong>強み</strong>をマーク。「技術」「品質」「ノウハウ」「一貫」などのキーワードに反応する。C社の武器になるものすべて。</div>
+      </li>
+      <li>
+        <span class="step-num">3</span>
+        <div><strong style="color:var(--blue)">青ペン</strong>で<strong>弱み・問題点</strong>をマーク。「〜できない」「〜が難しい」「悩み」「遅延」「差がある」など、ネガティブな表現すべて。</div>
+      </li>
+      <li>
+        <span class="step-num">4</span>
+        <div><strong style="color:var(--green)">緑ペン</strong>で<strong>機会・成長の種</strong>をマーク。「増加」「拡大」「付加価値が高い」「今後」など、未来志向の情報。</div>
+      </li>
+      <li>
+        <span class="step-num">5</span>
+        <div><strong style="color:var(--yellow)">黄ペン</strong>で<strong>制約条件・注意事項</strong>をマーク。「〜以内」「個別受注」「手作業」など、解答の方向性を縛る条件。</div>
+      </li>
+    </ol>
+  </div>
+
+  <!-- View Toggle -->
+  <div class="view-toggle">
+    <button class="active" onclick="showMode('practice')">🖊️ 自分でマーキング</button>
+    <button onclick="showMode('answer')">📝 模範マーキングを見る</button>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-bar" id="statsBar">
+    <div class="stat-chip red"><span class="legend-dot red" style="width:8px;height:8px"></span> 強み: <span id="count-red">0</span></div>
+    <div class="stat-chip blue"><span class="legend-dot blue" style="width:8px;height:8px"></span> 問題点: <span id="count-blue">0</span></div>
+    <div class="stat-chip green"><span class="legend-dot green" style="width:8px;height:8px"></span> 機会: <span id="count-green">0</span></div>
+    <div class="stat-chip yellow"><span class="legend-dot yellow" style="width:8px;height:8px"></span> 制約: <span id="count-yellow">0</span></div>
+  </div>
+
+  <!-- ─── Yoken Text ─── -->
+  <div class="section-label">与件文 ─ C社の概要</div>
+  <div class="yoken-block">
+    <p>C社は、1955年創業で、資本金4,000万円、<span class="markable" data-answer="red" data-tip="S：装飾性＝高付加価値技術">デザインを伴うビル建築用金属製品やモニュメント製品などのステンレス製品を受注・製作・据付する企業</span>で、従業員は営業部5名、製造部23名、総務部2名の合計30名で構成される。C社が受注しているビル建築用金属製品の主なものは、出入口の窓枠やサッシ、各種手摺、室内照明ボックスなどで、<span class="markable" data-answer="red" data-tip="S：特別仕様＝差別化要因">特別仕様の装飾性を要求されるステンレス製品</span>である。またモニュメント製品は、<span class="markable" data-answer="yellow" data-tip="制約：顧客はデザイナー（BtoB）">作家（デザイナー）のデザインに従って製作する</span>ステンレス製の立体的造形物である。どちらも<span class="markable" data-answer="yellow" data-tip="制約：個別受注＝標準化が難しい">個別受注製品</span>であり、<span class="markable" data-answer="yellow" data-tip="制約：物理的サイズ上限">C社の工場建屋の制約から設置高さ7m以内の製品</span>である。主な顧客は、ビル建築用金属製品については<span class="markable" data-answer="yellow" data-tip="制約：取引先＝メーカー（BtoB）">建築用金属製品メーカー</span>、モニュメント製品については<span class="markable" data-answer="yellow" data-tip="制約：取引先＝デザイナー">デザイナー</span>である。</p>
+
+    <p>創業時は、サッシ、手摺など建築用金属製品の特注品製作から始め、<span class="markable" data-answer="red" data-tip="S：創業以来の核心技術 → コア・コンピタンス">特に鏡面仕上げなどステンレス製品の表面品質にこだわり、溶接技術や研磨技術を高めることに努力した</span>。その後、ビル建築内装材の大型ステンレス加工、サイン（案内板）など装飾性の高い製品製作に拡大し、それに対応して<span class="markable" data-answer="red" data-tip="S：技術者の確保 → 一貫対応力">設計技術者を確保し、設計から製作、据付工事までを受注する企業になった</span>。</p>
+
+    <p>その後、3代目である現社長は、就任前から<span class="markable" data-answer="red" data-tip="S：社長のビジョン＝技術を活かす市場開拓">溶接技術や研磨技術を生かした製品市場を探していた</span>が、ある建築プロジェクトで外装デザインを行うデザイナーから、モニュメントの製作依頼を受けたことを契機として、<span class="markable" data-answer="red" data-tip="S：特殊加工＋仕上げ品質 → 参入障壁">特殊加工と仕上げ品質が要求されるステンレス製モニュメント製品の受注活動を始めた</span>。<span class="markable" data-answer="blue" data-tip="W：受注量の変動＝経営の不安定性">モニュメント製品は受注量が減少したこともあった</span>が、<span class="markable" data-answer="green" data-tip="O：市場拡大トレンド → 第4問の根拠">近年の都市型建築の増加に伴い製作依頼が増加している</span>。<span class="markable" data-answer="blue" data-tip="W：受注量が不安定 → リスク">受注量の変動が大きいものの</span>、全売上高の40％を占め、<span class="markable" data-answer="green" data-tip="O：高付加価値 → 第4問で拡大すべき根拠">ビル建築用金属製品と比較して付加価値が高い</span>ため、<span class="markable" data-answer="green" data-tip="O：社長の意思 → 設問と直結">今後も受注の増加を狙っている</span>。</p>
+  </div>
+
+  <div class="section-label">与件文 ─ 業務プロセス</div>
+  <div class="yoken-block">
+    <p>ビル建築用金属製品、モニュメント製品の受注から引き渡しまでの業務フローは以下の通りである。受注、設計、据付工事施工管理は営業部が担当する。顧客から引き合いがあると、受注製品ごとに受注から引き渡しに至る営業部担当者を決め、顧客から提供される設計図や仕様書などを基に、製作仕様と納期を確認して見積書を作成・提出し、契約締結後、製作図および施工図を作成して顧客承認を得る。通常、<span class="markable" data-answer="blue" data-tip="W：営業部門の問題 → 第2問設問1の根拠">製作図および施工図の顧客承認段階では、仕様変更や図面変更などによって顧客とのやり取りが多く発生する</span>。特にモニュメント製品では、<span class="markable" data-answer="blue" data-tip="W：特にモニュメントで深刻 → 3D CADで解決">造形物のイメージの合わせに時間を要する場合が多く、図面承認後の製作段階でも打ち合わせが必要な場合がある</span>。設計には<span class="markable" data-answer="blue" data-tip="W：2D CADの限界 → 3D CAD導入のヒント">2次元CADを早くから使用している</span>。</p>
+
+    <p>その後、製作図を製造部に渡すことにより製作指示をする。製作終了後、据付工事があるものについては、営業部担当者が施工管理して据付工事を行い、検査後顧客に引き渡す。据付工事は社外の協力会社に依頼し、施工管理のみ社内営業部担当者が行っている。契約から製品引き渡しまでのリードタイムは、平均約2か月である。最終引き渡し日が設定されているが、<span class="markable" data-answer="blue" data-tip="W：製作前の工程が長すぎる → 第2問設問1">契約、図面作成、顧客承認までの製作前プロセスに時間を要して製作期間を十分に確保できないこと</span>や、<span class="markable" data-answer="blue" data-tip="W：技術的難度による計画超過 → 標準化の不備">複雑な形状など高度な加工技術が必要な製品などの受注内容によって、製作期間が生産計画をオーバーする</span>など、<span class="markable" data-answer="blue" data-tip="W：C社最大の悩み → 全問に通底するテーマ">納期の遅延が生じC社の大きな悩みとなっている</span>。C社では、<span class="markable" data-answer="green" data-tip="O：全社的改善の意思 → 助言が受け入れられる土壌">全社的な改善活動として「納期遅延の根絶」を掲げ、製作プロセスを含む業務プロセス全体の見直しを進めている</span>。また、<span class="markable" data-answer="green" data-tip="O：IT化の意思 → 第3問の直接的な根拠">その対策の支援システムとしてIT化も検討している</span>。</p>
+  </div>
+
+  <div class="section-label">与件文 ─ 生産の現状</div>
+  <div class="yoken-block">
+    <p>製作工程は<span class="markable" data-answer="yellow" data-tip="制約：5工程の把握が前提">切断加工、曲げ加工、溶接・組立、研磨、最終検査の5工程</span>である。切断加工工程と曲げ加工工程はNC加工機による加工であり、作業員2名が担当している。溶接・組立工程と研磨工程は<span class="markable" data-answer="yellow" data-tip="制約：手作業＝自動化しにくい">溶接機や研磨機を用いた手作業</span>であり、4班の作業チームが受注製品別に担当している。この作業チームは1班5名で編成され、<span class="markable" data-answer="red" data-tip="S：熟練技術者の存在 → 技術伝承の源泉">熟練技術者が各班のリーダーとなって作業管理を行う</span>が、<span class="markable" data-answer="blue" data-tip="W：チーム間の技術力格差 → 多能工化で解決">各作業チームの技術力には差があり、高度な技術が必要な製作物の場合には任せられない作業チームもある</span>。ビル建築用金属製品は切断加工、曲げ加工、溶接・組立までは比較的単純であるが、<span class="markable" data-answer="red" data-tip="S：研磨工程に技術力 → コア・コンピタンス">その後の研磨工程に技術を要する</span>。また、モニュメント製品は<span class="markable" data-answer="red" data-tip="S：全工程で高い技術力が必要 → 参入障壁">立体的で複雑な曲線形状の製作が多く、全ての工程で製作図の理解力と高い加工技術が要求される</span>。ビル建築用金属製品は製作完了後、製造部長と営業部の担当者が最終検査を行って出荷する。モニュメント製品は、<span class="markable" data-answer="blue" data-tip="W：デザイナー立会いで修正発生 → 手戻りリスク">デザイナーの立ち会いの下、最終検査が行われ、この際デザイナーの指示によって製品に修整や手直しが生じる場合がある</span>。</p>
+
+    <p><span class="markable" data-answer="blue" data-tip="W：月次計画 → 精度が粗い。週次・日次への短縮が解決策">生産計画は、製造部長が月次で作成している</span>。月次生産計画は、営業部の受注情報、設計担当者の製品仕様情報によって、納期順にスケジューリングされるが、溶接・組立工程と研磨工程は加工の難易度などを考慮して各作業チームの振り分けを行いスケジューリングされる。<span class="markable" data-answer="blue" data-tip="W：標準化の未確立 → 第1問(b)弱みの最重要根拠">C社の製品については基準となる工程順序や工数見積もりなどの標準化が確立しているとはいえない</span>。工場は10年前に改築し、個別受注生産に適した設備や作業スペースのレイアウトに改善したが、<span class="markable" data-answer="blue" data-tip="W：狭隘化 → 5Sで解決">最近の加工物の大型化によって狭隘な状態が進み、溶接・組立工程と研磨工程の作業スペースの確保が難しく、新たな製品の着手によって作業途中の加工物の移動などを強いられている</span>。</p>
+
+    <p>製造部長は、全社的改善活動のテーマである納期遅延の問題点を把握するため、作業時間中の作業者の稼働状態を調査した。それによると、<span class="markable" data-answer="blue" data-tip="W：不稼働の内訳 → 第2問設問2の直接根拠">不稼働の作業内容としては、「材料・工具運搬」と「歩行」のモノの移動に関連する作業が多く</span>、<span class="markable" data-answer="blue" data-tip="W：情報共有不足 → IT化（第3問）で解決">その他作業者間の「打ち合わせ」、営業部担当者などとの打ち合わせのための「不在」が多く発生していた</span>。</p>
+  </div>
+
+  <!-- ─── Questions ─── -->
+  <div class="section-label">設問文と使うべき色のヒント</div>
+
+  <div class="question-card">
+    <h3><span class="q-badge red">S</span><span class="q-badge blue">W</span> 第1問（配点20点）</h3>
+    <p class="q-text">C社の ⒜ 強みと ⒝ 弱みを、それぞれ40字以内で述べよ。</p>
+    <button class="btn-reveal" onclick="toggleReveal(this)"><span class="arrow">▶</span> 解答の方向性を見る</button>
+    <div class="answer-hint red">
+      <strong>(a) 強み：</strong>ステンレス製品の高い溶接・研磨技術と設計から据付までの一貫対応力。<br>
+      <span style="color:var(--text-dim)">→ <strong style="color:var(--red)">赤</strong>でマークした箇所をつなげるだけ！</span>
+    </div>
+    <div class="answer-hint blue">
+      <strong>(b) 弱み：</strong>生産計画や工数見積もりの標準化が未確立で、納期遅延が頻発している点。<br>
+      <span style="color:var(--text-dim)">→ <strong style="color:var(--blue)">青</strong>の中でも最も根本的なもの（標準化の未確立）を選ぶ。</span>
+    </div>
+  </div>
+
+  <div class="question-card">
+    <h3><span class="q-badge blue">W</span> 第2問 設問1（配点40点の一部）</h3>
+    <p class="q-text">C社の営業部門で生じている ⒜ 問題点と ⒝ その対応策を、それぞれ60字以内で述べよ。</p>
+    <button class="btn-reveal" onclick="toggleReveal(this)"><span class="arrow">▶</span> 解答の方向性を見る</button>
+    <div class="answer-hint blue">
+      <strong>(a) 問題点：</strong>顧客との仕様調整・図面承認に時間を要し、製造期間を圧迫。製作開始後も打ち合わせが発生し、手戻りの原因となる。<br>
+      <strong>(b) 対応策：</strong>3次元CADを導入し顧客との合意形成を迅速化。製造部門と連携し製作上の問題を早期に解決する。<br>
+      <span style="color:var(--text-dim)">→ 「業務プロセス」の<strong style="color:var(--blue)">青</strong>マーク部分に「2D CAD」のヒントが隠れている。</span>
+    </div>
+  </div>
+
+  <div class="question-card">
+    <h3><span class="q-badge blue">W</span> 第2問 設問2（配点40点の一部）</h3>
+    <p class="q-text">C社の製造部門で生じている ⒜ 問題点と ⒝ その対応策を、それぞれ60字以内で述べよ。</p>
+    <button class="btn-reveal" onclick="toggleReveal(this)"><span class="arrow">▶</span> 解答の方向性を見る</button>
+    <div class="answer-hint blue">
+      <strong>(a) 問題点：</strong>工数見積等の標準化が未確立。チーム間の技術力格差や工場の狭隘化による不稼働時間の多発。<br>
+      <strong>(b) 対応策：</strong>作業手順の標準化、OJTによる多能工化、5S徹底による作業効率の向上。<br>
+      <span style="color:var(--text-dim)">→ 「生産の現状」の<strong style="color:var(--blue)">青</strong>マーク部分がそのまま問題点になる。解決策は「標準化・多能工化・5S」の定番3点セット。</span>
+    </div>
+  </div>
+
+  <div class="question-card">
+    <h3><span class="q-badge blue">W</span><span class="q-badge green">O</span> 第3問（配点20点）</h3>
+    <p class="q-text">C社社長は、納期遅延対策として社内のIT化を考えている。C社のIT活用について、中小企業診断士としてどのように助言するか、120字以内で述べよ。</p>
+    <button class="btn-reveal" onclick="toggleReveal(this)"><span class="arrow">▶</span> 解答の方向性を見る</button>
+    <div class="answer-hint green">
+      <strong>模範解答：</strong>全社の情報共有基盤を整備する。営業部門は3次元CADで設計情報を一元化し製造部門と共有。製造部門は生産管理システムで工程負荷や進捗を可視化。これにより部門間連携を強化し、納期遵守を実現する。<br>
+      <span style="color:var(--text-dim)">→ <strong style="color:var(--blue)">青</strong>（問題点）を<strong style="color:var(--green)">緑</strong>（IT化の意思）で解決する構成。第2問の答えをIT視点で再構成するだけ！</span>
+    </div>
+  </div>
+
+  <div class="question-card">
+    <h3><span class="q-badge red">S</span><span class="q-badge green">O</span> 第4問（配点20点）</h3>
+    <p class="q-text">C社社長は、付加価値の高いモニュメント製品事業の拡大を戦略に位置付けている。モニュメント製品事業の充実、拡大をどのように行うべきか、120字以内で助言せよ。</p>
+    <button class="btn-reveal" onclick="toggleReveal(this)"><span class="arrow">▶</span> 解答の方向性を見る</button>
+    <div class="answer-hint green">
+      <strong>模範解答：</strong>納期遵守体制を構築し、既存顧客であるデザイナーとの関係を強化して安定受注を図る。同時に、高い技術力と一貫対応力を強みとして、Webサイトや展示会で実績をPRし、ゼネコンや設計事務所等の新規顧客を開拓する。<br>
+      <span style="color:var(--text-dim)">→ <strong style="color:var(--red)">赤</strong>（強み）× <strong style="color:var(--green)">緑</strong>（成長の種）の掛け合わせ。「足元を固めてから攻める」が事例Ⅲの黄金シナリオ。</span>
+    </div>
+  </div>
+
+</div>
+
+<script>
+let currentColor = 'red';
+
+function setColor(color) {
+  currentColor = color;
+  document.querySelectorAll('.legend-item').forEach(el => {
+    el.classList.toggle('active', el.dataset.color === color);
+  });
+}
+
+function resetAll() {
+  document.querySelectorAll('.markable').forEach(el => {
+    el.classList.remove('mark-red','mark-blue','mark-green','mark-yellow');
+  });
+  updateCounts();
+}
+
+// Click to toggle mark
+document.addEventListener('click', (e) => {
+  const span = e.target.closest('.markable');
+  if (!span) return;
+  const markClass = 'mark-' + currentColor;
+  // If already marked with the same color, remove
+  if (span.classList.contains(markClass)) {
+    span.classList.remove(markClass);
+  } else {
+    // Remove all other marks first
+    span.classList.remove('mark-red','mark-blue','mark-green','mark-yellow');
+    span.classList.add(markClass);
+  }
+  updateCounts();
+});
+
+function updateCounts() {
+  ['red','blue','green','yellow'].forEach(c => {
+    const n = document.querySelectorAll('.mark-' + c).length;
+    document.getElementById('count-' + c).textContent = n;
+  });
+}
+
+// Show answer mode
+function showMode(mode) {
+  document.querySelectorAll('.view-toggle button').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+
+  if (mode === 'answer') {
+    document.querySelectorAll('.markable').forEach(el => {
+      el.classList.remove('mark-red','mark-blue','mark-green','mark-yellow');
+      const ans = el.dataset.answer;
+      if (ans) el.classList.add('mark-' + ans);
+    });
+  } else {
+    document.querySelectorAll('.markable').forEach(el => {
+      el.classList.remove('mark-red','mark-blue','mark-green','mark-yellow');
+    });
+  }
+  updateCounts();
+}
+
+// Reveal answer hints
+function toggleReveal(btn) {
+  btn.classList.toggle('open');
+  const hints = btn.parentElement.querySelectorAll('.answer-hint');
+  hints.forEach(h => h.classList.toggle('show'));
+}
+</script>
+
+</body>
+</html>
