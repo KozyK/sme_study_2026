@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中小企業診断士 2次試験 学習ポータル</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --border: #2e3345;
+    --text: #e4e6ef;
+    --text-muted: #8b90a5;
+    --accent: #6c8aff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 24px;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  h1 { font-size: 1.5rem; margin-bottom: 24px; text-align: center; color: var(--accent); }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    display: block;
+    text-decoration: none;
+    color: var(--text);
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .card:hover, .card:active {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+  }
+  .card h2 { font-size: 1.1rem; margin-bottom: 8px; }
+  .card p { font-size: 0.85rem; color: var(--text-muted); }
+  .badge {
+    display: inline-block;
+    background: rgba(108, 138, 255, 0.15);
+    color: var(--accent);
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+</style>
+</head>
+<body>
+  <h1>📘 SME Study 2026</h1>
+
+  <a href="study_guide.html" class="card">
+    <span class="badge">頻出・必須</span>
+    <h2>二次試験 頻出トピック・ディープガイド</h2>
+    <p>事例Ⅰ〜Ⅳの頻出理論と解法のフレームワーク。ネタバレなしの実践的教科書。</p>
+  </a>
+
+  <!-- 今後ここに他の解説HTML（例えば「採点基準まとめ」など）のリンクを追加していきます -->
+  <a href="sessions/2020_jirei3/marking_practice.html" class="card">
+    <span class="badge">演習</span>
+    <h2>令和2年度 事例Ⅲ 採点ツール</h2>
+    <p>解答の自己採点用インタラクティブツール。</p>
+  </a>
+
+</body>
+</html>
