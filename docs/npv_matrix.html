@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="robots" content="noindex, nofollow">
+<title>Npv Matrix</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --border: #2e3345;
+    --text: #e4e6ef;
+    --text-muted: #8b90a5;
+    --accent: #6c8aff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    padding: 24px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  h1, h2, h3 { color: #fff; margin-top: 2rem; margin-bottom: 1rem; }
+  h1 { font-size: 1.6rem; border-bottom: 2px solid var(--accent); padding-bottom: 8px; }
+  h2 { font-size: 1.3rem; border-left: 4px solid var(--accent); padding-left: 10px; }
+  h3 { font-size: 1.1rem; color: var(--accent); }
+  p, ul, ol { margin-bottom: 1rem; font-size: 0.95rem; }
+  ul, ol { padding-left: 20px; }
+  li { margin-bottom: 0.5rem; }
+  strong { color: #ff6b8a; }
+  hr { border: 0; border-top: 1px solid var(--border); margin: 2rem 0; }
+  a { color: var(--accent); text-decoration: none; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9rem; padding: 6px 12px; background: var(--surface); border-radius: 6px; border: 1px solid var(--border); }
+</style>
+</head>
+<body>
+<a href="index.html" class="back-link">← ポータルに戻る</a>
+<div class="content">
+<h1>ゼロから間違えない！NPVタイムライン・マトリックス（余白メモ術）</h1>
+<p>事例ⅣのNPV問題で、問題用紙の余白に「いかに素早く・ミスなく」タイムラインを描くか。
+プロの受験生が本番で無意識に書いている<strong>「マトリックス（表）形式」</strong>のフォーマットです。</p>
+<h2>✒️ 基本フォーマット（これを余白に殴り書きする）</h2>
+<p>本番では、以下のような縦横の表をサッと引きます。
+（※単位は省略し、数字と記号だけを書くことでスピードを上げます）</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">年(t)</th>
+<th style="text-align: center;">0年 (期首)</th>
+<th style="text-align: center;">1年 (1年末)</th>
+<th style="text-align: center;">2年 (2年末)</th>
+<th style="text-align: center;">3年 (3年末)</th>
+<th style="text-align: center;">4年 (4年末)</th>
+<th style="text-align: center;">5年 (5年末)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>① 投資CF</strong></td>
+<td style="text-align: center;">△初期投資</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">＋処分・回収</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>② 営業CF</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">＋営業CF</td>
+<td style="text-align: center;">＋営業CF</td>
+<td style="text-align: center;">＋営業CF</td>
+<td style="text-align: center;">＋営業CF</td>
+<td style="text-align: center;">＋営業CF</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>③ 費用CF</strong></td>
+<td style="text-align: center;">△広告等</td>
+<td style="text-align: center;">△広告等</td>
+<td style="text-align: center;">△広告等</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>(A) 計(①+②+③)</strong></td>
+<td style="text-align: center;"><strong>合計0</strong></td>
+<td style="text-align: center;"><strong>合計1</strong></td>
+<td style="text-align: center;"><strong>合計2</strong></td>
+<td style="text-align: center;"><strong>合計3</strong></td>
+<td style="text-align: center;"><strong>合計4</strong></td>
+<td style="text-align: center;"><strong>合計5</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>(B) 現価係数</strong></td>
+<td style="text-align: center;">1.000</td>
+<td style="text-align: center;">0.926</td>
+<td style="text-align: center;">0.857</td>
+<td style="text-align: center;">0.794</td>
+<td style="text-align: center;">0.735</td>
+<td style="text-align: center;">0.681</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>(C) 現価(A×B)</strong></td>
+<td style="text-align: center;">NPV0</td>
+<td style="text-align: center;">NPV1</td>
+<td style="text-align: center;">NPV2</td>
+<td style="text-align: center;">NPV3</td>
+<td style="text-align: center;">NPV4</td>
+<td style="text-align: center;">NPV5</td>
+</tr>
+</tbody>
+</table>
+<p>最終的なNPV ＝ <strong>NPV0 + NPV1 + NPV2 + NPV3 + NPV4 + NPV5</strong></p>
+<hr />
+<h2>💡 ミスを防ぐ3つの黄金ルール</h2>
+<h3>ルール1：CFは「種類別（横スライス）」で書き込む</h3>
+<p>縦に「0年目はこれとこれ…」と埋めるのはNGです。問題文を読みながら、<strong>「投資CFを横に一気に埋める」→「営業CFを横に一気に埋める」</strong>と、種類（レイヤー）ごとに横へ横へ記入します。これにより、毎年の記入漏れやズレがなくなります。</p>
+<h3>ルール2：期首と期末を絶対に間違えない</h3>
+<p>事例Ⅳの最大の引っかけポイントです。
+- <strong>「〇〇年4月1日に支払う」「期首に支出」</strong> → その年の数字ではなく、<strong>「1つ前の年の列」</strong>に入れます。（例：1年目の期首＝0年目の列、2年目の期首＝1年目の列）
+- <strong>「営業CF」や「処分CF」</strong> → 原則としてすべて<strong>「期末」</strong>に発生するものとして、その年の列に入れます。</p>
+<h3>ルール3：縦計を出してから、係数を掛ける</h3>
+<p>いきなり係数を掛けた数字を出さないでください。必ず一度タテに足し算をして「その年の純CF（A）」を確定させてから、その下に問題文の「現価係数（B）」を書き写し、最後に掛け算（C）をします。
+※ただし、営業CFが毎年同じ金額の場合は、解答用紙に清書する際に見やすくするために「現価係数の和（年金現価係数）」でくくって計算するのが時短のコツです。</p>
+<hr />
+<h2>📝 令和2年 事例Ⅳ（第2問 設問2 選択肢②：業態転換のケース）の記入例</h2>
+<p>「順調に推移した場合（40%）」の余白メモはこのようになります。
+※1年目は半年休業なので営業CFが半分（12.5）になるのが最大のトラップ！</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">年(t)</th>
+<th style="text-align: center;">0年 (期首)</th>
+<th style="text-align: center;">1年 (1年末)</th>
+<th style="text-align: center;">2年 (2年末)</th>
+<th style="text-align: center;">3年 (3年末)</th>
+<th style="text-align: center;">4年 (4年末)</th>
+<th style="text-align: center;">5年 (5年末)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>① 投資CF</strong></td>
+<td style="text-align: center;">△30</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">＋27</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>② 営業CF</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">＋12.5</td>
+<td style="text-align: center;">＋25</td>
+<td style="text-align: center;">＋25</td>
+<td style="text-align: center;">＋25</td>
+<td style="text-align: center;">＋25</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>(A) 計</strong></td>
+<td style="text-align: center;"><strong>△30</strong></td>
+<td style="text-align: center;"><strong>＋12.5</strong></td>
+<td style="text-align: center;"><strong>＋25</strong></td>
+<td style="text-align: center;"><strong>＋25</strong></td>
+<td style="text-align: center;"><strong>＋25</strong></td>
+<td style="text-align: center;"><strong>＋52</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>(B) 現価係数</strong></td>
+<td style="text-align: center;">1.000</td>
+<td style="text-align: center;">0.926</td>
+<td style="text-align: center;">0.857</td>
+<td style="text-align: center;">0.794</td>
+<td style="text-align: center;">0.735</td>
+<td style="text-align: center;">0.681</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>(C) 現価</strong></td>
+<td style="text-align: center;">△30</td>
+<td style="text-align: center;">11.575</td>
+<td style="text-align: center;">\&lt;-</td>
+<td style="text-align: center;">25 × (0.857+0.794+0.735) -&gt;</td>
+<td style="text-align: center;">\&lt;-</td>
+<td style="text-align: center;">52 × 0.681</td>
+</tr>
+</tbody>
+</table>
+<p>※2年目〜4年目は金額が同じ「25」なので、余白メモの段階で現価係数を足し合わせて <code>25 × (0.857+0.794+0.735)</code> とくくって計算すると劇的にスピードアップします（5年目は処分CFの27が乗っかって「52」と別枠になるため、混ぜないのが安全）。</p>
+</div>
+</body>
+</html>
