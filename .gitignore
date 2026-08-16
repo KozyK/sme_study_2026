@@ -1,0 +1,18 @@
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Scripts & Crawlers
+*.py
+*.sh
+__pycache__/
+
+# Raw Exam PDFs (Size reduction)
+past_exams/
+reference/
+
+# Temp & Brain artifacts
+*.tmp
+*.log
