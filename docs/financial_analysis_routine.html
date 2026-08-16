@@ -11,129 +11,149 @@
 <body>
 <a href="index.html" class="back-link">← ポータルに戻る</a>
 <div class="content">
-<h1>経営分析の最高効率ルーチン（ヨコ倍率・指標絞り込み統合版）</h1>
-<p>事例Ⅳの第1問（経営分析）において、不要な指標を最初から捨て、残った鉄板指標の優劣を割り算なしで瞬時に判定するための「最高効率の型」です。</p>
-<h2>究極の作業手順（4ステップ）</h2>
-<h3>Step 1: 与件文フラグの確認（指標の事前の絞り込み）</h3>
-<p>計算に入る前に、与件文を読んで「採用する指標の当たり」をつけます。後述する<strong>【指標と与件文フラグの紐付けマトリックス】</strong>を参考に、定性的な強み・弱みをマークします。</p>
-<h3>Step 2: 情報量の圧縮（上3桁化）</h3>
-<p>計算ミスと認知負荷を防ぐため、B/S・P/Lの数値の下3桁（千円単位など）を鉛筆で斜線で消し、<strong>上3桁（百万円単位）だけで暗算する</strong>状態を作ります。
-B/Sの流動資産の横に、「当座資産（現預金＋売上債権＋有価証券）」の合計（上3桁）を手書きで足し算してメモします。</p>
-<h3>Step 3: ヨコ倍率チェック（割り算の排除）</h3>
-<p>電卓で割り算をする代わりに、「分母の倍率（D社÷他社）」を暗算し、分子の倍率と大小比較するだけで◯×（優劣）を判定します。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">チェック対象（ベース）</th>
-<th style="text-align: left;">計算する基準倍率（分母）</th>
-<th style="text-align: left;">比較対象（分子）と判定ルール</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>① 売上高ベース</strong></td>
-<td style="text-align: left;">P/L「<strong>売上高</strong>」の倍率<br>（例：1.2倍）</td>
-<td style="text-align: left;"><strong>【利益】</strong>（総利益、営業、経常）が1.2倍より大きければ◯<br><strong>【資産】</strong>（棚卸、有形固定）が1.2倍より小さければ◯</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>② 短期安全性ベース</strong></td>
-<td style="text-align: left;">B/S「<strong>流動負債</strong>」の倍率<br>（例：0.8倍）</td>
-<td style="text-align: left;"><strong>【当座資産】</strong>の倍率が0.8倍より大きければ◯<br><em>(※流動資産は見ない)</em></td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>③ 長期安全性ベース</strong></td>
-<td style="text-align: left;">B/S「<strong>総資産</strong>」の倍率<br>（例：1.1倍）</td>
-<td style="text-align: left;"><strong>【自己資本】</strong>の倍率が1.1倍より大きければ◯<br><em>(※負債は見ない)</em></td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>④ 投資安全性ベース</strong><br><em>(※フラグ成立時のみ)</em></td>
-<td style="text-align: left;">B/S「<strong>自己資本＋固定負債</strong>」<br>の倍率</td>
-<td style="text-align: left;"><strong>【固定資産】</strong>の倍率が基準より<strong>小さければ</strong>◯</td>
-</tr>
-</tbody>
-</table>
-<h3>Step 4: 最終3指標の決定と精緻な計算</h3>
-<p>Step 3で◯×をつけた指標の中から、<strong>与件文のエピソードと最も強くリンクしている3つ</strong>を決定します。
-選ばれた3つの指標についてのみ、ここで初めて電卓を使い、指定された形式で正確な数値を計算し解答用紙に記入します。</p>
+<h1>経営分析 最高効率ルーチン</h1>
+<p>事例Ⅳ第1問（経営分析）を最速で通過するための型。上から順に読めば、そのまま本番の作業手順になります。</p>
 <hr />
-<h2>【コア・マトリックス】指標と「与件文フラグ」の紐付け表</h2>
-<p>「どのエピソード（記述）があれば、どの指標を採用すべきか」を完全にパターン化したテーブルです。第1問はこのテーブルとの神経衰弱ゲームです。</p>
+<h2>1. 与件文フラグの確認（指標の当たりをつける）</h2>
+<p>与件文を読みながら、以下のマトリックスに該当するキーワード（フラグ）を探します。
+見つかったフラグに対応する指標が、解答の候補です。</p>
 <table>
 <thead>
 <tr>
 <th style="text-align: left;">区分</th>
-<th style="text-align: left;">採用すべき指標</th>
-<th style="text-align: left;">採用の決め手となる「与件文の典型フラグ（気づき方）」</th>
+<th style="text-align: left;">採用する指標</th>
+<th style="text-align: left;">【優】のフラグ</th>
+<th style="text-align: left;">【劣】のフラグ</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>収益性</strong></td>
+<td style="text-align: left;">収益性</td>
 <td style="text-align: left;"><strong>売上高総利益率</strong></td>
-<td style="text-align: left;"><strong>【優】</strong>高付加価値、固定客、ブランド力、地元密着による価格維持<br><strong>【劣】</strong>価格競争、外注費高騰、歩留まり悪化、原材料費の高騰</td>
+<td style="text-align: left;">高付加価値、固定客、ブランド力、地元密着</td>
+<td style="text-align: left;">価格競争、外注費高騰、原材料費の高騰</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>収益性</strong></td>
+<td style="text-align: left;">収益性</td>
 <td style="text-align: left;"><strong>売上高営業利益率</strong></td>
-<td style="text-align: left;"><strong>【劣】</strong>人件費の高止まり、多額の広告宣伝費、非効率な営業体制</td>
+<td style="text-align: left;"><em>(優で使うケースは稀)</em></td>
+<td style="text-align: left;">人件費の高止まり、広告宣伝費、非効率な営業</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>収益性</strong></td>
+<td style="text-align: left;">収益性</td>
 <td style="text-align: left;"><strong>売上高経常利益率</strong></td>
-<td style="text-align: left;"><strong>【劣】</strong>過大な借入金による重い支払利息</td>
+<td style="text-align: left;"><em>(優で使うケースは稀)</em></td>
+<td style="text-align: left;">過大な借入金、重い支払利息</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>効率性</strong></td>
+<td style="text-align: left;">効率性</td>
 <td style="text-align: left;"><strong>棚卸資産回転率</strong></td>
-<td style="text-align: left;"><strong>【優】</strong>厳格な在庫管理、IT化によるロス削減、事業間シナジー<br><strong>【劣】</strong>不良在庫の滞留、見込み生産による売れ残り、品揃え過多</td>
+<td style="text-align: left;">在庫管理の徹底、IT化、事業間シナジー</td>
+<td style="text-align: left;">不良在庫の滞留、見込み生産、品揃え過多</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>効率性</strong></td>
+<td style="text-align: left;">効率性</td>
 <td style="text-align: left;"><strong>有形固定資産回転率</strong></td>
-<td style="text-align: left;"><strong>【優】</strong>古い設備の活用、店舗の居抜き出店<br><strong>【劣】</strong>過大な設備投資、機械の稼働率低下、遊休資産の存在</td>
+<td style="text-align: left;">既存設備の有効活用、居抜き出店</td>
+<td style="text-align: left;">過大な設備投資、稼働率低下、遊休資産</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>安全性</strong></td>
-<td style="text-align: left;"><strong>当座比率</strong><br><em>(※流動比率の代わり)</em></td>
-<td style="text-align: left;"><strong>【優】</strong>手元資金が潤沢、資金繰りが安定<br><strong>【劣】</strong>短期借入金への依存、現金不足、回収遅れ</td>
+<td style="text-align: left;">安全性</td>
+<td style="text-align: left;"><strong>当座比率</strong></td>
+<td style="text-align: left;">手元資金が潤沢、資金繰り安定</td>
+<td style="text-align: left;">短期借入金への依存、現金不足</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>安全性</strong></td>
-<td style="text-align: left;"><strong>自己資本比率</strong><br><em>(※負債比率の代わり)</em></td>
-<td style="text-align: left;"><strong>【優】</strong>無借金経営、内部留保が厚い、自己資金での投資<br><strong>【劣】</strong>借入金過多、過大な負債による財務基盤の脆弱化</td>
+<td style="text-align: left;">安全性</td>
+<td style="text-align: left;"><strong>自己資本比率</strong></td>
+<td style="text-align: left;">無借金経営、内部留保が厚い</td>
+<td style="text-align: left;">借入金過多、財務基盤の脆弱化</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>安全性</strong></td>
-<td style="text-align: left;"><strong>固定長期適合率</strong><br><em>(※固定比率の代わり)</em></td>
-<td style="text-align: left;"><strong>【劣】</strong>短期借入金による無理な工場・設備投資（資金繰り悪化の危機）</td>
+<td style="text-align: left;">安全性</td>
+<td style="text-align: left;"><strong>固定長期適合率</strong><br><em>(フラグ成立時のみ)</em></td>
+<td style="text-align: left;"><em>(優で使うケースは稀)</em></td>
+<td style="text-align: left;">短期借入で無理な設備投資（即倒産の危機）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意</strong>: 営業利益率と経常利益率が両方フラグを立てることは稀です。与件文の記述がどちらに該当するかで一方を選びます。</p>
+<hr />
+<h2>2. 問題用紙への書き込み（情報量の圧縮）</h2>
+<ol>
+<li>B/S・P/Lの数値の<strong>下3桁を鉛筆で斜線で消す</strong>。上3桁（百万円単位）だけで暗算する状態を作ります。</li>
+<li>B/Sの流動資産の横に「<strong>当座資産</strong>（現預金＋売上債権＋有価証券）」の合計（上3桁）を手書きでメモします。</li>
+</ol>
+<hr />
+<h2>3. ヨコ倍率チェック（割り算をせずに優劣を判定）</h2>
+<p>指標ごとに「D社 ÷ 他社」の割り算をして％を出す代わりに、<strong>分母となる項目の倍率を1つ出し、分子の倍率と大小比較するだけ</strong>で◯×を判定します。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ベース</th>
+<th style="text-align: left;">基準倍率の出し方</th>
+<th style="text-align: left;">判定ルール</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>売上高</strong></td>
+<td style="text-align: left;">P/L「売上高」の倍率を出す（例：1.2倍）</td>
+<td style="text-align: left;">各利益の倍率が基準より<strong>大きければ◯</strong><br>各資産の倍率が基準より<strong>小さければ◯</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>流動負債</strong></td>
+<td style="text-align: left;">B/S「流動負債」の倍率を出す（例：0.8倍）</td>
+<td style="text-align: left;">当座資産の倍率が基準より<strong>大きければ◯</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>総資産</strong></td>
+<td style="text-align: left;">B/S「総資産」の倍率を出す（例：1.1倍）</td>
+<td style="text-align: left;">自己資本の倍率が基準より<strong>大きければ◯</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>自己資本＋固定負債</strong></td>
+<td style="text-align: left;">上3桁で合算し倍率を出す <em>(フラグ成立時のみ)</em></td>
+<td style="text-align: left;">固定資産の倍率が基準より<strong>小さければ◯</strong></td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2>【コラム】流動・負債・固定比率を「捨てる」理由と例外</h2>
+<h2>4. 最終決定と精緻な計算</h2>
+<ol>
+<li>◯×の結果と、Step 1で拾った与件文フラグを突き合わせ、<strong>最もリンクが強い3つの指標</strong>（優1〜2・劣1〜2など、設問の指示に従う）を決定します。</li>
+<li><strong>選ばれた3つについてのみ</strong>、ここで初めて電卓を使い、指定の形式（小数点第3位を四捨五入等）で正確な数値を算出し、解答用紙に記入します。</li>
+</ol>
+<hr />
+<h2>補足: 類似指標を「一本化」する理由と例外</h2>
+<p>安全性には類似する指標のペアがありますが、片方に一本化して認知負荷を下げます。</p>
 <table>
 <thead>
 <tr>
 <th style="text-align: left;">捨てる指標</th>
-<th style="text-align: left;">捨てる理由（こちらを優先する理由）</th>
-<th style="text-align: left;">例外（使うケース）</th>
+<th style="text-align: left;">採用する指標</th>
+<th style="text-align: left;">一本化の理由</th>
+<th style="text-align: left;">例外（捨てた方を使うケース）</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>流動比率</strong></td>
-<td style="text-align: left;">換金性の低い不良在庫を含んでおり、資金繰りの指標として罠になりやすいため（<strong>当座比率</strong>を優先）。</td>
-<td style="text-align: left;">B/Sに棚卸資産の記載がない、または現預金等の内訳が不明で当座比率が計算できない場合。</td>
+<td style="text-align: left;">流動比率</td>
+<td style="text-align: left;"><strong>当座比率</strong></td>
+<td style="text-align: left;">不良在庫を含む流動比率は罠になりやすい</td>
+<td style="text-align: left;">B/Sに棚卸資産がない、または当座資産が計算できない場合</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>負債比率</strong></td>
-<td style="text-align: left;">意味は自己資本比率と同じだが、解答の型としてマイナーなため（<strong>自己資本比率</strong>を優先）。</td>
-<td style="text-align: left;">過去の事例Ⅳにおいて実質的に例外なし（自己資本比率一択）。</td>
+<td style="text-align: left;">負債比率</td>
+<td style="text-align: left;"><strong>自己資本比率</strong></td>
+<td style="text-align: left;">表裏一体だが、自己資本比率の方が解答としてメジャー</td>
+<td style="text-align: left;">実質的に例外なし（完全に自己資本比率一択）</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>固定比率</strong></td>
-<td style="text-align: left;">固定資産を「自己資本だけ」で賄うのは中小企業には厳しすぎる指標のため（<strong>固定長期適合率</strong>を優先）。</td>
-<td style="text-align: left;">B/Sに固定負債（長期借入金等）が「ゼロ」の企業の場合（値が同じになるため計算が楽なこちらを使う）。</td>
+<td style="text-align: left;">固定比率</td>
+<td style="text-align: left;"><strong>固定長期適合率</strong></td>
+<td style="text-align: left;">自己資本だけで固定資産を賄うのは中小企業に厳しすぎる</td>
+<td style="text-align: left;">B/Sの固定負債がゼロの場合（両者が同じ値になる）</td>
 </tr>
 </tbody>
 </table>
