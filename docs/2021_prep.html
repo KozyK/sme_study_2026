@@ -4,664 +4,351 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="robots" content="noindex, nofollow">
-<title>令和3年度 事前予習ガイド（実践編）</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<title>2021 Prep</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #0f1117;
     --surface: #1a1d27;
-    --surface-2: #232733;
     --border: #2e3345;
     --text: #e4e6ef;
     --text-muted: #8b90a5;
-    --accent-1: #6c8aff;
-    --accent-2: #ff6b8a;
-    --accent-3: #4ecdc4;
-    --accent-4: #ffd166;
-    --case1: #6c8aff;
-    --case2: #ff6b8a;
-    --case3: #4ecdc4;
-    --case4: #ffd166;
+    --accent: #6c8aff;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html {
-    font-size: 16px;
-    scroll-behavior: smooth;
-    -webkit-text-size-adjust: 100%;
-  }
-
   body {
-    font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     background: var(--bg);
     color: var(--text);
-    line-height: 1.85;
-    padding: 0 0 120px 0;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ── Hero ── */
-  .hero {
-    padding: 48px 20px 36px;
-    text-align: center;
-    background: linear-gradient(135deg, #1a1d27 0%, #0f1117 100%);
-    border-bottom: 1px solid var(--border);
-  }
-  .hero h1 {
-    font-size: 1.5rem;
-    font-weight: 900;
-    letter-spacing: -0.02em;
-    line-height: 1.4;
-    background: linear-gradient(135deg, var(--case1), var(--case3));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 12px;
-  }
-  .hero p {
-    font-size: 0.82rem;
-    color: var(--text-muted);
-    max-width: 360px;
+    line-height: 1.7;
+    padding: 24px;
+    max-width: 800px;
     margin: 0 auto;
-    line-height: 1.7;
   }
-
-  /* ── Nav (table of contents) ── */
-  .toc {
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(15, 17, 23, 0.92);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-  }
-  .toc a {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 0.78rem;
-    font-weight: 700;
-    text-decoration: none;
-    color: var(--text);
-    background: var(--surface);
-    border: 1px solid var(--border);
-    transition: all 0.2s;
-  }
-  .toc a:active { transform: scale(0.95); }
-  .toc a[data-case="1"] { border-color: var(--case1); color: var(--case1); }
-  .toc a[data-case="2"] { border-color: var(--case2); color: var(--case2); }
-  .toc a[data-case="3"] { border-color: var(--case3); color: var(--case3); }
-  .toc a[data-case="4"] { border-color: var(--case4); color: var(--case4); }
-
-  /* ── Main ── */
-  main { max-width: 680px; margin: 0 auto; padding: 0 16px; }
-
-  /* ── Case Section Header ── */
-  .case-header {
-    margin-top: 48px;
-    margin-bottom: 24px;
-    padding: 20px;
-    border-radius: 16px;
-    background: var(--surface);
-    border-left: 4px solid;
-  }
-  .case-header[data-case="1"] { border-color: var(--case1); }
-  .case-header[data-case="2"] { border-color: var(--case2); }
-  .case-header[data-case="3"] { border-color: var(--case3); }
-  .case-header[data-case="4"] { border-color: var(--case4); }
-
-  .case-header .emoji { font-size: 1.6rem; margin-bottom: 8px; display: block; }
-  .case-header h2 {
-    font-size: 1.15rem;
-    font-weight: 900;
-    letter-spacing: -0.01em;
-  }
-  .case-header[data-case="1"] h2 { color: var(--case1); }
-  .case-header[data-case="2"] h2 { color: var(--case2); }
-  .case-header[data-case="3"] h2 { color: var(--case3); }
-  .case-header[data-case="4"] h2 { color: var(--case4); }
-
-  /* ── Topic Card (collapsible) ── */
-  .topic {
-    margin-bottom: 16px;
-    border-radius: 14px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    overflow: hidden;
-    transition: border-color 0.2s;
-  }
-  .topic.open { border-color: var(--accent-1); }
-
-  .topic-toggle {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px 18px;
-    background: none;
-    border: none;
-    color: var(--text);
-    font-family: inherit;
-    font-size: 0.95rem;
-    font-weight: 700;
-    text-align: left;
-    cursor: pointer;
-    line-height: 1.5;
-    -webkit-tap-highlight-color: transparent;
-  }
-  .topic-toggle .chevron {
-    flex-shrink: 0;
-    width: 20px;
-    height: 20px;
-    margin-left: 12px;
-    transition: transform 0.25s ease;
-    color: var(--text-muted);
-  }
-  .topic.open .topic-toggle .chevron { transform: rotate(180deg); }
-
-  .topic-body {
-    display: none;
-    padding: 0 18px 20px;
-  }
-  .topic.open .topic-body { display: block; }
-
-  /* ── Content Typography ── */
-  .topic-body h4 {
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: var(--accent-3);
-    margin: 20px 0 8px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid var(--border);
-  }
-  .topic-body h4:first-child { margin-top: 4px; }
-
-  .topic-body p {
-    font-size: 0.88rem;
-    color: var(--text);
-    margin-bottom: 12px;
-    line-height: 1.9;
-  }
-
-  .topic-body ul, .topic-body ol {
-    padding-left: 1.2em;
-    margin-bottom: 14px;
-  }
-  .topic-body li {
-    font-size: 0.86rem;
-    margin-bottom: 8px;
-    line-height: 1.8;
-  }
-  .topic-body li strong { color: var(--accent-4); }
-
-  /* ── Tables ── */
-  .table-wrap {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    margin: 14px 0;
-    border-radius: 10px;
-    border: 1px solid var(--border);
-  }
-  .topic-body table {
-    width: 100%;
-    min-width: 420px;
-    border-collapse: collapse;
-    font-size: 0.82rem;
-  }
-  .topic-body th {
-    background: var(--surface-2);
-    color: var(--accent-3);
-    font-weight: 700;
-    padding: 10px 12px;
-    text-align: left;
-    white-space: nowrap;
-  }
-  .topic-body td {
-    padding: 10px 12px;
-    border-top: 1px solid var(--border);
-    line-height: 1.7;
-    vertical-align: top;
-  }
-
-  /* ── Code / Formula blocks ── */
-  .formula {
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 14px 16px;
-    margin: 14px 0;
-    font-size: 0.84rem;
-    line-height: 1.9;
-    overflow-x: auto;
-    white-space: pre-wrap;
-    word-break: break-all;
-    color: var(--accent-4);
-    font-weight: 500;
-  }
-
-  /* ── Tip / Warning callouts ── */
-  .callout {
-    margin: 16px 0;
-    padding: 14px 16px;
-    border-radius: 10px;
-    font-size: 0.84rem;
-    line-height: 1.8;
-  }
-  .callout.tip {
-    background: rgba(78, 205, 196, 0.08);
-    border: 1px solid rgba(78, 205, 196, 0.25);
-    color: var(--accent-3);
-  }
-  .callout.warn {
-    background: rgba(255, 107, 138, 0.08);
-    border: 1px solid rgba(255, 107, 138, 0.25);
-    color: var(--accent-2);
-  }
-  .callout .callout-title {
-    font-weight: 700;
-    margin-bottom: 6px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  /* ── Diagram (ASCII art style) ── */
-  .diagram {
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 16px;
-    margin: 14px 0;
-    font-family: 'Courier New', monospace;
-    font-size: 0.76rem;
-    line-height: 1.6;
-    overflow-x: auto;
-    white-space: pre;
-    color: var(--text-muted);
-  }
-
-  /* ── Back to top ── */
-  .back-top {
-    position: fixed;
-    bottom: 24px;
-    right: 20px;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    color: var(--text-muted);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    font-size: 1.2rem;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-    z-index: 200;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  /* ── Highlight ── */
-  em { font-style: normal; color: var(--accent-4); }
-  strong { color: #fff; }
+  h1, h2, h3 { color: #fff; margin-top: 2rem; margin-bottom: 1rem; }
+  h1 { font-size: 1.6rem; border-bottom: 2px solid var(--accent); padding-bottom: 8px; }
+  h2 { font-size: 1.3rem; border-left: 4px solid var(--accent); padding-left: 10px; }
+  h3 { font-size: 1.1rem; color: var(--accent); }
+  p, ul, ol { margin-bottom: 1rem; font-size: 0.95rem; }
+  ul, ol { padding-left: 20px; }
+  li { margin-bottom: 0.5rem; }
+  strong { color: #ff6b8a; }
+  hr { border: 0; border-top: 1px solid var(--border); margin: 2rem 0; }
+  a { color: var(--accent); text-decoration: none; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9rem; padding: 6px 12px; background: var(--surface); border-radius: 6px; border: 1px solid var(--border); }
 </style>
 </head>
 <body>
-
-<div class="hero">
-  <h1>令和3年度（2021）演習前<br>事前予習ガイド（実践編）</h1>
-  <p>事例Ⅰ〜Ⅳの頻出理論と解法の型。電車の中でのインプット用（ネタバレなし）。</p>
-</div>
-
-<nav class="toc" id="toc">
-  <a href="#case1" data-case="1">📘 事例Ⅰ</a>
-  <a href="#case2" data-case="2">📕 事例Ⅱ</a>
-  <a href="#case3" data-case="3">📗 事例Ⅲ</a>
-  <a href="#case4" data-case="4">📙 事例Ⅳ</a>
-</nav>
-
-<main>
-
-<!-- ═══════════════════════════════════════════ CASE 1 ═══ -->
-<div class="case-header" data-case="1" id="case1">
-  <span class="emoji">📘</span>
-  <h2>事例Ⅰ（組織・人事）</h2>
-</div>
-
-<!-- Topic 1-1 -->
-<div class="topic">
-  <button class="topic-toggle" onclick="toggle(this)">
-    PMI（買収後統合）
-    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-  </button>
-  <div class="topic-body">
-    <h4>そもそもPMIとは何か</h4>
-    <p>M&A（合併・買収）は「契約書にサインした瞬間」がゴールではありません。むしろ、そこからが本当の勝負です。買収した会社の社員・制度・文化を自社グループに統合し、シナジー（相乗効果）を実際に生み出すプロセスのことをPMIと呼びます。</p>
-
-    <h4>PMIで起きる典型的な問題（3つの壁）</h4>
-    <ol>
-      <li><strong>制度の壁：</strong>給与体系、評価基準、昇進ルールが違う。被買収側の社員が「うちの方が技術力は上なのに、なぜ待遇が下がるんだ」と不満を持つ。</li>
-      <li><strong>文化の壁：</strong>「うちは昔からこうやってきた」という暗黙のルールや価値観が衝突する。</li>
-      <li><strong>コミュニケーションの壁：</strong>物理的に事業所が離れている、部門間の交流がないなど、お互いを知る機会がない。</li>
-    </ol>
-
-    <h4>解答で使えるPMI施策（引き出し）</h4>
-    <div class="table-wrap">
-      <table>
-        <tr><th>壁</th><th>施策例</th><th>考え方</th></tr>
-        <tr><td>制度</td><td>人事評価制度の統一・透明化</td><td>「同じ物差しで測る」ことで公平感を担保</td></tr>
-        <tr><td>文化</td><td>経営ビジョンの明文化と全社共有</td><td>「何のために一緒になったのか」を繰り返し伝える</td></tr>
-        <tr><td>対話</td><td>両社混合のプロジェクトチーム編成</td><td>一緒に仕事をすることで相互理解が進む</td></tr>
-        <tr><td>スキル</td><td>OJT/OFF-JTによるクロストレーニング</td><td>互いの技術を教え合い、人材の質を底上げ</td></tr>
-      </table>
-    </div>
-
-    <h4>具体例で考える</h4>
-    <p>たとえば、老舗の和菓子メーカーA社が洋菓子ベンチャーB社を買収したとします。A社の強みは「伝統の技術と百貨店への販路」、B社の強みは「SNSマーケティング力と若い顧客基盤」です。</p>
-    <p>PMIの成功とは、A社の販路にB社の商品を乗せ、B社のSNSノウハウでA社の和菓子をバズらせること（シナジーの創出）です。しかし、A社のベテラン職人が「洋菓子なんて邪道だ」と反発し、B社の若手が「年功序列の古い会社に吸収されるなんて嫌だ」と退職し始めたら、シナジーどころか崩壊します。</p>
-
-    <div class="callout tip">
-      <div class="callout-title">💡 解法のコツ</div>
-      診断士としての助言は精神論ではなく、<strong>「評価制度」や「権限委譲」というハード面（仕組み）</strong>を変えることで、社員が新しい行動をとった方が得をする環境を設計することが求められます。
-    </div>
-  </div>
-</div>
-
-<!-- Topic 1-2 -->
-<div class="topic">
-  <button class="topic-toggle" onclick="toggle(this)">
-    事業転換時の組織設計（機能別 vs 事業部制）
-    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-  </button>
-  <div class="topic-body">
-    <h4>考え方の順序（3ステップ）</h4>
-    <ol>
-      <li><strong>ステップ1：</strong>現在の組織構造は何か？（機能別 or 事業部制）を与件文から読み取る</li>
-      <li><strong>ステップ2：</strong>何が問題か？を与件文の「弱み」から読み取る<br>
-        ・機能別の問題 → 部門間の連携が悪い、トップに意思決定が集中して遅い<br>
-        ・事業部制の問題 → 技術やノウハウの共有ができていない、重複投資
-      </li>
-      <li><strong>ステップ3：</strong>どう変えるべきか？を提案する</li>
-    </ol>
-
-    <div class="callout tip">
-      <div class="callout-title">💡 解法のコツ</div>
-      事例Ⅰでは「組織構造そのものを丸ごと変えろ」という大手術を求められることは稀です。多くの場合、<strong>既存の組織を維持しつつ、横串の仕組み（プロジェクトチーム、委員会、兼任など）を追加する</strong>のが現実的かつ高得点の解答です。中小企業には組織をガラッと変える余裕がないからです。
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════ CASE 2 ═══ -->
-<div class="case-header" data-case="2" id="case2">
-  <span class="emoji">📕</span>
-  <h2>事例Ⅱ（マーケティング・流通）</h2>
-</div>
-
-<!-- Topic 2-1 -->
-<div class="topic">
-  <button class="topic-toggle" onclick="toggle(this)">
-    チャネル戦略（B2B → B2Cへの転換とD2C）
-    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-  </button>
-  <div class="topic-body">
-    <h4>なぜB2B依存は危ないのか</h4>
-    <p>多くの中小メーカーは、問屋や小売店（中間業者）を通して商品を届けています。これには致命的な弱点が2つあります。</p>
-    <ol>
-      <li><strong>利益率が低い：</strong>中間マージンを取られるため、メーカーの取り分が薄い。</li>
-      <li><strong>顧客の顔が見えない：</strong>最終消費者のデータ（誰が、いつ、何を買ったか）が中間業者に握られ、商品開発に活かせない。</li>
-    </ol>
-    <p>この2つの弱点を一気に解決するのが<em>D2C（Direct to Consumer）モデル</em>です。自社ECサイトやSNSを通じて直接消費者に売ることで、利益率が上がり、顧客データも自社に蓄積されます。</p>
-
-    <h4>ダナドコの実践例</h4>
-    <p>「D2Cで直販すべき」とだけ書いても点数はもらえません。必ず<strong>ダナドコ</strong>で構造化します。</p>
-    <p><em>例題：</em>ある老舗味噌メーカーが、スーパーへの卸売りに依存している。今後の成長戦略を提案せよ。</p>
-    <div class="table-wrap">
-      <table>
-        <tr><th>要素</th><th>解答例</th></tr>
-        <tr><td>ダ（誰に）</td><td>健康志向が高くこだわりの食材を求める30〜50代の主婦層に対し</td></tr>
-        <tr><td>ナ（何を）</td><td>創業100年の伝統製法による無添加味噌という強みを活かし</td></tr>
-        <tr><td>ド（どのように）</td><td>自社ECでの定期購入（サブスク）モデルを構築し、SNSでレシピ動画を発信することで</td></tr>
-        <tr><td>コ（効果）</td><td>顧客との直接的な関係を構築し、LTV向上と安定的な収益基盤の確立を図る</td></tr>
-      </table>
-    </div>
-
-    <div class="callout tip">
-      <div class="callout-title">💡 解法のコツ</div>
-      <strong>「ダ（誰に）」を具体的にする</strong>のが最大の差別化ポイントです。「消費者」ではダメ。与件文に書かれている人口動態やライフスタイルの情報を拾って、「〇〇な△△層」と具体化してください。<br><br>
-      <strong>「コ（効果）」は必ず経営課題の解決に紐付ける。</strong>「売上が増える」だけではなく、「顧客データの蓄積による商品開発力の強化」「中間マージン削減による収益性改善」など、冒頭の経営課題に対応する形で書く。
-    </div>
-  </div>
-</div>
-
-<!-- Topic 2-2 -->
-<div class="topic">
-  <button class="topic-toggle" onclick="toggle(this)">
-    協業・連携による地域ブランディング
-    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-  </button>
-  <div class="topic-body">
-    <h4>なぜ「連携」が頻出なのか</h4>
-    <p>中小企業は1社で全てを完結させる経営資源（ヒト・モノ・カネ）を持っていません。だからこそ、地域の他業種や団体と連携して、互いの経営資源を補完し合うことが試験で繰り返し問われます。</p>
-
-    <h4>連携のパターン（引き出し）</h4>
-    <div class="table-wrap">
-      <table>
-        <tr><th>パターン</th><th>具体例</th><th>メリット</th></tr>
-        <tr><td>異業種コラボ</td><td>地元の酒蔵 × 旅館 =「地酒と料理のペアリング宿泊プラン」</td><td>互いの顧客基盤を相互送客し、新規顧客を低コストで獲得</td></tr>
-        <tr><td>地域ブランド化</td><td>産地名を冠した統一ブランド（例：今治タオル）</td><td>個社では不可能な認知度を共同で獲得</td></tr>
-        <tr><td>イベント連携</td><td>商店街の合同セール、マルシェ出店</td><td>集客力の向上、地域全体の回遊性アップ</td></tr>
-      </table>
-    </div>
-
-    <div class="callout tip">
-      <div class="callout-title">💡 解法のコツ</div>
-      連携の提案をする際は、<strong>「誰と組むか」を与件文の中から探す</strong>ことが最重要です。与件文には必ず「地元の〇〇組合」「近隣の△△」「取引先の□□」といった連携候補がさりげなく登場しています。これを見落とさずに拾い上げ、ダナドコの「ド（どのように）」に組み込んでください。
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════ CASE 3 ═══ -->
-<div class="case-header" data-case="3" id="case3">
-  <span class="emoji">📗</span>
-  <h2>事例Ⅲ（生産・技術）</h2>
-</div>
-
-<!-- Topic 3-1 -->
-<div class="topic">
-  <button class="topic-toggle" onclick="toggle(this)">
-    OEM（受託生産）からの脱却と自社ブランド構築
-    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-  </button>
-  <div class="topic-body">
-    <h4>OEMとは何か</h4>
-    <p>OEM（Original Equipment Manufacturer）とは、自社の工場で他社ブランドの製品を受託生産するビジネスモデルです。たとえば、ある中小の鞄メーカーが、有名ブランドXの鞄をXの設計図通りに作って納品している状態です。</p>
-
-    <h4>OEMの「安全な檻」と「見えない天井」</h4>
-    <ul>
-      <li><strong>安定している：</strong>ブランドXから継続的に注文が来るので、営業活動が不要</li>
-      <li><strong>しかし利益が薄い：</strong>付加価値の高い「企画」と「販売」はブランドXが握っている</li>
-      <li><strong>依存リスク：</strong>ブランドXが発注先を海外に切り替えたら、一瞬で売上ゼロ</li>
-    </ul>
-
-    <h4>脱却に必要な機能（バリューチェーンの拡張）</h4>
-    <div class="diagram">【OEM時代】
+<a href="index.html" class="back-link">← ポータルに戻る</a>
+<div class="content">
+<h1>令和3年度（2021）演習前：事前予習ガイド（実践編）</h1>
+<p>過去問の具体的な設定（業種やストーリー）のネタバレは一切含まず、令和3年度の事例を解くための<strong>「前提となる経営理論・フレームワーク・解法の型」</strong>をまとめた事前予習ドキュメントです。
+電車の中でのインプットや、演習前の思考の引き出しの整理に活用してください。</p>
+<hr />
+<h1>📘 事例Ⅰ（組織・人事）</h1>
+<h2>トピック1：PMI（Post Merger Integration：買収後統合）</h2>
+<h3>そもそもPMIとは何か</h3>
+<p>M&amp;A（合併・買収）は「契約書にサインした瞬間」がゴールではありません。むしろ、そこからが本当の勝負です。買収した会社の社員・制度・文化を自社グループに統合し、シナジー（相乗効果）を実際に生み出すプロセスのことをPMIと呼びます。</p>
+<h3>なぜ試験で頻出なのか</h3>
+<p>中小企業の事業承継やM&amp;Aは近年急増しており、診断士が現場で助言を求められる場面が非常に多いテーマだからです。試験委員は「知識として知っているか」ではなく、「具体的にどんな施策を提案できるか」を見ています。</p>
+<h3>PMIで起きる典型的な問題（3つの壁）</h3>
+<ol>
+<li><strong>制度の壁：</strong> 給与体系、評価基準、昇進ルールが違う。被買収側の社員が「うちの方が技術力は上なのに、なぜ待遇が下がるんだ」と不満を持つ。</li>
+<li><strong>文化の壁：</strong> 「うちは昔からこうやってきた」という暗黙のルールや価値観が衝突する。たとえば、買収元は「成果主義」で、被買収側は「年功序列」だった場合、評価のモノサシが全く違うため対立が起きる。</li>
+<li><strong>コミュニケーションの壁：</strong> 物理的に事業所が離れている、部門間の交流がないなど、そもそも「お互いを知る機会」がない。</li>
+</ol>
+<h3>解答で使えるPMI施策（引き出し）</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">壁</th>
+<th style="text-align: left;">施策例</th>
+<th style="text-align: left;">考え方</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">制度の壁</td>
+<td style="text-align: left;">人事評価制度の統一・透明化</td>
+<td style="text-align: left;">「同じ物差しで測る」ことで公平感を担保する</td>
+</tr>
+<tr>
+<td style="text-align: left;">文化の壁</td>
+<td style="text-align: left;">経営ビジョンの明文化と全社共有</td>
+<td style="text-align: left;">「何のために一緒になったのか」を繰り返し伝える</td>
+</tr>
+<tr>
+<td style="text-align: left;">コミュニケーション</td>
+<td style="text-align: left;">両社混合のプロジェクトチーム編成</td>
+<td style="text-align: left;">一緒に仕事をすることで相互理解が進む</td>
+</tr>
+<tr>
+<td style="text-align: left;">スキルギャップ</td>
+<td style="text-align: left;">OJT/OFF-JTによるクロストレーニング</td>
+<td style="text-align: left;">買収元の技術を被買収側に、またはその逆を教え合う</td>
+</tr>
+</tbody>
+</table>
+<h3>具体例で考えてみる</h3>
+<p>たとえば、老舗の和菓子メーカーA社が、洋菓子ベンチャーB社を買収したとします。A社の強みは「伝統の技術と百貨店への販路」、B社の強みは「SNSマーケティング力と若い顧客基盤」です。
+PMIの成功とは、A社の販路にB社の商品を乗せ、B社のSNSノウハウでA社の和菓子をバズらせること（シナジーの創出）です。
+しかし、A社のベテラン職人が「洋菓子なんて邪道だ」と反発し、B社の若手社員が「年功序列の古い会社に吸収されるなんて嫌だ」と退職し始めたら、シナジーどころか崩壊します。
+診断士としての助言は、「A社の職人にB社のSNS動画出演を依頼する（相互理解の促進）」「両社の商品開発チームを混成にする（協業による文化融合）」「新商品の売上目標を共通KPIとして両社の評価基準に組み込む（制度の統一）」といった具体的施策になります。</p>
+<hr />
+<h2>トピック2：事業転換時の組織設計（機能別 vs 事業部制）</h2>
+<h3>考え方の順序</h3>
+<p>事例Ⅰで「組織構造を変えるべきか？」という設問が出たら、以下の順序で考えます。</p>
+<p><strong>ステップ1：現在の組織構造は何か？（与件文から読み取る）</strong>
+- 機能別組織（製造部・営業部・管理部…）なのか
+- 事業部制（A事業部・B事業部…）なのか</p>
+<p><strong>ステップ2：何が問題か？（与件文の「弱み」から読み取る）</strong>
+- 機能別の問題 → 「部門間の連携が悪い」「トップに意思決定が集中して遅い」「新規事業への対応が遅れている」
+- 事業部制の問題 → 「部門間で技術やノウハウの共有ができていない」「重複投資が起きている」</p>
+<p><strong>ステップ3：どう変えるべきか？（施策を提案する）</strong>
+- 機能別→事業部制：「各事業に独立した判断権を与え、スピードを上げたい」場合
+- 事業部制→機能別（または横串の委員会設置）：「全社で技術やノウハウを共有し、シナジーを出したい」場合
+- プロジェクトチーム制の追加：既存組織を壊さず、横断的な課題に対応したい場合</p>
+<h3>解法のコツ</h3>
+<p>事例Ⅰでは「組織構造そのものを丸ごと変えろ」という大手術を求められることは稀です。多くの場合、<strong>既存の組織構造を維持しつつ、横串の仕組み（プロジェクトチーム、委員会、兼任など）を追加する</strong>のが現実的かつ高得点の解答になります。なぜなら、中小企業には大企業のように組織をガラッと変える余裕（人材も資金も）がないからです。</p>
+<hr />
+<h1>📕 事例Ⅱ（マーケティング・流通）</h1>
+<h2>トピック1：チャネル戦略（B2B → B2Cへの転換）</h2>
+<h3>考え方の本質</h3>
+<p>多くの中小メーカーは、自社で最終消費者に売る力がないため、問屋や小売店（中間業者）を通して商品を届けています（B2Bモデル）。しかし、これには致命的な弱点が2つあります。</p>
+<ol>
+<li><strong>利益率が低い：</strong> 中間マージンを取られるため、メーカーの取り分が薄い。</li>
+<li><strong>顧客の顔が見えない：</strong> 最終消費者のデータ（誰が、いつ、何を買ったか）が中間業者に握られてしまい、自社の商品開発に活かせない。</li>
+</ol>
+<p>この2つの弱点を一気に解決するのが<strong>D2C（Direct to Consumer）モデル</strong>です。自社ECサイトやSNSを通じて直接消費者に売ることで、利益率が上がり、顧客データも自社に蓄積されます。</p>
+<h3>解答の組み立て方（ダナドコの実践）</h3>
+<p>「D2Cで直販すべき」とだけ書いても点数はもらえません。必ず<strong>ダナドコ</strong>で構造化します。</p>
+<p><strong>例題：</strong> ある老舗味噌メーカーが、スーパーへの卸売りに依存している。今後の成長戦略を提案せよ。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">要素</th>
+<th style="text-align: left;">解答例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>ダ（誰に）</strong></td>
+<td style="text-align: left;">健康志向が高く、こだわりの食材を求める30〜50代の主婦層に対し</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>ナ（何を）</strong></td>
+<td style="text-align: left;">創業100年の伝統製法による無添加味噌という強みを活かし</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>ド（どのように）</strong></td>
+<td style="text-align: left;">自社ECサイトでの定期購入（サブスク）モデルを構築し、SNSでレシピ動画を発信することで</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>コ（効果）</strong></td>
+<td style="text-align: left;">顧客との直接的な関係を構築し、LTV向上と安定的な収益基盤の確立を図る</td>
+</tr>
+</tbody>
+</table>
+<h3>解法のコツ</h3>
+<ul>
+<li><strong>「ダ（誰に）」を具体的にする</strong>のが最大の差別化ポイントです。「消費者」ではダメです。与件文に書かれている人口動態やライフスタイルの情報を拾って、「〇〇な△△層」と具体化してください。</li>
+<li><strong>「コ（効果）」は必ず経営課題の解決に紐付ける。</strong> 「売上が増える」だけではなく、「顧客データの蓄積による商品開発力の強化」「中間マージン削減による収益性改善」など、冒頭の経営課題に対応する形で書く。</li>
+</ul>
+<hr />
+<h2>トピック2：協業・連携による地域ブランディング</h2>
+<h3>なぜ「連携」が頻出なのか</h3>
+<p>中小企業は1社で全てを完結させる経営資源（ヒト・モノ・カネ）を持っていません。だからこそ、<strong>地域の他業種や団体と連携して、互いの経営資源を補完し合う</strong>ことが、試験で繰り返し問われます。</p>
+<h3>連携のパターン（引き出し）</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">パターン</th>
+<th style="text-align: left;">具体例</th>
+<th style="text-align: left;">メリット</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>異業種コラボ</strong></td>
+<td style="text-align: left;">地元の酒蔵 × 旅館 = 「地酒と料理のペアリング宿泊プラン」</td>
+<td style="text-align: left;">互いの顧客基盤を相互送客でき、新規顧客を低コストで獲得</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>地域ブランド化</strong></td>
+<td style="text-align: left;">産地名を冠した統一ブランド（例：今治タオル）</td>
+<td style="text-align: left;">個社では不可能な広告宣伝力・認知度を共同で獲得</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>イベント連携</strong></td>
+<td style="text-align: left;">商店街の合同セール、マルシェ出店</td>
+<td style="text-align: left;">集客力の向上、地域全体の回遊性アップ</td>
+</tr>
+</tbody>
+</table>
+<h3>解法のコツ</h3>
+<p>連携の提案をする際は、<strong>「誰と組むか」を与件文の中から探す</strong>ことが最重要です。与件文には必ず「地元の〇〇組合」「近隣の△△」「取引先の□□」といった連携候補がさりげなく登場しています。これを見落とさずに拾い上げ、ダナドコの「ド（どのように）」に組み込んでください。</p>
+<hr />
+<h1>📗 事例Ⅲ（生産・技術）</h1>
+<h2>トピック1：OEM（受託生産）からの脱却と自社ブランド構築</h2>
+<h3>OEMとは何か（改めて整理）</h3>
+<p>OEM（Original Equipment Manufacturer）とは、自社の工場で他社ブランドの製品を受託生産するビジネスモデルです。たとえば、ある中小の鞄メーカーが、有名ブランドXの鞄をXの設計図通りに作って納品している状態です。</p>
+<h3>OEMの「安全な檻」と「見えない天井」</h3>
+<ul>
+<li><strong>安定している：</strong> ブランドXから継続的に注文が来るので、営業活動が不要。生産に集中できる。</li>
+<li><strong>しかし利益が薄い：</strong> 付加価値の高い「企画・設計」と「販売・ブランディング」はブランドXが握っている。自社は「製造（労働力）」を提供しているだけなので、値下げ圧力に常にさらされる。</li>
+<li><strong>依存リスク：</strong> ブランドXが発注先を海外工場に切り替えたら、一瞬で売上がゼロになる。</li>
+</ul>
+<h3>脱却のために必要な機能（バリューチェーンの拡張）</h3>
+<p>OEMから脱却して自社ブランドを持つには、今まで他社に任せていた以下の機能を自社内に構築する必要があります。</p>
+<pre><code>【OEM時代】
   [企画・設計]  →  [製造]  →  [販売・ブランディング]
    ブランドXが担当    自社     ブランドXが担当
 
 【自社ブランド化後】
   [企画・設計]  →  [製造]  →  [販売・ブランディング]
       自社          自社          自社
-      ↑ 新設！                    ↑ 新設！</div>
-
-    <h4>解答の組み立て方</h4>
-    <ol>
-      <li>与件文から<strong>「強み（赤）」</strong>を拾う → 製造技術そのものは高い（＝維持・活用）</li>
-      <li>与件文から<strong>「弱み（青）」</strong>を拾う → 企画力がない、営業部門がない、顧客ニーズの把握ができていない</li>
-      <li><strong>施策を提案する</strong> → 営業機能の新設、デザイン・企画部門の設置、自社ECサイトの開設 など</li>
-    </ol>
-  </div>
+      ↑ 新設が必要！              ↑ 新設が必要！
+</code></pre>
+<h3>解答の組み立て方</h3>
+<ol>
+<li><strong>与件文から「強み（赤）」を拾う：</strong> 製造技術そのものは高い（＝これは維持・活用する）</li>
+<li><strong>与件文から「弱み（青）」を拾う：</strong> 企画力がない、営業部門がない、顧客ニーズの把握ができていない</li>
+<li><strong>施策を提案する：</strong> 「顧客ニーズを把握するための営業機能の新設」「デザイン・企画部門の設置またはデザイナーの採用」「自社ECサイトの開設」など</li>
+</ol>
+<hr />
+<h2>トピック2：生産管理の基本（受注生産 vs 見込み生産）</h2>
+<h3>2つの生産方式の違いと、それぞれの課題</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">受注生産（個別受注）</th>
+<th style="text-align: left;">見込み生産（量産）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>特徴</strong></td>
+<td style="text-align: left;">注文を受けてから作る</td>
+<td style="text-align: left;">需要を予測して先に作る</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>メリット</strong></td>
+<td style="text-align: left;">在庫リスクがない</td>
+<td style="text-align: left;">大量生産で単価を下げられる</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>デメリット</strong></td>
+<td style="text-align: left;">納期が長くなりがち</td>
+<td style="text-align: left;">需要予測が外れると在庫が余る</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>典型的な課題</strong></td>
+<td style="text-align: left;">生産計画の精度が低く納期遅延が頻発</td>
+<td style="text-align: left;">過剰在庫によるキャッシュフロー悪化</td>
+</tr>
+</tbody>
+</table>
+<h3>解法のコツ</h3>
+<p>事例Ⅲの与件文を読む際、<strong>まず「この会社は受注生産か？見込み生産か？」を確認</strong>してください。それによって、提案すべき改善策の方向性がガラッと変わります。</p>
+<ul>
+<li><strong>受注生産の改善：</strong> 生産計画の精度向上（IT活用）、段取り替え時間の短縮、多能工化によるボトルネック解消</li>
+<li><strong>見込み生産の改善：</strong> 需要予測の精度向上（販売データの分析）、適正在庫水準の設定、小ロット生産への移行</li>
+</ul>
+<hr />
+<h1>📙 事例Ⅳ（財務・会計）</h1>
+<h2>トピック1：複数セグメントのCVP分析</h2>
+<h3>令和2年との違い</h3>
+<p>令和2年のCVPは「同じ事業で、売上の閾値を超えたら変動費率が変わる」というパターンでした。しかし、CVPにはもう一つ厄介なパターンがあります。それが<strong>「利益率が異なる複数の事業（または店舗）を合算して、全社の損益分岐点を求める」</strong>問題です。</p>
+<h3>解法の手順（ステップバイステップ）</h3>
+<p><strong>例題：</strong> A店（変動費率60%、固定費100万円）とB店（変動費率40%、固定費200万円）がある。全社の損益分岐点売上高を求めよ。ただし、A店とB店の売上比率は常に3:2とする。</p>
+<p><strong>ステップ1：</strong> 売上比率から「加重平均限界利益率」を計算する。
+- A店の限界利益率：1 - 0.60 = <strong>0.40（40%）</strong>
+- B店の限界利益率：1 - 0.40 = <strong>0.60（60%）</strong>
+- 加重平均：0.40 × 3/5 + 0.60 × 2/5 = 0.24 + 0.24 = <strong>0.48（48%）</strong></p>
+<p><strong>ステップ2：</strong> 全社の固定費合計を出す。
+- 100 + 200 = <strong>300万円</strong></p>
+<p><strong>ステップ3：</strong> 損益分岐点売上高 = 固定費 ÷ 加重平均限界利益率
+- 300 ÷ 0.48 = <strong>625万円</strong></p>
+<h3>ハマりやすい罠</h3>
+<ul>
+<li><strong>売上比率の指定を見落とす：</strong> 問題文のどこかに「売上比率は〇:〇とする」と書いてあります。これを見落として、各店舗を独立に計算してしまうと大事故になります。</li>
+<li><strong>「加重平均」を使うべきか「ブロック」で解くべきかの判断：</strong> 売上比率が固定されている場合は加重平均が使えます。比率が変動する場合（「A店の売上が〇〇を超えたらB店を閉鎖する」など）は、ブロック解法で段階的に解く必要があります。</li>
+</ul>
+<hr />
+<h2>トピック2：差額キャッシュフローによるNPV</h2>
+<h3>「差額」で考えるとは？</h3>
+<p>令和2年のNPVは「投資する場合のCFだけ」を計算しましたが、より実践的（そして試験で頻出）なのが<strong>「現状維持した場合」と「投資した場合」の差分だけを抽出して計算する方法</strong>です。</p>
+<h3>なぜ差額を使うのか（具体例）</h3>
+<p>ある工場の古い機械（残り3年で廃棄、年間売上500万円、年間費用400万円）を、新しい機械（購入費600万円、3年で廃棄、年間売上500万円、年間費用250万円）に取り替えるべきかを判断するケースを考えます。</p>
+<p><strong>愚直にやる場合（非効率）：</strong>
+- 現状維持のNPV：毎年の利益(500-400)=100万円を3年間割り引いて計算
+- 新機械のNPV：初期投資△600 + 毎年の利益(500-250)=250万円を3年間割り引いて計算
+- 両者を比較</p>
+<p><strong>差額で考える場合（効率的）：</strong>
+- 売上は変わらない（500→500）ので、<strong>売上は無視</strong>（差額ゼロ）
+- 費用が年間150万円減る（400→250）ので、<strong>年間のCF増加は＋150万円</strong>
+- 初期投資が△600万円
+- この「差額CF」だけでNPVを計算すれば、一発で「投資すべきか否か」が分かる</p>
+<h3>解法のコツ</h3>
+<p>差額キャッシュフロー法の最大のメリットは、<strong>「変わらないもの」を全部無視できること</strong>です。売上が同じなら売上は無視。同じ金額の固定費があるなら無視。「変化する部分」だけに集中することで、計算量が劇的に減り、ミスも減ります。</p>
+<h3>タイムラインへの落とし込み方</h3>
+<p>差額キャッシュフロー法でも、NPVマトリックス（余白メモ術）はそのまま使えます。ただし、各行に書く数字が「絶対額」ではなく「差額」になるだけです。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">年(t)</th>
+<th style="text-align: center;">0年</th>
+<th style="text-align: center;">1年末</th>
+<th style="text-align: center;">2年末</th>
+<th style="text-align: center;">3年末</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>投資の差額</strong></td>
+<td style="text-align: center;">△600</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>費用削減の差額</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">+150</td>
+<td style="text-align: center;">+150</td>
+<td style="text-align: center;">+150</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>(A) 差額CF計</strong></td>
+<td style="text-align: center;">△600</td>
+<td style="text-align: center;">+150</td>
+<td style="text-align: center;">+150</td>
+<td style="text-align: center;">+150</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>トピック3：税引後キャッシュフローと減価償却の節税効果</h2>
+<h3>なぜ「税引後」で計算するのか</h3>
+<p>NPVの問題では「税率は30%とする」「法人税率は〇%」という指定がよく出ます。企業は利益に対して税金を払うため、実際に手元に残るキャッシュは「利益 × (1 - 税率)」になります。</p>
+<h3>減価償却費の「タックスシールド（節税効果）」</h3>
+<p>減価償却費は「費用」として利益を圧縮しますが、実際にお金が出ていくわけではありません（現金支出を伴わない費用）。しかし、利益が圧縮される分だけ税金が安くなります。この「税金が安くなった分」を<strong>タックスシールド（税の盾）</strong>と呼びます。</p>
+<p><strong>税引後CFの公式：</strong></p>
+<pre><code>税引後CF ＝ 営業利益 ×（1 - 税率）＋ 減価償却費 × 税率
+                ↑ 本業の儲けの手取り     ↑ 節税効果（タックスシールド）
+</code></pre>
+<h3>具体例で計算してみる</h3>
+<ul>
+<li>営業利益：100万円、減価償却費：50万円、税率：30%</li>
+<li>税引後CF = 100 × (1 - 0.3) + 50 × 0.3 = 70 + 15 = <strong>85万円</strong></li>
+</ul>
+<h3>解法のコツ</h3>
+<p>上記の公式は「営業利益（減価償却費を引いた後の利益）」と「減価償却費」が別々に与えられている場合にそのまま使えます。
+しかし、問題文によっては「税引前キャッシュフロー（＝減価償却費を足し戻した後の金額）」が直接与えられることもあります。その場合は以下の変形公式を使います。</p>
+<pre><code>税引後CF ＝ 税引前CF ×（1 - 税率）＋ 減価償却費 × 税率
+</code></pre>
+<p>どちらの公式を使うかは、問題文で「何が与えられているか」によって判断してください。<strong>迷ったら、必ず「営業利益」→「税引後利益」→「＋減価償却費」の3ステップで丁寧に計算すれば、どんなパターンでも絶対に正解にたどり着けます。</strong></p>
 </div>
-
-<!-- Topic 3-2 -->
-<div class="topic">
-  <button class="topic-toggle" onclick="toggle(this)">
-    生産管理の基本（受注生産 vs 見込み生産）
-    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-  </button>
-  <div class="topic-body">
-    <h4>2つの生産方式の違い</h4>
-    <div class="table-wrap">
-      <table>
-        <tr><th></th><th>受注生産（個別受注）</th><th>見込み生産（量産）</th></tr>
-        <tr><td>特徴</td><td>注文を受けてから作る</td><td>需要を予測して先に作る</td></tr>
-        <tr><td>メリット</td><td>在庫リスクがない</td><td>大量生産で単価を下げられる</td></tr>
-        <tr><td>デメリット</td><td>納期が長くなりがち</td><td>予測が外れると在庫が余る</td></tr>
-        <tr><td>典型的な課題</td><td>生産計画の精度が低く納期遅延</td><td>過剰在庫によるCF悪化</td></tr>
-      </table>
-    </div>
-
-    <div class="callout tip">
-      <div class="callout-title">💡 解法のコツ</div>
-      与件文を読む際、まず<strong>「この会社は受注生産か？ 見込み生産か？」を確認</strong>してください。それによって提案すべき改善策の方向性がガラッと変わります。<br><br>
-      <strong>受注生産の改善：</strong>生産計画の精度向上（IT活用）、段取り替え時間の短縮、多能工化<br>
-      <strong>見込み生産の改善：</strong>需要予測の精度向上（販売データ分析）、適正在庫水準の設定、小ロット化
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════ CASE 4 ═══ -->
-<div class="case-header" data-case="4" id="case4">
-  <span class="emoji">📙</span>
-  <h2>事例Ⅳ（財務・会計）</h2>
-</div>
-
-<!-- Topic 4-1 -->
-<div class="topic">
-  <button class="topic-toggle" onclick="toggle(this)">
-    複数セグメントのCVP分析
-    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-  </button>
-  <div class="topic-body">
-    <h4>令和2年との違い</h4>
-    <p>令和2年のCVPは「同じ事業で、売上の閾値を超えたら変動費率が変わる」パターンでした。もう一つ厄介なのが<em>「利益率が異なる複数の事業を合算して、全社の損益分岐点を求める」</em>問題です。</p>
-
-    <h4>解法の手順（ステップバイステップ）</h4>
-    <p><em>例題：</em>A店（変動費率60%、固定費100万円）とB店（変動費率40%、固定費200万円）がある。売上比率は常に3:2とする。全社の損益分岐点売上高を求めよ。</p>
-    <ol>
-      <li><strong>加重平均限界利益率を計算：</strong><br>
-        A店の限界利益率：1 - 0.60 = 0.40<br>
-        B店の限界利益率：1 - 0.40 = 0.60<br>
-        加重平均：0.40 × 3/5 + 0.60 × 2/5 = <strong>0.48</strong></li>
-      <li><strong>全社の固定費合計：</strong>100 + 200 = <strong>300万円</strong></li>
-      <li><strong>損益分岐点売上高</strong> = 300 ÷ 0.48 = <strong>625万円</strong></li>
-    </ol>
-
-    <div class="callout warn">
-      <div class="callout-title">⚠️ ハマりやすい罠</div>
-      <strong>売上比率の指定を見落とす：</strong>問題文のどこかに「売上比率は〇:〇とする」と書いてあります。これを見落として各店舗を独立に計算すると大事故になります。<br><br>
-      <strong>加重平均 vs ブロック解法の判断：</strong>売上比率が固定なら加重平均。比率が途中で変動する場合（「A店の売上が〇〇を超えたらB店を閉鎖する」など）は、ブロック解法で段階的に解く。
-    </div>
-  </div>
-</div>
-
-<!-- Topic 4-2 -->
-<div class="topic">
-  <button class="topic-toggle" onclick="toggle(this)">
-    差額キャッシュフローによるNPV
-    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-  </button>
-  <div class="topic-body">
-    <h4>「差額」で考えるとは？</h4>
-    <p>令和2年のNPVは「投資する場合のCFだけ」を計算しましたが、より実践的なのが<em>「現状維持した場合」と「投資した場合」の差分だけ</em>を抽出して計算する方法です。</p>
-
-    <h4>具体例で理解する</h4>
-    <p>ある工場の古い機械（残り3年、年間売上500万円、年間費用400万円）を、新しい機械（購入費600万円、3年で廃棄、年間売上500万円、年間費用250万円）に取り替えるべきかを判断するケース。</p>
-
-    <p><strong>愚直にやる場合（非効率）：</strong></p>
-    <ul>
-      <li>現状維持のNPVを計算</li>
-      <li>新機械のNPVを計算</li>
-      <li>両者を比較</li>
-    </ul>
-
-    <p><strong>差額で考える場合（効率的）：</strong></p>
-    <ul>
-      <li>売上は変わらない（500→500）→ <strong>無視（差額ゼロ）</strong></li>
-      <li>費用が年間150万円減る（400→250）→ <strong>年間CF増加＋150万円</strong></li>
-      <li>初期投資 △600万円</li>
-      <li>この「差額CF」だけでNPVを計算！</li>
-    </ul>
-
-    <h4>タイムラインへの落とし込み</h4>
-    <p>NPVマトリックスはそのまま使えます。各行の数字が「絶対額」→「差額」になるだけです。</p>
-    <div class="table-wrap">
-      <table>
-        <tr><th>年(t)</th><th>0年</th><th>1年末</th><th>2年末</th><th>3年末</th></tr>
-        <tr><td><strong>投資の差額</strong></td><td>△600</td><td></td><td></td><td></td></tr>
-        <tr><td><strong>費用削減の差額</strong></td><td></td><td>+150</td><td>+150</td><td>+150</td></tr>
-        <tr><td><strong>(A) 差額CF計</strong></td><td><strong>△600</strong></td><td><strong>+150</strong></td><td><strong>+150</strong></td><td><strong>+150</strong></td></tr>
-      </table>
-    </div>
-
-    <div class="callout tip">
-      <div class="callout-title">💡 解法の哲学</div>
-      差額CF法の最大のメリットは、<strong>「変わらないもの」を全部無視できること</strong>です。売上が同じなら売上は無視。同じ金額の固定費があるなら無視。「変化する部分」だけに集中することで、計算量もミスも劇的に減ります。
-    </div>
-  </div>
-</div>
-
-<!-- Topic 4-3 -->
-<div class="topic">
-  <button class="topic-toggle" onclick="toggle(this)">
-    税引後CFと減価償却の節税効果（タックスシールド）
-    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-  </button>
-  <div class="topic-body">
-    <h4>なぜ「税引後」で計算するのか</h4>
-    <p>NPVの問題では「税率は30%とする」「法人税率は〇%」という指定がよく出ます。企業は利益に対して税金を払うため、実際に手元に残るキャッシュは「利益 ×（1 - 税率）」になります。</p>
-
-    <h4>減価償却費の「タックスシールド（節税効果）」</h4>
-    <p>減価償却費は「費用」として利益を圧縮しますが、<strong>実際にお金が出ていくわけではありません</strong>（現金支出を伴わない費用）。しかし、利益が圧縮される分だけ税金が安くなります。この「税金が安くなった分」をタックスシールド（税の盾）と呼びます。</p>
-
-    <h4>公式</h4>
-    <div class="formula">税引後CF ＝ 営業利益 ×（1 - 税率）＋ 減価償却費 × 税率
-             ↑ 本業の儲けの手取り       ↑ 節税効果</div>
-
-    <h4>具体例で計算</h4>
-    <ul>
-      <li>営業利益：100万円、減価償却費：50万円、税率：30%</li>
-      <li>税引後CF = 100 ×（1 - 0.3）+ 50 × 0.3 = 70 + 15 = <strong>85万円</strong></li>
-    </ul>
-
-    <h4>もう一つの変形公式</h4>
-    <p>「税引前キャッシュフロー（＝減価償却費を足し戻した後の金額）」が直接与えられた場合は：</p>
-    <div class="formula">税引後CF ＝ 税引前CF ×（1 - 税率）＋ 減価償却費 × 税率</div>
-
-    <div class="callout tip">
-      <div class="callout-title">💡 迷った時の鉄板手順</div>
-      どちらの公式を使うか迷ったら、必ず<strong>「営業利益」→「税引後利益」→「＋減価償却費」の3ステップ</strong>で丁寧に計算すれば、どんなパターンでも絶対に正解にたどり着けます。
-    </div>
-  </div>
-</div>
-
-</main>
-
-<a href="#toc" class="back-top" aria-label="トップへ戻る">↑</a>
-
-<script>
-function toggle(btn) {
-  const topic = btn.closest('.topic');
-  topic.classList.toggle('open');
-}
-</script>
 </body>
 </html>
