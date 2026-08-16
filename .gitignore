@@ -9,10 +9,15 @@ Thumbs.db
 *.sh
 __pycache__/
 
-# Raw Exam PDFs (Size reduction)
+# Raw Exam PDFs
 past_exams/
 reference/
 
-# Temp & Brain artifacts
+# Personal Sessions & Workflows (KEEP LOCAL ONLY - DO NOT PUBLISH)
+sessions/
+study_notes.md
+study_plan.md
+
+# Temp & Artifacts
 *.tmp
 *.log
