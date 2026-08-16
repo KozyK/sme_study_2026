@@ -4,20 +4,18 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Scripts & Crawlers
+# Raw Archive & Scripts (LOCAL ONLY)
+archive/
+tools/
 *.py
 *.sh
 __pycache__/
 
-# Raw Exam PDFs
-past_exams/
-reference/
-
-# Personal Sessions & Internal Notes (LOCAL ONLY)
+# Personal Sessions & Personal Notes (LOCAL ONLY)
 sessions/
-*.md
+study_notes.md
+study_plan.md
 
-# Temp & Artifacts
+# Temp
 *.tmp
 *.log
-study_guide.html
