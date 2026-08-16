@@ -13,11 +13,11 @@ __pycache__/
 past_exams/
 reference/
 
-# Personal Sessions & Workflows (KEEP LOCAL ONLY - DO NOT PUBLISH)
+# Personal Sessions & Internal Notes (LOCAL ONLY)
 sessions/
-study_notes.md
-study_plan.md
+*.md
 
 # Temp & Artifacts
 *.tmp
 *.log
+study_guide.html

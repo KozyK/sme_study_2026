@@ -2,67 +2,666 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="robots" content="noindex, nofollow">
-<title>中小企業診断士 2次試験 学習ポータル</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<title>二次試験 頻出トピック・ディープガイド</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #0f1117;
     --surface: #1a1d27;
+    --surface-2: #232733;
     --border: #2e3345;
     --text: #e4e6ef;
     --text-muted: #8b90a5;
-    --accent: #6c8aff;
+    --accent-1: #6c8aff;
+    --accent-2: #ff6b8a;
+    --accent-3: #4ecdc4;
+    --accent-4: #ffd166;
+    --case1: #6c8aff;
+    --case2: #ff6b8a;
+    --case3: #4ecdc4;
+    --case4: #ffd166;
   }
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
   body {
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--bg);
     color: var(--text);
-    padding: 24px;
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
+    line-height: 1.85;
+    padding: 0 0 120px 0;
+    -webkit-font-smoothing: antialiased;
   }
-  h1 { font-size: 1.5rem; margin-bottom: 24px; text-align: center; color: var(--accent); }
-  .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
+
+  /* ── Hero ── */
+  .hero {
+    padding: 48px 20px 36px;
+    text-align: center;
+    background: linear-gradient(135deg, #1a1d27 0%, #0f1117 100%);
+    border-bottom: 1px solid var(--border);
+  }
+  .hero h1 {
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 1.4;
+    background: linear-gradient(135deg, var(--case1), var(--case3));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 12px;
+  }
+  .hero p {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    max-width: 360px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* ── Nav (table of contents) ── */
+  .toc {
     padding: 20px;
-    margin-bottom: 16px;
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(15, 17, 23, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .toc a {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 700;
     text-decoration: none;
     color: var(--text);
-    transition: transform 0.2s, border-color 0.2s;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    transition: all 0.2s;
   }
-  .card:hover, .card:active {
-    transform: translateY(-2px);
-    border-color: var(--accent);
+  .toc a:active { transform: scale(0.95); }
+  .toc a[data-case="1"] { border-color: var(--case1); color: var(--case1); }
+  .toc a[data-case="2"] { border-color: var(--case2); color: var(--case2); }
+  .toc a[data-case="3"] { border-color: var(--case3); color: var(--case3); }
+  .toc a[data-case="4"] { border-color: var(--case4); color: var(--case4); }
+
+  /* ── Main ── */
+  main { max-width: 680px; margin: 0 auto; padding: 0 16px; }
+
+  /* ── Case Section Header ── */
+  .case-header {
+    margin-top: 48px;
+    margin-bottom: 24px;
+    padding: 20px;
+    border-radius: 16px;
+    background: var(--surface);
+    border-left: 4px solid;
   }
-  .card h2 { font-size: 1.1rem; margin-bottom: 8px; }
-  .card p { font-size: 0.85rem; color: var(--text-muted); }
-  .badge {
-    display: inline-block;
-    background: rgba(108, 138, 255, 0.15);
-    color: var(--accent);
-    padding: 4px 8px;
-    border-radius: 6px;
-    font-size: 0.7rem;
-    font-weight: bold;
+  .case-header[data-case="1"] { border-color: var(--case1); }
+  .case-header[data-case="2"] { border-color: var(--case2); }
+  .case-header[data-case="3"] { border-color: var(--case3); }
+  .case-header[data-case="4"] { border-color: var(--case4); }
+
+  .case-header .emoji { font-size: 1.6rem; margin-bottom: 8px; display: block; }
+  .case-header h2 {
+    font-size: 1.15rem;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+  }
+  .case-header[data-case="1"] h2 { color: var(--case1); }
+  .case-header[data-case="2"] h2 { color: var(--case2); }
+  .case-header[data-case="3"] h2 { color: var(--case3); }
+  .case-header[data-case="4"] h2 { color: var(--case4); }
+
+  /* ── Topic Card (collapsible) ── */
+  .topic {
+    margin-bottom: 16px;
+    border-radius: 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .topic.open { border-color: var(--accent-1); }
+
+  .topic-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 18px;
+    background: none;
+    border: none;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-align: left;
+    cursor: pointer;
+    line-height: 1.5;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .topic-toggle .chevron {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-left: 12px;
+    transition: transform 0.25s ease;
+    color: var(--text-muted);
+  }
+  .topic.open .topic-toggle .chevron { transform: rotate(180deg); }
+
+  .topic-body {
+    display: none;
+    padding: 0 18px 20px;
+  }
+  .topic.open .topic-body { display: block; }
+
+  /* ── Content Typography ── */
+  .topic-body h4 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--accent-3);
+    margin: 20px 0 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+  }
+  .topic-body h4:first-child { margin-top: 4px; }
+
+  .topic-body p {
+    font-size: 0.88rem;
+    color: var(--text);
+    margin-bottom: 12px;
+    line-height: 1.9;
+  }
+
+  .topic-body ul, .topic-body ol {
+    padding-left: 1.2em;
+    margin-bottom: 14px;
+  }
+  .topic-body li {
+    font-size: 0.86rem;
     margin-bottom: 8px;
+    line-height: 1.8;
   }
+  .topic-body li strong { color: var(--accent-4); }
+
+  /* ── Tables ── */
+  .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 14px 0;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+  }
+  .topic-body table {
+    width: 100%;
+    min-width: 420px;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+  }
+  .topic-body th {
+    background: var(--surface-2);
+    color: var(--accent-3);
+    font-weight: 700;
+    padding: 10px 12px;
+    text-align: left;
+    white-space: nowrap;
+  }
+  .topic-body td {
+    padding: 10px 12px;
+    border-top: 1px solid var(--border);
+    line-height: 1.7;
+    vertical-align: top;
+  }
+
+  /* ── Code / Formula blocks ── */
+  .formula {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin: 14px 0;
+    font-size: 0.84rem;
+    line-height: 1.9;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-all;
+    color: var(--accent-4);
+    font-weight: 500;
+  }
+
+  /* ── Tip / Warning callouts ── */
+  .callout {
+    margin: 16px 0;
+    padding: 14px 16px;
+    border-radius: 10px;
+    font-size: 0.84rem;
+    line-height: 1.8;
+  }
+  .callout.tip {
+    background: rgba(78, 205, 196, 0.08);
+    border: 1px solid rgba(78, 205, 196, 0.25);
+    color: var(--accent-3);
+  }
+  .callout.warn {
+    background: rgba(255, 107, 138, 0.08);
+    border: 1px solid rgba(255, 107, 138, 0.25);
+    color: var(--accent-2);
+  }
+  .callout .callout-title {
+    font-weight: 700;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* ── Diagram (ASCII art style) ── */
+  .diagram {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    margin: 14px 0;
+    font-family: 'Courier New', monospace;
+    font-size: 0.76rem;
+    line-height: 1.6;
+    overflow-x: auto;
+    white-space: pre;
+    color: var(--text-muted);
+  }
+
+  /* ── Back to top ── */
+  .back-top {
+    position: fixed;
+    bottom: 24px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    z-index: 200;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* ── Highlight ── */
+  em { font-style: normal; color: var(--accent-4); }
+  strong { color: #fff; }
 </style>
 </head>
 <body>
-  <h1>📘 SME Study 2026</h1>
 
-  <a href="study_guide.html" class="card">
-    <span class="badge">頻出・必須</span>
-    <h2>二次試験 頻出トピック・ディープガイド</h2>
-    <p>事例Ⅰ〜Ⅳの頻出理論と解法のフレームワーク。ネタバレなしの実践的教科書。</p>
-  </a>
+<div class="hero">
+  <h1>二次試験<br>頻出トピック・ディープガイド</h1>
+  <p>フレームワーク・解法のコツ・具体例を交えた実践的な復習ドキュメント。ネタバレなし。</p>
+</div>
 
+<nav class="toc" id="toc">
+  <a href="#case1" data-case="1">📘 事例Ⅰ</a>
+  <a href="#case2" data-case="2">📕 事例Ⅱ</a>
+  <a href="#case3" data-case="3">📗 事例Ⅲ</a>
+  <a href="#case4" data-case="4">📙 事例Ⅳ</a>
+</nav>
+
+<main>
+
+<!-- ═══════════════════════════════════════════ CASE 1 ═══ -->
+<div class="case-header" data-case="1" id="case1">
+  <span class="emoji">📘</span>
+  <h2>事例Ⅰ（組織・人事）</h2>
+</div>
+
+<!-- Topic 1-1 -->
+<div class="topic">
+  <button class="topic-toggle" onclick="toggle(this)">
+    PMI（買収後統合）
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+  <div class="topic-body">
+    <h4>そもそもPMIとは何か</h4>
+    <p>M&A（合併・買収）は「契約書にサインした瞬間」がゴールではありません。むしろ、そこからが本当の勝負です。買収した会社の社員・制度・文化を自社グループに統合し、シナジー（相乗効果）を実際に生み出すプロセスのことをPMIと呼びます。</p>
+
+    <h4>PMIで起きる典型的な問題（3つの壁）</h4>
+    <ol>
+      <li><strong>制度の壁：</strong>給与体系、評価基準、昇進ルールが違う。被買収側の社員が「うちの方が技術力は上なのに、なぜ待遇が下がるんだ」と不満を持つ。</li>
+      <li><strong>文化の壁：</strong>「うちは昔からこうやってきた」という暗黙のルールや価値観が衝突する。</li>
+      <li><strong>コミュニケーションの壁：</strong>物理的に事業所が離れている、部門間の交流がないなど、お互いを知る機会がない。</li>
+    </ol>
+
+    <h4>解答で使えるPMI施策（引き出し）</h4>
+    <div class="table-wrap">
+      <table>
+        <tr><th>壁</th><th>施策例</th><th>考え方</th></tr>
+        <tr><td>制度</td><td>人事評価制度の統一・透明化</td><td>「同じ物差しで測る」ことで公平感を担保</td></tr>
+        <tr><td>文化</td><td>経営ビジョンの明文化と全社共有</td><td>「何のために一緒になったのか」を繰り返し伝える</td></tr>
+        <tr><td>対話</td><td>両社混合のプロジェクトチーム編成</td><td>一緒に仕事をすることで相互理解が進む</td></tr>
+        <tr><td>スキル</td><td>OJT/OFF-JTによるクロストレーニング</td><td>互いの技術を教え合い、人材の質を底上げ</td></tr>
+      </table>
+    </div>
+
+    <h4>具体例で考える</h4>
+    <p>たとえば、老舗の和菓子メーカーA社が洋菓子ベンチャーB社を買収したとします。A社の強みは「伝統の技術と百貨店への販路」、B社の強みは「SNSマーケティング力と若い顧客基盤」です。</p>
+    <p>PMIの成功とは、A社の販路にB社の商品を乗せ、B社のSNSノウハウでA社の和菓子をバズらせること（シナジーの創出）です。しかし、A社のベテラン職人が「洋菓子なんて邪道だ」と反発し、B社の若手が「年功序列の古い会社に吸収されるなんて嫌だ」と退職し始めたら、シナジーどころか崩壊します。</p>
+
+    <div class="callout tip">
+      <div class="callout-title">💡 解法のコツ</div>
+      診断士としての助言は精神論ではなく、<strong>「評価制度」や「権限委譲」というハード面（仕組み）</strong>を変えることで、社員が新しい行動をとった方が得をする環境を設計することが求められます。
+    </div>
+  </div>
+</div>
+
+<!-- Topic 1-2 -->
+<div class="topic">
+  <button class="topic-toggle" onclick="toggle(this)">
+    事業転換時の組織設計（機能別 vs 事業部制）
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+  <div class="topic-body">
+    <h4>考え方の順序（3ステップ）</h4>
+    <ol>
+      <li><strong>ステップ1：</strong>現在の組織構造は何か？（機能別 or 事業部制）を与件文から読み取る</li>
+      <li><strong>ステップ2：</strong>何が問題か？を与件文の「弱み」から読み取る<br>
+        ・機能別の問題 → 部門間の連携が悪い、トップに意思決定が集中して遅い<br>
+        ・事業部制の問題 → 技術やノウハウの共有ができていない、重複投資
+      </li>
+      <li><strong>ステップ3：</strong>どう変えるべきか？を提案する</li>
+    </ol>
+
+    <div class="callout tip">
+      <div class="callout-title">💡 解法のコツ</div>
+      事例Ⅰでは「組織構造そのものを丸ごと変えろ」という大手術を求められることは稀です。多くの場合、<strong>既存の組織を維持しつつ、横串の仕組み（プロジェクトチーム、委員会、兼任など）を追加する</strong>のが現実的かつ高得点の解答です。中小企業には組織をガラッと変える余裕がないからです。
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ CASE 2 ═══ -->
+<div class="case-header" data-case="2" id="case2">
+  <span class="emoji">📕</span>
+  <h2>事例Ⅱ（マーケティング・流通）</h2>
+</div>
+
+<!-- Topic 2-1 -->
+<div class="topic">
+  <button class="topic-toggle" onclick="toggle(this)">
+    チャネル戦略（B2B → B2Cへの転換とD2C）
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+  <div class="topic-body">
+    <h4>なぜB2B依存は危ないのか</h4>
+    <p>多くの中小メーカーは、問屋や小売店（中間業者）を通して商品を届けています。これには致命的な弱点が2つあります。</p>
+    <ol>
+      <li><strong>利益率が低い：</strong>中間マージンを取られるため、メーカーの取り分が薄い。</li>
+      <li><strong>顧客の顔が見えない：</strong>最終消費者のデータ（誰が、いつ、何を買ったか）が中間業者に握られ、商品開発に活かせない。</li>
+    </ol>
+    <p>この2つの弱点を一気に解決するのが<em>D2C（Direct to Consumer）モデル</em>です。自社ECサイトやSNSを通じて直接消費者に売ることで、利益率が上がり、顧客データも自社に蓄積されます。</p>
+
+    <h4>ダナドコの実践例</h4>
+    <p>「D2Cで直販すべき」とだけ書いても点数はもらえません。必ず<strong>ダナドコ</strong>で構造化します。</p>
+    <p><em>例題：</em>ある老舗味噌メーカーが、スーパーへの卸売りに依存している。今後の成長戦略を提案せよ。</p>
+    <div class="table-wrap">
+      <table>
+        <tr><th>要素</th><th>解答例</th></tr>
+        <tr><td>ダ（誰に）</td><td>健康志向が高くこだわりの食材を求める30〜50代の主婦層に対し</td></tr>
+        <tr><td>ナ（何を）</td><td>創業100年の伝統製法による無添加味噌という強みを活かし</td></tr>
+        <tr><td>ド（どのように）</td><td>自社ECでの定期購入（サブスク）モデルを構築し、SNSでレシピ動画を発信することで</td></tr>
+        <tr><td>コ（効果）</td><td>顧客との直接的な関係を構築し、LTV向上と安定的な収益基盤の確立を図る</td></tr>
+      </table>
+    </div>
+
+    <div class="callout tip">
+      <div class="callout-title">💡 解法のコツ</div>
+      <strong>「ダ（誰に）」を具体的にする</strong>のが最大の差別化ポイントです。「消費者」ではダメ。与件文に書かれている人口動態やライフスタイルの情報を拾って、「〇〇な△△層」と具体化してください。<br><br>
+      <strong>「コ（効果）」は必ず経営課題の解決に紐付ける。</strong>「売上が増える」だけではなく、「顧客データの蓄積による商品開発力の強化」「中間マージン削減による収益性改善」など、冒頭の経営課題に対応する形で書く。
+    </div>
+  </div>
+</div>
+
+<!-- Topic 2-2 -->
+<div class="topic">
+  <button class="topic-toggle" onclick="toggle(this)">
+    協業・連携による地域ブランディング
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+  <div class="topic-body">
+    <h4>なぜ「連携」が頻出なのか</h4>
+    <p>中小企業は1社で全てを完結させる経営資源（ヒト・モノ・カネ）を持っていません。だからこそ、地域の他業種や団体と連携して、互いの経営資源を補完し合うことが試験で繰り返し問われます。</p>
+
+    <h4>連携のパターン（引き出し）</h4>
+    <div class="table-wrap">
+      <table>
+        <tr><th>パターン</th><th>具体例</th><th>メリット</th></tr>
+        <tr><td>異業種コラボ</td><td>地元の酒蔵 × 旅館 =「地酒と料理のペアリング宿泊プラン」</td><td>互いの顧客基盤を相互送客し、新規顧客を低コストで獲得</td></tr>
+        <tr><td>地域ブランド化</td><td>産地名を冠した統一ブランド（例：今治タオル）</td><td>個社では不可能な認知度を共同で獲得</td></tr>
+        <tr><td>イベント連携</td><td>商店街の合同セール、マルシェ出店</td><td>集客力の向上、地域全体の回遊性アップ</td></tr>
+      </table>
+    </div>
+
+    <div class="callout tip">
+      <div class="callout-title">💡 解法のコツ</div>
+      連携の提案をする際は、<strong>「誰と組むか」を与件文の中から探す</strong>ことが最重要です。与件文には必ず「地元の〇〇組合」「近隣の△△」「取引先の□□」といった連携候補がさりげなく登場しています。これを見落とさずに拾い上げ、ダナドコの「ド（どのように）」に組み込んでください。
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ CASE 3 ═══ -->
+<div class="case-header" data-case="3" id="case3">
+  <span class="emoji">📗</span>
+  <h2>事例Ⅲ（生産・技術）</h2>
+</div>
+
+<!-- Topic 3-1 -->
+<div class="topic">
+  <button class="topic-toggle" onclick="toggle(this)">
+    OEM（受託生産）からの脱却と自社ブランド構築
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+  <div class="topic-body">
+    <h4>OEMとは何か</h4>
+    <p>OEM（Original Equipment Manufacturer）とは、自社の工場で他社ブランドの製品を受託生産するビジネスモデルです。たとえば、ある中小の鞄メーカーが、有名ブランドXの鞄をXの設計図通りに作って納品している状態です。</p>
+
+    <h4>OEMの「安全な檻」と「見えない天井」</h4>
+    <ul>
+      <li><strong>安定している：</strong>ブランドXから継続的に注文が来るので、営業活動が不要</li>
+      <li><strong>しかし利益が薄い：</strong>付加価値の高い「企画」と「販売」はブランドXが握っている</li>
+      <li><strong>依存リスク：</strong>ブランドXが発注先を海外に切り替えたら、一瞬で売上ゼロ</li>
+    </ul>
+
+    <h4>脱却に必要な機能（バリューチェーンの拡張）</h4>
+    <div class="diagram">【OEM時代】
+  [企画・設計]  →  [製造]  →  [販売・ブランディング]
+   ブランドXが担当    自社     ブランドXが担当
+
+【自社ブランド化後】
+  [企画・設計]  →  [製造]  →  [販売・ブランディング]
+      自社          自社          自社
+      ↑ 新設！                    ↑ 新設！</div>
+
+    <h4>解答の組み立て方</h4>
+    <ol>
+      <li>与件文から<strong>「強み（赤）」</strong>を拾う → 製造技術そのものは高い（＝維持・活用）</li>
+      <li>与件文から<strong>「弱み（青）」</strong>を拾う → 企画力がない、営業部門がない、顧客ニーズの把握ができていない</li>
+      <li><strong>施策を提案する</strong> → 営業機能の新設、デザイン・企画部門の設置、自社ECサイトの開設 など</li>
+    </ol>
+  </div>
+</div>
+
+<!-- Topic 3-2 -->
+<div class="topic">
+  <button class="topic-toggle" onclick="toggle(this)">
+    生産管理の基本（受注生産 vs 見込み生産）
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+  <div class="topic-body">
+    <h4>2つの生産方式の違い</h4>
+    <div class="table-wrap">
+      <table>
+        <tr><th></th><th>受注生産（個別受注）</th><th>見込み生産（量産）</th></tr>
+        <tr><td>特徴</td><td>注文を受けてから作る</td><td>需要を予測して先に作る</td></tr>
+        <tr><td>メリット</td><td>在庫リスクがない</td><td>大量生産で単価を下げられる</td></tr>
+        <tr><td>デメリット</td><td>納期が長くなりがち</td><td>予測が外れると在庫が余る</td></tr>
+        <tr><td>典型的な課題</td><td>生産計画の精度が低く納期遅延</td><td>過剰在庫によるCF悪化</td></tr>
+      </table>
+    </div>
+
+    <div class="callout tip">
+      <div class="callout-title">💡 解法のコツ</div>
+      与件文を読む際、まず<strong>「この会社は受注生産か？ 見込み生産か？」を確認</strong>してください。それによって提案すべき改善策の方向性がガラッと変わります。<br><br>
+      <strong>受注生産の改善：</strong>生産計画の精度向上（IT活用）、段取り替え時間の短縮、多能工化<br>
+      <strong>見込み生産の改善：</strong>需要予測の精度向上（販売データ分析）、適正在庫水準の設定、小ロット化
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ CASE 4 ═══ -->
+<div class="case-header" data-case="4" id="case4">
+  <span class="emoji">📙</span>
+  <h2>事例Ⅳ（財務・会計）</h2>
+</div>
+
+<!-- Topic 4-1 -->
+<div class="topic">
+  <button class="topic-toggle" onclick="toggle(this)">
+    複数セグメントのCVP分析
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+  <div class="topic-body">
+    <h4>令和2年との違い</h4>
+    <p>令和2年のCVPは「同じ事業で、売上の閾値を超えたら変動費率が変わる」パターンでした。もう一つ厄介なのが<em>「利益率が異なる複数の事業を合算して、全社の損益分岐点を求める」</em>問題です。</p>
+
+    <h4>解法の手順（ステップバイステップ）</h4>
+    <p><em>例題：</em>A店（変動費率60%、固定費100万円）とB店（変動費率40%、固定費200万円）がある。売上比率は常に3:2とする。全社の損益分岐点売上高を求めよ。</p>
+    <ol>
+      <li><strong>加重平均限界利益率を計算：</strong><br>
+        A店の限界利益率：1 - 0.60 = 0.40<br>
+        B店の限界利益率：1 - 0.40 = 0.60<br>
+        加重平均：0.40 × 3/5 + 0.60 × 2/5 = <strong>0.48</strong></li>
+      <li><strong>全社の固定費合計：</strong>100 + 200 = <strong>300万円</strong></li>
+      <li><strong>損益分岐点売上高</strong> = 300 ÷ 0.48 = <strong>625万円</strong></li>
+    </ol>
+
+    <div class="callout warn">
+      <div class="callout-title">⚠️ ハマりやすい罠</div>
+      <strong>売上比率の指定を見落とす：</strong>問題文のどこかに「売上比率は〇:〇とする」と書いてあります。これを見落として各店舗を独立に計算すると大事故になります。<br><br>
+      <strong>加重平均 vs ブロック解法の判断：</strong>売上比率が固定なら加重平均。比率が途中で変動する場合（「A店の売上が〇〇を超えたらB店を閉鎖する」など）は、ブロック解法で段階的に解く。
+    </div>
+  </div>
+</div>
+
+<!-- Topic 4-2 -->
+<div class="topic">
+  <button class="topic-toggle" onclick="toggle(this)">
+    差額キャッシュフローによるNPV
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+  <div class="topic-body">
+    <h4>「差額」で考えるとは？</h4>
+    <p>令和2年のNPVは「投資する場合のCFだけ」を計算しましたが、より実践的なのが<em>「現状維持した場合」と「投資した場合」の差分だけ</em>を抽出して計算する方法です。</p>
+
+    <h4>具体例で理解する</h4>
+    <p>ある工場の古い機械（残り3年、年間売上500万円、年間費用400万円）を、新しい機械（購入費600万円、3年で廃棄、年間売上500万円、年間費用250万円）に取り替えるべきかを判断するケース。</p>
+
+    <p><strong>愚直にやる場合（非効率）：</strong></p>
+    <ul>
+      <li>現状維持のNPVを計算</li>
+      <li>新機械のNPVを計算</li>
+      <li>両者を比較</li>
+    </ul>
+
+    <p><strong>差額で考える場合（効率的）：</strong></p>
+    <ul>
+      <li>売上は変わらない（500→500）→ <strong>無視（差額ゼロ）</strong></li>
+      <li>費用が年間150万円減る（400→250）→ <strong>年間CF増加＋150万円</strong></li>
+      <li>初期投資 △600万円</li>
+      <li>この「差額CF」だけでNPVを計算！</li>
+    </ul>
+
+    <h4>タイムラインへの落とし込み</h4>
+    <p>NPVマトリックスはそのまま使えます。各行の数字が「絶対額」→「差額」になるだけです。</p>
+    <div class="table-wrap">
+      <table>
+        <tr><th>年(t)</th><th>0年</th><th>1年末</th><th>2年末</th><th>3年末</th></tr>
+        <tr><td><strong>投資の差額</strong></td><td>△600</td><td></td><td></td><td></td></tr>
+        <tr><td><strong>費用削減の差額</strong></td><td></td><td>+150</td><td>+150</td><td>+150</td></tr>
+        <tr><td><strong>(A) 差額CF計</strong></td><td><strong>△600</strong></td><td><strong>+150</strong></td><td><strong>+150</strong></td><td><strong>+150</strong></td></tr>
+      </table>
+    </div>
+
+    <div class="callout tip">
+      <div class="callout-title">💡 解法の哲学</div>
+      差額CF法の最大のメリットは、<strong>「変わらないもの」を全部無視できること</strong>です。売上が同じなら売上は無視。同じ金額の固定費があるなら無視。「変化する部分」だけに集中することで、計算量もミスも劇的に減ります。
+    </div>
+  </div>
+</div>
+
+<!-- Topic 4-3 -->
+<div class="topic">
+  <button class="topic-toggle" onclick="toggle(this)">
+    税引後CFと減価償却の節税効果（タックスシールド）
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+  <div class="topic-body">
+    <h4>なぜ「税引後」で計算するのか</h4>
+    <p>NPVの問題では「税率は30%とする」「法人税率は〇%」という指定がよく出ます。企業は利益に対して税金を払うため、実際に手元に残るキャッシュは「利益 ×（1 - 税率）」になります。</p>
+
+    <h4>減価償却費の「タックスシールド（節税効果）」</h4>
+    <p>減価償却費は「費用」として利益を圧縮しますが、<strong>実際にお金が出ていくわけではありません</strong>（現金支出を伴わない費用）。しかし、利益が圧縮される分だけ税金が安くなります。この「税金が安くなった分」をタックスシールド（税の盾）と呼びます。</p>
+
+    <h4>公式</h4>
+    <div class="formula">税引後CF ＝ 営業利益 ×（1 - 税率）＋ 減価償却費 × 税率
+             ↑ 本業の儲けの手取り       ↑ 節税効果</div>
+
+    <h4>具体例で計算</h4>
+    <ul>
+      <li>営業利益：100万円、減価償却費：50万円、税率：30%</li>
+      <li>税引後CF = 100 ×（1 - 0.3）+ 50 × 0.3 = 70 + 15 = <strong>85万円</strong></li>
+    </ul>
+
+    <h4>もう一つの変形公式</h4>
+    <p>「税引前キャッシュフロー（＝減価償却費を足し戻した後の金額）」が直接与えられた場合は：</p>
+    <div class="formula">税引後CF ＝ 税引前CF ×（1 - 税率）＋ 減価償却費 × 税率</div>
+
+    <div class="callout tip">
+      <div class="callout-title">💡 迷った時の鉄板手順</div>
+      どちらの公式を使うか迷ったら、必ず<strong>「営業利益」→「税引後利益」→「＋減価償却費」の3ステップ</strong>で丁寧に計算すれば、どんなパターンでも絶対に正解にたどり着けます。
+    </div>
+  </div>
+</div>
+
+</main>
+
+<a href="#toc" class="back-top" aria-label="トップへ戻る">↑</a>
+
+<script>
+function toggle(btn) {
+  const topic = btn.closest('.topic');
+  topic.classList.toggle('open');
+}
+</script>
 </body>
 </html>
