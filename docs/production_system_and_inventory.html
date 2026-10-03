@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="robots" content="noindex, nofollow">
+<title>Production System And Inventory</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a href="index.html" class="back-link">← ポータルに戻る</a>
+<div class="content">
+<h1>事例Ⅲ：生産方式混在・在庫発注管理・工場レイアウトの完全攻略ガイド</h1>
+<div class="podcast-player-card">
+  <div class="podcast-header">
+    <span class="podcast-badge">🎧 AUDIO OVERVIEW</span>
+    <span class="podcast-title">この資料の対話型ポッドキャスト解説</span>
+  </div>
+  <audio controls preload="metadata" src="audio/production_system_and_inventory.mp3" style="width: 100%; margin-top: 10px;"></audio>
+</div>
+
+<p>事例Ⅲ（生産・技術）において、QCDの現場改善から一歩踏み込んだ難問として出題されるのが、<strong>「生産方式の混在トラブル」「在庫・発注方式の不備」「工場移転・レイアウト設計」</strong>です。
+本ドキュメントは、「標準品と特注品で現場が大混乱」「置き場が狭くて在庫が山積み」という構造的課題をスマートに解決するためのマスターデータです。</p>
+<hr />
+<h2>1. 「見込み生産」と「受注生産」の混在トラブルと解決策</h2>
+<p>中小製造業が生き残りをかけて「高付加価値な特注品（受注生産）」に乗り出す際、<strong>「従来の標準品（見込み生産）と同じラインで作ろうとして現場が大混乱する」</strong> のが典型パターンです。</p>
+<pre><code class="language-text">【混在による現場崩壊の構図】
+  標準品（大量・定常的） ──┐
+                          ├──▶ [同じ機械・同じライン] ──▶ 段取り替え頻発・どちらも納期遅れ！
+  特注品（少量・飛び込み）─┘
+</code></pre>
+<h3>助言の3大打ち手</h3>
+<ol>
+<li><strong>生産ラインの分離（専用ライン化）</strong>:<ul>
+<li>稼働率の高い標準品ラインと、多品種少量の特注品ラインを物理的・計画的に分離する。</li>
+</ul>
+</li>
+<li><strong>部品の共通化・モジュール化（遅延差別化）</strong>:<ul>
+<li>特注品であっても、内部部品や中間品は標準品と共通設計にする。</li>
+<li>途中工程までは「見込み」で作り置きし、最終工程でのみ特注仕様に加工する（ポストポーンメント）。</li>
+</ul>
+</li>
+<li><strong>生産計画の平準化と枠取り（スロット）管理</strong>:<ul>
+<li>標準品をベースロード（緩衝材）として一定ペースで生産し、特注品の飛び込み枠をあらかじめ計画内に確保しておく。</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2>2. 在庫管理と適正発注方式（保管スペースの圧迫解消）</h2>
+<p>「工場が狭いのに、原材料のまとめ買いで通路までモノが溢れている」「探すムダや欠品が頻発している」という課題への処方箋です。</p>
+<h3>助言の3大打ち手</h3>
+<ol>
+<li><strong>ABC分析による重点管理</strong>:<ul>
+<li><strong>Aランク品（高額・重要部品）</strong>: 「定期発注方式」を採用し、需要予測に基づき綿密に在庫コントロール。</li>
+<li><strong>B・Cランク品（汎用ボルト等）</strong>: 「定量発注点方式」やツービン法（2箱法）を採用し、発注業務を簡素化。</li>
+</ul>
+</li>
+<li><strong>発注ロットの小口化と分納化</strong>:<ul>
+<li>まとめ買いによる購入単価の安さよりも、在庫保管コスト・スペース圧迫・陳腐化リスクを優先し、小ロット・高頻度納入へ切り替える。</li>
+</ul>
+</li>
+<li><strong>サプライヤーとの情報共有（VMIなど）</strong>:<ul>
+<li>仕入先（サプライヤー）に自社の生産計画・内示情報を早期開示し、必要最小限のジャストインタイム納入を促す。</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2>3. 工場移転・新設とレイアウト改善（運搬ロスの排除）</h2>
+<p>長年の増築・増設で工場内が迷路化し、「工程間の移動距離が長すぎる」「モノの運搬で一日が終わる」という工場への助言です。</p>
+<h3>助言の3大打ち手</h3>
+<ol>
+<li><strong>直線的一方向の動線（U字ライン等）</strong>:<ul>
+<li>「原材料受入 ➡ 加工 ➡ 組み立て ➡ 検査 ➡ 出荷」の流れが一方向にスムーズに流れるレイアウト（逆流・交差の排除）。</li>
+</ul>
+</li>
+<li><strong>工程間の近接化（SLP手法の活用）</strong>:<ul>
+<li>前工程と後工程を隣接させ、中間仕掛品の運搬距離と保管スペースを最小化する。</li>
+</ul>
+</li>
+<li><strong>人とモノの動線分離</strong>:<ul>
+<li>作業者の歩行動線と、フォークリフト・運搬台車の搬送動線を分離し、安全性の確保と運搬の停滞を解消する。</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2>4. 解答でそのまま使える「記述モジュール（定番フレーズ集）」</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">狙い・論点</th>
+<th style="text-align: left;">答案で使える定石フレーズ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>生産ライン分離</strong></td>
+<td style="text-align: left;">「標準品と特注品の生産ラインを分離し、段取り替えの頻度を削減して生産効率と納期遵守率の向上を図る。」</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>部品共通化</strong></td>
+<td style="text-align: left;">「部品の標準化・モジュール化を進め、中間品まで作り置く遅延差別化により、特注品の製造リードタイムを短縮する。」</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>発注方式見直し</strong></td>
+<td style="text-align: left;">「ABC分析により重要部品は定期発注、汎用品は発注点方式へ見直し、小ロット高頻度納入で在庫保管スペースを圧縮する。」</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>レイアウト改善</strong></td>
+<td style="text-align: left;">「原材料受入から出荷まで逆流や交差のない直線的一方向レイアウトへ再配置し、運搬ロスと仕掛品滞留を削減する。」</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>動線分離</strong></td>
+<td style="text-align: left;">「作業者動線と運搬動線を分離し、安全性の向上とフォークリフト等の運搬効率化により、工程間リードタイムを短縮する。」</td>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>
