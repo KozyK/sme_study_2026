@@ -115,3 +115,43 @@ th {
   text-decoration: none;
   background: var(--border);
 }
+
+/* Podcast Player Card */
+.podcast-player-card {
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  border: 1px solid #374151;
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 16px;
+  margin: 1.5rem 0 2rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.podcast-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.podcast-badge {
+  background: #3b82f6;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  letter-spacing: 0.05em;
+}
+
+.podcast-title {
+  color: var(--text-strong);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+audio {
+  border-radius: 6px;
+  outline: none;
+}
+
