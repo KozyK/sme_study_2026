@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="robots" content="noindex, nofollow">
+<title>Production Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a href="index.html" class="back-link">← ポータルに戻る</a>
+<div class="content">
+<h1>事例Ⅲ：生産・技術の完全攻略ガイド</h1>
+<div class="podcast-player-card">
+  <div class="podcast-header">
+    <span class="podcast-badge">🎧 AUDIO OVERVIEW</span>
+    <span class="podcast-title">この資料の対話型ポッドキャスト解説</span>
+  </div>
+  <audio controls preload="metadata" src="audio/production_management.mp3" style="width: 100%; margin-top: 10px;"></audio>
+</div>
+
+<p>事例Ⅲ（生産・技術）は、文系出身者や工場勤務経験のない受験生が最も苦手意識を持ちやすい科目です。
+しかし実態は、<strong>4事例の中で最もパターンが定型化されており、型さえ身につければ70点以上を安定して叩き出せる最大の「得点源」科目</strong>です。</p>
+<p>本ドキュメントは、工場特有の課題を瞬時に「QCD」で整理し、合格答案を機械的に組み立てるためのマスターデータです。</p>
+<hr />
+<h2>1. 事例Ⅲの全体構造（工場の「内」と「外」）</h2>
+<p>事例Ⅲの問題は、大きく以下の<strong>2つのレイヤー</strong>に分かれます。</p>
+<pre><code class="language-text">┌───────────────────────────────────────────────────────────┐
+│ 【第1問〜第3問】工場「内部」の現場改善（QCDの最適化）   │
+│   ・納期短縮（D）、コスト削減（C）、品質向上（Q）        │
+│   ・生産計画の見直し、標準化、多能工化、情報の一元化     │
+└───────────────────────────────────────────────────────────┘
+                             ▲
+                             │ （強みを現場から吸い上げる）
+                             ▼
+┌───────────────────────────────────────────────────────────┐
+│ 【第4問・最終問】工場「外部」の成長戦略（ビジネス展開） │
+│   ・下請け/OEM依存からの脱却、自社ブランド化             │
+│   ・設計・開発機能の強化、直接販売ルートの開拓           │
+└───────────────────────────────────────────────────────────┘
+</code></pre>
+<hr />
+<h2>2. 現場改善の最強切り口「QCD」＆「情報の一元化」</h2>
+<p>工場の現場で起きている問題は、突き詰めると<strong>「QCDのどれか」</strong>に集約されます。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">切り口</th>
+<th style="text-align: left;">典型的な問題点</th>
+<th style="text-align: left;">助言すべき定石の打ち手</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>D（納期 / Delivery）</strong></td>
+<td style="text-align: left;">飛び込み注文による納期遅延、仕掛品滞留、リードタイム長期化</td>
+<td style="text-align: left;"><strong>計画サイクルの短縮</strong>（月次→週次・日次）、全社一元的な生産計画、進捗・余力管理の徹底</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>C（コスト / Cost）</strong></td>
+<td style="text-align: left;">段取り替えの遅れ、不良による廃棄ロス、在庫の過剰保管</td>
+<td style="text-align: left;"><strong>段取り替えの改善</strong>（内段取り外段取り化）、ロット適正化、歩留まり向上</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Q（品質 / Quality）</strong></td>
+<td style="text-align: left;">ベテラン依存による品質バラつき、手戻りの多発</td>
+<td style="text-align: left;"><strong>作業の標準化・マニュアル化</strong>、OJTによる<strong>多能工化</strong>、図面・設計情報の共有</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>【万能の処方箋：情報のデータベース化（IT化）】</strong><br />
+営業と工場の連携不足、設計と製造の伝達ミスには、<strong>「販売情報・生産情報・図面情報の一元管理（データベース化）」</strong>を助言するのが事例Ⅲの最強の共通解です。</p>
+</blockquote>
+<hr />
+<h2>3. 事例Ⅲで問われる「5大頻出パターン」</h2>
+<h3>パターン①：生産計画と統制の混乱（納期遅延・仕掛品山積み）</h3>
+<ul>
+<li><strong>与件のサイン</strong>:<ul>
+<li>「生産計画は月1回しか立てていない」「確定情報ではなく見込みで計画」</li>
+<li>「頻繁な飛び込みや仕様変更で計画が狂う」「各現場が独自の判断で製造」</li>
+</ul>
+</li>
+<li><strong>助言の打ち手</strong>:<ol>
+<li><strong>計画サイクルの短期化</strong>: 月次計画から「週次・日次計画」への細分化（確定情報でローリング）。</li>
+<li><strong>全社一元的な生産計画</strong>: 各工程ごとのバラバラな計画を廃止し、生産管理部門が一元管理。</li>
+<li><strong>製販会議の定例化と進捗管理</strong>: 営業と製造が定期的に情報共有し、余力管理を行う。</li>
+</ol>
+</li>
+<li><strong>効果（結び）</strong>:<ul>
+<li>計画の精度向上、飛び込みへの柔軟な対応、仕掛品の削減、<strong>製造リードタイムの短縮と納期遵守率の向上</strong>。</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3>パターン②：作業の属人化とボトルネック工程（生産性低下・品質バラつき）</h3>
+<ul>
+<li><strong>与件のサイン</strong>:<ul>
+<li>「ベテラン職人の勘と経験に依存」「特定工程の作業者しかできない」</li>
+<li>「特定工程の前後に仕掛品が山積み（ボトルネック）」「新人が育たない」</li>
+</ul>
+</li>
+<li><strong>助言の打ち手</strong>:<ol>
+<li><strong>作業の標準化・マニュアル化</strong>: ベテランの暗黙知を洗い出し、標準作業手順書を策定。</li>
+<li><strong>OJTによる計画的な多能工化</strong>: 複数工程を担当できる人材を育成。</li>
+<li><strong>工程間の負荷平準化</strong>: 応援体制（相互支援）を構築し、ボトルネック工程を解消。</li>
+</ol>
+</li>
+<li><strong>効果（結び）</strong>:<ul>
+<li>作業効率の向上、品質の安定、柔軟な人員配置による<strong>全社的な生産能力の向上</strong>。</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3>パターン③：下請け（OEM）からの脱却と自社製品・直販展開</h3>
+<ul>
+<li><strong>与件のサイン</strong>:<ul>
+<li>「特定の親会社・取引先に売上を依存」「単価引き下げ圧力が強い」</li>
+<li>「製造技術は高いが、営業力やデザイン力がない」</li>
+</ul>
+</li>
+<li><strong>助言の打ち手</strong>:<ol>
+<li><strong>高い製造技術を活かした自社ブランド開発（Product）</strong>: 顧客の潜在ニーズを捉えた高付加価値商品。</li>
+<li><strong>営業・企画部門の新設または専門人材採用</strong>: 外部デザイナーやマーケターとの連携。</li>
+<li><strong>直販ルート・自社ECの構築（Place）</strong>: 中間マージンを排除し、最終消費者への直販。</li>
+</ol>
+</li>
+<li><strong>効果（結び）</strong>:<ul>
+<li>特定親会社への依存リスク低減、粗利率の大幅向上、直接の顧客の声（VOC）の獲得。</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3>パターン④：設計・開発と製造現場の連携不全（手戻り多発・出図遅れ）</h3>
+<ul>
+<li><strong>与件のサイン</strong>:<ul>
+<li>「設計の出図が遅れて製造現場の納期が圧迫される」</li>
+<li>「現場で加工できない設計になっており、手戻りが多発している」</li>
+<li>「過去の図面や類似設計が生かされず、毎回ゼロから設計している」</li>
+</ul>
+</li>
+<li><strong>助言の打ち手</strong>:<ol>
+<li><strong>フロントローディング（早期の現場参画）</strong>: 設計段階から現場のベテランや製造部門が参画し、加工性を事前検証。</li>
+<li><strong>設計・図面データの共通化・DB化</strong>: 3D CAD等の導入による過去データの標準化・再利用。</li>
+</ol>
+</li>
+<li><strong>効果（結び）</strong>:<ul>
+<li>設計手戻りの防止、出図日程の短縮、設計から製造までの一貫した<strong>開発リードタイム短縮</strong>。</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3>パターン⑤：外注先（協力会社）の管理不備（納期遅れ・コスト高）</h3>
+<ul>
+<li><strong>与件のサイン</strong>:<ul>
+<li>「外注加工品の納品が遅れ、自社の工程がストップする」</li>
+<li>「外注先ごとに品質のバラつきがある」「発注が場当たり的」</li>
+</ul>
+</li>
+<li><strong>助言の打ち手</strong>:<ol>
+<li><strong>生産計画・内示情報の早期共有</strong>: 外注先にも自社の生産計画を共有し、準備期間を確保。</li>
+<li><strong>技術指導と品質基準の統一</strong>: 外注先へ自社の標準作業手順を指導。</li>
+<li><strong>定期的な評価と集約</strong>: 外注先のQCDを客観的に評価し、優良外注先へ発注を集約。</li>
+</ol>
+</li>
+<li><strong>効果（結び）</strong>:<ul>
+<li>外注加工リードタイムの短縮、不良率低減、自社生産工程の安定稼働。</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2>4. 解答でそのまま使える「記述モジュール（定番フレーズ集）」</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">狙い・論点</th>
+<th style="text-align: left;">答案で使える定石フレーズ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>生産計画</strong></td>
+<td style="text-align: left;">「全社一元的な生産計画を週次・日次で策定し、進捗・余力管理を徹底することで、仕掛品削減と納期遵守を図る。」</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>標準化・多能工化</strong></td>
+<td style="text-align: left;">「ベテランのノウハウを標準化・マニュアル化し、計画的なOJTで多能工化を進め、負荷の平準化と品質安定を図る。」</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>情報のDB化</strong></td>
+<td style="text-align: left;">「製販会議の定例化と生産・販売情報のデータベース化を行い、情報共有を迅速化してリードタイムを短縮する。」</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>下請け脱却</strong></td>
+<td style="text-align: left;">「高い技術力を活かした自社ブランド製品を開発し、直販ルートを開拓することで、下請け依存から脱却し収益性を高める。」</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>フロントローディング</strong></td>
+<td style="text-align: left;">「設計段階に製造部門が参画するフロントローディングを導入し、手戻り防止と開発リードタイムの短縮を図る。」</td>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>
