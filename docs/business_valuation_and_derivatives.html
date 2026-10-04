@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="robots" content="noindex, nofollow">
+<title>Business Valuation And Derivatives</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a href="index.html" class="back-link">← ポータルに戻る</a>
+<div class="content">
+<h1>📘 事例Ⅳ 企業価値評価（DCF/配当割引）・M&amp;A・為替デリバティブヘッジ完全攻略</h1>
+<p>〜フリーキャッシュフロー・WACC・継続価値から為替予約・通貨オプションまで〜</p>
+<h2>はじめに：なぜ企業価値評価と為替ヘッジが事例Ⅳで問われるのか？</h2>
+<p>中小企業診断士2次試験の事例Ⅳでは、経営分析やCVP、設備投資NPVといった王道論点に加え、数年に一度の頻度で<strong>「企業価値評価（M&amp;A・事業承継）」</strong>や<strong>「為替リスク管理（デリバティブ）」</strong>が出題されます。</p>
+<p>これらの論点は、多くの受験生が「難解なファイナンス理論」として敬遠し、対策が手薄になりがちです。しかし、出題されるパターンと計算構造は驚くほど定型化されており、仕組みさえ理解していれば<strong>確実に満点や部分点を奪取できるボーナス問題</strong>へと変わります。</p>
+<p>本ガイドでは、以下の核心論点を体系的・論理的に解剖します。</p>
+<ol>
+<li><strong>インカム・アプローチ（DCF法・配当割引モデル）の完全構造</strong></li>
+<li><strong>継続価値（ターミナルバリュー）とゴードン成長モデルの計算</strong></li>
+<li><strong>M&amp;Aにおけるシナジー、のれん（Goodwill）、買収プレミアム</strong></li>
+<li><strong>マーケット・アプローチ（マルチプル法）とコスト・アプローチ（時価純資産法）</strong></li>
+<li><strong>外貨建て取引における為替リスクと2大デリバティブ（為替予約 vs 通貨オプション）</strong></li>
+</ol>
+<hr />
+<h2>第1章：企業価値評価（Valuation）の全体体系</h2>
+<p>企業価値評価の手法は、評価の基礎とする情報源によって大きく3つのアプローチに分類されます。</p>
+<pre><code>［企業価値評価の3大アプローチ］
+  ├─ ① インカム・アプローチ（将来の収益力に着目）
+  │    ├─ DCF法（割引キャッシュフロー法）：最も本質的・標準的
+  │    └─ 配当割引モデル（DDM）：株主への配当金を割り引く
+  │
+  ├─ ② マーケット・アプローチ（市場の取引価格・他社比較に着目）
+  │    ├─ 類似会社比較法（マルチプル法：EV/EBITDA倍率、PER倍率、PBR倍率）
+  │    └─ 類似取引比較法
+  │
+  └─ ③ コスト・アプローチ（企業の保有資産に着目）
+       ├─ 簿価純資産法
+       └─ 時価純資産法（＋営業権・のれん）
+</code></pre>
+<p>中小企業の事業承継やM&amp;A、試験問題においては、理論的厳密さを問う<strong>「DCF法」「配当割引モデル」</strong>と、中小企業の実務で多用される<strong>「時価純資産法＋営業権」</strong>の対比が頻出です。</p>
+<hr />
+<h2>第2章：DCF法（割引キャッシュフロー法）の計算アルゴリズム</h2>
+<p>DCF法は、企業が生み出す将来のフリーキャッシュフロー（FCF）を、資本コスト（WACC）で現在価値に割り引いて事業価値を算出する手法です。</p>
+<h3>1. 企業価値・事業価値・株式価値の関係性（B/Sの視点）</h3>
+<p>貸借対照表（時価ベース）をイメージすると、各概念の包含関係が論理的に整理されます。</p>
+<pre><code>【資産サイド（借方）】                     【負債・純資産サイド（貸方）】
+┌─────────────────────────┐             ┌─────────────────────────┐
+│                         │             │ 有利子負債（時価）       │
+│ 事業価値（EV）           │             │ （借入金、社債等）      │
+│ （将来FCFの現在価値合計）│             ├─────────────────────────┤
+│                         │             │                         │
+├─────────────────────────┤             │ 株式価値（株主価値）    │
+│ 非事業用資産             │             │ （時価純資産・自己資本）│
+│ （余剰現預金、遊休不動産│             │                         │
+│   投資有価証券等）      │             │                         │
+└─────────────────────────┘             └─────────────────────────┘
+  └───────┬───────────────┘               └───────────┬───────────┘
+      【企業価値】                                【企業価値】
+</code></pre>
+<h4>基本等式</h4>
+<ol>
+<li><strong>企業価値</strong> ＝ <strong>事業価値</strong> ＋ <strong>非事業用資産</strong></li>
+<li><strong>株式価値（株主価値）</strong> ＝ <strong>企業価値</strong> − <strong>有利子負債</strong><br />
+   または<br />
+<strong>株式価値</strong> ＝ <strong>事業価値</strong> − <strong>ネット有利子負債</strong>（※ネット有利子負債 ＝ 有利子負債 − 非事業用現預金）</li>
+<li><strong>1株当たり株式価値</strong> ＝ <strong>株式価値</strong> $\div$ <strong>発行済株式数</strong></li>
+</ol>
+<blockquote>
+<p><strong>【注意】</strong><br />
+問題文で「事業価値」を求められているのか、「企業価値」なのか、「株式価値（株主価値）」なのか、「1株当たり価値」なのかを必ず確認すること。ここを取り違えると最終行で失点します。</p>
+</blockquote>
+<hr />
+<h3>2. フリーキャッシュフロー（FCF）の算出式</h3>
+<p>企業価値評価におけるFCFは、<strong>「債権者（銀行）と株主の両方に帰属するキャッシュフロー」</strong>です（アンレバードFCF）。</p>
+<pre><code>［フリーキャッシュフロー（FCF）］
+  ＝ 営業利益 × (1 − 法人税率)
+     ＋ 減価償却費
+     − 設備投資額（有形・無形固定資産の増加額）
+     − 正味運転資本増加額（Δ売上債権 ＋ Δ棚卸資産 − Δ仕入債務）
+</code></pre>
+<ul>
+<li>支払利息は引いてはいけません（割引率であるWACCの中に負債コストとして織り込まれているため、二重控除を防ぐ）。</li>
+<li>減価償却費は非現金支出費用なので足し戻します。</li>
+<li>設備投資と運転資本の増加は現金の流出なので控除します。</li>
+</ul>
+<hr />
+<h3>3. 継続価値（ターミナルバリュー）の算定式</h3>
+<p>企業の寿命は永久に続くと仮定されるため、有限の予測期間（例：5年）以降のキャッシュフローを<strong>「継続価値（Terminal Value, TV）」</strong>として一括集計します。</p>
+<h4>ゴードン成長モデル（定率成長モデル）</h4>
+<p>予測期間最終年度（第$n$期）の翌期以降、FCFが年率 $g$（永久成長率）で永久に成長し続けると仮定した場合：</p>
+<p>$$TV_n = \frac{FCF_{n+1}}{WACC - g} = \frac{FCF_n \times (1 + g)}{WACC - g}$$</p>
+<ul>
+<li>$WACC$：加重平均資本コスト</li>
+<li>$g$：永久成長率（問題文で指定される。ゼロの場合は $TV_n = \frac{FCF}{WACC}$）</li>
+<li><strong>現在価値への割引</strong>：第$n$期末時点の価値であるため、これを<strong>さらに初年度（現在）まで割り戻す</strong>必要があります。</li>
+</ul>
+<p>$$\text{継続価値の現在価値} = \frac{TV_n}{(1 + WACC)^n}$$</p>
+<blockquote>
+<p><strong>【計算の落とし穴】</strong><br />
+$TV_n$ を求めた後、$(1 + WACC)^n$ で割り引くのを忘れるミスが多発します。必ず「$n$期末時点の金額」であることを意識してください。</p>
+</blockquote>
+<hr />
+<h2>第3章：配当割引モデル（Dividend Discount Model, DDM）</h2>
+<p>配当割引モデルは、<strong>「株式価値は、将来株主が受け取る配当金の現在価値の合計に等しい」</strong>という理論です。株主資本コスト（$r_e$）を用いて割り引きます。</p>
+<h3>1. ゼロ成長モデル（永久年金型）</h3>
+<p>毎年同額の配当金 $D$ が永久に支払われる場合：</p>
+<p>$$P = \frac{D}{r_e}$$</p>
+<ul>
+<li>$P$：現在の株価（株式価値）</li>
+<li>$D$：1株当たり配当金</li>
+<li>$r_e$：株主資本コスト（CAPM等で算定）</li>
+</ul>
+<h3>2. 定率成長配当割引モデル（ゴードンモデル）</h3>
+<p>配当金が毎期一定割合 $g$ で永久に成長し続ける場合：</p>
+<p>$$P = \frac{D_1}{r_e - g} = \frac{D_0 \times (1 + g)}{r_e - g}$$</p>
+<ul>
+<li>$D_0$：当期の配当金</li>
+<li>$D_1$：翌期の予想配当金</li>
+<li>$r_e$：株主資本コスト（※必ず $r_e &gt; g$）</li>
+<li>$g$：配当成長率</li>
+</ul>
+<h4>サステイナブル成長率（内部留保による成長率）</h4>
+<p>配当成長率 $g$ は、企業の再投資能力によって決まります。</p>
+<p>$$g = ROE \times (1 - \text{配当性向}) = ROE \times \text{内部留保率}$$</p>
+<hr />
+<h2>第4章：M&amp;A・のれん（Goodwill）・買収プレミアム</h2>
+<h3>1. のれん（Goodwill）の発生メカニズム</h3>
+<p>M&amp;Aにおいて、買い手企業が支払った買収対価が、対象企業の<strong>「時価純資産」</strong>を上回る場合、その差額が<strong>「のれん（資産）」</strong>として計上されます。</p>
+<pre><code>［のれん］＝［買収対価］−［被買収企業の時価純資産（時価資産 − 時価負債）］
+</code></pre>
+<ul>
+<li>のれんの本質は、対象企業が持つ<strong>「将来の超過収益力（ブランド力、技術力、顧客基盤、組織力）」</strong>です。</li>
+<li><strong>日本の会計基準</strong>: 20年以内の定額法で規則的に減損・償却（営業費用または販管費として計上）。</li>
+<li><strong>IFRS（国際財務報告基準）</strong>: 規則償却は行わず、毎期減損テストを実施。</li>
+</ul>
+<h3>2. 買収プレミアムとシナジー効果</h3>
+<p>買収企業が時価よりも高い価格（プレミアム）を支払う理由は、M&amp;Aによって<strong>「シナジー（相乗効果）」</strong>が創出されると期待するためです。</p>
+<ol>
+<li><strong>売上シナジー</strong>：クロスセル、販売網の相互利用、ブランド力の活用による売上拡大。</li>
+<li><strong>コストシナジー</strong>：本社の間接部門統合、原材料の共同購買（規模の経済）、重複拠点の統廃合。</li>
+<li><strong>財務シナジー</strong>：信用力向上による借入金利の低下、節税効果。</li>
+</ol>
+<hr />
+<h2>第5章：為替リスク管理と金融デリバティブ</h2>
+<p>中小企業が海外取引（輸出・輸入）を行う際、避けて通れないのが<strong>為替変動リスク（為替レートの変動によって損益がブレるリスク）</strong>です。</p>
+<h3>1. 為替リスクの構造（輸出企業 vs 輸入企業）</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">区分</th>
+<th style="text-align: left;">決済通貨</th>
+<th style="text-align: left;">直面するリスク</th>
+<th style="text-align: left;">円高の影響</th>
+<th style="text-align: left;">円安の影響</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>輸出企業</strong></td>
+<td style="text-align: left;">外貨建て（ドル受取）</td>
+<td style="text-align: left;"><strong>円高ドル安リスク</strong></td>
+<td style="text-align: left;"><strong>損失（為替差損）</strong><br>円換算の受取額が目減りする</td>
+<td style="text-align: left;"><strong>利益（為替差益）</strong><br>円換算の受取額が増加する</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>輸入企業</strong></td>
+<td style="text-align: left;">外貨建て（ドル支払）</td>
+<td style="text-align: left;"><strong>円安ドル高リスク</strong></td>
+<td style="text-align: left;"><strong>利益（為替差益）</strong><br>円換算の支払額が減少する</td>
+<td style="text-align: left;"><strong>損失（為替差損）</strong><br>円換算の支払額が増加する</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>2. 為替予約（Forward Exchange Contract）</h3>
+<p>将来の一定期日に、<strong>あらかじめ取り決めた為替レート（予約レート）で外貨を売買することを銀行と約束する契約</strong>です。</p>
+<ul>
+<li><strong>輸出企業</strong>: 将来受け取る米ドルを売却して円を買う契約（<strong>ドル売り・円買い為替予約</strong>）。</li>
+<li><strong>輸入企業</strong>: 将来支払う米ドルを購入して円を売る契約（<strong>ドル買い・円売り為替予約</strong>）。</li>
+</ul>
+<h4>為替予約のメリット・デメリット</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">特徴</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>メリット</strong></td>
+<td style="text-align: left;">将来の受取円額または支払円額が<strong>1円単位まで完全に固定化</strong>され、為替変動リスクがゼロになる。事前の事業計画・原価計算が狂わない。契約時の追加コスト（手数料相当はレートに含まれる）が原則不要。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>デメリット</strong></td>
+<td style="text-align: left;"><strong>有利な方向へ為替が動いた場合の利益（為替差益）を完全に放棄</strong>することになる。<br>（例：1ドル＝150円で輸出予約をした後、市場が160円の円安になっても、150円でしか換金できない）。一度契約すると原則キャンセル不可。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>3. 通貨オプション（Currency Options）</h3>
+<p>将来の一定期日（または期間内）に、<strong>あらかじめ取り決めた権利行使価格（Strike Price）で外貨を「買う権利（コール）」または「売る権利（プット）」を売買する取引</strong>です。</p>
+<ul>
+<li><strong>コール・オプション（Call Option）</strong>：外貨を<strong>「買う権利」</strong>。</li>
+<li><strong>輸入企業</strong>が活用：円安が進んだ場合は権利行使して上限レートでドルを調達。円高になった場合は権利を放棄して市場の有利なレートでドルを安く買う。</li>
+<li><strong>プット・オプション（Put Option）</strong>：外貨を<strong>「売る権利」</strong>。</li>
+<li><strong>輸出企業</strong>が活用：円高が進んだ場合は権利行使して下限レートでドルを高値売却。円安になった場合は権利を放棄して市場の有利なレートでドルを高く売る。</li>
+</ul>
+<h4>通貨オプションの損益構造（非対称性）</h4>
+<p>オプションの最大の特徴は、<strong>「権利であって義務ではない」</strong>という点です。</p>
+<pre><code>［通貨オプションの損益特性］
+  不利な変動（損失側） → 権利を行使して損失を一定限度にブロック！
+  有利な変動（利益側） → 権利を放棄して市場レートで無限に利益を享受！
+</code></pre>
+<h4>為替予約 vs 通貨オプションの比較マトリックス</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">比較項目</th>
+<th style="text-align: left;">為替予約（先渡取引）</th>
+<th style="text-align: left;">通貨オプション（買う権利・売る権利）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>法的性質</strong></td>
+<td style="text-align: left;">契約上の<strong>「義務」</strong>（必ず予約レートで履行）</td>
+<td style="text-align: left;">権利者の<strong>「権利」</strong>（有利なら行使、不利なら放棄）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>下振れリスク</strong></td>
+<td style="text-align: left;">完全に排除（リスクゼロ）</td>
+<td style="text-align: left;">権利行使により一定水準でカット</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>上振れ利益</strong></td>
+<td style="text-align: left;"><strong>享受できない</strong>（完全に放棄）</td>
+<td style="text-align: left;"><strong>享受できる</strong>（市場の有利なレートを獲得可能）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>コスト</strong></td>
+<td style="text-align: left;">初期費用は原則ゼロ（スプレッドのみ）</td>
+<td style="text-align: left;"><strong>オプション料（プレミアム）の支払いが必要</strong>（掛け捨て）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>中小企業の適合性</strong></td>
+<td style="text-align: left;">資金繰りの確実性を最優先する場合に適する</td>
+<td style="text-align: left;">コストを払ってでも為替差益を狙いたい場合に適する</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>第6章：耳で解く！計算＆記述実践ドリル</h2>
+<h3>ドリル1：DCF法による株式価値の算定</h3>
+<ul>
+<li><strong>条件</strong>:</li>
+<li>予測期間（向こう3年間）のFCF：毎期100百万円</li>
+<li>4期目以降のFCF：100百万円で永久に一定（成長率 $g = 0$）</li>
+<li>WACC：10%</li>
+<li>有利子負債：300百万円、余剰現預金（非事業用資産）：100百万円</li>
+<li><strong>解答プロセス</strong>:</li>
+<li>予測期間（1〜3期）FCFの現在価値合計:
+     $$\frac{100}{1.1} + \frac{100}{1.1^2} + \frac{100}{1.1^3} = 90.91 + 82.64 + 75.13 = 248.68 \text{ 百万円}$$</li>
+<li>継続価値（3期末時点）:
+     $$TV_3 = \frac{100}{0.10} = 1,000 \text{ 百万円}$$</li>
+<li>継続価値の現在価値:
+     $$\frac{1,000}{1.1^3} = \frac{1,000}{1.331} = 751.31 \text{ 百万円}$$</li>
+<li>事業価値（EV）:
+     $$248.68 + 751.31 = 1,000 \text{ 百万円}$$</li>
+<li>企業価値 ＝ 事業価値 $1,000$ ＋ 余剰現預金 $100 = 1,100 \text{ 百万円}$</li>
+<li><strong>株式価値</strong> ＝ 企業価値 $1,100$ − 有利子負債 $300 = \mathbf{800 \text{ 百万円}}$</li>
+</ul>
+<hr />
+<h3>ドリル2：為替リスク管理の記述問題（設問要求即応）</h3>
+<ul>
+<li><strong>問</strong>: 米国からの輸入原材料比率が高いD社が、急激な円安ドル高リスクを回避するために「為替予約」を採用する場合のメリットとデメリットを60字以内で述べよ。</li>
+<li><strong>解答例</strong>:<blockquote>
+<p>メリットは輸入原価と支払円額を確定させ為替リスクを排除できる点。デメリットは円高時の為替差益を享受できない点。（56字）</p>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h2>まとめ：事例Ⅳファイナンス攻略の3大原則</h2>
+<ol>
+<li><strong>「企業価値」「事業価値」「株式価値」の境界線を厳密に区別する。</strong></li>
+<li><strong>継続価値（ターミナルバリュー）は、$n$期末の金額を現在価値に割り戻す二段階計算を忘れない。</strong></li>
+<li><strong>為替デリバティブは「為替予約＝義務（リスクゼロだがアップサイド喪失）」「オプション＝権利（アップサイド維持だがプレミアム負担）」の対比で即答する。</strong></li>
+</ol>
+</div>
+</body>
+</html>
