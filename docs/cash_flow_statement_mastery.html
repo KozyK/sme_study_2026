@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="robots" content="noindex, nofollow">
+<title>Cash Flow Statement Mastery</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a href="index.html" class="back-link">← ポータルに戻る</a>
+<div class="content">
+<h1>📘 事例Ⅳ キャッシュフロー計算書（間接法）・資金繰り・運転資本の完全攻略ガイド</h1>
+<div class="podcast-player-card">
+  <div class="podcast-header">
+    <span class="podcast-badge">🎧 AUDIO OVERVIEW</span>
+    <span class="podcast-title">この資料の対話型ポッドキャスト解説</span>
+  </div>
+  <audio controls preload="metadata" src="audio/cash_flow_statement_mastery.mp3" style="width: 100%; margin-top: 10px;"></audio>
+</div>
+
+<p>〜「利益」と「現金」のズレ・黒字倒産のメカニズム・CCC・FCFのセオリー〜</p>
+<h2>はじめに：なぜ「利益が出ているのに倒産する」のか？</h2>
+<p>中小企業診断士の実務および2次試験の事例Ⅳにおいて、最も経営の本質を突いているテーマが<strong>「キャッシュフロー管理（資金繰り）」</strong>です。</p>
+<p>損益計算書（P/L）上は数百万円の大黒字を出している優良企業が、ある日突然、銀行への手形決済ができずに不渡りを出して倒産してしまう——これが<strong>「黒字倒産」</strong>です。
+なぜこのような悲劇が起きるのか？
+その原因は、会計の<strong>「発生主義（売上や費用が確定した時点で計上する）」</strong>と、現実の<strong>「現金主義（実際にお金が入った・出た時点で計上する）」</strong>の間に、大きな時間のズレ（タイムラグ）が存在するからです。</p>
+<p>事例Ⅳでは、第1問の経営分析や、第2問〜第3問のキャッシュフロー計算において、「営業キャッシュフローの算出」「正味運転資本の所要額計算」「フリーキャッシュフローの使途」が繰り返し問われます。</p>
+<p>本書では、この「利益と現金のズレ」を解き明かす間接法キャッシュフロー計算書の手順から、資金繰り改善、CCC（キャッシュ・コンバージョン・サイクル）まで、論理的・構造的に完全解剖します。</p>
+<hr />
+<h2>第1章：キャッシュフロー計算書（C/F）の3大区分と理想的なパターン</h2>
+<p>キャッシュフロー計算書は、企業の現金の出入りを以下の3つの活動に分類して報告します。</p>
+<ol>
+<li><strong>営業活動によるキャッシュフロー（営業CF）</strong>：</li>
+<li>本業の営業活動から稼ぎ出した現金の純増減。<strong>常に大幅なプラスであることが絶対条件</strong>。</li>
+<li><strong>投資活動によるキャッシュフロー（投資CF）</strong>：</li>
+<li>将来の成長のための設備投資や有価証券の取得・売却による現金の純増減。<strong>通常は設備投資を行うためマイナスが健全</strong>。</li>
+<li><strong>財務活動によるキャッシュフロー（財務CF）</strong>：</li>
+<li>銀行からの借入・返済、株式の発行、配当金の支払いなどによる現金の純増減。<strong>営業CFの余力で借入金を返済している場合はマイナスが健全</strong>。</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">企業のステージ</th>
+<th style="text-align: center;">営業CF</th>
+<th style="text-align: center;">投資CF</th>
+<th style="text-align: center;">財務CF</th>
+<th style="text-align: left;">状態と診断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>成長期企業</strong></td>
+<td style="text-align: center;">＋</td>
+<td style="text-align: center;">−−</td>
+<td style="text-align: center;">＋</td>
+<td style="text-align: left;">本業で稼ぎつつ、銀行借入も起こして積極的な大型設備投資を行っている攻めの状態。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>成熟・優良企業</strong></td>
+<td style="text-align: center;">＋＋</td>
+<td style="text-align: center;">−</td>
+<td style="text-align: center;">−</td>
+<td style="text-align: left;"><strong>中小企業の理想形</strong>。本業で稼いだ潤沢な資金で必要な設備更新を行い、余った現金で借入金をどんどん返済している健全な状態。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>衰退・危機的企業</strong></td>
+<td style="text-align: center;">−</td>
+<td style="text-align: center;">＋</td>
+<td style="text-align: center;">＋</td>
+<td style="text-align: left;">本業が赤字で現金が流出し、工場や設備を切り売りして食いつなぎ、銀行からの追加融資で延命している危険な状態。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>第2章：間接法による営業キャッシュフローの作成手順</h2>
+<p>営業キャッシュフローの表示方法には「直接法」と「間接法」の2種類がありますが、実務および診断士試験で出題されるのは<strong>99%「間接法」</strong>です。</p>
+<h3>1. なぜ「税引前当期純利益」からスタートするのか？</h3>
+<p>間接法は、<strong>損益計算書のゴールである「税引前当期純利益」を出発点として、そこに「利益と現金のズレ」を足したり引いたりして、最終的に「手元に残った現金」を逆算する手法</strong>です。</p>
+<pre><code>［税引前当期純利益］
+  ＋ 非資金損益項目（減価償却費、貸倒引当金繰入額など、お金が出ていかない費用）
+  − 非資金収益項目（貸倒引当金戻入益など、お金が入ってこない収益）
+  ＋ 投資・財務損益項目（固定資産売却損、除却損など、営業活動以外の損）
+  − 投資・財務損益項目（固定資産売却益など、営業活動以外の得）
+  − 売上債権の増加額（＋売上債権の減少額）
+  − 棚卸資産の増加額（＋棚卸資産の減少額）
+  ＋ 仕入債務の増加額（−仕入債務の減少額）
+  ＝【小計】
+  ＋ 利息及び配当金の受取額
+  − 利息の支払額
+  − 法人税等の支払額
+  ＝【営業活動によるキャッシュフロー】
+</code></pre>
+<hr />
+<h2>第3章：耳でわかる！なぜ資産が増えるとマイナスで、負債が増えるとプラスなのか？</h2>
+<p>多くの受験生がキャッシュフロー精算書でプラス・マイナスの符号を間違える最大の原因が、<strong>「営業活動に係る資産・負債の増減」</strong>です。
+これを暗記ではなく、お金の動きとして直感的に理解しましょう。</p>
+<h3>1. 資産の増加が「マイナス（キャッシュアウト）」になる理由</h3>
+<p>貸借対照表の左側（借方）にある資産が増えるということは、<strong>「お金を使って何かを買った（または資金が拘束された）」</strong>ことを意味します。</p>
+<ul>
+<li><strong>売上債権（売掛金・受取手形）の増加 $\implies$ マイナス</strong>:</li>
+<li>売上は計上されたが、代金がまだ現金で回収されていない（ツケで売った）。</li>
+<li>売上という利益は増えているのに、現金が手元に入ってきていないため、そのズレを解消するために<strong>利益からマイナス</strong>する。</li>
+<li><strong>棚卸資産（在庫）の増加 $\implies$ マイナス</strong>:</li>
+<li>材料代や人件費を現金で支払って製品を作ったが、売れずに倉庫に眠っている。</li>
+<li>現金が出ていったのに、費用（売上原価）にはなっていないため、<strong>利益からマイナス</strong>する。</li>
+</ul>
+<h3>2. 負債の増加が「プラス（キャッシュイン）」になる理由</h3>
+<p>貸借対照表の右側（貸方）にある負債が増えるということは、<strong>「外部から資金を調達した（または支払いを待ってもらった）」</strong>ことを意味します。</p>
+<ul>
+<li><strong>仕入債務（買掛金・支払手形）の増加 $\implies$ プラス</strong>:</li>
+<li>材料を仕入れて売上原価（費用）には計上したが、代金の支払いを待ってもらっている（ツケで買った）。</li>
+<li>費用を計上して利益は減っているのに、現金は手元から出ていっていないため、そのズレを解消するために<strong>利益にプラス</strong>する。</li>
+<li>実質的に、仕入先から無利息で短期資金を借りているのと同じ状態。</li>
+</ul>
+<blockquote>
+<p><strong>【合格の合言葉】</strong><br />
+<strong>「資産の増加は資金の流出（マイナス）、負債の増加は資金の流入（プラス）」</strong><br />
+（※減少はその真逆）</p>
+</blockquote>
+<hr />
+<h2>第4章：運転資金（正味運転資本）とキャッシュ・コンバージョン・サイクル（CCC）</h2>
+<h3>1. 所要運転資金の算式</h3>
+<p>中小企業が日々の事業を回すために、常に手元に用意しておかなければならない資金を<strong>「所要運転資金（経常運転資金）」</strong>と呼びます。</p>
+<p>$$\text{所要運転資金} = \text{売上債権} + \text{棚卸資産} - \text{仕入債務}$$</p>
+<ul>
+<li><strong>売上が急増したときの落とし穴（黒字倒産の典型例）</strong>:</li>
+<li>売上が2倍になると、売上債権と在庫も2倍に膨らむ。</li>
+<li>その結果、必要な所要運転資金も2倍に跳ね上がる。</li>
+<li>銀行からの運転資金の追加融資が間に合わないと、黒字のまま資金ショートして倒産する。</li>
+</ul>
+<hr />
+<h3>2. キャッシュ・コンバージョン・サイクル（CCC）</h3>
+<p>仕入先に現金を支払ってから、最終的に顧客から製品代金を現金で回収するまでの「資金拘束日数」を示す指標です。</p>
+<p>$$\text{CCC（日）} = \text{売上債権回転期間} + \text{棚卸資産回転期間} - \text{仕入債務回転期間}$$</p>
+<ul>
+<li><strong>CCCが長い企業</strong>:</li>
+<li>現金が出ていってから戻ってくるまでの日数が長いため、手元資金が枯渇しやすい。</li>
+<li><strong>診断士としての資金繰り改善助言（3大処方箋）</strong>:</li>
+<li><strong>売上債権回転期間の短縮</strong>: 回収条件の見直し、早期入金インセンティブ、電子決済導入。</li>
+<li><strong>棚卸資産回転期間の短縮</strong>: 適正発注、不良・滞留在庫の早期処分、リードタイム短縮（事例Ⅲと連動）。</li>
+<li><strong>仕入債務回転期間の適正化</strong>: 支払期日の交渉、手形払いの見直し。</li>
+</ul>
+<hr />
+<h2>第5章：フリーキャッシュフロー（FCF）の定義と企業価値</h2>
+<h3>1. フリーキャッシュフローとは何か？</h3>
+<p>企業が本業で稼ぎ出したキャッシュ（営業CF）から、現在の事業を維持・継続するために最低限必要な設備投資支出（投資CF）を差し引いた、<strong>「会社が完全に自由に使える正味の現金」</strong>です。</p>
+<p>$$\text{フリーキャッシュフロー（FCF）} = \text{営業活動によるCF} - \text{事業維持のための設備投資額}$$</p>
+<h3>2. FCFの使途（稼いだ現金をどう使うか？）</h3>
+<ol>
+<li><strong>債権者への還元</strong>：有利子負債（借入金）の返済、支払利息の支払い $\implies$ <strong>財務安全性の向上</strong>。</li>
+<li><strong>株主への還元</strong>：配当金の支払い、自社株買い $\implies$ <strong>株主価値の向上</strong>。</li>
+<li><strong>将来の成長投資</strong>：M&amp;A、新事業展開、研究開発への再投資 $\implies$ <strong>企業規模の拡大</strong>。</li>
+</ol>
+<p>FCFが恒常的にプラスの企業は、借金に頼らずに自力で成長できる「自立経営」が可能になります。</p>
+<hr />
+<h2>第6章：耳で解く！キャッシュフロー精算書ドリル</h2>
+<h3>ドリル：営業キャッシュフローの算出</h3>
+<ul>
+<li><strong>条件</strong>:</li>
+<li>税引前当期純利益：500万円</li>
+<li>減価償却費：200万円</li>
+<li>売上債権の増加：100万円</li>
+<li>棚卸資産の減少：50万円</li>
+<li>仕入債務の減少：80万円</li>
+<li>法人税等の支払額：120万円</li>
+<li><strong>解答</strong>:</li>
+<li>税引前当期純利益：$500 \text{ 万円}$</li>
+<li>減価償却費（足し戻し）：$+200 \text{ 万円}$</li>
+<li>売上債権の増加（マイナス）：$-100 \text{ 万円}$</li>
+<li>棚卸資産の減少（プラス）：$+50 \text{ 万円}$</li>
+<li>仕入債務の減少（マイナス）：$-80 \text{ 万円}$</li>
+<li>小計：$500 + 200 - 100 + 50 - 80 = \mathbf{570 \text{ 万円}}$</li>
+<li>法人税等の支払額：$-120 \text{ 万円}$</li>
+<li><strong>営業活動によるキャッシュフロー</strong>：$570 - 120 = \mathbf{450 \text{ 万円}}$</li>
+</ul>
+<hr />
+<h2>まとめ：事例Ⅳにおける「資金管理」の3大鉄則</h2>
+<ol>
+<li><strong>P/Lの「利益」と、金庫の「現金」を絶対に混同しない。</strong></li>
+<li><strong>「資産の増加はマイナス、負債の増加はプラス」を脊髄反射にする。</strong></li>
+<li><strong>売上が伸びている局面ほど、運転資金の急増による黒字倒産リスクを警戒する。</strong></li>
+</ol>
+</div>
+</body>
+</html>
