@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="robots" content="noindex, nofollow">
+<title>Npv And Cf Mastery</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a href="index.html" class="back-link">← ポータルに戻る</a>
+<div class="content">
+<h1>📘 事例Ⅳ 設備投資の意思決定・NPV・ファイナンス完全攻略ガイド</h1>
+<div class="podcast-player-card">
+  <div class="podcast-header">
+    <span class="podcast-badge">🎧 AUDIO OVERVIEW</span>
+    <span class="podcast-title">この資料の対話型ポッドキャスト解説</span>
+  </div>
+  <audio controls preload="metadata" src="audio/npv_and_cf_mastery.mp3" style="width: 100%; margin-top: 10px;"></audio>
+</div>
+
+<p>〜取替投資・売却損タックスシールド・WACC・デシジョンツリーのセオリー〜</p>
+<h2>はじめに：なぜ「設備投資NPV」が事例Ⅳの合否を決定づけるのか？</h2>
+<p>中小企業診断士2次試験の事例Ⅳにおいて、<strong>最も配点が大きく（例年25〜30点）、最も多くの受験生が途中で計算ミスをして大量失点する最大の難所</strong>が「設備投資の意思決定（NPV）」です。</p>
+<p>令和6年度の試験でも、第3問として「取替投資のキャッシュフロー増加額」「NPV計算」「市場調査の情報を加味した期待値計算」が30点満点で出題されました。
+多くの受験生が「問題文の条件が複雑で手が出ない」「タックスシールドや運転資本の扱いが分からない」とパニックに陥り、白紙や部分点止まりで不合格になっています。</p>
+<p>しかし、設備投資の意思決定は、<strong>「キャッシュフローの発生パターンを時間軸（タイムライン）で整理する手順」</strong>さえ身体に染み込ませてしまえば、毎年出題されるパターンは驚くほど定型的です。</p>
+<p>本書では、基礎的な概念から、取替投資、WACC（加重平均資本コスト）、デシジョンツリー、購入vsリースの比較まで、設備投資・ファイナンス理論のすべてを論理的・構造的に完全解剖します。</p>
+<hr />
+<h2>第1章：取替投資のタイムライン構築法（新規投資との違い）</h2>
+<h3>1. 新規投資 vs 取替投資の構造的相違</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">区分</th>
+<th style="text-align: left;">新規投資（設備の純増）</th>
+<th style="text-align: left;">取替投資（既存設備の更新）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>初期投資額（0年度期首）</strong></td>
+<td style="text-align: left;">新機械の取得価格（支出）</td>
+<td style="text-align: left;">新機械の取得価格 − <strong>旧機械の売却収入</strong> − <strong>売却損に伴う節税額（タックスシールド）</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>営業キャッシュフロー</strong></td>
+<td style="text-align: left;">新設備による税引後営業利益 ＋ 減価償却費 $\times$ 税率</td>
+<td style="text-align: left;"><strong>差額（増分）</strong>の税引後営業利益 ＋ <strong>差額（増分）</strong>の減価償却費 $\times$ 税率</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>運転資本の増減</strong></td>
+<td style="text-align: left;">新規事業に伴う運転資本の純増</td>
+<td style="text-align: left;">売上拡大等に伴う<strong>増分</strong>運転資本のみ</td>
+</tr>
+</tbody>
+</table>
+<p>取替投資の最大の特徴は、<strong>「新機械を導入した場合」と「旧機械をそのまま使い続けた場合」の「差額（インクリメンタル・キャッシュフロー）」</strong>で計算する点にあります。</p>
+<hr />
+<h3>2. タイムライン表（時系列マトリクス）の作成手順</h3>
+<p>試験用紙の余白に、以下の表を必ず最初に手書きします。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">キャッシュフロー項目</th>
+<th style="text-align: center;">0年度（現在）</th>
+<th style="text-align: center;">1年度</th>
+<th style="text-align: center;">2年度</th>
+<th style="text-align: center;">…</th>
+<th style="text-align: center;">最終年度（$n$年度）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">① 新機械の取得支出</td>
+<td style="text-align: center;"><strong>−投資額</strong></td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;">② 旧機械の売却収入</td>
+<td style="text-align: center;"><strong>＋売却額</strong></td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;">③ 旧機械売却損の節税額</td>
+<td style="text-align: center;"><strong>＋節税額</strong></td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;">④ 差額税引後営業利益</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">＋$CF_1$</td>
+<td style="text-align: center;">＋$CF_2$</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">＋$CF_n$</td>
+</tr>
+<tr>
+<td style="text-align: left;">⑤ 差額減価償却の節税額</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">＋$Dep_1 \times t$</td>
+<td style="text-align: center;">＋$Dep_2 \times t$</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">＋$Dep_n \times t$</td>
+</tr>
+<tr>
+<td style="text-align: left;">⑥ 運転資本の増減</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;"><strong>−増加額</strong></td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;"><strong>＋全額回収！</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>正味キャッシュフロー（合計）</strong></td>
+<td style="text-align: center;"><strong>初期投資CF</strong></td>
+<td style="text-align: center;"><strong>$NCF_1$</strong></td>
+<td style="text-align: center;"><strong>$NCF_2$</strong></td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;"><strong>$NCF_n$</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">複利現価係数</td>
+<td style="text-align: center;">$1.000$</td>
+<td style="text-align: center;">$(1+r)^{-1}$</td>
+<td style="text-align: center;">$(1+r)^{-2}$</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">$(1+r)^{-n}$</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>現在価値（PV）</strong></td>
+<td style="text-align: center;"><strong>−初期投資CF</strong></td>
+<td style="text-align: center;"><strong>$PV_1$</strong></td>
+<td style="text-align: center;"><strong>$PV_2$</strong></td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;"><strong>$PV_n$</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>第2章：売却損タックスシールドの完全理解</h2>
+<h3>1. 売却損タックスシールドとは何か？</h3>
+<p>既存設備を更新する際、帳簿価額（残存簿価）よりも低い価格で売却すると、「固定資産売却損」が発生します。</p>
+<p>$$\text{固定資産売却損} = \text{旧機械の帳簿価額（簿価）} - \text{旧機械の売却価格}$$</p>
+<p>この売却損が発生すると、会社全体の課税所得（利益）がその分だけ減額されます。
+利益が減るということは、<strong>「売却損 $\times$ 法人税率」の分だけ支払う税金が安く浮く</strong>ことになります。
+税金という現金の流出が減るということは、会社の手元に現金が残る、すなわち<strong>「実質的なキャッシュイン（節税効果）」</strong>になります。</p>
+<p>$$\text{売却損タックスシールド} = \text{固定資産売却損} \times \text{実効税率 } t$$</p>
+<h4>数値例</h4>
+<ul>
+<li>旧機械の帳簿価額：100万円</li>
+<li>旧機械の売却価格：30万円</li>
+<li>実効税率：30%</li>
+<li><strong>売却損</strong>：$100 \text{ 万円} - 30 \text{ 万円} = 70 \text{ 万円}$</li>
+<li><strong>節税額（キャッシュイン）</strong>：$70 \text{ 万円} \times 30\% = \mathbf{21 \text{ 万円}}$</li>
+<li>$\implies$ 旧機械を売ることで、売却代金30万円 ＋ 税金節約21万円 ＝ <strong>合計51万円のキャッシュイン</strong>が得られる！</li>
+</ul>
+<hr />
+<h2>第3章：運転資本の増減とキャッシュフロー</h2>
+<h3>1. なぜ運転資本が増えるとキャッシュアウトなのか？</h3>
+<p>設備投資によって売上が拡大すると、売掛金（売上債権）や在庫（棚卸資産）が増加します。</p>
+<p>$$\text{正味運転資本} = \text{売上債権} + \text{棚卸資産} - \text{仕入債務}$$</p>
+<ul>
+<li><strong>売掛金が増える</strong>: 売上は計上されたが、まだ現金が入ってきていない（資金が拘束される）。</li>
+<li><strong>在庫が増える</strong>: 材料代を支払って製品を作ったが、まだ売れていない（資金が寝てしまう）。</li>
+<li><strong>買掛金が増える</strong>: 材料を仕入れたが、支払いを待ってもらっている（資金を借りている状態）。</li>
+</ul>
+<p>したがって、<strong>運転資本の増加は「事業資金が拘束されることによる現金の流出（マイナスCF）」</strong>となります。</p>
+<h3>2. 最終年度の「運転資本回収」の鉄則</h3>
+<p>プロジェクトの最終年度には、事業を終了または定常化するため、残っていた売掛金をすべて回収し、在庫を売り切り、買掛金をすべて清算します。
+拘束されていた資金が手元に戻ってくるため、<strong>最終年度に「運転資本増加額と同額が全額キャッシュイン（プラスCF）」として計上</strong>されます。</p>
+<blockquote>
+<p><strong>【合格者の知恵】</strong><br />
+タイムライン表を作成した瞬間に、最終年度の行に「運転資本回収 ＋○万円」と赤ペンで書いておくこと。これを足し忘れて3点失点する受験生が後を絶ちません。</p>
+</blockquote>
+<hr />
+<h2>第4章：割引計算の基本（複利現価係数 vs 年金現価係数）</h2>
+<h3>1. 2つの現価係数の使い分け</h3>
+<ul>
+<li><strong>複利現価係数</strong>：$n$年後に受け取る「1円」の現在価値。
+  $$\text{PV} = \frac{1}{(1 + r)^n}$$
+  $\implies$ 各年度のキャッシュフロー金額が毎年異なるときに使用。</li>
+<li><strong>年金現価係数</strong>：$n$年間にわたって「毎年同額で受け取る1円」の現在価値の合計額。
+  $$\text{年金現価係数} = \sum_{k=1}^n \frac{1}{(1 + r)^k}$$
+  $\implies$ 毎年のキャッシュフローが同額のとき、1年ずつ掛けて足す必要がなく、<strong>年金額 $\times$ 年金現価係数で一発計算</strong>できる！</li>
+</ul>
+<hr />
+<h2>第5章：加重平均資本コスト（WACC）とCAPM</h2>
+<h3>1. WACCの算式と負債コストの節税効果</h3>
+<p>資本コストとは、資金の出し手（株主・債権者）から要求される期待利回り（ハードルレート）です。</p>
+<p>$$\text{WACC} = r_d \times (1 - t) \times \frac{D}{D + E} + r_e \times \frac{E}{D + E}$$</p>
+<ul>
+<li>$D$：有利子負債（借入金・社債）の時価</li>
+<li>$E$：株主資本（株式）の時価</li>
+<li>$r_d$：負債コスト（借入金利利回り）</li>
+<li>$r_e$：株主資本コスト</li>
+<li>$t$：実効税率</li>
+</ul>
+<h4>なぜ負債コストだけに $(1 - t)$ を掛けるのか？</h4>
+<ul>
+<li>銀行に支払う「支払利息」は、損益計算書で費用（損金）として計上できるため、法人税を安くする節税効果がある。</li>
+<li>株主に支払う「配当金」は、税金を支払った後の当期純利益から配分されるため、節税効果はゼロである。</li>
+</ul>
+<h3>2. 株主資本コストとCAPM（資本資産評価モデル）</h3>
+<p>$$r_e = r_f + \beta \times (r_m - r_f)$$</p>
+<ul>
+<li>$r_f$：リスクフリーレート（国債利回り）</li>
+<li>$r_m$：市場全体の期待収益率（TOPIX全体の平均リターン）</li>
+<li>$(r_m - r_f)$：市場リスクプレミアム</li>
+<li>$\beta$（ベータ）：市場全体が1%動いたときに、その個別株が何%敏感に動くかを示すボラティリティ指標（感応度）。</li>
+</ul>
+<hr />
+<h2>第6章：不確実性とデシジョンツリー・期待値（令和6年第3問設問3）</h2>
+<p>将来の業績が「好況（高業績）」になるか「不況（低業績）」になるかが不確実な場合、確率加重平均を用いて<strong>「正味現在価値の期待値」</strong>を算出します。</p>
+<p>$$E(\text{NPV}) = \text{好況時NPV} \times \text{好況確率} + \text{不況時NPV} \times \text{不況確率} - \text{調査コスト}$$</p>
+<h3>完全情報の期待価値（EVPI: Expected Value of Perfect Information）</h3>
+<ul>
+<li>将来どちらになるかが事前に100%確実に分かる「完璧な情報（神の予言）」を手に入れるために、最大いくらまで支払ってよいか。</li>
+<li>$\text{EVPI} = (\text{情報がある場合の期待利益}) - (\text{情報がない場合の期待利益})$。</li>
+</ul>
+<hr />
+<h2>第7章：購入 vs リースの意思決定</h2>
+<p>設備を導入する際、「銀行借入で購入するか」「リース会社からリースするか」の意思決定です。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">借入購入</th>
+<th style="text-align: left;">リース契約</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>初期支出</strong></td>
+<td style="text-align: left;">機械の購入代金（マイナス）</td>
+<td style="text-align: left;">初期支出ゼロ</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>毎年の支出</strong></td>
+<td style="text-align: left;">なし（借入返済と利息）</td>
+<td style="text-align: left;"><strong>リース料の支払い（全額損金算入）</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>節税効果</strong></td>
+<td style="text-align: left;"><strong>減価償却費 $\times$ 税率</strong>（＋支払利息 $\times$ 税率）</td>
+<td style="text-align: left;"><strong>リース料 $\times$ 税率</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>税引後キャッシュアウト</strong></td>
+<td style="text-align: left;">借入元利返済 − 減価償却費の節税額</td>
+<td style="text-align: left;"><strong>リース料 $\times (1 - \text{税率})$</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>適用割引率</strong></td>
+<td style="text-align: left;">税引後借入利率 $r_d(1 - t)$</td>
+<td style="text-align: left;">税引後借入利率 $r_d(1 - t)$</td>
+</tr>
+</tbody>
+</table>
+<p>どちらの方式の方が「現在価値に割り引いたキャッシュアウトの総額が小さいか」で有利・不利を判定します。</p>
+<hr />
+<h2>第8章：耳で解く！設備投資実践ドリル</h2>
+<h3>ドリル1：売却損タックスシールド</h3>
+<ul>
+<li><strong>問題</strong>: 簿価500万円の機械を100万円で売却。税率30%。初年度の正味キャッシュインはいくらか？</li>
+<li><strong>解答</strong>:</li>
+<li>売却収入：100万円</li>
+<li>売却損：$500 - 100 = 400 \text{ 万円}$</li>
+<li>売却損タックスシールド：$400 \text{ 万円} \times 30\% = 120 \text{ 万円}$</li>
+<li>正味キャッシュイン：$100 + 120 = \mathbf{220 \text{ 万円}}$</li>
+</ul>
+<h3>ドリル2：WACCの計算</h3>
+<ul>
+<li><strong>問題</strong>: 負債400万円（利息5%）、自己資本600万円（株主資本コスト10%）、税率30%。WACCはいくらか？</li>
+<li><strong>解答</strong>:</li>
+<li>負債比率：40%、株主資本比率：60%</li>
+<li>税引後負債コスト：$5\% \times (1 - 0.3) = 3.5\%$</li>
+<li>$\text{WACC} = 3.5\% \times 0.4 + 10\% \times 0.6 = 1.4\% + 6.0\% = \mathbf{7.4\%}$</li>
+</ul>
+</div>
+</body>
+</html>
