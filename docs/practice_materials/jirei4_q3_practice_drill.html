@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>事例Ⅳ 第3問 特訓ドリル（取替投資・NPV・期待値）</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 12mm 15mm 12mm 15mm;
+  }
+  * {
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  body {
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+    color: #1a1a1a;
+    line-height: 1.48;
+    font-size: 9.6pt;
+    margin: 0;
+    padding: 0;
+  }
+  .page {
+    page-break-after: always;
+    height: 100%;
+    position: relative;
+    padding-bottom: 24px;
+  }
+  .page:last-child {
+    page-break-after: avoid;
+  }
+  
+  /* Header & Footer */
+  .header {
+    border-bottom: 2px solid #1e3a5f;
+    padding-bottom: 4px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .header-title {
+    font-size: 12.5pt;
+    font-weight: 700;
+    color: #1e3a5f;
+    letter-spacing: 0.5px;
+  }
+  .header-meta {
+    font-size: 8.8pt;
+    color: #475569;
+    font-weight: 500;
+  }
+  .footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 8.2pt;
+    color: #64748b;
+    border-top: 1px solid #cbd5e1;
+    padding-top: 3px;
+  }
+
+  /* Typography & Headings */
+  h1 {
+    font-size: 11.5pt;
+    margin: 0 0 7px 0;
+    padding-left: 8px;
+    border-left: 4px solid #1e3a5f;
+    color: #1e3a5f;
+    line-height: 1.3;
+  }
+  h2 {
+    font-size: 10pt;
+    margin: 9px 0 4px 0;
+    color: #1e293b;
+    font-weight: 700;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 2px;
+  }
+  p {
+    margin: 0 0 5px 0;
+    text-align: justify;
+  }
+  .lead {
+    font-size: 9.2pt;
+    line-height: 1.55;
+    margin-bottom: 7px;
+  }
+  
+  /* Condition Box */
+  .condition-box {
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    padding: 7px 11px;
+    margin-bottom: 8px;
+    font-size: 8.9pt;
+    line-height: 1.52;
+  }
+  .condition-box ol {
+    margin: 0;
+    padding-left: 17px;
+  }
+  .condition-box li {
+    margin-bottom: 2px;
+  }
+  .important-note {
+    font-weight: 700;
+    color: #b91c1c;
+    background-color: #fef2f2;
+    padding: 1px 4px;
+    border-radius: 2px;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 5px 0 8px 0;
+    font-size: 8.8pt;
+  }
+  th, td {
+    border: 1px solid #94a3b8;
+    padding: 3.5px 7px;
+    text-align: center;
+  }
+  th {
+    background-color: #f1f5f9;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .text-left { text-align: left; }
+  .text-right { text-align: right; }
+
+  /* Sub-questions */
+  .sub-question {
+    margin-bottom: 7px;
+    padding: 4px 6px;
+    background-color: #fdfdfe;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+  }
+  .sub-title {
+    font-weight: 700;
+    color: #1e3a5f;
+    margin-bottom: 2px;
+    font-size: 9.3pt;
+  }
+
+  /* Answer Sheet Styles (Page 2) */
+  .answer-block {
+    border: 1.5px solid #334155;
+    border-radius: 4px;
+    padding: 7px 10px;
+    margin-bottom: 10px;
+  }
+  .answer-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 9.3pt;
+  }
+  .answer-label {
+    width: 220px;
+    font-weight: 700;
+  }
+  .answer-input-box {
+    border-bottom: 1px solid #333;
+    width: 140px;
+    height: 22px;
+    display: inline-block;
+    margin-right: 6px;
+  }
+  .calc-box {
+    border: 1px dashed #64748b;
+    background-color: #fafafa;
+    min-height: 80px;
+    padding: 6px;
+    font-size: 8.3pt;
+    color: #94a3b8;
+    border-radius: 3px;
+  }
+
+  /* Explanations (Page 3 & 4) */
+  .highlight-card {
+    background-color: #eff6ff;
+    border-left: 4px solid #2563eb;
+    padding: 7px 11px;
+    margin: 6px 0;
+    font-size: 8.9pt;
+    line-height: 1.5;
+  }
+  .warning-card {
+    background-color: #fef2f2;
+    border-left: 4px solid #ef4444;
+    padding: 7px 11px;
+    margin: 6px 0;
+    font-size: 8.9pt;
+    line-height: 1.5;
+  }
+  .formula-box {
+    background-color: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    padding: 6px 10px;
+    margin: 5px 0;
+    font-size: 8.8pt;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.5;
+  }
+  .badge {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 7.8pt;
+    font-weight: 700;
+    margin-right: 4px;
+  }
+  .badge-red { background-color: #fee2e2; color: #991b1b; }
+  .badge-blue { background-color: #dbeafe; color: #1e40af; }
+  .badge-green { background-color: #dcfce7; color: #166534; }
+  
+  .math-num {
+    font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<!-- ========================================== -->
+<!-- PAGE 1: 問題用紙                           -->
+<!-- ========================================== -->
+<div class="page">
+  <div class="header">
+    <div class="header-title">中小企業診断士 2次試験 事例Ⅳ 実践特訓演習</div>
+    <div class="header-meta">試験時間目安：25分 / 配点：30点</div>
+  </div>
+
+  <h1>第3問（配点30点）設備投資の意思決定・取替投資NPV・期待値</h1>
+  
+  <p class="lead">
+    D社は老舗の洋菓子・焼菓子製造販売業である。現在、主力製品の個包装工程において使用している既存の包装機械（以下「旧機械」という）の老朽化が進んでおり、生産性の向上と省力化を目的として、最新鋭の高速自動包装機（以下「新機械」という）への取替投資を検討している。以下の条件および資料に基づき、各設問に答えよ。
+  </p>
+
+  <div class="condition-box">
+    <strong>【取替投資に関する前提条件】</strong>
+    <ol>
+      <li><strong>旧機械の状況</strong>：4年前に取得原価300万円で購入し、耐用年数10年、残存価額ゼロ、定額法で減価償却を行っている（減価償却費30万円/年、現在の帳簿価額180万円、残存耐用年数6年）。新機械を導入する場合、旧機械は直ちに100万円で売却処分され、売却代金は新機械の購入資金の一部に充当される。</li>
+      <li><strong>新機械の導入</strong>：取得原価は480万円であり、今期末（0年度末）に全額を一括取得・支払う。耐用年数は旧機械の残存耐用年数と同じ6年、残存価額ゼロ、定額法により減価償却を行う（減価償却費80万円/年、減価償却費の増分は50万円/年）。</li>
+      <li><strong>営業利益の増加額</strong>：新機械の導入により、向こう6年間にわたり作業工数の削減と生産性向上に伴う営業利益の増加が見込まれる。増分営業利益は、1年度に<strong>40万円</strong>、2年度に<strong>80万円</strong>、3年度から6年度までは<strong>毎年度80万円</strong>である。<br>
+      <span class="important-note">※注：この営業利益の増加額は、新機械導入に伴う減価償却費の増加額（50万円/年）を控除した後の金額である。</span></li>
+      <li><strong>運転資本の増減</strong>：生産数量の拡大に伴い、運転資本は1年度末に30万円増加し、2年度末にさらに20万円増加する（累計50万円）。3年度末から5年度末にかけては増減がなく、6年度末（設備稼働終了時）に累計50万円の全額が回収（キャッシュイン）される。</li>
+      <li><strong>税金および売却損の取り扱い</strong>：法人税等の実効税率は<strong>30%</strong>とする。旧機械の売却に伴い発生する固定資産売却損の節税効果（タックスシールド）は、1年度末のキャッシュフローに反映させるものとする。</li>
+      <li><strong>資本コスト</strong>：D社の資本コスト（割引率）は年<strong>8%</strong>である。</li>
+    </ol>
+  </div>
+
+  <p style="font-size: 8.8pt; font-weight: bold; margin-bottom: 2px;">【資料：資本コスト8%における現価係数表】</p>
+  <table style="margin-bottom: 7px;">
+    <tr>
+      <th>期間</th>
+      <th>1年</th>
+      <th>2年</th>
+      <th>4年</th>
+      <th>6年</th>
+    </tr>
+    <tr>
+      <td><strong>複利現価係数</strong></td>
+      <td>0.926</td>
+      <td>0.857</td>
+      <td>0.735</td>
+      <td>0.630</td>
+    </tr>
+    <tr>
+      <td><strong>年金現価係数</strong></td>
+      <td>0.926</td>
+      <td>1.783</td>
+      <td><strong>3.312</strong></td>
+      <td>4.623</td>
+    </tr>
+  </table>
+
+  <div class="sub-question">
+    <div class="sub-title">（設問1）キャッシュフロー増加額の算出（8点）</div>
+    <p>新機械導入に伴う初年度（1年度）および2年度のキャッシュフロー増加額（単位：万円）をそれぞれ求めよ。</p>
+  </div>
+
+  <div class="sub-question">
+    <div class="sub-title">（設問2）正味現在価値（NPV）の算出（10点）</div>
+    <p>上記前提に基づき、新機械を導入した場合の正味現在価値（NPV、単位：万円）を求めよ。なお、計算結果は表示単位の小数第3位を四捨五入し、小数第2位まで表示すること。</p>
+  </div>
+
+  <div class="sub-question">
+    <div class="sub-title">（設問3）不確実性を考慮した投資判断（12点）</div>
+    <p>D社が本投資の検討にあたり事前に実施した市場調査（調査費用20万円は既に支出済み）の結果、将来の営業利益について以下の2つの予測が得られた。<br>
+    ・<strong>高業績シナリオ</strong>：営業利益の増加額が当初予測通りに推移する（発生確率 <strong>60%</strong>）。<br>
+    ・<strong>低業績シナリオ</strong>：競合他社の参入により、毎年度の営業利益の増加額が当初予測の <strong>50%</strong> に留まる（発生確率 <strong>40%</strong>）。<br>
+    この条件下における正味現在価値の期待値（単位：万円、小数第2位まで表示）を求め、本投資案を実行すべきか否かを判断せよ。</p>
+  </div>
+
+  <div class="footer">
+    <span>中小企業診断士2次試験 事例Ⅳ 特訓演習シリーズ</span>
+    <span>ページ 1 / 4（問題用紙）</span>
+  </div>
+</div>
+
+<!-- ========================================== -->
+<!-- PAGE 2: 解答用紙（答案用紙）               -->
+<!-- ========================================== -->
+<div class="page">
+  <div class="header">
+    <div class="header-title">事例Ⅳ 第3問 解答用紙（答案用紙）</div>
+    <div class="header-meta">氏名：＿＿＿＿＿＿＿＿＿＿　得点：＿＿ / 30点</div>
+  </div>
+
+  <!-- 設問1 -->
+  <div class="answer-block">
+    <div class="sub-title">（設問1）キャッシュフロー増加額（配点：8点）</div>
+    <div style="display: flex; gap: 24px; margin: 6px 0;">
+      <div class="answer-row">
+        <span class="answer-label">① 初年度（1年度）CF増加額：</span>
+        <span class="answer-input-box"></span> 万円
+      </div>
+      <div class="answer-row">
+        <span class="answer-label">② 2年度CF増加額：</span>
+        <span class="answer-input-box"></span> 万円
+      </div>
+    </div>
+    <div style="font-size: 8.5pt; font-weight: bold; margin-bottom: 2px;">【計算過程】</div>
+    <div class="calc-box" style="min-height: 80px;">
+      （ここに1年度および2年度のキャッシュフロー算出過程を記入せよ）
+    </div>
+  </div>
+
+  <!-- 設問2 -->
+  <div class="answer-block">
+    <div class="sub-title">（設問2）正味現在価値（NPV）（配点：10点）</div>
+    <div class="answer-row" style="margin: 6px 0;">
+      <span class="answer-label">正味現在価値（NPV）：</span>
+      <span class="answer-input-box" style="width: 180px;"></span> 万円
+    </div>
+    <div style="font-size: 8.5pt; font-weight: bold; margin-bottom: 2px;">【計算過程】</div>
+    <div class="calc-box" style="min-height: 125px;">
+      （ここに初期投資額、各年度CFの現在価値、年金現価係数を用いた割引計算、NPV算出過程を記入せよ）
+    </div>
+  </div>
+
+  <!-- 設問3 -->
+  <div class="answer-block">
+    <div class="sub-title">（設問3）不確実性を考慮した投資判断（配点：12点）</div>
+    <div class="answer-row" style="margin: 6px 0;">
+      <span class="answer-label">① 正味現在価値の期待値：</span>
+      <span class="answer-input-box" style="width: 150px;"></span> 万円
+    </div>
+    <div class="answer-row" style="margin: 6px 0;">
+      <span class="answer-label">② 投資判断：</span>
+      <span style="font-weight: 700; font-size: 9.8pt; margin-left: 8px;">［　実行すべきである　／　実行すべきでない　］</span> （いずれかを丸で囲む）
+    </div>
+    <div style="font-size: 8.5pt; font-weight: bold; margin-bottom: 2px;">【計算過程】</div>
+    <div class="calc-box" style="min-height: 115px;">
+      （ここに低業績シナリオのNPV、生起確率を用いた期待値計算、市場調査費用の取り扱いを記入せよ）
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>中小企業診断士2次試験 事例Ⅳ 特訓演習シリーズ</span>
+    <span>ページ 2 / 4（解答用紙）</span>
+  </div>
+</div>
+
+<!-- ========================================== -->
+<!-- PAGE 3: 模範解答・採点基準・最重要ポイント解説 -->
+<!-- ========================================== -->
+<div class="page">
+  <div class="header">
+    <div class="header-title">事例Ⅳ 第3問 模範解答・採点基準・詳細解説</div>
+    <div class="header-meta">完全克服マスターガイド</div>
+  </div>
+
+  <h1>模範解答一覧および採点基準（配点30点）</h1>
+  
+  <table>
+    <tr>
+      <th style="width: 18%;">設問</th>
+      <th style="width: 42%;">解答項目</th>
+      <th style="width: 25%;">模範正解</th>
+      <th style="width: 15%;">配点</th>
+    </tr>
+    <tr>
+      <td rowspan="2"><strong>設問1</strong></td>
+      <td class="text-left">初年度（1年度）キャッシュフロー増加額</td>
+      <td><strong>72 万円</strong></td>
+      <td>4点</td>
+    </tr>
+    <tr>
+      <td class="text-left">2年度キャッシュフロー増加額</td>
+      <td><strong>86 万円</strong></td>
+      <td>4点</td>
+    </tr>
+    <tr>
+      <td><strong>設問2</strong></td>
+      <td class="text-left">新機械導入の正味現在価値（NPV）</td>
+      <td><strong>92.74 万円</strong>（※92.743万円）</td>
+      <td>10点</td>
+    </tr>
+    <tr>
+      <td rowspan="2"><strong>設問3</strong></td>
+      <td class="text-left">正味現在価値の期待値</td>
+      <td><strong>46.17 万円</strong>（※46.169万円）</td>
+      <td>7点</td>
+    </tr>
+    <tr>
+      <td class="text-left">投資判断</td>
+      <td><strong>実行すべきである</strong></td>
+      <td>5点</td>
+    </tr>
+  </table>
+
+  <h2>★最重要克服論点：減価償却費の「二重控除トラップ」の完全撲滅</h2>
+
+  <div class="warning-card">
+    <span class="badge badge-red">典型的な不合格ミス</span>
+    <strong>「営業利益40万円、80万円」から減価償却費50万円を再度差し引いてしまう過ち</strong><br>
+    多くの受験生が「CF ＝ (利益 − 減価償却費) × (1 − t) ＋ 減価償却費」という公式をうろ覚えにしているため、問題文で与えられた増分営業利益から再度減価償却費を引いてしまい、課税所得をマイナスにして大失点します。
+  </div>
+
+  <div class="highlight-card">
+    <span class="badge badge-blue">数理的・論理的な真実</span>
+    <strong>営業利益は「すでに減価償却費が差し引かれた後」の利益である！</strong><br>
+    営業利益の会計的定義は「営業利益 ＝ 売上高 − 現金支出費用 − 減価償却費」です。<br>
+    したがって、手元に残る現金（税引後キャッシュフロー）を導出すると：<br>
+    ・税引後CF ＝ 現金収入 − 現金支出 − 支払税金<br>
+    ・　　　　 ＝ (売上高 − 現金支出費用) − (営業利益 × t)<br>
+    ・　　　　 ＝ (営業利益 ＋ 減価償却費) − (営業利益 × t)<br>
+    ・　　　　 ＝ <strong>営業利益 × (1 − t) ＋ 減価償却費</strong>
+  </div>
+
+  <p><strong>【本番で二度と迷わないための二大公式の峻別ルール】</strong></p>
+  <div class="formula-box">
+    <strong>【パターンA：現金利益（売上 − 現金支出費用）からスタートする場合】</strong><br>
+    　CF ＝ (増分売上 − 増分現金支出費用 − 減価償却費) × (1 − t) ＋ 減価償却費<br>
+    　　 ＝ <strong>(増分売上 − 増分現金支出費用) × (1 − t) ＋ 減価償却費 × t</strong><br><br>
+    <strong>【パターンB：営業利益からスタートする場合】</strong> ★本問および令和6年本試験の形式！<br>
+    　CF ＝ <strong>営業利益 × (1 − t) ＋ 減価償却費</strong> （※引かずに100%足し戻すだけ！）
+  </div>
+
+  <h2>旧機械の除却・売却損に伴うタックスシールド（節税効果）</h2>
+  <p>
+    旧機械（簿価180万円）を100万円で売却したため、<strong>固定資産売却損 80万円</strong>（180万円 − 100万円）が発生します。
+    売却損が発生すると、会社全体の課税所得が80万円圧縮され、法人税の支払額が <strong>80万円 × 30% ＝ 24万円</strong> だけ減少します。
+    この24万円の節税額は、初年度（1年度）末のキャッシュフローに「プラスのキャッシュイン」として確実に計上します。
+  </p>
+
+  <div class="footer">
+    <span>中小企業診断士2次試験 事例Ⅳ 特訓演習シリーズ</span>
+    <span>ページ 3 / 4（模範解答・重要解説）</span>
+  </div>
+</div>
+
+<!-- ========================================== -->
+<!-- PAGE 4: 完全ステップ計算解説               -->
+<!-- ========================================== -->
+<div class="page">
+  <div class="header">
+    <div class="header-title">事例Ⅳ 第3問 完全ステップ・バイ・ステップ計算解説</div>
+    <div class="header-meta">完全克服マスターガイド</div>
+  </div>
+
+  <h1>全年度の差額キャッシュフロー・タイムライン一覧表（単位：万円）</h1>
+
+  <table>
+    <tr>
+      <th style="width: 14%;">区分</th>
+      <th style="width: 13%;">0年度末</th>
+      <th style="width: 13%;">1年度末</th>
+      <th style="width: 13%;">2年度末</th>
+      <th style="width: 16%;">3〜5年度末(各年)</th>
+      <th style="width: 14%;">6年度末</th>
+      <th style="width: 17%;">計算根拠</th>
+    </tr>
+    <tr>
+      <td class="text-left"><strong>新機械取得</strong></td>
+      <td>−480</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td class="text-left">設備購入代金の支出</td>
+    </tr>
+    <tr>
+      <td class="text-left"><strong>旧機械売却</strong></td>
+      <td>＋100</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td class="text-left">旧機械の売却手取額</td>
+    </tr>
+    <tr>
+      <td class="text-left"><strong>営業利益増分</strong></td>
+      <td>—</td>
+      <td>40</td>
+      <td>80</td>
+      <td>80</td>
+      <td>80</td>
+      <td class="text-left">減価償却後増分利益</td>
+    </tr>
+    <tr>
+      <td class="text-left"><strong>税引後営業利益</strong></td>
+      <td>—</td>
+      <td>＋28</td>
+      <td>＋56</td>
+      <td>＋56</td>
+      <td>＋56</td>
+      <td class="text-left">営業利益 × (1 − 0.3)</td>
+    </tr>
+    <tr>
+      <td class="text-left"><strong>減価償却費足戻</strong></td>
+      <td>—</td>
+      <td>＋50</td>
+      <td>＋50</td>
+      <td>＋50</td>
+      <td>＋50</td>
+      <td class="text-left">増分償却費（80 − 30）</td>
+    </tr>
+    <tr>
+      <td class="text-left"><strong>売却損節税額</strong></td>
+      <td>—</td>
+      <td>＋24</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td class="text-left">売却損80 × 30%</td>
+    </tr>
+    <tr>
+      <td class="text-left"><strong>運転資本増減</strong></td>
+      <td>—</td>
+      <td>−30</td>
+      <td>−20</td>
+      <td>0</td>
+      <td>＋50</td>
+      <td class="text-left">6年度末に全額回収</td>
+    </tr>
+    <tr style="background-color: #f1f5f9; font-weight: bold;">
+      <td class="text-left"><strong>増分CF合計</strong></td>
+      <td><strong>−380 万円</strong></td>
+      <td><strong>＋72 万円</strong></td>
+      <td><strong>＋86 万円</strong></td>
+      <td><strong>＋106 万円</strong></td>
+      <td><strong>＋156 万円</strong></td>
+      <td class="text-left">各年度の合計CF</td>
+    </tr>
+  </table>
+
+  <h2>（設問1）の解法トレース</h2>
+  <p>
+    ・<strong>1年度CF</strong> ＝ 40 × (1 − 0.3) ＋ 50 − 30 ＋ 24 ＝ 28 ＋ 50 − 30 ＋ 24 ＝ <strong>72 万円</strong><br>
+    ・<strong>2年度CF</strong> ＝ 80 × (1 − 0.3) ＋ 50 − 20 ＝ 56 ＋ 50 − 20 ＝ <strong>86 万円</strong>
+  </p>
+
+  <h2>（設問2）の解法トレース：年金現価係数を用いた二段階割引</h2>
+  <p>3〜6年度の通常CFは毎年106万円（税引後利益56 ＋ 償却費50）で一定です。資料の係数を用いて割り引きます。</p>
+  <ol style="margin: 0; padding-left: 17px; font-size: 8.8pt; line-height: 1.48;">
+    <li><strong>1年度CFの現在価値</strong>：72 × 0.926 ＝ <strong>66.672 万円</strong></li>
+    <li><strong>2年度CFの現在価値</strong>：86 × 0.857 ＝ <strong>73.702 万円</strong></li>
+    <li><strong>3〜6年度通常CF（4年間分）の現在価値</strong>：<br>
+        3〜6年度の4年間の年金現価係数（3.312）を掛けると「2年度末時点の価値」が得られます。<br>
+        これをさらに2年の複利現価係数（0.857）で0年度に割り戻します：<br>
+        106 × 3.312 × 0.857 ＝ 351.072 × 0.857 ＝ <strong>300.869 万円</strong></li>
+    <li><strong>6年度末の運転資本回収（50万円）の現在価値</strong>：50 × 0.630 ＝ <strong>31.500 万円</strong></li>
+    <li><strong>将来CFの現在価値合計</strong>：66.672 ＋ 73.702 ＋ 300.869 ＋ 31.500 ＝ <strong>472.743 万円</strong></li>
+    <li><strong>NPVの算出</strong>：NPV ＝ −380 ＋ 472.743 ＝ <strong>＋92.743 万円</strong> ⇒ 四捨五入して <strong>92.74 万円</strong></li>
+  </ol>
+
+  <h2>（設問3）の解法トレース：不確実性とサンクコストの排除</h2>
+  <div class="condition-box" style="margin-bottom: 5px;">
+    <strong>【サンクコスト（埋没原価）の取り扱い】</strong><br>
+    事前に支出された市場調査費用20万円は、投資を実行するか否かにかかわらず既に回収不能な「サンクコスト」です。したがって、将来の差額キャッシュフローおよびNPV計算には一切算入してはなりません。
+  </div>
+  <p style="font-size: 8.8pt; line-height: 1.48;">
+    <strong>1. 低業績シナリオ（営業利益が当初予測の50%）におけるCFとNPVの算出</strong>：<br>
+    ・1年度CF：20 × 0.7 ＋ 50 − 30 ＋ 24 ＝ 58 万円 （現価：58 × 0.926 ＝ 53.708 万円）<br>
+    ・2年度CF：40 × 0.7 ＋ 50 − 20 ＝ 58 万円 （現価：58 × 0.857 ＝ 49.706 万円）<br>
+    ・3〜6年度通常CF：40 × 0.7 ＋ 50 ＝ 78 万円 （現価：78 × 3.312 × 0.857 ＝ 221.394 万円）<br>
+    ・運転資本回収現価：50 × 0.630 ＝ 31.500 万円<br>
+    ・将来CF現価合計：53.708 ＋ 49.706 ＋ 221.394 ＋ 31.500 ＝ 356.308 万円<br>
+    ・低業績時NPV：356.308 − 380 ＝ <strong>−23.692 万円</strong> （※マイナスのNPV）<br>
+    <strong>2. 期待正味現在価値（期待NPV）の計算</strong>：<br>
+    期待NPV ＝ 0.60 × 92.743 ＋ 0.40 × (−23.692) ＝ 55.6458 − 9.4768 ＝ <strong>＋46.169 万円</strong> ⇒ <strong>46.17 万円</strong><br>
+    <strong>3. 投資判断</strong>：期待NPVが正（＋46.17 万円 ＞ 0）であるため、本投資案は<strong>「実行すべきである」</strong>。
+  </p>
+
+  <div class="footer">
+    <span>中小企業診断士2次試験 事例Ⅳ 特訓演習シリーズ</span>
+    <span>ページ 4 / 4（完全ステップ解説）</span>
+  </div>
+</div>
+
+</body>
+</html>

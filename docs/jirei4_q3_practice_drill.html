@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="robots" content="noindex, nofollow">
+<title>Jirei4 Q3 Practice Drill</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a href="index.html" class="back-link">← ポータルに戻る</a>
+<div class="content">
+<h1>📘 事例Ⅳ 第3問 実践特訓ドリル（取替投資・NPV・期待値）</h1>
+<p>〜令和6年度第3問の完全同型・数値改変版（問題・解答用紙・詳細解説）〜</p>
+<blockquote>
+<p><strong>【印刷用PDFのご案内】</strong><br />
+本問題は、本番の試験用紙そっくりのレイアウトでA4用紙4ページ（問題用紙・解答用紙・模範解答・詳細解説）にまとめた<strong><a href="practice_materials/jirei4_q3_practice_drill.pdf">印刷用PDF（jirei4_q3_practice_drill.pdf）</a></strong>を生成済みです。<br />
+印刷して手書きで計算演習を行うことができます。</p>
+</blockquote>
+<hr />
+<h2>【問題用紙】第3問（配点30点 / 目安時間25分）</h2>
+<p>D社は老舗の洋菓子・焼菓子製造販売業である。現在、主力製品の個包装工程において使用している既存の包装機械（以下「旧機械」という）の老朽化が進んでおり、生産性の向上と省力化を目的として、最新鋭の高速自動包装機（以下「新機械」という）への取替投資を検討している。以下の条件および資料に基づき、各設問に答えよ。</p>
+<h3>【取替投資に関する前提条件】</h3>
+<ol>
+<li><strong>旧機械の状況</strong>：4年前に取得原価300万円で購入し、耐用年数10年、残存価額ゼロ、定額法で減価償却を行っている（減価償却費30万円/年、現在の帳簿価額180万円、残存耐用年数6年）。新機械を導入する場合、旧機械は直ちに100万円で売却処分され、売却代金は新機械の購入資金の一部に充当される。</li>
+<li><strong>新機械の導入</strong>：取得原価は480万円であり、今期末（0年度末）に全額を一括取得・支払う。耐用年数は旧機械の残存耐用年数と同じ6年、残存価額ゼロ、定額法により減価償却を行う（減価償却費80万円/年、減価償却費の増分は50万円/年）。</li>
+<li><strong>営業利益の増加額</strong>：新機械の導入により、向こう6年間にわたり作業工数の削減と生産性向上に伴う営業利益の増加が見込まれる。増分営業利益は、1年度に<strong>40万円</strong>、2年度に<strong>80万円</strong>、3年度から6年度までは<strong>毎年度80万円</strong>である。<br />
+<strong>※注：この営業利益の増加額は、新機械導入に伴う減価償却費の増加額（50万円/年）を控除した後の金額である。</strong></li>
+<li><strong>運転資本の増減</strong>：生産数量の拡大に伴い、運転資本は1年度末に30万円増加し、2年度末にさらに20万円増加する（累計50万円）。3年度末から5年度末にかけては増減がなく、6年度末（設備稼働終了時）に累計50万円の全額が回収（キャッシュイン）される。</li>
+<li><strong>税金および売却損の取り扱い</strong>：法人税等の実効税率は<strong>30%</strong>とする。旧機械の売却に伴い発生する固定資産売却損の節税効果（タックスシールド）は、1年度末のキャッシュフローに反映させるものとする。</li>
+<li><strong>資本コスト</strong>：D社の資本コスト（割引率）は年<strong>8%</strong>である。</li>
+</ol>
+<h3>【資料：資本コスト8%における現価係数表】</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">期間</th>
+<th style="text-align: center;">1年</th>
+<th style="text-align: center;">2年</th>
+<th style="text-align: center;">4年</th>
+<th style="text-align: center;">6年</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>複利現価係数</strong></td>
+<td style="text-align: center;">0.926</td>
+<td style="text-align: center;">0.857</td>
+<td style="text-align: center;">0.735</td>
+<td style="text-align: center;">0.630</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>年金現価係数</strong></td>
+<td style="text-align: center;">0.926</td>
+<td style="text-align: center;">1.783</td>
+<td style="text-align: center;"><strong>3.312</strong></td>
+<td style="text-align: center;">4.623</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>（設問1）キャッシュフロー増加額の算出（8点）</h3>
+<p>新機械導入に伴う初年度（1年度）および2年度のキャッシュフロー増加額（単位：万円）をそれぞれ求めよ。</p>
+<h3>（設問2）正味現在価値（NPV）の算出（10点）</h3>
+<p>上記前提に基づき、新機械を導入した場合の正味現在価値（NPV、単位：万円）を求めよ。なお、計算結果は表示単位の小数第3位を四捨五入し、小数第2位まで表示すること。</p>
+<h3>（設問3）不確実性を考慮した投資判断（12点）</h3>
+<p>D社が本投資の検討にあたり事前に実施した市場調査（調査費用20万円は既に支出済み）の結果、将来の営業利益について以下の2つの予測が得られた。
+- <strong>高業績シナリオ</strong>：営業利益の増加額が当初予測通りに推移する（発生確率 <strong>60%</strong>）。
+- <strong>低業績シナリオ</strong>：競合他社の参入により、毎年度の営業利益の増加額が当初予測の <strong>50%</strong> に留まる（発生確率 <strong>40%</strong>）。</p>
+<p>この条件下における正味現在価値の期待値（単位：万円、小数第2位まで表示）を求め、本投資案を実行すべきか否かを判断せよ。</p>
+<hr />
+<h2>【模範解答および採点基準】（配点30点）</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">設問</th>
+<th style="text-align: left;">解答項目</th>
+<th style="text-align: center;">模範正解</th>
+<th style="text-align: center;">配点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>設問1</strong></td>
+<td style="text-align: left;">① 初年度（1年度）キャッシュフロー増加額</td>
+<td style="text-align: center;"><strong>72 万円</strong></td>
+<td style="text-align: center;">4点</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">② 2年度キャッシュフロー増加額</td>
+<td style="text-align: center;"><strong>86 万円</strong></td>
+<td style="text-align: center;">4点</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>設問2</strong></td>
+<td style="text-align: left;">正味現在価値（NPV）</td>
+<td style="text-align: center;"><strong>92.74 万円</strong>（※92.743万円）</td>
+<td style="text-align: center;">10点</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>設問3</strong></td>
+<td style="text-align: left;">① 正味現在価値の期待値</td>
+<td style="text-align: center;"><strong>46.17 万円</strong>（※46.169万円）</td>
+<td style="text-align: center;">7点</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">② 投資判断</td>
+<td style="text-align: center;"><strong>実行すべきである</strong></td>
+<td style="text-align: center;">5点</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>【最重要解説】減価償却費の「二重控除トラップ」の完全撲滅</h2>
+<h3>1. 典型的な不合格ミス</h3>
+<p>「営業利益40万円、80万円」から、減価償却費50万円を再度差し引いてしまう過ち：
+$$(40 - 50) \times (1 - 0.3) + 50 - 30 + 24 = -7 + 50 - 30 + 24 = 37 \text{ 万円（誤り！）}$$</p>
+<h3>2. 数理的な真実</h3>
+<p><strong>営業利益は「すでに減価償却費が差し引かれた後」の利益である！</strong>
+$$\text{営業利益} = \text{売上高} - \text{現金支出費用} - \text{減価償却費}$$
+したがって、手元に残る現金（税引後CF）は：
+$$\text{税引後CF} = \text{現金収入} - \text{現金支出} - \text{支払税金}$$
+$$= (\text{売上高} - \text{現金支出費用}) - \text{営業利益} \times t$$
+$$= (\text{営業利益} + \text{減価償却費}) - \text{営業利益} \times t$$
+$$= \mathbf{\text{営業利益} \times (1 - t) + \text{減価償却費}}$$</p>
+<h3>3. 二大公式の峻別ルール</h3>
+<ul>
+<li><strong>【現金利益（売上 − 現金支出費用）からスタートする場合】</strong>:
+  $$\text{CF} = (\text{増分売上} - \text{増分現金支出費用}) \times (1 - t) + \text{減価償却費} \times t$$</li>
+<li><strong>【営業利益からスタートする場合】★本試験の形式！</strong>:
+  $$\text{CF} = \mathbf{\text{営業利益} \times (1 - t) + \text{減価償却費}} \quad \text{（※引かずに足し戻すだけ！）}$$</li>
+</ul>
+<hr />
+<h2>【全年度の差額キャッシュフロー・タイムライン一覧表】（単位：万円）</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">区分</th>
+<th style="text-align: center;">0年度末</th>
+<th style="text-align: center;">1年度末</th>
+<th style="text-align: center;">2年度末</th>
+<th style="text-align: center;">3〜5年度末(各年)</th>
+<th style="text-align: center;">6年度末</th>
+<th style="text-align: left;">計算根拠</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>新機械取得支出</strong></td>
+<td style="text-align: center;">−480</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: left;">設備購入代金の支出</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>旧機械売却手取</strong></td>
+<td style="text-align: center;">＋100</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: left;">旧機械の売却手取額</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>増分営業利益</strong></td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">80</td>
+<td style="text-align: center;">80</td>
+<td style="text-align: center;">80</td>
+<td style="text-align: left;">減価償却後増分利益</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>税引後営業利益</strong></td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">＋28</td>
+<td style="text-align: center;">＋56</td>
+<td style="text-align: center;">＋56</td>
+<td style="text-align: center;">＋56</td>
+<td style="text-align: left;">営業利益 $\times (1 - 0.3)$</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>減価償却費足戻</strong></td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">＋50</td>
+<td style="text-align: center;">＋50</td>
+<td style="text-align: center;">＋50</td>
+<td style="text-align: center;">＋50</td>
+<td style="text-align: left;">増分償却費（$80 - 30$）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>売却損節税額</strong></td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">＋24</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: left;">売却損80 $\times 30\%$</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>運転資本増減</strong></td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">−30</td>
+<td style="text-align: center;">−20</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">＋50</td>
+<td style="text-align: left;">6年度末に全額回収</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>増分CF合計</strong></td>
+<td style="text-align: center;"><strong>−380 万円</strong></td>
+<td style="text-align: center;"><strong>＋72 万円</strong></td>
+<td style="text-align: center;"><strong>＋86 万円</strong></td>
+<td style="text-align: center;"><strong>＋106 万円</strong></td>
+<td style="text-align: center;"><strong>＋156 万円</strong></td>
+<td style="text-align: left;">各年度の合計正味CF</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>【各設問のステップ・バイ・ステップ計算トレース】</h2>
+<h3>（設問1）</h3>
+<ul>
+<li><strong>1年度CF</strong>:
+  $$40 \times (1 - 0.3) + 50 - 30 + 24 = 28 + 50 - 30 + 24 = \mathbf{72 \text{ 万円}}$$</li>
+<li><strong>2年度CF</strong>:
+  $$80 \times (1 - 0.3) + 50 - 20 = 56 + 50 - 20 = \mathbf{86 \text{ 万円}}$$</li>
+</ul>
+<h3>（設問2）年金現価係数を用いた二段階割引</h3>
+<ol>
+<li><strong>1年度CF現価</strong>: $72 \times 0.926 = \mathbf{66.672 \text{ 万円}}$</li>
+<li><strong>2年度CF現価</strong>: $86 \times 0.857 = \mathbf{73.702 \text{ 万円}}$</li>
+<li><strong>3〜6年度通常CF（106万円 $\times$ 4年間）の現価</strong>:</li>
+<li>2年度末時点の価値：$106 \times 3.312 = 351.072 \text{ 万円}$</li>
+<li>0年度末への割り戻し：$351.072 \times 0.857 = \mathbf{300.869 \text{ 万円}}$</li>
+<li><strong>6年度末の運転資本回収（50万円）の現価</strong>:
+   $$50 \times 0.630 = \mathbf{31.500 \text{ 万円}}$$</li>
+<li><strong>将来CF現価合計</strong>:
+   $$66.672 + 73.702 + 300.869 + 31.500 = \mathbf{472.743 \text{ 万円}}$$</li>
+<li><strong>NPV</strong>:
+   $$\text{NPV} = -380 + 472.743 = \mathbf{+92.743 \text{ 万円}} \implies \mathbf{92.74 \text{ 万円}}$$</li>
+</ol>
+<h3>（設問3）不確実性とサンクコストの排除</h3>
+<ul>
+<li><strong>サンクコスト</strong>: 支出済みの市場調査費用20万円は意思決定に関係のない埋没原価であり、一切考慮しない。</li>
+<li><strong>低業績シナリオ（営業利益が当初の50%）のCFとNPV</strong>:</li>
+<li>1年度CF：$20 \times 0.7 + 50 - 30 + 24 = 58 \text{ 万円}$（現価：$58 \times 0.926 = 53.708 \text{ 万円}$）</li>
+<li>2年度CF：$40 \times 0.7 + 50 - 20 = 58 \text{ 万円}$（現価：$58 \times 0.857 = 49.706 \text{ 万円}$）</li>
+<li>3〜6年度通常CF：$40 \times 0.7 + 50 = 78 \text{ 万円}$（現価：$78 \times 3.312 \times 0.857 = 221.394 \text{ 万円}$）</li>
+<li>運転資本回収現価：$50 \times 0.630 = 31.500 \text{ 万円}$</li>
+<li>将来CF現価合計：$53.708 + 49.706 + 221.394 + 31.500 = 356.308 \text{ 万円}$</li>
+<li>低業績時NPV：$356.308 - 380 = \mathbf{-23.692 \text{ 万円}}$（マイナスのNPV）</li>
+<li><strong>期待正味現在価値（期待NPV）</strong>:
+  $$\text{期待NPV} = 0.60 \times 92.743 + 0.40 \times (-23.692) = 55.6458 - 9.4768 = \mathbf{+46.169 \text{ 万円}} \implies \mathbf{46.17 \text{ 万円}}$$</li>
+<li><strong>投資判断</strong>: 期待NPVが正（$+46.17 \text{ 万円} &gt; 0$）であるため、<strong>「実行すべきである」</strong>。</li>
+</ul>
+</div>
+</body>
+</html>
