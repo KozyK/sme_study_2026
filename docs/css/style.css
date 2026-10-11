@@ -44,7 +44,12 @@ h2 {
 }
 
 h3 { 
-  font-size: 1.1rem; 
+  font-size: 1.15rem;
+  color: var(--text-strong);
+  margin-top: 1.8rem;
+  margin-bottom: 0.8rem;
+  padding-left: 10px;
+  border-left: 4px solid var(--accent);
 }
 
 p, ul, ol { 
