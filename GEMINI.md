@@ -31,3 +31,21 @@
    ユーザー答案を与件文の事実および設問制約に照らし合わせて厳密に採点する。
 5. **Step 5: 解説教材・ポッドキャスト化**
    純粋な経営理論・診断士ロジックに基づき、与件文の因果関係を論理的に解説する。
+
+---
+
+### 3. 【ポッドキャスト・教材制作の標準ツールチェーン】
+使い捨てのPythonスクリプトを乱立させず、以下の標準化された共通ツール群を用いて制作・運用すること：
+1. **対話構成・計画**:
+   `python3 tools/generate_dialogue.py study_materials/<name>.md --target 60m`
+   （目標時間に応じたセクション分割と文字数配分の自動算出）
+2. **対話の検証・ステータス診断**:
+   `python3 tools/dialogue_tool.py status <name>.dialogue.json --target 60m`
+   `python3 tools/dialogue_tool.py validate <name>.dialogue.json`
+3. **対話の編集・修正（スクリプト作成不要）**:
+   `python3 tools/dialogue_tool.py insert <name>.dialogue.json --after "キーワード" --snippet <snippet.json>`
+   `python3 tools/dialogue_tool.py replace <name>.dialogue.json --index <idx> --text "新発言"`
+4. **音声合成・マージ（Edge-TTS + ffmpeg）**:
+   `python3 tools/build_podcast.py <name>.dialogue.json`
+5. **ポータルHTML再ビルド**:
+   `python3 tools/build_docs.py`
