@@ -160,3 +160,23 @@ audio {
   outline: none;
 }
 
+/* Mermaid Diagram Styling */
+.mermaid-container {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 1.8rem 0;
+  overflow-x: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--border);
+}
+
+.mermaid-container .mermaid {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+

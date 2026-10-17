@@ -7,6 +7,33 @@
 <title>Jirei3 2023 Mastery</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var blocks = document.querySelectorAll('pre code.language-mermaid');
+    if (blocks.length === 0) return;
+    
+    blocks.forEach(function(block) {
+      var pre = block.parentElement;
+      var container = document.createElement('div');
+      container.className = 'mermaid-container';
+      var div = document.createElement('div');
+      div.className = 'mermaid';
+      div.textContent = block.textContent;
+      container.appendChild(div);
+      pre.replaceWith(container);
+    });
+    
+    if (window.mermaid) {
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: 'default',
+        securityLevel: 'loose'
+      });
+      mermaid.run();
+    }
+  });
+</script>
 </head>
 <body>
 <a href="index.html" class="back-link">← ポータルに戻る</a>
