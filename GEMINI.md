@@ -40,8 +40,17 @@
 
 ---
 
-### 3. 【ポッドキャスト・教材制作の標準ツールチェーン】
-使い捨てのPythonスクリプトを乱立させず、以下の標準化された共通ツール群を用いて制作・運用すること：
+### 3. 【ポッドキャスト・教材制作の標準ツールチェーンと厳格禁止事項】
+
+#### 🚫 【絶対禁止事項：使い捨てPython生成スクリプトの作成禁止】
+- **対話台本や教材コンテンツを生成・拡張・マージするための個別Pythonスクリプト（例: `generate_*.py`, `expand_*.py`, `build_*_dialogue.py`, `add_*.py` 等、および `scratch/*.py`）の新規作成・保存を完全禁止とする。**
+- 本リポジトリには機械的ガードレールとして `.git/hooks/pre-commit` が配備されており、禁止スクリプトが存在する場合はコミットが強制拒絶される。
+- **対話台本の作成・修正は、必ず以下の標準手段のみで行うこと**:
+  1. **対話台本の直接編集**: `study_materials/<name>.dialogue.json` に対する直接の `write_to_file` または `replace_file_content`
+  2. **標準CLIツールの利用**: `tools/dialogue_tool.py`（`insert`, `replace`, `append`, `status`, `validate`）
+  3. **スニペットの利用**: 部分的な対話追加が必要な場合は、Pythonではなく**JSONスニペット（`snippet.json`）**を作成し、`python3 tools/dialogue_tool.py insert <name>.dialogue.json --after "キーワード" --snippet snippet.json` で注入すること。
+
+#### 🛠️ 【標準パイプライン実行手順】
 1. **対話構成・計画**:
    `python3 tools/generate_dialogue.py study_materials/<name>.md --target 60m`
    （目標時間に応じたセクション分割と文字数配分の自動算出）
@@ -55,3 +64,4 @@
    `python3 tools/build_podcast.py <name>.dialogue.json`
 5. **ポータルHTML再ビルド**:
    `python3 tools/build_docs.py`
+
