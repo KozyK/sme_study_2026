@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="robots" content="noindex, nofollow">
+<title>Jirei3 2022 Mastery</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var blocks = document.querySelectorAll('pre code.language-mermaid');
+    if (blocks.length === 0) return;
+    
+    blocks.forEach(function(block) {
+      var pre = block.parentElement;
+      var container = document.createElement('div');
+      container.className = 'mermaid-container';
+      var div = document.createElement('div');
+      div.className = 'mermaid';
+      div.textContent = block.textContent;
+      container.appendChild(div);
+      pre.replaceWith(container);
+    });
+    
+    if (window.mermaid) {
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: 'default',
+        securityLevel: 'loose'
+      });
+      mermaid.run();
+    }
+  });
+</script>
+</head>
+<body>
+<a href="index.html" class="back-link">← ポータルに戻る</a>
+<div class="content">
+<h1>令和4年度（2022年度） 事例Ⅲ 完全攻略マスター講義＆生産計画・生産管理システム徹底対策</h1>
+<div class="podcast-player-card">
+  <div class="podcast-header">
+    <span class="podcast-badge">🎧 AUDIO OVERVIEW</span>
+    <span class="podcast-title">この資料の対話型ポッドキャスト解説</span>
+  </div>
+  <audio controls preload="metadata" src="audio/jirei3_2022_mastery.mp3" style="width: 100%; margin-top: 10px;"></audio>
+</div>
+
+<hr />
+<h2>🎧 解説ポッドキャスト（特大ディープダイブ2時間講義）</h2>
+<blockquote>
+<p><strong>講義時間</strong>: 約120分（等速） / 約60分（2倍速推奨）<br />
+<strong>構成</strong>:<br />
+- <strong>前半（約60分）</strong>: 令和4年度 本試験徹底解答解説（C社の全貌、全問思考実況、模範解答）<br />
+- <strong>後半（約60分）</strong>: ユーザー答案分析＆弱点完全克服「生産計画・生産管理システム」超特訓講義<br />
+<strong>出演</strong>: ケイタ（中小企業診断士）、ナナミ（受験生ナビゲーター）<br />
+<strong>音声ファイル</strong>: <code>docs/audio/jirei3_2022_mastery.mp3</code></p>
+</blockquote>
+<p><audio controls src="audio/jirei3_2022_mastery.mp3" style="width: 100%; margin: 15px 0;"></audio></p>
+<hr />
+<h2>目次</h2>
+<ul>
+<li><a href="#前半本年度フォーカス解答解説編">【前半：本年度フォーカス・解答解説編】</a></li>
+<li><a href="#第1部令和4年度-事例ⅲの全体構造と難易度分析">第1部：令和4年度 事例Ⅲの全体構造と難易度分析</a></li>
+<li><a href="#第2部全問徹底解剖満点答案思考実況プロセス">第2部：全問徹底解剖・満点答案・思考実況プロセス（第1問〜第5問）</a></li>
+<li><a href="#第3部第4問なぜ書けなかったのかを完全打破するbprdx構文">第3部：第4問「なぜ書けなかったのか？」を完全打破するBPR・DX構文</a></li>
+<li><a href="#後半答案分析生産計画生産管理システム徹底マスター編">【後半：答案分析＆生産計画・生産管理システム徹底マスター編】</a></li>
+<li><a href="#第4部ユーザー答案の徹底添削講評">第4部：ユーザー答案の徹底添削講評（第4問白紙でも74点・A判定の理由）</a></li>
+<li><a href="#第5部超特訓講義生産計画の完全体系">第5部：【超特訓講義①】生産計画の完全体系（大日程・中日程・小日程・ロット・同期化）</a></li>
+<li><a href="#第6部超特訓講義生産管理システムと現場itの完全体系">第6部：【超特訓講義②】生産管理システムと現場ITの完全体系（EDI・MES・MRP・POP・BPR）</a></li>
+<li><a href="#第7部近年傾向の系譜比較">第7部：近年傾向の系譜比較（平成30年〜令和6年）と事例Ⅲ・不変の合格ロジック</a></li>
+</ul>
+<hr />
+<h1>【前半：本年度フォーカス・解答解説編】</h1>
+<h2>第1部：令和4年度 事例Ⅲの全体構造と難易度分析</h2>
+<h3>1. 企業概要と事例の本質的テーマ</h3>
+<ul>
+<li><strong>企業名</strong>: C社</li>
+<li><strong>業種</strong>: 金属製品製造業（金属熱プレス加工、板金加工、金型製作）</li>
+<li><strong>資本金</strong>: 1,000万円 / <strong>従業員数</strong>: 32名（金型製作課5名、プレス加工課18名、板金加工課5名、設計課4名）</li>
+<li><strong>主力事業</strong>: 厨房機器・業務用調理器具のプレス加工（大手中堅調理器具メーカー向けOEMおよび卸売業者向け）</li>
+<li><strong>主要顧客</strong>: 既存卸売業者2社（売上の約7割を占める）</li>
+<li><strong>新規の引き合い</strong>: アウトドア用品企画販売業者X社（高価格帯オリジナルアウトドア製品の共同開発・製造委託）</li>
+</ul>
+<pre><code class="language-mermaid">graph TD
+    subgraph 外部環境の変化と脅威
+        T1[コロナ禍による宿泊・飲食業界の需要激減] --&gt;|売上急減| MainBiz[既存事業: 卸売2社向け厨房機器 大ロット]
+        T2[発注元の在庫削減方針: 短納期・小ロット要請] --&gt;|生産停滞| Factory[工場現場の過剰在庫・段取負荷]
+        O1[アウトドアブームと高品質PB需要の急伸] --&gt;|新事業機会| XBiz[X社との新規取引: アルミプレス・短納期小ロット]
+    end
+
+    subgraph C社の固有強みと弱み（ボトルネック）
+        S1[高度なプレス加工技術・アルミニウム難加工]
+        S2[高品質なプレス金型を自社設計・製作可能]
+        W1[金型製作の属人化・ベテラン技能者の高齢化]
+        W2[設計課の兼務による個別板金設計との混乱]
+        W3[プレス工程の段取替え頻発・仕掛品滞留]
+        W4[情報共有が紙ベース・生産計画が月度固定]
+    end
+
+    MainBiz --&gt; Strategy[生産体制の近代化と新規高付加価値PBへの事業構造転換]
+    XBiz --&gt; Strategy
+    S1 &amp; S2 --&gt; Strategy
+    W1 &amp; W2 &amp; W3 &amp; W4 --&gt;|生産管理・DX改善| Strategy
+</code></pre>
+<hr />
+<h2>第2部：全問徹底解剖・満点答案・思考実況プロセス</h2>
+<h3>第1問：外部環境の変化と販売面・生産面の課題（配点20点）</h3>
+<ul>
+<li><strong>制約条件</strong>: 「販売面」「生産面」に明確に分けて整理すること。文字数は80字以内。</li>
+<li><strong>与件根拠</strong>:</li>
+<li>第5段落: 「宿泊・飲食業界向け製品の需要が急減」</li>
+<li>第6段落: 「売上の約7割を占める既存卸2社からの受注が大幅に減少」</li>
+<li>第7段落: 「小ロット・短納期発注が増加」</li>
+<li>第8段落: 「金型製作課のベテラン技能者の高齢化と技術伝承の遅れ」</li>
+<li><strong>模範解答（80字）</strong>:<blockquote>
+<p><strong>「販売面は、外食需要減に伴う既存卸２社依存から脱却し新規受注を開拓する。生産面は、金型技能者の技術伝承と、小ロット化に対応した社内過剰在庫の削減と短納期化である。」</strong></p>
+</blockquote>
+</li>
+</ul>
+<h3>第2問：金型製作工程の課題と短納期化の対応策（配点20点）</h3>
+<ul>
+<li><strong>制約条件</strong>: 「課題」と「対応策」を対応させて整理すること。文字数は120字以内。</li>
+<li><strong>因果の「課題3点 $\times$ 対応策3点」完全結合フレーム</strong>:</li>
+<li>課題①：発注元との仕様確認遅延と設計変更 $\to$ 対応策①：3D CAD導入で早期合意・仕様凍結</li>
+<li>課題②：板金設計兼務による混乱 $\to$ 対応策②：設計課の担当分担・専任化</li>
+<li>課題③：金型技能者の属人化と余力不足 $\to$ 対応策③：作業手順書の作成と計画的OJTによる技術伝承</li>
+<li><strong>模範解答（118字）</strong>:<blockquote>
+<p><strong>「課題は①仕様確認遅延と変更、②板金設計兼務による混乱、③金型技能者の高齢化と属人化。対応策は①３ＤＣＡＤ導入で発注元と仕様を早期確定、②設計課の担当分担で兼務解消、③作業手順書の作成と計画的ＯＪＴによる若手技能伝承で金型製作を短納期化する。」</strong></p>
+</blockquote>
+</li>
+</ul>
+<h3>第3問：プレス加工課の小ロット化対応策（配点20点）</h3>
+<ul>
+<li><strong>制約条件</strong>: 小ロット化に伴う生産面の問題点に対する対応策。文字数は120字以内。</li>
+<li><strong>改善の3大柱</strong>:</li>
+<li>外段取化と多能工応援体制（段取時間短縮）</li>
+<li>月度計画から週次・日次計画への移行（確定受注連動）</li>
+<li>プレス工程と後工程（組付・仕上）の同期化（仕掛品滞留と過剰在庫削減）</li>
+<li><strong>模範解答（119字）</strong>:<blockquote>
+<p><strong>「対応策は、①外段取化の徹底と多能工応援体制により段取時間を短縮し、②生産計画を月度から週次・日次計画へ細分化して確定受注連動型に改め、③プレス工程と後工程の同期化を図り、仕掛品滞留と社内過剰在庫を削減して短納期小ロット生産を実現する。」</strong></p>
+</blockquote>
+</li>
+</ul>
+<h3>第4問：優先すべきデジタル化の内容と社内活動（配点20点）</h3>
+<ul>
+<li><strong>制約条件</strong>: 「優先すべきデジタル化の内容」と「社内活動」。文字数は120字以内。</li>
+<li><strong>模範解答（119字）</strong>:<blockquote>
+<p><strong>「内容は、Ｘ社と受発注データをＥＤＩ連携し、社内の受注・生産計画・工程進捗・在庫情報を一元管理する生産管理システムを導入し情報共有を迅速化する。社内活動は、全社横断の推進チームを立ち上げ、業務プロセスの可視化・標準化を行い、マニュアル作成と教育で定着を図る。」</strong></p>
+</blockquote>
+</li>
+</ul>
+<h3>第5問：X社との取引による戦略的可能性（配点20点）</h3>
+<ul>
+<li><strong>制約条件</strong>: 戦略的可能性。文字数は120字以内。</li>
+<li><strong>模範解答（118字）</strong>:<blockquote>
+<p><strong>「可能性は、①Ｘ社向け高価格製品の共同開発によるアルミニウム加工技術の高度化、②短納期・小ロット生産体制の確立による新規取引先開拓、③成長するアウトドア市場での自社企画力向上により、既存卸依存から脱却し収益基盤の多角化と経営安定化を図ることである。」</strong></p>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h2>第3部：第4問「なぜ書けなかったのか？」を完全打破するBPR・DX構文</h2>
+<h3>1. 思考停止に陥った真因</h3>
+<ul>
+<li><strong>「優先すべき＝ITツール名1点に絞るべき？」という錯覚</strong>:
+  出題者が問うているのはツールの名前当てではない。C社の最大の製造リードタイム阻害要因である<strong>「紙ベースの情報交換（第11段落）」を撲滅し、情報をリアルタイム一元化すること</strong>が真の狙い。</li>
+</ul>
+<h3>2. 黄金の2ブロック構文（各60字）</h3>
+<ul>
+<li><strong>前半ブロック（デジタル化の内容）</strong>:
+  外部連携（EDI）＋内部一元管理（生産管理システム：受注・計画・進捗・在庫）＋リアルタイム共有。</li>
+<li><strong>後半ブロック（社内活動の進め方）</strong>:
+  全社横断プロジェクトチーム＋現行業務プロセスの可視化・標準化＋操作マニュアル作成・教育訓練による現場定着。</li>
+</ul>
+<hr />
+<h1>【後半：答案分析＆生産計画・生産管理システム徹底マスター編】</h1>
+<h2>第4部：ユーザー答案の徹底添削講評</h2>
+<h3>1. 総合評価：74点 / 100点（第4問白紙でもAランク合格）</h3>
+<ul>
+<li>第1問: 17点 / 20点（85%）</li>
+<li>第2問: 19点 / 20点（95%）</li>
+<li>第3問: 19点 / 20点（95%）</li>
+<li>第4問: 0点 / 20点（未記入・白紙）</li>
+<li>第5問: 19点 / 20点（95%）</li>
+</ul>
+<h3>2. 答案の圧倒的強みと改善ポイント</h3>
+<ul>
+<li><strong>強み</strong>: 第2問の「課題3点 $\times$ 対応策3点」の1対1完全対応、第3問の外段取・多能工・日次計画、第5問の高価格PB・新規開拓・収益分散は全国トップレベルの精度。</li>
+<li><strong>改善点</strong>:</li>
+<li>助詞の脱落（「依存減らす」 $\to$ 「依存から脱却し」）を防ぎ、文の引き締まりを向上させる。</li>
+<li>手段の記述の後に、必ず「〜によりリードタイム短縮と過剰在庫削減を図る」というQCD成果で着地させる。</li>
+</ul>
+<hr />
+<h2>第5部：【超特訓講義①】生産計画の完全体系</h2>
+<p>受験生が最も知識の抜け落ちを感じやすい「生産計画」の全貌を体系化します。</p>
+<pre><code class="language-mermaid">graph TD
+    subgraph 生産計画の3層階層構造
+        P1[大日程計画: 3ヶ月〜1年] --&gt;|生産能力・設備投資・人員計画| P2[中日程計画: 月度・四半期]
+        P2 --&gt;|確定受注 + 月間所要量展開 MRP| P3[小日程計画: 週間・日次]
+        P3 --&gt;|ライン・機械・作業者への作業割付 アサイン| Execution[現場の加工作業・ディスパッチング]
+    end
+
+    subgraph C社で起きていた破綻
+        F1[月度計画しかない] --&gt; F2[日々の急な特急品・変更に対応不能]
+        F2 --&gt; F3[現場が勝手に段取替えして割り込み]
+        F3 --&gt; F4[計画崩壊・仕掛品の山・欠品]
+    end
+</code></pre>
+<h3>1. 生産計画の3階層（大日程・中日程・小日程）</h3>
+<ol>
+<li><strong>大日程計画（長期・中期）</strong>:</li>
+<li>期間：3ヶ月〜1年程度。</li>
+<li>目的：需要予測に基づき、設備投資、原材料の長期調達枠、人員採用・配置を決定する。</li>
+<li><strong>中日程計画（月度計画）</strong>:</li>
+<li>期間：1ヶ月〜四半期。</li>
+<li>目的：月間の確定受注と内示（フォーキャスト）に基づき、製品群ごとの生産数量、月間稼働日数、資材所要量展開（MRP）を確定する。</li>
+<li><strong>小日程計画（週間・日次計画）</strong>:</li>
+<li>期間：1週間〜日次・時間単位。</li>
+<li>目的：直近の確定注文に基づき、<strong>「どの機械で、誰が、何時から何時まで、どのロットを作るか」を具体的に割り付ける（ディスパッチング・作業割付）</strong>。</li>
+</ol>
+<h3>2. ロットサイズと段取改善（SMEDの理論）</h3>
+<ul>
+<li><strong>経済的生産ロット（EPL）の原理</strong>:
+  ロットを大きくすれば「1個あたりの段取費用」は下がるが、「在庫維持費用」が跳ね上がる。</li>
+<li><strong>小ロット化の絶対条件</strong>:
+  段取時間を短縮しないままロットだけ小さくすると、機械が止まる回数が増えて工場がパンクする。だからこそ<strong>「内段取の外段取化（SMED: シングル段取化）」</strong>が必須となる。</li>
+</ul>
+<h3>3. 工程間同期化とラインバランシング</h3>
+<ul>
+<li><strong>プッシュ型（押し込み）からプル型（後工程引取り・同期化）へ</strong>:
+  プレス工程が前工程の都合で大ロット生産すると、後工程（組付・仕上）の前に中間仕掛品が山積みになる。</li>
+<li><strong>同期化の実現策</strong>:
+  全工程のタスク時間（サイクルタイム）を揃える「ラインバランシング」を行い、小ロットで1個流し・セル生産的に次工程へ引き渡す。</li>
+</ul>
+<hr />
+<h2>第6部：【超特訓講義②】生産管理システムと現場ITの完全体系</h2>
+<p>事例Ⅲで頻出するIT・生産管理システムの全体像とBPRの定石を整理します。</p>
+<pre><code class="language-mermaid">graph LR
+    subgraph 外部取引先との連携
+        Customer[顧客 X社・発注元] --&gt;|EDI連携: 確定受注・内示データ| EDI[Web-EDI / EDI]
+    end
+
+    subgraph 生産管理システムの一元管理
+        EDI --&gt; Order[受注管理]
+        Order --&gt; MRP[生産計画・資材所要量展開 MRP]
+        MRP --&gt; Purchasing[購買・発注管理]
+        MRP --&gt; Schedule[工程スケジュール・小日程]
+        Schedule --&gt; ShopFloor[現場作業・プレス機]
+        ShopFloor --&gt;|バーコード/タブレット入力| POP[POP: 実績収集・進捗管理]
+        POP --&gt; Inventory[リアルタイム在庫管理]
+        Inventory --&gt; Order
+    end
+</code></pre>
+<h3>1. 生産管理システム（パッケージ）の基本機能モジュール</h3>
+<ol>
+<li><strong>受注・出荷管理</strong>: 外部顧客からの確定発注・内示データの取り込み。</li>
+<li><strong>生産計画（MRPモジュール）</strong>: 受注データから製品構成表（BOM）に基づき、必要な部品・材料の所要量と発注タイミングを自動展開。</li>
+<li><strong>工程管理・進捗管理（MES: 製造実行システム）</strong>: 各機械・工程への作業指示の発行と、日々の進捗ステータスのリアルタイム把握。</li>
+<li><strong>実績収集（POPシステム: Point of Production）</strong>: 作業現場でバーコードやハンディターミナル、タブレットを用いて、着工・完了・不良数を即座に入力。</li>
+<li><strong>在庫管理</strong>: 原材料・仕掛品・完成品のリアルタイム在庫数を一元管理し、過剰在庫と欠品を防止。</li>
+</ol>
+<h3>2. 現場導入・定着化のBPRステップ（社内活動の王道）</h3>
+<ol>
+<li><strong>Step 1: 全社横断プロジェクトチームの設置</strong>:
+   社長直轄で、製造部門長だけでなく設計・板金・営業・金型ベテランをアサイン。</li>
+<li><strong>Step 2: 現行業務プロセスの可視化（As-Is）と標準化（To-Be）</strong>:
+   紙伝票がどこで滞留しているかを洗い出し、ムダな転記や確認作業を廃止して業務フローを統一。</li>
+<li><strong>Step 3: マニュアル作成とスモールスタート（パイロット運用）</strong>:
+   写真・画面付きの直感的な手順書を作成し、プレス課の特定ラインで試行運用して成功体験を作る。</li>
+<li><strong>Step 4: 教育訓練・OJTと全社展開</strong>:
+   若手とベテランがペアを組み、操作教育を行って現場の心理的抵抗を解消。</li>
+</ol>
+<hr />
+<h2>第7部：近年傾向の系譜比較（平成30年〜令和6年）</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">出題年度</th>
+<th style="text-align: left;">企業概要</th>
+<th style="text-align: left;">生産計画・情報化の課題</th>
+<th style="text-align: left;">共通する合格ロジック</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>平成30年度</strong></td>
+<td style="text-align: left;">金属熱処理受託</td>
+<td style="text-align: left;">治具製作の属人化、進捗がブラックボックス化。</td>
+<td style="text-align: left;">治具の標準化、リアルタイム進捗共有、多能工応援。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>令和元年度</strong></td>
+<td style="text-align: left;">金属部品・機械組立</td>
+<td style="text-align: left;">設計兼務による混乱、部品欠品と納期遅延。</td>
+<td style="text-align: left;">設計の専任化、3D CAD活用、部品と組立の同期化。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>令和3年度</strong></td>
+<td style="text-align: left;">金属熱処理・機械加工</td>
+<td style="text-align: left;">特定顧客依存、航空・医療参入、特殊技能属人化。</td>
+<td style="text-align: left;">暗黙知の形式知化、試作短納期化、品質管理体制。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>令和4年度</strong></td>
+<td style="text-align: left;"><strong>金属プレス・金型製作</strong></td>
+<td style="text-align: left;"><strong>既存卸依存、金型属人化、段取増、紙ベース伝票。</strong></td>
+<td style="text-align: left;"><strong>3D CAD、専任化、外段取、EDI・生産管理システム、PB協業。</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>令和5年度</strong></td>
+<td style="text-align: left;">金属プレス・射出成型</td>
+<td style="text-align: left;">金型メンテナンス遅れ、突発故障、歩留まり低下。</td>
+<td style="text-align: left;">金型の定期予防保全計画、保全履歴のデータ化、多能工化。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>令和6年度</strong></td>
+<td style="text-align: left;">プレス金型・部品加工</td>
+<td style="text-align: left;">顧客短納期化、設計負荷集中、機械稼働率バラツキ。</td>
+<td style="text-align: left;">3D CAD/CAM連携、日程計画の日次見直し、全社情報共有。</td>
+</tr>
+</tbody>
+</table>
+<h3>結論</h3>
+<p>事例Ⅲの合格ロジックは不変です。<strong>「設計の属人化をCADと標準化で解消し」「段取改善と日次計画で小ロット同期化を達成し」「紙を捨てて生産管理システムで一元管理し」「固有技術を武器に高付加価値PBで多角化する」</strong>。この骨太の理論を武器に、本番試験に臨みましょう！</p>
+</div>
+</body>
+</html>
