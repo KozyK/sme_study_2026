@@ -85,24 +85,28 @@
 </ul>
 <pre><code class="language-mermaid">graph TD
     subgraph 外部環境の変化と脅威
-        T1[コロナ禍による宿泊・飲食業界の需要激減] --&gt;|売上急減| MainBiz[既存事業: 卸売2社向け厨房機器 大ロット]
-        T2[発注元の在庫削減方針: 短納期・小ロット要請] --&gt;|生産停滞| Factory[工場現場の過剰在庫・段取負荷]
-        O1[アウトドアブームと高品質PB需要の急伸] --&gt;|新事業機会| XBiz[X社との新規取引: アルミプレス・短納期小ロット]
+        T1[&quot;コロナ禍による宿泊・飲食業界の需要激減&quot;] --&gt;|売上急減| MainBiz[&quot;既存事業（卸売2社向け厨房機器 大ロット）&quot;]
+        T2[&quot;発注元の在庫削減方針（短納期・小ロット要請）&quot;] --&gt;|生産停滞| Factory[&quot;工場現場の過剰在庫・段取負荷&quot;]
+        O1[&quot;アウトドアブームと高品質PB需要の急伸&quot;] --&gt;|新事業機会| XBiz[&quot;X社との新規取引（アルミプレス・短納期小ロット）&quot;]
     end
 
-    subgraph C社の固有強みと弱み（ボトルネック）
-        S1[高度なプレス加工技術・アルミニウム難加工]
-        S2[高品質なプレス金型を自社設計・製作可能]
-        W1[金型製作の属人化・ベテラン技能者の高齢化]
-        W2[設計課の兼務による個別板金設計との混乱]
-        W3[プレス工程の段取替え頻発・仕掛品滞留]
-        W4[情報共有が紙ベース・生産計画が月度固定]
+    subgraph C社の固有強みと弱み
+        S1[&quot;高度なプレス加工技術・アルミニウム難加工&quot;]
+        S2[&quot;高品質なプレス金型を自社設計・製作可能&quot;]
+        W1[&quot;金型製作の属人化・ベテラン技能者の高齢化&quot;]
+        W2[&quot;設計課の兼務による個別板金設計との混乱&quot;]
+        W3[&quot;プレス工程の段取替え頻発・仕掛品滞留&quot;]
+        W4[&quot;情報共有が紙ベース・生産計画が月度固定&quot;]
     end
 
-    MainBiz --&gt; Strategy[生産体制の近代化と新規高付加価値PBへの事業構造転換]
+    MainBiz --&gt; Strategy[&quot;生産体制の近代化と新規高付加価値PBへの事業構造転換&quot;]
     XBiz --&gt; Strategy
-    S1 &amp; S2 --&gt; Strategy
-    W1 &amp; W2 &amp; W3 &amp; W4 --&gt;|生産管理・DX改善| Strategy
+    S1 --&gt; Strategy
+    S2 --&gt; Strategy
+    W1 --&gt; Strategy
+    W2 --&gt; Strategy
+    W3 --&gt; Strategy
+    W4 --&gt; Strategy
 </code></pre>
 <hr />
 <h2>第2部：全問徹底解剖・満点答案・思考実況プロセス</h2>
@@ -196,15 +200,15 @@
 <p>受験生が最も知識の抜け落ちを感じやすい「生産計画」の全貌を体系化します。</p>
 <pre><code class="language-mermaid">graph TD
     subgraph 生産計画の3層階層構造
-        P1[大日程計画: 3ヶ月〜1年] --&gt;|生産能力・設備投資・人員計画| P2[中日程計画: 月度・四半期]
-        P2 --&gt;|確定受注 + 月間所要量展開 MRP| P3[小日程計画: 週間・日次]
-        P3 --&gt;|ライン・機械・作業者への作業割付 アサイン| Execution[現場の加工作業・ディスパッチング]
+        P1[&quot;大日程計画（3ヶ月〜1年）&quot;] --&gt;|生産能力・設備投資・人員計画| P2[&quot;中日程計画（月度・四半期）&quot;]
+        P2 --&gt;|確定受注と月間所要量展開 MRP| P3[&quot;小日程計画（週間・日次）&quot;]
+        P3 --&gt;|作業割付・アサイン| Execution[&quot;現場の加工作業・ディスパッチング&quot;]
     end
 
     subgraph C社で起きていた破綻
-        F1[月度計画しかない] --&gt; F2[日々の急な特急品・変更に対応不能]
-        F2 --&gt; F3[現場が勝手に段取替えして割り込み]
-        F3 --&gt; F4[計画崩壊・仕掛品の山・欠品]
+        F1[&quot;月度計画しかない&quot;] --&gt; F2[&quot;日々の急な特急品・変更に対応不能&quot;]
+        F2 --&gt; F3[&quot;現場が勝手に段取替えして割り込み&quot;]
+        F3 --&gt; F4[&quot;計画崩壊・仕掛品の山・欠品&quot;]
     end
 </code></pre>
 <h3>1. 生産計画の3階層（大日程・中日程・小日程）</h3>
@@ -238,17 +242,17 @@
 <p>事例Ⅲで頻出するIT・生産管理システムの全体像とBPRの定石を整理します。</p>
 <pre><code class="language-mermaid">graph LR
     subgraph 外部取引先との連携
-        Customer[顧客 X社・発注元] --&gt;|EDI連携: 確定受注・内示データ| EDI[Web-EDI / EDI]
+        Customer[&quot;顧客（X社・発注元）&quot;] --&gt;|EDI連携: 確定受注・内示データ| EDI[&quot;Web-EDI / EDI&quot;]
     end
 
     subgraph 生産管理システムの一元管理
-        EDI --&gt; Order[受注管理]
-        Order --&gt; MRP[生産計画・資材所要量展開 MRP]
-        MRP --&gt; Purchasing[購買・発注管理]
-        MRP --&gt; Schedule[工程スケジュール・小日程]
-        Schedule --&gt; ShopFloor[現場作業・プレス機]
-        ShopFloor --&gt;|バーコード/タブレット入力| POP[POP: 実績収集・進捗管理]
-        POP --&gt; Inventory[リアルタイム在庫管理]
+        EDI --&gt; Order[&quot;受注管理&quot;]
+        Order --&gt; MRP[&quot;生産計画・資材所要量展開 MRP&quot;]
+        MRP --&gt; Purchasing[&quot;購買・発注管理&quot;]
+        MRP --&gt; Schedule[&quot;工程スケジュール・小日程&quot;]
+        Schedule --&gt; ShopFloor[&quot;現場作業・プレス機&quot;]
+        ShopFloor --&gt;|バーコード・タブレット入力| POP[&quot;POPシステム（実績収集・進捗管理）&quot;]
+        POP --&gt; Inventory[&quot;リアルタイム在庫管理&quot;]
         Inventory --&gt; Order
     end
 </code></pre>
