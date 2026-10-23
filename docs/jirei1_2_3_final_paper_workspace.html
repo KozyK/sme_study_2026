@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="robots" content="noindex, nofollow">
+<title>Jirei1 2 3 Final Paper Workspace</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var blocks = document.querySelectorAll('pre code.language-mermaid');
+    if (blocks.length === 0) return;
+    
+    blocks.forEach(function(block) {
+      var pre = block.parentElement;
+      var container = document.createElement('div');
+      container.className = 'mermaid-container';
+      var div = document.createElement('div');
+      div.className = 'mermaid';
+      div.textContent = block.textContent;
+      container.appendChild(div);
+      pre.replaceWith(container);
+    });
+    
+    if (window.mermaid) {
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: 'default',
+        securityLevel: 'loose'
+      });
+      mermaid.run();
+    }
+  });
+</script>
+</head>
+<body>
+<a href="index.html" class="back-link">← ポータルに戻る</a>
+<div class="content">
+<h1>📋 事例Ⅰ・Ⅱ・Ⅲ ファイナルペーパー 検討ワークスペース（作業方針・中間成果物）</h1>
+<p>本ドキュメントは、事例Ⅰ（組織・人事）、事例Ⅱ（マーケティング・流通）、事例Ⅲ（生産・技術）のファイナルペーパー（直前叩き込み用・A4ギッシリ規模）を策定するための作業方針、過去10年の出題傾向分析、盲点・死角論点マッピング、および中間検討成果物を整理したものである。</p>
+<hr />
+<h2>1. 全体作業方針と設計思想</h2>
+<h3>① 目的とゴール</h3>
+<ul>
+<li><strong>直前叩き込み</strong>: 「たまに出てきて知らんと詰む」盲点論点、ローテーション頻出テーマ、周辺理論を網羅。</li>
+<li><strong>本番即応の文字数指定フレーズ</strong>: 設問要求に応じた「40字」「80字」「100字」「120字」「140字」ジャストのナンバリング構文（①〜、②〜）で記述フレームを配備。</li>
+<li><strong>純度の高い経営理論・診断士ロジック</strong>: アナロジー（比喩）を一切排除し、1次・2次の公式経営理論と因果構造（原因 $\to$ 施策 $\to$ 効果）のみで構成。</li>
+<li><strong>既存成果物の集大成</strong>: これまで策定したマスター教材群（組織・人事、深層マーケティング、生産方式・在庫管理、新傾向問題攻略など）の最高純度のエッセンスを凝縮。</li>
+</ul>
+<hr />
+<h2>2. 各事例の過去10年盲点論点マップと構成設計</h2>
+<h3>■ 事例Ⅰ（組織・人事）：盲点論点と出題系譜</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">論点分野</th>
+<th style="text-align: left;">過去問の系譜・盲点・出題実績</th>
+<th style="text-align: left;">知らんと詰む核心ロジック・死角</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>組織構造の選択</strong></td>
+<td style="text-align: left;">H28（事業部制移行）、R3（ファブレス化・部門独立）、R5（多角化と専従体制）、R7（事業部制とプロフィットセンター化）</td>
+<td style="text-align: left;"><strong>機能別組織</strong>（規模の経済・専門性追求、経営者負担大・セクショナリズム） vs <strong>事業部制組織</strong>（権限委譲・迅速な意思決定・後継者育成、重複コスト・短期利益志向） vs <strong>プロジェクト組織</strong>（特定課題への横断対応・柔軟性、二重命令系統・帰属意識希薄化）。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>集団指導体制・権限委譲</strong></td>
+<td style="text-align: left;">H27（ワンマンからの権限委譲）、H30（事業承継と役員体制）、R6（専務の緩衝材役割）、R7（共同研究・PJ体制）</td>
+<td style="text-align: left;"><strong>ワンマン経営の限界打破</strong>。社長（CEO：全社戦略・対外折衝）と後継者/専務（COO：現場統括・業務執行）の役割分担。若手リーダーを登用した経営企画室・委員会組織による集団指導体制への移行。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>事業承継・PMI</strong></td>
+<td style="text-align: left;">H29（買収後の組織融和）、R2（伝統工芸の承継）、R4（弟常務との二人三脚・娘承継）、R5（飲食店承継）</td>
+<td style="text-align: left;"><strong>PMIの3大要素</strong>：①制度統合（人事・賃金体系の公正な統合）、②業務統合（情報共有・受発注システムの標準化）、③文化融和（丁寧な対話、相互尊重、シナジー創出プロジェクト）。ベテラン職人の暗黙知承継。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>理念再定義と浸透</strong></td>
+<td style="text-align: left;">H30（酒造の理念見直し）、R3（印刷から広告への理念）、R7（新分野進出と理念再定義）</td>
+<td style="text-align: left;"><strong>理念再定義の黄金3ステップ</strong>：①創業の精神・自社の強みの再確認、②新市場・社会要請（ESG・地域貢献等）の統合、③社内浸透（クレド・朝礼・評価連動）と社外発信（Web・IR・広報）。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>人事処遇制度の死角</strong></td>
+<td style="text-align: left;">H28（非正規のモチベーション）、R1（成果主義の歪み）、R4（職人気質と役割不明確）、R5（アルバイト定着）</td>
+<td style="text-align: left;"><strong>複線型人事制度</strong>（管理職コース vs 専門職・スペシャリストコース）。<strong>成果主義の弊害是正</strong>（短期志向の抑制、プロセス評価・定性評価・チーム業績評価の併用）。<strong>非正規の戦力化</strong>（正社員登用制度、スキルマップ、改善提案制度、インセンティブ付与）。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>インターナルコミュニケーション</strong></td>
+<td style="text-align: left;">R1（情報共有不足）、R3（部門間断絶）、R6（社員の反発・不信感）</td>
+<td style="text-align: left;"><strong>ナレッジマネジメント（SECIモデル）</strong>：暗黙知の共同化 $\to$ 表出化（マニュアル化） $\to$ 連結化（DB化） $\to$ 内面化（OJT）。サンクスカード、1on1、社内報、横断的タスクフォース。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>■ 事例Ⅱ（マーケティング・流通）：盲点論点と出題系譜</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">論点分野</th>
+<th style="text-align: left;">過去問の系譜・盲点・出題実績</th>
+<th style="text-align: left;">知らんと詰む核心ロジック・死角</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>チャネル競合回避と共存</strong></td>
+<td style="text-align: left;">H28（インバウンドと既存客）、H30（直販ECと既存卸・小売）、R3（置き配・移動販売と店舗）、R4（直営店・ECと大手中食）</td>
+<td style="text-align: left;"><strong>カニバリゼーション完全回避の3大策</strong>：①商品差別化（EC・直営店限定品、高級ライン、ギフト用）、②価格差別化（直販での値引き禁止・定価販売遵守）、③送客・共存（ECから実店舗への相互誘導、既存小売店へのマージン還元・コラボ企画）。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>価格戦略の死角</strong></td>
+<td style="text-align: left;">H29（差別的価格）、R2（宿泊飲食のダイナミックプライシング）、R3（PB低価格から高単価変わり豆腐へ）、R7（イールドマネジメント）</td>
+<td style="text-align: left;"><strong>イールドマネジメント（ピークロードプライシング）</strong>：固定キャパシティ下で需要変動（繁忙期・閑散期、時間帯）に応じた変動価格制による収益最大化。<strong>プライスライニング</strong>（松竹梅の品揃えによる心理的誘導、参照価格の活用）。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>ブランド価値構造と深層心理</strong></td>
+<td style="text-align: left;">H27（地元密着ブランド）、R2（ハーブ製品のブランド化）、R4（有機JAS・地元菓子連携）、R6（伝統野菜ブランド）</td>
+<td style="text-align: left;"><strong>ブランド価値の2層構造</strong>：①感覚価値（品質、機能、デザイン、美味しさ）、②観念価値（伝統、ストーリー、職人のこだわり、地域文化共感、環境配慮）。<strong>シュミットのCX（顧客体験価値）5要素</strong>：SENSE（感覚）、FEEL（感情）、THINK（知性）、ACT（行動）、RELATE（関係性）。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>デジタルプロモーション・SNS</strong></td>
+<td style="text-align: left;">R1（SNS口コミ）、R3（インスタントメッセンジャー）、R5（インフルエンサー・SNS）、R7（Web動画3要素）</td>
+<td style="text-align: left;"><strong>Web動画・SNSの3大要素</strong>：①共感・アテンション（最初の3秒、悩み共感）、②理解・信頼（製造プロセスの可視化、開発秘話、実績・エビデンス）、③行動喚起（CTA、限定クーポン、UGC促進・ハッシュタグ投稿）。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>顧客DB・CRM・LTV</strong></td>
+<td style="text-align: left;">H28（顧客台帳）、R2（オンライン顧客DB）、R3（買い上げ額上位客の収穫祭）、R7（部活生DB）</td>
+<td style="text-align: left;"><strong>顧客情報3層ピラミッド</strong>：属性データ（デモグラ）、購買履歴データ（RFM）、行動・心理データ（好み・利用動機）。<strong>CRM施策</strong>：優良顧客（ロイヤルカスタマー）の特別優遇、ステップメール、記念日特典、コミュニティ化によるLTV最大化。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>アライアンス・地域連携</strong></td>
+<td style="text-align: left;">H29（商店街連携）、R1（酒蔵ツアー連携）、R3（米穀店Y社とのEC相乗り・豆腐丼コラボ）</td>
+<td style="text-align: left;"><strong>地域ブランド共創（水平的アライアンス）</strong>：強みを持つ他社（EC基盤、顧客基盤、他食材）との相互送客・セット商品開発。地域資源の相乗効果。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>■ 事例Ⅲ（生産・技術）：盲点論点と出題系譜</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">論点分野</th>
+<th style="text-align: left;">過去問の系譜・盲点・出題実績</th>
+<th style="text-align: left;">知らんと詰む核心ロジック・死角</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>生産計画のボトルネックと改善</strong></td>
+<td style="text-align: left;">H28（計画変更多発）、R1（短納期化）、R3（月1回計画の都度変更）、R4（直前変更）、R7（日次化・ロット編成）</td>
+<td style="text-align: left;"><strong>計画精度の3段ロケット</strong>：①サイクル短縮（月次 $\to$ 週次 $\to$ 日次化）、②計画確定期間（フリーズ期間）の設定、③全社情報共有（営業・調達・製造の同時連動）。製番管理（個別受注型）と追番管理（連続生産型）の使い分け。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>見込と受注の混在生産</strong></td>
+<td style="text-align: left;">H29（プレス加工の見込と受注）、R3（自社ブランド見込と受託品受注）、R5（特注品と標準品）</td>
+<td style="text-align: left;"><strong>遅延差別化（ポストポーンメント）</strong>：共通部品・中間仕掛品までを見込生産で先行加工・在庫化し、最終組み立て・表面処理を受注確定後に行うことで短納期化と在庫圧縮を両立。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>調達・資材在庫管理</strong></td>
+<td style="text-align: left;">H27（歩留まりと資材）、H30（金型と部材）、R3（長リードタイム資材欠品）、R7（購買BCP・端材リサイクル）</td>
+<td style="text-align: left;"><strong>調達・在庫の適正化</strong>：ABC分析に基づく重点管理（A品：定期発注方式・厳密管理、C品：発注点方式）。発注リードタイムを考慮した安全在庫設定。複数購買（シングルソース回避）によるサプライチェーンBCP。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>作業・工程・動線改善</strong></td>
+<td style="text-align: left;">H28（段取り替え）、R2（レイアウト改善）、R4（手待ち・運搬ロス）、R6（ボトルネック工程）</td>
+<td style="text-align: left;"><strong>ECRSの原則</strong>（排除、結合、交換、簡素化）。<strong>段取り短縮</strong>（内段取りの外段取り化、治工具の事前準備、ワンタッチ化）。<strong>レイアウト改善</strong>（機能別配置から製品別U字ライン・直線的一方向動線への変更、運搬距離短縮・停滞排除）。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>技術伝承と多能工化</strong></td>
+<td style="text-align: left;">H30（ベテラン職人引退）、R3（熟練職人の一人作りと若手育成）、R6（属人的作業の標準化）</td>
+<td style="text-align: left;"><strong>技術伝承の標準手順</strong>：熟練職人の暗黙知の洗い出し $\to$ 作業手順書・マニュアルへの形式知化 $\to$ スキルマップの導入 $\to$ OJT・計画的ローテーションによる多能工化 $\to$ 工程間負荷平準化とボトルネック解消。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>設計・開発のフロントローディング</strong></td>
+<td style="text-align: left;">H27（顧客図面修正）、R1（設計変更の遅れ）、R5（仕様変更多発）</td>
+<td style="text-align: left;"><strong>コンカレントエンジニアリング（CE）</strong>：設計部門、製造部門、品証部門、営業部門が初期段階から同時並行で参画。CAD/CAM・3Dデータの早期共有による試作回数削減・手戻り撲滅・開発期間短縮。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>新事業参入の4大因果展開フレーム</strong></td>
+<td style="text-align: left;">H29（新分野進出）、R3（自社直営店・高級路線）、R7（紙パイプ新分野進出）</td>
+<td style="text-align: left;"><strong>開発・現場・品証・組織の4大展開</strong>：①開発（共同開発・特許）、②現場（専用ライン・工程分離・治工具開発）、③品証（品質基準策定・検査体制）、④組織（専門プロジェクトチーム編成・権限付与）。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>3. 作成フェーズの進行計画</h2>
+<ol>
+<li><strong>中間検討ワークスペースの確定</strong>（本ドキュメント）</li>
+<li><strong>事例Ⅰ ファイナルペーパー本体の執筆</strong>（<code>study_materials/jirei1_final_paper.md</code>）</li>
+<li><strong>事例Ⅱ ファイナルペーパー本体の執筆</strong>（<code>study_materials/jirei2_final_paper.md</code>）</li>
+<li><strong>事例Ⅲ ファイナルペーパー本体の執筆</strong>（<code>study_materials/jirei3_final_paper.md</code>）</li>
+<li><strong>ポータルHTML再ビルド（<code>build_docs.py</code>）＆リンク更新（<code>study_materials/index.md</code>）</strong></li>
+<li><strong>Gitコミット＆プッシュ</strong></li>
+</ol>
+</div>
+</body>
+</html>

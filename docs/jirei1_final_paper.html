@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="robots" content="noindex, nofollow">
+<title>Jirei1 Final Paper</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var blocks = document.querySelectorAll('pre code.language-mermaid');
+    if (blocks.length === 0) return;
+    
+    blocks.forEach(function(block) {
+      var pre = block.parentElement;
+      var container = document.createElement('div');
+      container.className = 'mermaid-container';
+      var div = document.createElement('div');
+      div.className = 'mermaid';
+      div.textContent = block.textContent;
+      container.appendChild(div);
+      pre.replaceWith(container);
+    });
+    
+    if (window.mermaid) {
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: 'default',
+        securityLevel: 'loose'
+      });
+      mermaid.run();
+    }
+  });
+</script>
+</head>
+<body>
+<a href="index.html" class="back-link">← ポータルに戻る</a>
+<div class="content">
+<h1>📝 事例Ⅰ 直前叩き込みファイナルペーパー（組織・人事の盲点総まとめ）</h1>
+<p>中小企業診断士2次試験・事例Ⅰ（組織・人事）において、「たまに出てきて知らんと詰む」盲点論点、周辺理論、および本番解答用紙にそのまま使える文字数別（40字／80字／100字）の黄金記述フレーズ集である。試験直前の最終確認用として、頭の引き出しを極限まで整理・充填すること。</p>
+<hr />
+<h2>1. 「知らんと詰む」組織構造の選択とトレードオフ</h2>
+<p>本試験では「現状の組織構造の課題」や「事業拡大に伴い採用すべき新組織構造」が繰り返し問われる。各組織形態のメリット・デメリットと選択基準を正確に対比把握せよ。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">組織形態</th>
+<th style="text-align: left;">メリット（採点キーワード）</th>
+<th style="text-align: left;">デメリット・弊害（採点キーワード）</th>
+<th style="text-align: left;">適用すべきシチュエーション</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>機能別組織</strong><br>（営業・製造・開発・総務など職能別）</td>
+<td style="text-align: left;">・専門性の深化と技能向上<br>・全社的規模の経済の追求<br>・トップによる一元的な統制</td>
+<td style="text-align: left;">・部門間のセクショナリズム発生<br>・トップへの意思決定集中による遅延<br>・全社的経営感覚を持つ後継者が育たない</td>
+<td style="text-align: left;">単一事業で製品ラインが少なく、事業環境が比較的安定している場合。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>事業部制組織</strong><br>（製品別・地域別・市場別）</td>
+<td style="text-align: left;">・現場への大幅な権限委譲<br>・迅速な意思決定と市場適応力<br>・事業部長（後継者）の経営者感覚の育成<br>・損益責任（プロフィットセンター）の明確化</td>
+<td style="text-align: left;">・本社機能や間接費の重複（コスト増）<br>・事業部間の過度な競争・非協力<br>・短期利益志向（目先の数値至上主義）</td>
+<td style="text-align: left;">多角化・新事業展開が進み、製品・地域ごとに異なる顧客ニーズへの即応が求められる場合。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>プロジェクト組織</strong><br>（特定課題に対する横断的チーム）</td>
+<td style="text-align: left;">・部門横断的な情報共有と知の融合<br>・特定課題（新商品開発等）への機動的対応<br>・メンバーの視野拡大とモチベーション向上</td>
+<td style="text-align: left;">・従来の所属部門との二重命令系統（コンフリクト）<br>・プロジェクト終了後の帰属意識の動揺<br>・通常業務との兼務による過重労働</td>
+<td style="text-align: left;">新商品開発、DX推進、PMIなど、全社横断的かつ期限付きの重要課題を推進する場合。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>マトリックス組織</strong><br>（機能軸 × 事業/地域軸）</td>
+<td style="text-align: left;">・専門性と事業適応性の両立<br>・情報伝達の多面化と柔軟な資源配分</td>
+<td style="text-align: left;">・ワンマン・ツーボスによる指揮命令系統の混乱<br>・利害対立による調整コストの増大</td>
+<td style="text-align: left;">高度な専門性と市場ごとの柔軟な対応が恒常的に要求される場合。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>2. 権限委譲と集団指導体制（ワンマン脱却の黄金ロジック）</h2>
+<p>創業社長や長年のカリスマ経営者からの事業承継局面において、必ず出題されるのが「属人化・ワンマン体制からの脱却」である。</p>
+<pre><code>【属人化の弊害】
+社長のトップダウン ──&gt; 幹部・現場の指示待ち化 ──&gt; 権限不足で意思決定遅延 ──&gt; 組織の硬直化・後継者不在
+          │
+          ▼【改善の処方箋】
+【集団指導体制の構築】
+① CEO（全社戦略・対外折衝）と COO（現場統括・業務執行）の機能的分担
+② 若手リーダー・部門長を登用した「経営会議」「経営企画室」「常務会」の設置
+③ 権限規定・稟議制度の整備による組織的・客観的意思決定ルールの確立
+</code></pre>
+<hr />
+<h2>3. 事業承継・PMI（M&amp;A買収後の組織統合3大ステップ）</h2>
+<p>事例Ⅰで数年おきに出題されるM&amp;A・事業譲受・グループ再編において、合否を分けるのが<strong>PMI（Post Merger Integration）</strong>の視点である。</p>
+<ol>
+<li><strong>制度の統合（ハード面）</strong>:</li>
+<li>人事評価制度、賃金・処遇体系の公正な一本化（不利益変更の回避、納得感の醸成）。</li>
+<li>財務会計・労務管理システムの統一。</li>
+<li><strong>業務の統合（プロセス面）</strong>:</li>
+<li>受発注・生産管理・ITシステムの統合と業務プロセスの標準化。</li>
+<li>相互の顧客リストや仕入先ネットワークの共有によるシナジー創出。</li>
+<li><strong>文化の融和（ソフト面・最重要）</strong>:</li>
+<li>買収先従業員への丁寧な対話とビジョン共有（強制的同化の禁止、心理的安全性）。</li>
+<li>両社の混成プロジェクトチームの結成による共同成功体験の醸成。</li>
+</ol>
+<hr />
+<h2>4. 企業理念の再定義・浸透（新市場進出・多角化の要）</h2>
+<p>伝統的企業が新事業（BtoCや新分野）に進出する際、経営理念の見直しと内外への浸透が求められる。</p>
+<ul>
+<li><strong>第1段階：理念の再定義</strong>:
+  創業以来の経営理念（コアバリュー・技術・信頼）を継承しつつ、新市場の顧客価値や社会的使命（地域貢献・持続可能性）を包摂した理念へ刷新する。</li>
+<li><strong>第2段階：社内浸透（インターナルブランディング）</strong>:
+  クレドカード配布、朝礼・経営方針説明会での対話、行動指針の人事評価への組み込み。</li>
+<li><strong>第3段階：社外発信（エクスターナルブランディング）</strong>:
+  Webサイト、SNS、プレスリリースを通じた一貫性ある企業ブランドの発信。</li>
+</ul>
+<hr />
+<h2>5. 人事・評価処遇制度の死角（知らんと詰む周辺論点）</h2>
+<h3>① 複線型人事制度（マネジメントコース vs エキスパートコース）</h3>
+<ul>
+<li><strong>目的</strong>: 職人や技術者が管理職にならなくても、高度な専門技能の発揮によって適正に昇進・昇格・処遇されるキャリアパスを用意し、技能の深化とモチベーション向上を図る。</li>
+</ul>
+<h3>② 成果主義の歪みとその是正策</h3>
+<ul>
+<li><strong>弊害</strong>: 目先の短期成果のみを追求し、難易度の高い仕事の忌避、チーム内非協力、ノウハウの囲い込み（属人化）が発生する。</li>
+<li><strong>是正策</strong>:</li>
+<li>定量成果だけでなく、「プロセス評価」「情意・行動評価（コンピテンシー）」を併用する。</li>
+<li>個人評価に加えて「チーム・部門業績評価」を導入し、協働を動機づける。</li>
+</ul>
+<h3>③ 非正規社員（パート・アルバイト・契約社員）の戦力化</h3>
+<ul>
+<li><strong>3点セット</strong>: ①正社員登用制度、②能力開発（スキルマップに基づくOJT・資格取得支援）、③評価連動（職務給導入、時給アップ、改善提案表彰制度）。</li>
+</ul>
+<h3>④ ナレッジマネジメント（SECIモデルによる技術承継）</h3>
+<ul>
+<li><strong>共同化（Socialization）</strong>: ベテランと若手のペアリング（OJT）。</li>
+<li><strong>表出化（Externalization）</strong>: 職人の勘やコツ（暗黙知）を作業手順書・マニュアル・動画へ落とし込む。</li>
+<li><strong>連結化（Combination）</strong>: 社内データベースや管理システムへ登録し共有化。</li>
+<li><strong>内面化（Internalization）</strong>: 実務での実践と反復練習による自己の知識化。</li>
+</ul>
+<hr />
+<h2>6. 本番即応！文字数別 黄金記述フレーズ集</h2>
+<p>本番の文字数制約（40字、80字、100字）にジャストフィットさせた完成答案フレーズ。ナンバリング構文でそのまま使える形で頭に叩き込め。</p>
+<h3>【40字枠】</h3>
+<ul>
+<li><strong>事業部制組織のメリット（40字）</strong>：<blockquote>
+<p>現場への権限委譲で意思決定を迅速化し、独立採算制で次世代の経営者を育成できる。（39字）</p>
+</blockquote>
+</li>
+<li><strong>事業部制組織のデメリット（40字）</strong>：<blockquote>
+<p>事業部間のセクショナリズムや本社機能の重複が生じ、全社的最適化が損なわれる。（39字）</p>
+</blockquote>
+</li>
+<li><strong>集団指導体制への移行目的（40字）</strong>：<blockquote>
+<p>属人化を排して組織的経営へ移行し、若手幹部の育成と迅速な意思決定を実現する。（39字）</p>
+</blockquote>
+</li>
+<li><strong>複線型人事制度の目的（40字）</strong>：<blockquote>
+<p>管理職昇進以外の専門職コースを設け、高度専門技術者の定着と意欲向上を図る。（38字）</p>
+</blockquote>
+</li>
+<li><strong>メンター制度の効果（40字）</strong>：<blockquote>
+<p>先輩社員が若手を精神的・実務的に支援し、早期離職を防止し定着と成長を促す。（38字）</p>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h3>【80字枠】</h3>
+<ul>
+<li><strong>ワンマン社長からの権限委譲と集団指導体制（80字）</strong>：<blockquote>
+<p>社長が全社戦略に特化し、後継者や若手幹部に現場統括の権限を委譲するとともに、経営会議を定例化して組織的な意思決定ルールを確立し、持続的成長基盤を築く。（76字）</p>
+</blockquote>
+</li>
+<li><strong>成果主義の弊害と人事評価制度の改善（80字）</strong>：<blockquote>
+<p>短期成果主義を是正するため、数値結果だけでなく業務プロセスや挑戦姿勢を評価項目に加え、チーム業績連動給を導入することで、社員間の協働と長期的な成長を促す。（78字）</p>
+</blockquote>
+</li>
+<li><strong>非正規社員のモチベーション向上と戦力化（80字）</strong>：<blockquote>
+<p>スキルマップに基づく公正な処遇と昇給制度を整え、業務改善提案制度や正社員登用制度を導入することで、帰属意識を高めて自発的な貢献を促し、組織力を底上げする。（78字）</p>
+</blockquote>
+</li>
+<li><strong>M&amp;A後の文化融和とシナジー創出（80字）</strong>：<blockquote>
+<p>丁寧な対話で経営理念を共有し、両社の混成プロジェクトチームを立ち上げて新規事業や共同開発を推進することで、相互理解と一体感を醸成しシナジーを発揮させる。（78字）</p>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h3>【100字枠】</h3>
+<ul>
+<li><strong>経営理念の再定義と浸透プロセス（100字）</strong>：<blockquote>
+<p>施策は①創業時の強みや技術を継承しつつ新市場の社会的要請を反映した理念へ再定義し、②クレド策定や社内対話集会で理念を社内浸透させ、③行動指針を人事評価基準に連動させて社員の自発的実践を促すこと。（98字）</p>
+</blockquote>
+</li>
+<li><strong>ベテラン職人の暗黙知承継と組織的ナレッジ共有（100字）</strong>：<blockquote>
+<p>施策は①ベテラン職人の勘やコツをヒアリング・動画撮影して作業手順書として形式知化し、②若手とのペアリングによるOJTで実践習熟を図り、③スキルマップで評価・共有して全社的な多能工化を推進すること。（99字）</p>
+</blockquote>
+</li>
+<li><strong>新規事業展開に伴う組織構造変革の助言（100字）</strong>：<blockquote>
+<p>助言は①新事業部門を既存組織から独立させ專従体制と十分な裁量権を与え、②外部専門人材を採用して部門横断プロジェクトを組成し、③新旧部門間の定期的な連絡会議を設けて全社シナジーを最大化すること。（98字）</p>
+</blockquote>
+</li>
+</ul>
+</div>
+</body>
+</html>
