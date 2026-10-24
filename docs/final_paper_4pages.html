@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>中小企業診断士2次試験 全4事例 直前完全武装ファイナルペーパー（4ページ超凝縮版）</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 5mm 7mm 5mm 7mm;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic Medium", "BIZ UDPGothic", Meiryo, sans-serif;
+      font-size: 6.8pt;
+      line-height: 1.24;
+      color: #0f172a;
+      background: #e2e8f0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    @media screen {
+      .page {
+        width: 196mm;
+        height: 287mm;
+        margin: 10px auto 20px auto;
+        background: white;
+        padding: 5mm 6mm;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.18);
+        border-radius: 2px;
+        overflow: hidden;
+        position: relative;
+      }
+      .page-nav {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background: #1e293b;
+        color: white;
+        padding: 8px 14px;
+        border-radius: 6px;
+        font-size: 11px;
+        z-index: 1000;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      }
+      .page-nav button {
+        background: #3b82f6;
+        color: white;
+        border: none;
+        padding: 4px 8px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+    }
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+      .page {
+        width: 196mm;
+        height: 287mm;
+        max-height: 287mm;
+        padding: 0;
+        page-break-after: always;
+        break-after: page;
+        overflow: hidden;
+      }
+      .page-nav {
+        display: none;
+      }
+    }
+
+    /* 共通ヘッダー */
+    .p-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 1.5px;
+      margin-bottom: 3px;
+    }
+    .p-title-group {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+    .p-case-badge {
+      padding: 1px 6px;
+      border-radius: 3px;
+      font-size: 8.5pt;
+      font-weight: 900;
+      color: white;
+      letter-spacing: 0.5px;
+    }
+    .p-title {
+      font-size: 9.8pt;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.2px;
+    }
+    .p-subtitle {
+      font-size: 6.6pt;
+      color: #475569;
+      font-weight: 600;
+    }
+    .p-page-num {
+      font-size: 7.2pt;
+      font-weight: 700;
+      color: #334155;
+      background: #f1f5f9;
+      padding: 1px 6px;
+      border-radius: 10px;
+      border: 1px solid #cbd5e1;
+    }
+
+    /* 各事例テーマカラー */
+    .case1 .p-case-badge { background: #2563eb; }
+    .case2 .p-case-badge { background: #059669; }
+    .case3 .p-case-badge { background: #d97706; }
+    .case4 .p-case-badge { background: #4f46e5; }
+
+    /* グリッドレイアウト */
+    .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+    .grid-3col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3px; }
+    .grid-4col { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 3px; }
+    .grid-73 { display: grid; grid-template-columns: 7fr 3fr; gap: 3px; }
+    .grid-64 { display: grid; grid-template-columns: 6fr 4fr; gap: 3px; }
+    .grid-55 { display: grid; grid-template-columns: 5fr 5fr; gap: 3px; }
+
+    /* ボックスコンポーネント */
+    .c-box {
+      border: 1px solid #cbd5e1;
+      border-radius: 2px;
+      padding: 2.5px 3.5px;
+      background: white;
+      margin-bottom: 2.8px;
+    }
+    .c-box.accent-box { background: #f8fafc; border-left: 3px solid #64748b; }
+    .c-box.alert-box { background: #fff1f2; border: 1px solid #fecdd3; border-left: 3px solid #e11d48; }
+    .c-box.success-box { background: #f0fdf4; border: 1px solid #bbf7d0; border-left: 3px solid #16a34a; }
+    .c-box.blue-box { background: #f0f7ff; border: 1px solid #bfdbfe; border-left: 3px solid #2563eb; }
+    .c-box.amber-box { background: #fefce8; border: 1px solid #fef08a; border-left: 3px solid #ca8a04; }
+
+    .box-title {
+      font-size: 7.0pt;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 1.5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 1px;
+    }
+    .badge-sub {
+      font-size: 6.0pt;
+      font-weight: 700;
+      padding: 0 3px;
+      border-radius: 2px;
+      background: #e2e8f0;
+      color: #334155;
+    }
+
+    ul, ol { padding-left: 10px; }
+    li { margin-bottom: 0.8px; }
+    p { margin-bottom: 1px; }
+    strong { font-weight: 800; color: #0f172a; }
+    .hl-red { color: #be123c; font-weight: bold; }
+    .hl-blue { color: #1d4ed8; font-weight: bold; }
+    .hl-green { color: #15803d; font-weight: bold; }
+    .hl-amber { color: #b45309; font-weight: bold; }
+
+    /* テーブル */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 6.4pt;
+      margin-bottom: 1.5px;
+    }
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 1.2px 2.5px;
+      text-align: left;
+      vertical-align: middle;
+      line-height: 1.2;
+    }
+    th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: #334155;
+    }
+    td.num {
+      text-align: right;
+      font-family: "SF Mono", Menlo, Consolas, monospace;
+    }
+    tr.highlight-row { background: #eff6ff; }
+
+    /* フレーズブロック */
+    .phrase-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 2px;
+      padding: 1.5px 3px;
+      margin-bottom: 1.8px;
+      font-size: 6.4pt;
+      line-height: 1.22;
+    }
+    .phrase-tag {
+      font-weight: 800;
+      display: inline-block;
+      padding: 0 2.5px;
+      border-radius: 2px;
+      font-size: 5.8pt;
+      color: white;
+      margin-right: 2px;
+      vertical-align: middle;
+    }
+    .tag-40 { background: #64748b; }
+    .tag-80 { background: #0284c7; }
+    .tag-100 { background: #4f46e5; }
+    .tag-120 { background: #7c3aed; }
+    .tag-140 { background: #c026d3; }
+
+    .formula {
+      font-family: "SF Mono", Menlo, Consolas, monospace;
+      background: #f1f5f9;
+      padding: 0.5px 2px;
+      border-radius: 2px;
+      font-weight: 600;
+      font-size: 6.3pt;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-nav">
+    <span>A4直前ファイナルペーパー（全4事例・各1P超凝縮）</span>
+    <button onclick="window.print()">🖨️ PDF印刷</button>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- PAGE 1: 事例Ⅰ 組織・人事 完全武装シート -->
+  <!-- ========================================== -->
+  <div class="page case1" id="page-1">
+    <div class="p-header">
+      <div class="p-title-group">
+        <span class="p-case-badge">事例Ⅰ</span>
+        <span class="p-title">組織・人事 直前完全武装ファイナルペーパー</span>
+        <span class="p-subtitle">設問レイヤー死守・小規模組織トラップ回避・集団指導体制・PMI・ナレッジ伝承</span>
+      </div>
+      <span class="p-page-num">Page 1 / 4</span>
+    </div>
+
+    <!-- 必達アラート -->
+    <div class="c-box alert-box" style="margin-bottom: 2.5px;">
+      <div class="box-title" style="color: #9f1239; border-color: #fecdd3;">
+        <span>🚨 【事例Ⅰ 最重要死守ルール：レイヤー逸脱の撲滅 ＆ 小規模組織の安易な部署新設トラップ】</span>
+        <span class="badge-sub" style="background: #ffe4e6; color: #9f1239;">配点直結</span>
+      </div>
+      <div class="grid-2col" style="gap: 5px;">
+        <div>
+          • <strong class="hl-red">事例レイヤー死守</strong>: 事例Ⅰでプロモーション・接客・販路開拓（事例Ⅱの言葉）を書くな！問われているのは「それを動かす<strong class="hl-blue">組織体制・人事・動機付け・評価処遇</strong>」である。
+        </div>
+        <div>
+          • <strong class="hl-red">小規模組織（30名）トラップ</strong>: 従業員30名前後の企業に「企画開発部」「専任マーケ部」新設はリソース破綻で大幅減点！「<strong class="hl-blue">兼任プロジェクトチーム・外部アライアンス</strong>」で解く！
+        </div>
+      </div>
+    </div>
+
+    <!-- 組織構造とワンマン脱却 -->
+    <div class="grid-2col">
+      <!-- 組織構造マトリクス -->
+      <div class="c-box">
+        <div class="box-title">
+          <span>🏛️ 組織構造の選択とトレードオフ（比較マトリクス）</span>
+        </div>
+        <table>
+          <tr>
+            <th style="width: 20%;">組織形態</th>
+            <th style="width: 40%;">メリット（加点ワード）</th>
+            <th style="width: 40%;">デメリット・弊害</th>
+          </tr>
+          <tr>
+            <td><strong>機能別</strong></td>
+            <td>専門性深化、規模の経済、一元統制</td>
+            <td>部門間セクショナリズム、トップ負荷集中、後継者育たず</td>
+          </tr>
+          <tr>
+            <td><strong>事業部制</strong></td>
+            <td>権限委譲、迅速意思決定、後継者育成、独立採算</td>
+            <td>間接費重複（コスト増）、過度な社内競争、短期利益志向</td>
+          </tr>
+          <tr>
+            <td><strong>プロジェクト</strong></td>
+            <td>部門横断知の融合、特定課題機動性、視野拡大</td>
+            <td>二重命令系統（コンフリクト）、通常業務兼務で過重労働</td>
+          </tr>
+          <tr>
+            <td><strong>マトリックス</strong></td>
+            <td>機能専門性と事業柔軟性の両立</td>
+            <td>ワンマン・ツーボス指揮命令混乱、調整コスト増</td>
+          </tr>
+        </table>
+        <div style="font-size: 6.2pt; color: #475569; background: #f8fafc; padding: 1px 3px; border-radius: 2px;">
+          👉 <strong>成長に伴う進化</strong>: 機能別（単一事業・効率）→ 事業部制（多角化・権限委譲）/ 横断PJ（新事業・DX推進）
+        </div>
+      </div>
+
+      <!-- ワンマン脱却と集団指導 -->
+      <div class="c-box accent-box">
+        <div class="box-title">
+          <span>👥 ワンマン脱却と集団指導体制（事業承継の黄金因果）</span>
+        </div>
+        <div style="background: #f1f5f9; padding: 1.5px 3px; border-radius: 2px; margin-bottom: 1.5px; font-size: 6.3pt;">
+          <strong>【属人化の弊害】</strong> トップダウン一任 → 幹部・現場の指示待ち化 → 権限不足で意思決定遅延 → 組織硬直化
+        </div>
+        <ul style="font-size: 6.5pt;">
+          <li><strong>CEOとCOOの役割分担</strong>: 社長＝全社戦略・対外折衝 / 後継者・COO＝現場統括・業務執行。</li>
+          <li><strong>集団指導体制の確立</strong>: 若手部門長を登用した「経営会議」「常務会」を定期開催。</li>
+          <li><strong>組織的意思決定のルール化</strong>: 権限規程・稟議制度を整備し、属人性を排した合議制へ。</li>
+        </ul>
+        <div class="box-title" style="margin-top: 2.5px;">
+          <span>🤝 事業承継・PMI（M&A買収後の3大統合）</span>
+        </div>
+        <ol style="font-size: 6.4pt;">
+          <li><strong>制度（ハード）</strong>: 人事評価・賃金体系の公正な一本化、労務・会計システム統一。</li>
+          <li><strong>業務（プロセス）</strong>: 受発注・製造プロセスの標準化、顧客・仕入先リスト共有。</li>
+          <li><strong>文化（ソフト・最重要）</strong>: 丁寧な対話・理念共有、混成プロジェクトによる成功体験。</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- 理念浸透・人事制度・モチベーション -->
+    <div class="grid-3col">
+      <!-- 理念再定義・浸透 -->
+      <div class="c-box blue-box">
+        <div class="box-title">
+          <span>🚩 経営理念の再定義と浸透</span>
+        </div>
+        <ul style="font-size: 6.3pt;">
+          <li><strong>① 再定義</strong>: 創業時の伝統・強みを継承しつつ、新市場の顧客価値や社会的使命（地域貢献等）を包摂。</li>
+          <li><strong>② 社内浸透（インターナル）</strong>: クレド策定、社内対話集会、行動指針の人事評価組み込み。</li>
+          <li><strong>③ 社外発信（エクスターナル）</strong>: Web・SNSで一貫した企業姿勢を発信しブランド化。</li>
+        </ul>
+      </div>
+
+      <!-- 人事処遇・成果主義是正 -->
+      <div class="c-box">
+        <div class="box-title">
+          <span>⚖️ 人事評価処遇の死角</span>
+        </div>
+        <ul style="font-size: 6.3pt;">
+          <li><strong>複線型人事制度</strong>: 管理職（マネジメント）と専門職（エキスパート）を分離。技術者の昇格・処遇の道を確保。</li>
+          <li><strong>成果主義の歪み是正</strong>: 短期数値至上主義を是正。<strong>プロセス評価・コンピテンシー・チーム業績連動</strong>を導入。</li>
+          <li><strong>非正規の戦力化</strong>: ①正社員登用、②スキルマップOJT、③職務給・改善提案表彰。</li>
+        </ul>
+      </div>
+
+      <!-- ナレッジ承継・組織活性化 -->
+      <div class="c-box">
+        <div class="box-title">
+          <span>🧠 SECIモデル＆組織活性化</span>
+        </div>
+        <ul style="font-size: 6.3pt;">
+          <li><strong>共同化(S)</strong>: 熟練職人と若手のペアリング（OJT）。</li>
+          <li><strong>表出化(E)</strong>: 勘・コツを作業手順書・動画へ形式知化。</li>
+          <li><strong>連結化(C)</strong>: 社内DB・管理システムで共有・体系化。</li>
+          <li><strong>内面化(I)</strong>: 現場実践・反復で個人の知恵に昇華。</li>
+          <li><strong>組織活性化施策</strong>: 社内報・経営方針発表会・提案表彰制度・1on1面談で心理的安全性を醸成。</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 古参幹部対応と後継者承継対策 -->
+    <div class="c-box accent-box">
+      <div class="box-title">
+        <span>👴 後継者承継における社内反発の抑制と古参幹部の処遇</span>
+        <span class="badge-sub">事業承継の盲点</span>
+      </div>
+      <div class="grid-3col" style="font-size: 6.3pt;">
+        <div>• <strong>古参幹部の役割再定義</strong>: 相談役・顧問への移行、または若手育成専任の指導係に任命しプライドを尊重。</div>
+        <div>• <strong>新旧融和プロジェクト</strong>: 後継者主導の改革チームに古参幹部を参画させ、経営ビジョンを共有し当事者意識を醸成。</div>
+        <div>• <strong>透明な評価制度の導入</strong>: 評価基準をブラックボックスから客観的基準（行動評価・数値目標）へ改定し納得感を高める。</div>
+      </div>
+    </div>
+
+    <!-- 本番即応！文字数別 黄金記述フレーズ集 -->
+    <div class="c-box" style="margin-bottom: 0;">
+      <div class="box-title" style="background: #f1f5f9; padding: 1.5px 3px;">
+        <span>🎯 本番即応！事例Ⅰ 文字数別 黄金記述フレーズ集（解答用紙にそのまま叩き込む）</span>
+        <span class="badge-sub">採点官に刺さるキーワード直結</span>
+      </div>
+
+      <div class="grid-2col">
+        <div>
+          <div class="phrase-box">
+            <span class="phrase-tag tag-40">40字</span><strong>集団指導体制</strong>：属人化を排して組織的経営へ移行し、若手幹部の育成と迅速な意思決定を実現する。（39字）
+          </div>
+          <div class="phrase-box">
+            <span class="phrase-tag tag-40">40字</span><strong>複線型人事制度</strong>：管理職昇進以外の専門職コースを設け、高度専門技術者の定着と意欲向上を図る。（38字）
+          </div>
+          <div class="phrase-box">
+            <span class="phrase-tag tag-80">80字</span><strong>ワンマン脱却・権限委譲</strong>：社長が全社戦略に特化し、後継者や若手幹部に現場統括の権限を委譲するとともに、経営会議を定例化して組織的な意思決定ルールを確立し、持続的成長基盤を築く。（76字）
+          </div>
+          <div class="phrase-box">
+            <span class="phrase-tag tag-80">80字</span><strong>成果主義の弊害是正</strong>：短期成果主義を是正するため、数値結果だけでなく業務プロセスや挑戦姿勢を評価項目に加え、チーム業績連動給を導入することで、社員間の協働と長期成長を促す。（78字）
+          </div>
+          <div class="phrase-box">
+            <span class="phrase-tag tag-80">80字</span><strong>非正規社員の戦力化</strong>：スキルマップに基づく公正な処遇と昇給制度を整え、業務改善提案制度や正社員登用制度を導入することで、帰属意識を高めて自発的な貢献を促し、組織力を底上げする。（78字）
+          </div>
+        </div>
+
+        <div>
+          <div class="phrase-box">
+            <span class="phrase-tag tag-80">80字</span><strong>M&A後の文化融和・シナジー</strong>：丁寧な対話で経営理念を共有し、両社の混成プロジェクトチームを立ち上げて新規事業や共同開発を推進することで、相互理解と一体感を醸成しシナジーを発揮させる。（78字）
+          </div>
+          <div class="phrase-box">
+            <span class="phrase-tag tag-100">100字</span><strong>新規事業組織（小規模組織・30名版）</strong>：助言は①専任部署の新設は避け既存の営業とデザイン等の兼任プロジェクトチームを組成し、②外部専門家や協力会社とのアライアンスで専門性を補完し、③定例進捗会議で部門間連携を深め全社シナジーを最大化すること。（100字）
+          </div>
+          <div class="phrase-box">
+            <span class="phrase-tag tag-100">100字</span><strong>暗黙知承継・技術伝承</strong>：施策は①ベテラン職人の勘やコツをヒアリング・動画撮影して作業手順書として形式知化し、②若手とのペアリングによるOJTで実践習熟を図り、③スキルマップで評価・共有して全社的な多能工化を推進すること。（99字）
+          </div>
+          <div class="phrase-box">
+            <span class="phrase-tag tag-100">100字</span><strong>経営理念の再定義と浸透</strong>：施策は①創業時の強みや技術を継承しつつ新市場の社会的要請を反映した理念へ再定義し、②クレド策定や社内対話集会で理念を社内浸透させ、③行動指針を人事評価基準に連動させて社員の自発的実践を促すこと。（98字）
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- PAGE 2: 事例Ⅱ マーケティング・流通 完全武装シート -->
+  <!-- ========================================== -->
+  <div class="page case2" id="page-2">
+    <div class="p-header">
+      <div class="p-title-group">
+        <span class="p-case-badge">事例Ⅱ</span>
+        <span class="p-title">マーケティング・流通 直前完全武装ファイナルペーパー</span>
+        <span class="p-subtitle">ターゲット×チャネル混同撲滅・カニバリ回避3原則・高度プライシング・CX・地域共創</span>
+      </div>
+      <span class="p-page-num">Page 2 / 4</span>
+    </div>
+
+    <!-- 必達アラート -->
+    <div class="c-box alert-box" style="margin-bottom: 2.5px;">
+      <div class="box-title" style="color: #065f46; border-color: #a7f3d0; background: #ecfdf5;">
+        <span>🚨 【事例Ⅱ 最重要死守ルール：ターゲット層（Who）と販売チャネル（Place）の混同撲滅】</span>
+        <span class="badge-sub" style="background: #d1fae5; color: #065f46;">ふぞろい大量加点</span>
+      </div>
+      <div class="grid-2col" style="gap: 5px;">
+        <div>
+          • <strong class="hl-red">ターゲット（Who）とチャネル（Place）の混同撲滅</strong>：「和菓子店」「移動販売」「百貨店」は<strong class="hl-blue">販売チャネル</strong>！ターゲット顧客ではない！
+          ❌「和菓子店」 → ⭕「健康志向の近隣主婦層」「こだわりの味を求める観光客」（デモ・ジオ・サイコで定義）。
+        </div>
+        <div>
+          • <strong class="hl-green">ふぞろい合否直結キーワード</strong>：「<strong class="hl-green">共存共栄</strong>」「<strong class="hl-green">相互送客</strong>」「<strong class="hl-green">オリジナル/コラボ商品開発</strong>」「<strong class="hl-green">地域ブランド確立</strong>」「<strong class="hl-green">口コミ（UGC）誘発</strong>」「<strong class="hl-green">顧客生涯価値（LTV）</strong>」。
+        </div>
+      </div>
+    </div>
+
+    <!-- ターゲット3軸テンプレート＆カニバリ回避 -->
+    <div class="grid-2col">
+      <!-- ターゲット明確化3軸テンプレート -->
+      <div class="c-box blue-box">
+        <div class="box-title">
+          <span>🎯 ターゲット明確化 3軸テンプレート（Who記述の型）</span>
+        </div>
+        <table style="font-size: 6.3pt;">
+          <tr>
+            <th style="width: 28%;">切り口（変数）</th>
+            <th style="width: 72%;">記述要素（与件文から拾って合成する）</th>
+          </tr>
+          <tr>
+            <td><strong>地理的（ジオ）</strong></td>
+            <td>地元在住、近隣商業地域、通勤・通学動線上、全国の観光客</td>
+          </tr>
+          <tr>
+            <td><strong>人口統計（デモ）</strong></td>
+            <td>子育て主婦層、シニア層、若年共働き世帯、単身ビジネスパーソン</td>
+          </tr>
+          <tr>
+            <td><strong>心理的（サイコ）</strong></td>
+            <td>健康志向、食の安全性重視、本物志向・伝統の味こだわり、時短ニーズ</td>
+          </tr>
+        </table>
+        <div style="font-size: 6.2pt; background: white; padding: 1.5px 3px; border-radius: 2px;">
+          👉 <strong>黄金合成構文</strong>：「【ジオ】在住で【デモ】であり、【サイコ】なニーズを持つ顧客層」（40字）
+        </div>
+      </div>
+
+      <!-- カニバリ回避3大鉄則 -->
+      <div class="c-box accent-box">
+        <div class="box-title">
+          <span>🥊 チャネル競合（カニバリゼーション）回避の3大鉄則</span>
+        </div>
+        <div style="background: #f8fafc; padding: 1.5px 3px; border-radius: 2px; margin-bottom: 1.5px; font-size: 6.2pt;">
+          直販EC・直営店開始 → 既存卸・小売店からの「顧客強奪」反発・取引停止を防ぐ！
+        </div>
+        <ul style="font-size: 6.4pt;">
+          <li><strong>① 商品差別化 (Product)</strong>: 直販・自社ECは「限定品・ギフトセット・高価格帯」。既存店には「量販用・標準普及品・定番品」を供給し棲み分ける。</li>
+          <li><strong>② 価格差別化 (Price)</strong>: 自社ECでの安売り・値引きを厳禁とし、必ず「定価販売」を遵守して既存店の価格秩序を守る。</li>
+          <li><strong>③ 送客・共存 (Place & Promotion)</strong>: 自社Web・SNSで全国取扱店舗を案内し実店舗へ相互送客。共同フェア展開でマージン還元（共存共栄）。</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 高度プライシング・CX・デジタル・CRM -->
+    <div class="grid-3col">
+      <!-- 高度プライシング -->
+      <div class="c-box">
+        <div class="box-title">
+          <span>🏷️ 価格戦略の盲点</span>
+        </div>
+        <ul style="font-size: 6.3pt;">
+          <li><strong>イールドマネジメント（変動価格制）</strong>:
+            客席・設備等、在庫持ち越し不能なサービス業で活用。
+            ・<strong>繁忙期・ピーク</strong>: 高価格で混雑緩和・高客単価・高収益化。
+            ・<strong>閑散期・オフピーク</strong>: 割引や限定特典で稼働率向上。
+          </li>
+          <li><strong>プライスライニング（松竹梅）</strong>:
+            極端性回避を利用。売りたい高粗利商品を「竹」に設定し、最上位「松」をアンカー配置し客単価向上。</li>
+          <li><strong>名声価格</strong>: 高価格自体が品質シグナルとなりブランド力向上。</li>
+        </ul>
+      </div>
+
+      <!-- ブランドとCX -->
+      <div class="c-box success-box">
+        <div class="box-title">
+          <span>💎 ブランド価値とCX（顧客体験）</span>
+        </div>
+        <p style="font-size: 6.3pt;"><strong>感覚価値</strong>（味・機能）と<strong>観念価値</strong>（歴史・職人こだわり・ストーリー・地域性・SDGs）の二重構造。模倣困難性を高め価格競争を脱却。</p>
+        <p style="font-size: 6.3pt;"><strong>シュミットのCX 5要素</strong>:</p>
+        <ul style="font-size: 6.2pt;">
+          <li><strong>SENSE</strong>: 五感刺激空間・香り・包装</li>
+          <li><strong>FEEL</strong>: 手書き礼状・温もりのある接客</li>
+          <li><strong>THINK</strong>: 工房見学・ワークショップ</li>
+          <li><strong>ACT</strong>: 手作り体験・ライフスタイル提案</li>
+          <li><strong>RELATE</strong>: ファンコミュニティ・地域交流</li>
+        </ul>
+      </div>
+
+      <!-- デジタル・CRM・地域共創 -->
+      <div class="c-box">
+        <div class="box-title">
+          <span>📱 SNS・CRM・地域共創</span>
+        </div>
+        <ul style="font-size: 6.3pt;">
+          <li><strong>SNS 3要素</strong>: ①共感問いかけ(3秒) → ②製造プロセス・職人動画で信頼化 → ③ハッシュタグ・クーポンでUGC拡散。</li>
+          <li><strong>RFM分析とCRM</strong>: 最終購買日・頻度・累計金額でランク分け。上位顧客に先行試食会・収穫祭招待でLTV最大化。</li>
+          <li><strong>FCと水平アライアンス</strong>:
+            本部＝戦略・資材・マニュアル / 加盟者＝対面・御用聞き・関係性維持。地元有力企業とコラボ商品（米×豆腐等）で相手EC共同出品。</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- サービス・接客品質標準化（インターナルマーケティング） -->
+    <div class="c-box accent-box">
+      <div class="box-title">
+        <span>🛎️ サービス品質・接客の標準化とインターナルマーケティング</span>
+        <span class="badge-sub">サービス業の急所</span>
+      </div>
+      <div class="grid-3col" style="font-size: 6.3pt;">
+        <div>• <strong>接客マニュアル策定</strong>: 丁寧な挨拶、商品説明、笑顔の接客手順を形式知化し、従業員間の対応バラツキを解消。</div>
+        <div>• <strong>理念共有・ロールプレイング</strong>: 経営理念や商品のこだわりを朝礼・研修で共有し、実践的な接客訓練で対応力を底上げ。</div>
+        <div>• <strong>顧客の声の現場フィードバック</strong>: アンケートや口コミを定期的に共有し、改善提案制度で現場のモチベーションを高める。</div>
+      </div>
+    </div>
+
+    <!-- 本番即応！文字数別 黄金記述フレーズ集 -->
+    <div class="c-box" style="margin-bottom: 0;">
+      <div class="box-title" style="background: #f1f5f9; padding: 1.5px 3px;">
+        <span>🎯 本番即応！事例Ⅱ 文字数別 黄金記述フレーズ集（解答用紙にそのまま叩き込む）</span>
+        <span class="badge-sub">採点官に刺さるキーワード直結</span>
+      </div>
+
+      <div class="grid-2col">
+        <div>
+          <div class="phrase-box">
+            <span class="phrase-tag tag-40">40字</span><strong>イールドマネジメント</strong>：需要の繁閑に応じた変動価格を設定し、閑散期の稼働率向上と繁忙期の客単価を高める。（40字）
+          </div>
+          <div class="phrase-box">
+            <span class="phrase-tag tag-40">40字</span><strong>プライスライニング</strong>：松竹梅の価格設定により極端性回避を促し、高粗利な中位商品への誘導で客単価を上げる。（40字）
+          </div>
+          <div class="phrase-box">
+            <span class="phrase-tag tag-40">40字</span><strong>ターゲット特定構文</strong>：地元在住で健康志向や食の安全に関心が高く、家庭での手作り料理にこだわりを持つ主婦層。（40字）
+          </div>
+          <div class="phrase-box">
+            <span class="phrase-tag tag-50">50字</span><strong>置き配・FC加盟者の施策</strong>：配送前後の電話連絡で安否確認と要望把握を行い、手書きのお礼状を添えて対面同様の関係性を維持する。（48字）
+          </div>
+          <div class="phrase-box">
+            <span class="phrase-tag tag-80">80字</span><strong>直販ECと既存店の競合回避・共存策</strong>：自社ECでは限定品やギフト用高級セットの定価販売に特化し、既存卸・小売店には標準品を供給して棲み分けを図りつつ、Web上で実店舗を案内して相互送客を推進する。（79字）
+          </div>
+        </div>
+
+        <div>
+          <div class="phrase-box">
+            <span class="phrase-tag tag-80">80字</span><strong>Web動画とUGC口コミ促進</strong>：こだわりの製造風景や生産者の声を動画で発信して共感と信頼を獲得し、購入者によるハッシュタグ付き写真投稿キャンペーンを展開してSNS上での口コミ拡散を促す。（78字）
+          </div>
+          <div class="phrase-box">
+            <span class="phrase-tag tag-80">80字</span><strong>顧客DBを活用したCRMとLTV向上</strong>：購買履歴と嗜好を登録した顧客DBに基づき、上位顧客に限定イベント招待や新商品の優先案内を実施して特別感を演出し、双方向の関係性を深めて継続購買とLTV向上を図る。（80字）
+          </div>
+          <div class="phrase-box">
+            <span class="phrase-tag tag-100">100字</span><strong>主婦層向け新製品＆コミュニケーション</strong>：製品戦略は地元産原料を活かしたヘルシースイーツを小分け包装で開発する。プロモーションは主婦層好みのSNSやIMで販売日程やアレンジレシピを発信し、試供品配布で購買と口コミ拡散を促す。（97字）
+          </div>
+          <div class="phrase-box">
+            <span class="phrase-tag tag-100">100字</span><strong>地域企業との全国展開アライアンス</strong>：商品は自社特製豆腐と連携企業の新米を組んだ健康コラボギフトを開発。全国に顧客基盤を持つ地元企業のECサイトへ共同出品し、こだわりストーリー動画を発信して全国の食通層へ訴求し販路を開拓する。（99字）
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- PAGE 3: 事例Ⅲ 生産・技術 完全武装シート -->
+  <!-- ========================================== -->
+  <div class="page case3" id="page-3">
+    <div class="p-header">
+      <div class="p-title-group">
+        <span class="p-case-badge">事例Ⅲ</span>
+        <span class="p-title">生産・技術 直前完全武装ファイナルペーパー</span>
+        <span class="p-subtitle">手作り品質バイアス粉砕・混在管理3本柱・生産統制3点・5S整流化・外注資材・新事業4大フレーム</span>
+      </div>
+      <span class="p-page-num">Page 3 / 4</span>
+    </div>
+
+    <!-- 必達アラート -->
+    <div class="c-box alert-box" style="margin-bottom: 2.5px;">
+      <div class="box-title" style="color: #9a3412; border-color: #fed7aa; background: #fff7ed;">
+        <span>🚨 【事例Ⅲ 最重要死守ルール：手作り品質バイアスの完全粉砕とレイヤー死守】</span>
+        <span class="badge-sub" style="background: #ffedd5; color: #9a3412;">大失点防止</span>
+      </div>
+      <div class="grid-2col" style="gap: 5px;">
+        <div>
+          • <strong class="hl-red">手作り品質バイアスの粉砕</strong>：「中小企業だから品質（手作業・職人技）にこだわるべきだ」は大間違い！手作り固執は属人化でQCD全滅。<strong class="hl-blue">形式知化・標準化・OJT多能工化で組織的均一品質</strong>を低コスト短納期で出すのが真の品質！
+        </div>
+        <div>
+          • <strong class="hl-amber">アウフヘーベン統合構文</strong>：「分業・量産」vs「一貫・職人」で悩むな！
+          👉 <strong class="hl-amber">「標準品は標準化・分業化で若手主体の量産」＋「最高級品・特注・修理は熟練職人が一貫生産」</strong>へ棲み分けよ！事例Ⅱ（接客・販促）への逃げ厳禁！
+        </div>
+      </div>
+    </div>
+
+    <!-- 生産計画・混在管理・生産統制 -->
+    <div class="grid-3col">
+      <!-- 生産計画の3段ロケット -->
+      <div class="c-box amber-box">
+        <div class="box-title">
+          <span>📅 生産計画 改善の3段ロケット</span>
+        </div>
+        <p style="font-size: 6.3pt;">月1回大括り計画 → 割込みで崩壊 → 納期遅れの改善：</p>
+        <ul style="font-size: 6.3pt;">
+          <li><strong>① 計画サイクルの短縮</strong>: 月次から「週次・日次」へ細分化し確定需要を反映。</li>
+          <li><strong>② 確定（フリーズ）期間</strong>: 納期直前は計画変更・特急割込み原則禁止。</li>
+          <li><strong>③ 管理方式の使い分け</strong>:
+            ・<strong>製番管理</strong>: 個別受注・多品種。番号付与で進捗・個別原価追跡。
+            ・<strong>追番管理</strong>: 反復連続生産。累積生産数と差異把握。
+          </li>
+        </ul>
+      </div>
+
+      <!-- 受託×自社混在管理 -->
+      <div class="c-box">
+        <div class="box-title">
+          <span>🏭 受託(OEM)×自社品 混在管理3本柱</span>
+        </div>
+        <ul style="font-size: 6.3pt;">
+          <li><strong>① 生産計画の分離・独立</strong>:
+            ・OEM: 納期厳守の確定受注計画で最優先。
+            ・自社品: 繁閑の谷間を埋める負荷平準化ツールとして見込計画で差し込み。
+          </li>
+          <li><strong>② 設備の物理的ゾーニング</strong>: 専用ライン化・エリア区分で治具・部材の混載取り違え不良を撲滅。</li>
+          <li><strong>③ 遅延差別化（ポストポーンメント）</strong>: 共通部材を先行見込加工 → 最終組立・加飾を受注確定後に行い短納期と在庫削減両立。</li>
+        </ul>
+      </div>
+
+      <!-- 生産統制 3大ツール -->
+      <div class="c-box">
+        <div class="box-title">
+          <span>⏱️ 生産統制 3大ツール＆5S整流化</span>
+        </div>
+        <ul style="font-size: 6.3pt;">
+          <li><strong>① 進捗管理（日程・納期）</strong>: バーコード・タブレットで実績即時収集、計画差異を即是正。</li>
+          <li><strong>② 余力管理（工数・負荷）</strong>: 保有工数と負荷を把握し、多能工応援や外注で山崩し。</li>
+          <li><strong>③ 現品管理（モノ・停滞）</strong>: ロケーション番地管理、先入れ先出し（FIFO）で滞留・探索ゼロ。</li>
+          <li><strong>5Sと整流化</strong>: 定位置・定量表示。モノと情報を一方向に流す整流化で停滞排除。</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 現場改善・暗黙知承継・新分野展開 -->
+    <div class="grid-3col">
+      <!-- 作業・工程改善 -->
+      <div class="c-box">
+        <div class="box-title">
+          <span>🔧 作業・段取・レイアウト改善</span>
+        </div>
+        <ul style="font-size: 6.3pt;">
+          <li><strong>ECRSの原則</strong>: 排除（ムダ運搬・検査・手待ち）→ 結合（工程統合）→ 交換（段取順序最適化）→ 簡素化（治具専用化・ワンタッチ）。</li>
+          <li><strong>内段取りの外段取り化</strong>: 機械停止作業（内段取り）を極小化し、稼働中の事前準備・片付（外段取り）へ移行 → シングル段取（10分未満）。</li>
+          <li><strong>レイアウト変更</strong>: 機能別（錯綜）から<strong>製品別U字ライン</strong>へ再編し運搬短縮・少人数化。</li>
+        </ul>
+      </div>
+
+      <!-- 技術伝承・多能工化 -->
+      <div class="c-box">
+        <div class="box-title">
+          <span>👥 技術伝承と多能工化（4ステップ）</span>
+        </div>
+        <ol style="font-size: 6.3pt;">
+          <li><strong>暗黙知抽出</strong>: 熟練職人の作業風景を動画撮影・ヒアリングでデータ化。</li>
+          <li><strong>標準化・マニュアル化（形式知化）</strong>: 作業手順書・チェックリスト作成。</li>
+          <li><strong>スキルマップ策定</strong>: 技能を客観的に格付け・可視化。</li>
+          <li><strong>計画的OJT・ローテーション</strong>: ペアリング教育で<strong>多能工化</strong> → ボトルネック応援・平準化。</li>
+        </ol>
+      </div>
+
+      <!-- 開発CE・新事業4大フレーム -->
+      <div class="c-box">
+        <div class="box-title">
+          <span>🚀 開発CE＆新事業4大因果フレーム</span>
+        </div>
+        <p style="font-size: 6.3pt;"><strong>コンカレントエンジニアリング (CE)</strong>: 企画初期から製造・品証・購買が並列参画、3D CAD共有で手戻り・試作ロス防止。</p>
+        <p style="font-size: 6.3pt;"><strong>新事業・新分野 4大因果（第4問型）</strong>:</p>
+        <ul style="font-size: 6.2pt;">
+          <li><strong>開発</strong>: 産学・顧客と共同開発、知財確保</li>
+          <li><strong>現場</strong>: 専用ライン区分、新設備・治工具内製</li>
+          <li><strong>品証</strong>: 新基準適合、工程内検査体制確立</li>
+          <li><strong>組織</strong>: 専任PJチーム、外部人材登用</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 資材調達・外注管理の盲点 -->
+    <div class="c-box accent-box">
+      <div class="box-title">
+        <span>📦 資材在庫管理（ABC分析）＆ 外注管理の3大急所</span>
+        <span class="badge-sub">調達ロスの撲滅</span>
+      </div>
+      <div class="grid-2col" style="font-size: 6.3pt;">
+        <div>
+          • <strong>ABC分析在庫管理</strong>: A品（高価・重要）＝定期発注方式で厳格管理 / B品＝発注点方式 / C品（安価汎用ボルト等）＝ツービン法（ダブルビン法）で工数削減。長納期品は内示先行手配。
+        </div>
+        <div>
+          • <strong>外注管理の3大急所</strong>: ①納期管理（発注残・進捗を定期把握） / ②品質管理（受入検査徹底、不良原因のフィードバックと現場技術指導） / ③BCP・価格（複数購買・定期単価見直し）。
+        </div>
+      </div>
+    </div>
+
+    <!-- 本番即応！文字数別 黄金記述フレーズ集 -->
+    <div class="c-box" style="margin-bottom: 0;">
+      <div class="box-title" style="background: #f1f5f9; padding: 1.5px 3px;">
+        <span>🎯 本番即応！事例Ⅲ 文字数別 黄金記述フレーズ集（解答用紙にそのまま叩き込む）</span>
+        <span class="badge-sub">採点官に刺さるキーワード直結</span>
+      </div>
+
+      <div class="grid-2col">
+        <div>
+          <div class="phrase-box">
+            <span class="phrase-tag tag-40">40字</span><strong>内段取りの外段取り化</strong>：金型や資材の事前準備を外段取り化し、機械停止時間を極小化して段取り替えを短縮。（39字）
+          </div>
+          <div class="phrase-box">
+            <span class="phrase-tag tag-40">40字</span><strong>遅延差別化（ポストポーンメント）</strong>：共通部材を見込で先行加工し、受注確定後に最終組立を行い短納期と在庫削減を両立。（39字）
+          </div>
+          <div class="phrase-box">
+            <span class="phrase-tag tag-40">40字</span><strong>生産統制の強化</strong>：作業実績のリアルタイム把握で進捗差異を是正し、多能工の応援で余力を平準化する。（39字）
+          </div>
+          <div class="phrase-box">
+            <span class="phrase-tag tag-80">80字</span><strong>生産計画改善と納期遅延防止</strong>：生産計画のサイクルを月次から週次・日次へ短縮し確定期間を設けるとともに、製造部門と営業部門で進捗状況をリアルタイムに共有し、特急割込みを抑制して工程を安定させる。（80字）
+          </div>
+          <div class="phrase-box">
+            <span class="phrase-tag tag-80">80字</span><strong>熟練職人の暗黙知承継と多能工化</strong>：熟練職人の加工ノウハウを作業手順書や動画で形式知化し、スキルマップに基づく計画的OJTを実施して若手を育成し、多能工化を推進してボトルネック工程の負荷を平準化する。（80字）
+          </div>
+        </div>
+
+        <div>
+          <div class="phrase-box">
+            <span class="phrase-tag tag-80">80字</span><strong>生産統制（進捗・余力・現品）の徹底</strong>：バーコード等で実績を即時収集し差異を迅速是正する進捗管理、多能工の応援で負荷を平準化する余力管理、ロケーション管理による現品管理を徹底し、停滞を排除する。（80字）
+          </div>
+          <div class="phrase-box">
+            <span class="phrase-tag tag-80">80字</span><strong>資材欠品防止と在庫適正化</strong>：ABC分析により重点管理資材を選定し、長リードタイム資材は内示に基づく先行発注を行い、全社的な資材管理システムで在庫と所要量を一元管理して欠品と過剰在庫を防止する。（80字）
+          </div>
+          <div class="phrase-box">
+            <span class="phrase-tag tag-120">120字</span><strong>手作り品質バイアス打破と生産体制</strong>：職人の手作りに頼る属人化を排し、熟練技能の手順書化・標準化とOJTによる若手の多能工化を進める。さらに標準品は分業化と専用ラインで量産し、高級品や修理は熟練職人が担当する住み分け体制を確立し、組織的な品質安定と短納期・低コストを両立する。（120字）
+          </div>
+          <div class="phrase-box">
+            <span class="phrase-tag tag-140">140字</span><strong>新事業参入に向けた生産体制構築</strong>：助言は、①外部研究機関や顧客との共同開発で新製品の基本仕様を早期確立し、②既存工場内に専用ラインを区分設置して受託品との干渉を防ぎ、③新業界の厳格な品質基準に適合する工程内検査体制を構築し、④部門横断プロジェクトを組織して専任人材を配置し、全社一丸で量産立上げを加速すること。（140字）
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- PAGE 4: 事例Ⅳ 財務・会計 完全武装シート -->
+  <!-- ========================================== -->
+  <div class="page case4" id="page-4">
+    <div class="p-header">
+      <div class="p-title-group">
+        <span class="p-case-badge">事例Ⅳ</span>
+        <span class="p-title">財務・会計 直前完全武装ファイナルペーパー</span>
+        <span class="p-subtitle">間接法C/F神速テーブル＆機械的振分・取替投資2列マトリクス・階段CVP・単位即死防止</span>
+      </div>
+      <span class="p-page-num">Page 4 / 4</span>
+    </div>
+
+    <!-- 80分安全航路＆単位即死防止アラート -->
+    <div class="grid-73" style="margin-bottom: 2.5px;">
+      <div class="c-box alert-box">
+        <div class="box-title" style="color: #4338ca; border-color: #c7d2fe; background: #eef2ff;">
+          <span>🚨 【事例Ⅳ 最重要死守ルール：単位即死防止 ＆ 80分安全航路プロトコル】</span>
+          <span class="badge-sub" style="background: #e0e7ff; color: #3730a3;">1マークで即死</span>
+        </div>
+        <div style="font-size: 6.4pt;">
+          • <strong class="hl-red">単位ミス＝即死</strong>：指示が「百万円」か「千円」か「円」か？「％（小数点第2位四捨五入・％表示）」か「回」「日」か？書く直前に<strong class="hl-red">問題文の単位指定を赤丸で囲め！</strong><br>
+          • <strong class="hl-blue">80分安全航路</strong>：第1問（財務分析15分・20点） → 第4問（記述10分・20点） → 第2問・第3問（意思決定/CVP各25分・完答狙わず部分点確保） → 見直し（5分）。
+        </div>
+      </div>
+
+      <div class="c-box">
+        <div class="box-title">
+          <span>🔢 電卓チートシート</span>
+        </div>
+        <div style="font-size: 6.2pt;">
+          • <strong>定数計算</strong>: <span class="formula">1.05 ÷ ÷</span> 画面に「K」 → <span class="formula">=</span> で $1/1.05$、さらに <span class="formula">=</span> で $1/1.05^2$。複利現価を瞬殺！<br>
+          • <strong>GT機能</strong>: 複数年現価を都度足さず <span class="formula">GT</span> 一発で合計NPV！
+        </div>
+      </div>
+    </div>
+
+    <!-- 間接法C/F計算書テーブル＆機械的デフォルト振分ルール -->
+    <div class="c-box accent-box">
+      <div class="box-title">
+        <span>📊 間接法キャッシュフロー計算書 完全テーブル ＆ 特段の指示がないときの【機械的デフォルト振分ルール】</span>
+        <span class="badge-sub">当日迷ったらこれに従え！</span>
+      </div>
+      <div class="grid-64">
+        <!-- C/Fテーブル -->
+        <table>
+          <tr>
+            <th style="width: 65%;">間接法キャッシュフロー 区分・項目名</th>
+            <th style="width: 35%;">符号判定・機械的ルール</th>
+          </tr>
+          <tr class="highlight-row">
+            <td><strong>Ⅰ. 営業活動によるキャッシュフロー</strong></td>
+            <td><strong>本業の資金創出力</strong></td>
+          </tr>
+          <tr>
+            <td>　税引前当期純利益（または当期純利益）</td>
+            <td>損益計算書からそのまま転記</td>
+          </tr>
+          <tr>
+            <td>　加算：減価償却費（非資金費用）</td>
+            <td>必ずプラス（＋加算）</td>
+          </tr>
+          <tr>
+            <td>　売上債権の増減（資産増＝マイナス／減＝プラス）</td>
+            <td>前期比 増加なら(△) 減少なら(+)</td>
+          </tr>
+          <tr>
+            <td>　棚卸資産の増減（資産増＝マイナス／減＝プラス）</td>
+            <td>前期比 増加なら(△) 減少なら(+)</td>
+          </tr>
+          <tr>
+            <td>　仕入債務の増減（負債増＝プラス／減＝マイナス）</td>
+            <td>前期比 増加なら(+) 減少なら(△)</td>
+          </tr>
+          <tr style="background: #fffbeb;">
+            <td>　<strong>その他流動資産の増減</strong>（※前払費用・立替金等）</td>
+            <td><strong>特段の指定がなければ営業CF小計前！</strong></td>
+          </tr>
+          <tr style="background: #fffbeb;">
+            <td>　<strong>その他固定負債の増減</strong>（※退職給付引当金等）</td>
+            <td><strong>特段の指定がなければ営業CF小計前！</strong></td>
+          </tr>
+          <tr style="background: #f1f5f9; font-weight: bold;">
+            <td>　小計</td>
+            <td>上記項目の合算額</td>
+          </tr>
+          <tr>
+            <td>　利息及び配当金の受取額 ／ 利息の支払額</td>
+            <td>営業外損益から機械的判断（受取+／支払△）</td>
+          </tr>
+          <tr>
+            <td>　法人税等の支払額</td>
+            <td>当期法人税等 ± 未払法人税等の増減（△）</td>
+          </tr>
+          <tr class="highlight-row">
+            <td><strong>Ⅱ. 投資活動によるキャッシュフロー</strong></td>
+            <td><strong>将来への投資・資産売買</strong></td>
+          </tr>
+          <tr style="background: #fffbeb;">
+            <td>　固定資産の取得による支出（△）／ 売却による収入（＋）<br>　<strong>その他固定資産の増減 ＆ 特別利益・特別損失</strong></td>
+            <td><strong>特段の指定がなければ【投資活動CF】に含める！</strong><br>（※固定資産売却損益・除却損等のCF影響）</td>
+          </tr>
+          <tr class="highlight-row">
+            <td><strong>Ⅲ. 財務活動によるキャッシュフロー</strong></td>
+            <td><strong>資金調達・返済・配当</strong></td>
+          </tr>
+          <tr>
+            <td>　短期・長期借入金の増減（借入＋／返済△）、配当金支払（△）</td>
+            <td>B/S借入金差額、剰余金処分から算出</td>
+          </tr>
+        </table>
+
+        <!-- 機械的判断まとめ・注意点 -->
+        <div>
+          <div class="c-box blue-box" style="margin-bottom: 2px;">
+            <div class="box-title" style="color: #1e40af;">
+              <span>🤖 特段の指示がないときの【6大機械的判断ルール】</span>
+            </div>
+            <ol style="font-size: 6.2pt; padding-left: 9px;">
+              <li><strong>特別利益・特別損失</strong>: すべて<strong class="hl-red">【投資活動CF】</strong>に含めて整理する（※事業用固定資産の売却・除却に伴うものが多いため）。</li>
+              <li><strong>その他流動資産の増減</strong>: 原則として<strong class="hl-blue">【営業CFの小計以前】</strong>に含める（資産増＝マイナス）。</li>
+              <li><strong>その他固定負債の増減</strong>: 原則として<strong class="hl-blue">【営業CFの小計以前】</strong>に含める（負債増＝プラス）。</li>
+              <li><strong>その他固定資産の増減</strong>: 原則として<strong class="hl-red">【投資活動CF】</strong>に含める。</li>
+              <li><strong>営業外費用</strong>: 別段の明記がなければ<strong class="hl-green">その全てを「支払利息」</strong>として扱う。</li>
+              <li><strong>営業外収益</strong>: 別段の明記がなければ<strong class="hl-green">その全てを「受取利息」</strong>として扱う。</li>
+            </ol>
+          </div>
+
+          <div class="c-box amber-box" style="margin-bottom: 0;">
+            <div class="box-title" style="color: #854d0e;">
+              <span>⚠️ 間接法C/Fの符号ミス防止 呪文</span>
+            </div>
+            <div style="font-size: 6.1pt; line-height: 1.22;">
+              • <strong>資産の増加＝キャッシュのマイナス(△)</strong>（モノや債権を買い込んで資金が出た）<br>
+              • <strong>負債の増加＝キャッシュのプラス(+)</strong>（ツケで買って資金が手元に残った）<br>
+              • <strong>費用加算</strong>: 減価償却費・固定資産売却損はP/Lで利益を減らしているが資金流出はないため<strong>「プラス(+)加算」</strong>！
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 取替投資マトリクス＆CVP全体適用 -->
+    <div class="grid-2col">
+      <!-- 取替投資 2列新旧比較マトリクス -->
+      <div class="c-box">
+        <div class="box-title">
+          <span>⚙️ 取替投資の意思決定（2列新旧比較マトリクス ＆ 差額アプローチ）</span>
+        </div>
+        <p style="font-size: 6.3pt;"><strong>差額CFの計算式</strong>: <span class="formula">差額CF = (Δ売上 - Δ現金支出費用)(1 - t) + Δ減価償却費 × t</span></p>
+        <table>
+          <tr>
+            <th>項目</th>
+            <th>① 旧機械継続案</th>
+            <th>② 新機械導入案</th>
+            <th>差額 (② - ①)</th>
+          </tr>
+          <tr>
+            <td>初期投資 (t=0)</td>
+            <td>0</td>
+            <td>新機械取得額 (△)</td>
+            <td>新投資支出 (△)</td>
+          </tr>
+          <tr>
+            <td>旧機売却 (t=0)</td>
+            <td>0</td>
+            <td>売却額 ＋ 売却損税効果(TS)</td>
+            <td>売却手取額 (＋)</td>
+          </tr>
+          <tr>
+            <td>各年営業CF</td>
+            <td>旧営業利益(1-t)＋旧償却</td>
+            <td>新営業利益(1-t)＋新償却</td>
+            <td><strong>増分営業CF</strong></td>
+          </tr>
+          <tr>
+            <td>償却TS差額</td>
+            <td>旧償却費 × t</td>
+            <td>新償却費 × t</td>
+            <td><strong>差額償却 × t</strong></td>
+          </tr>
+        </table>
+        <div style="font-size: 6.2pt; color: #475569;">
+          ※旧機械除却損/売却損のタックスシールド: <span class="formula">(残存簿価 - 売却額) × 税率 t</span> （t=0で現金流入＋）
+        </div>
+      </div>
+
+      <!-- 階段型CVP＆財務比率 -->
+      <div class="c-box">
+        <div class="box-title">
+          <span>📈 階段型CVP全体適用 ＆ 経営指標公式集</span>
+        </div>
+        <div style="background: #f1f5f9; padding: 1.5px 3px; border-radius: 2px; margin-bottom: 1.5px; font-size: 6.2pt;">
+          <strong>【階段型固定費 全体適用ルール】</strong><br>
+          売上高や生産量がキャパ（例: 8,000個）を超えると、追加固定費が発生し<strong>全社固定費全体がステップアップ</strong>する！<br>
+          👉 損益分岐点売上高 <span class="formula">S* = (基本FC + 追加FC) ÷ (1 - 変動費率)</span> を全体適用して再計算！
+        </div>
+        <table style="font-size: 6.2pt;">
+          <tr>
+            <th>指標区分</th>
+            <th>指標名</th>
+            <th>計算式（公式）</th>
+          </tr>
+          <tr>
+            <td rowspan="2"><strong>収益性</strong></td>
+            <td>売上高総利益率 / 営業利益率</td>
+            <td><span class="formula">売上総利益 ÷ 売上高 × 100</span> / <span class="formula">営業利益 ÷ 売上高 × 100 (%)</span></td>
+          </tr>
+          <tr>
+            <td>総資本経常利益率 (ROA)</td>
+            <td><span class="formula">経常利益 ÷ 総資産 × 100 (%)</span></td>
+          </tr>
+          <tr>
+            <td rowspan="2"><strong>効率性</strong></td>
+            <td>売上債権 / 棚卸資産回転期間</td>
+            <td><span class="formula">売上債権 ÷ (売上高 ÷ 12)</span> / <span class="formula">棚卸資産 ÷ (売上高 ÷ 12) (月)</span></td>
+          </tr>
+          <tr>
+            <td>有形固定資産回転率</td>
+            <td><span class="formula">売上高 ÷ 有形固定資産 (回)</span></td>
+          </tr>
+          <tr>
+            <td rowspan="2"><strong>安全性</strong></td>
+            <td>流動比率 / 当座比率</td>
+            <td><span class="formula">流動資産 ÷ 流動負債 × 100</span> / <span class="formula">当座資産 ÷ 流動負債 × 100 (%)</span></td>
+          </tr>
+          <tr>
+            <td>自己資本比率 / 固定長期適合率</td>
+            <td><span class="formula">純資産 ÷ 総資産 × 100</span> / <span class="formula">固定資産 ÷ (自己資本 + 固定負債) × 100 (%)</span></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- 本番即応！記述対策フレーズ＆セールスミックス -->
+    <div class="c-box" style="margin-bottom: 0;">
+      <div class="box-title" style="background: #f1f5f9; padding: 1.5px 3px;">
+        <span>🎯 第4問 記述対策 黄金改善フレーズ ＆ セールスミックス（制約条件の限界利益最大化）</span>
+        <span class="badge-sub">部分点を確実に奪取</span>
+      </div>
+      <div class="grid-4col" style="font-size: 6.3pt;">
+        <div class="phrase-box">
+          <strong>収益性改善（利益向上）</strong><br>
+          不採算品の統廃合、高付加価値製品へのシフトによる粗利益率向上、販売価格の適正化、歩留まり改善による売上原価の圧縮を図る。
+        </div>
+        <div class="phrase-box">
+          <strong>効率性改善（資産圧縮）</strong><br>
+          適正在庫管理による棚卸資産の圧縮、遊休固定資産の売却・処分、売掛金回収サイクルの短縮により総資産回転率を向上させる。
+        </div>
+        <div class="phrase-box">
+          <strong>安全性改善（負債圧縮）</strong><br>
+          創出した営業キャッシュフローや資産売却資金を有利子負債の返済に充当し、支払利息負担を軽減して財務安全性を高める。
+        </div>
+        <div class="phrase-box" style="background: #eff6ff; border-color: #bfdbfe;">
+          <strong>セールスミックスの鉄則</strong><br>
+          制約資源（機械時間等）が存在する場合、製品単体の限界利益ではなく<strong>「制約資源1単位あたりの限界利益」</strong>が大きい順に生産・販売枠を割り当てる！
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
