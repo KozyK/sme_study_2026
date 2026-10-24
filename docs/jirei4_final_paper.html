@@ -38,9 +38,9 @@
 <body>
 <a href="index.html" class="back-link">← ポータルに戻る</a>
 <div class="content">
-<h1>事例Ⅳ 直前総点検ファイナルペーパー（A4ギッシリ・完全武装シート）</h1>
+<h1>📘 事例Ⅳ 直前総点検ファイナルペーパー（超高密度・完全武装シート）</h1>
 <hr />
-<h2>📌 【最重要】過去10年の盲点公式＆計算ロジック（知らんと即死の10大定理）</h2>
+<h2>📌 【最重要】過去10年の盲点公式＆計算ロジック（知らんと即死の12大定理）</h2>
 <h3>1. 企業価値・現在価値・配当割引モデル</h3>
 <ul>
 <li><strong>永久年金の現在価値</strong>:
@@ -48,91 +48,205 @@
   ※一定のCFが永久に続くと仮定する場合（継続価値・ターミナルバリューの基礎）。</li>
 <li><strong>定率成長モデル（ゴードン成長モデル）</strong>:
   $$PV = \frac{CF_1}{r - g} = \frac{CF_0 \times (1 + g)}{r - g}$$
-  ※CFが毎年一定率 $g$ で永久成長する場合。$r &gt; g$ が必須条件。</li>
+  ※CFが毎年一定率 $g$ で永久成長する場合。$r &gt; g$ が必須条件。分母は「資本コスト $-$ 成長率」。</li>
 <li><strong>フリーキャッシュフロー（FCF）の定義式</strong>:
   $$\text{FCF} = \text{営業利益} \times (1 - \text{税率 } t) + \text{減価償却費} - \text{設備投資} - \Delta\text{運転資本}$$
-  ※「営業CF $-$ 投資CF」の実務簡便型。受取利息や支払利息などの財務活動は除外する。</li>
+  ※「営業CF $-$ 投資CF」の実務簡便型。支払利息や受取利息などの財務活動は除外する。</li>
 <li><strong>WACC（加重平均資本コスト）</strong>:
   $$WACC = r_e \times \frac{E}{D+E} + r_d \times (1 - t) \times \frac{D}{D+E}$$
-  ※負債コスト $r_d$ にのみ「$(1 - t)$（節税効果）」を掛ける。株主資本コスト $r_e$ には掛けない！</li>
+  ※負債コスト $r_d$ にのみ「$(1 - t)$（節税効果）」を掛ける。株主資本コスト $r_e$ には絶対に掛けない！</li>
 <li><strong>CAPM（資本資産評価モデル）</strong>:
   $$r_e = r_f + \beta \times (r_m - r_f)$$
-  ※$r_f$: 安全資産利子率、$r_m$: 市場ポートフォリオ期待収益率、$(r_m - r_f)$: マーケット・リスクプレミアム。</li>
+  ※$r_f$: 安全資産利子率、$r_m$: 市場期待収益率、$(r_m - r_f)$: マーケット・リスクプレミアム。</li>
 </ul>
 <hr />
-<h3>2. 付加価値額・生産性指標（H29・R1等頻出）</h3>
+<h3>2. 取替投資（設備更新）差額キャッシュフローの黄金マトリクス（令和3年猛反省論点）</h3>
+<p>取替投資は「新設備を導入した世界線」と「旧設備を継続使用した世界線」の<strong>【差額（増分CF）】</strong>で計算する！
+頭の中だけで解かず、必ず下書き用紙に以下の<strong>2列マトリクス</strong>を書くこと：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">① 新設備導入案</th>
+<th style="text-align: left;">② 旧設備継続案</th>
+<th style="text-align: left;">差額（① − ②：増分CF）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>0年目初期投資</strong></td>
+<td style="text-align: left;">新設備の取得原価（支出）</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;"><strong>− 新設備取得原価 ＋ 旧設備売却時CF</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>現金営業利益</strong></td>
+<td style="text-align: left;">新設備の現金利益</td>
+<td style="text-align: left;">旧設備の現金利益</td>
+<td style="text-align: left;"><strong>差額現金営業利益 $\times (1 - t)$</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>減価償却費</strong></td>
+<td style="text-align: left;">新設備の年間償却費</td>
+<td style="text-align: left;">旧設備の年間償却費</td>
+<td style="text-align: left;"><strong>【差額減価償却費】$\times t$ （※超頻出罠！）</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>旧設備売却損益</strong></td>
+<td style="text-align: left;">期首に旧設備を売却</td>
+<td style="text-align: left;">なし（継続使用）</td>
+<td style="text-align: left;"><strong>$(\text{旧設備簿価} - \text{売却価額}) \times t$ （※売却損なら＋）</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[!WARNING]
+<strong>【知らんと即死の取替投資トラップ】</strong>
+1. <strong>差額減価償却タックスシールド</strong>: 新設備の減価償却費丸ごとに税率を掛けてはならない！旧設備を使い続けても得られていた減価償却費を差し引いた<strong>差額（$1,500\text{万円}$ 等）に対して税率30%（$450\text{万円}$）を計上</strong>すること！
+2. <strong>売却損タックスシールド</strong>: 「簿価 $&gt;$ 売却額」のとき、売却損により税金が安くなるため<strong>必ず初年度CFにキャッシュイン（プラス）</strong>として加算する！</p>
+</blockquote>
+<hr />
+<h3>3. CVP・営業レバレッジ・段階的価格変動モデル</h3>
+<ul>
+<li><strong>営業レバレッジ（DOL: Degree of Operating Leverage）</strong>:
+  $$DOL = \frac{\text{限界利益}}{\text{営業利益}} = \frac{\text{売上高} - \text{変動費}}{\text{売上高} - \text{変動費} - \text{固定費}} = \frac{1}{\text{安全余裕率}}$$</li>
+<li><strong>解釈</strong>: 固定費比率が高い企業ほどDOLが大きくなり、売上増加時の利益増大効果が高い反面、減収時の赤字リスクが高い（ハイリスク・ハイリターン構造）。</li>
+<li><strong>安全余裕率と損益分岐点比率</strong>:
+  $$\text{安全余裕率} = \frac{\text{売上高} - \text{損益分岐点売上高}}{\text{売上高}} \times 100\% = 1 - \text{損益分岐点比率}$$</li>
+<li><strong>目標営業利益を達成する売上高</strong>:
+  $$\text{目標売上高} = \frac{\text{固定費} + \text{目標営業利益}}{\text{限界利益率}}$$
+  ※「税引後当期純利益」が指定された場合は、$\text{目標営業利益} = \frac{\text{目標純利益}}{1 - t}$ で税引前に戻してから分子に足す！</li>
+<li><strong>階段型価格変動モデルの判定ルール（令和3年第3問完答の神技）</strong>:</li>
+<li>注記を確認：「販売数量全体に該当区分の単価が適用（全体適用型）」か、「超過分のみに適用（超過累進型）」か。</li>
+<li>境界値（2万kg、3万kg等）を代入して利益を検算し、目標利益がどのステージに属するかを特定してから方程式を解く。</li>
+<li>端数処理指示が「切り上げ」なら、1kgでも端数が出たら切り上げる（例: $38,571.42 \to \mathbf{38,572\text{kg}}$）。</li>
+</ul>
+<hr />
+<h3>4. 制約条件下の最適セールスミックス（令和4年・令和7年頻出）</h3>
+<ul>
+<li><strong>判定基準</strong>: 「製品単価」や「製品1個あたり限界利益」ではなく、<strong>【制約条件1単位あたりの限界利益】</strong>が高い順に優先生産する！
+  $$\text{優先度} = \frac{\text{製品1個あたり限界利益}}{\text{製品1個あたり制約資源使用量（機械時間・職人作業時間など）}}$$</li>
+<li><strong>手順</strong>:</li>
+<li>優先順位第1位の製品を需要上限まで全量生産する。</li>
+<li>残余の制約資源（残り時間など）を、優先順位第2位の製品に投入する。</li>
+<li>固定費は埋没原価として扱い、セールスミックスの順位付けには一切影響させない。</li>
+</ul>
+<hr />
+<h3>5. 付加価値額・生産性指標（H29・R1頻出）</h3>
 <ul>
 <li><strong>中小企業庁方式（加算法）★最頻出</strong>:
   $$\text{付加価値額} = \text{営業利益} + \text{人件費} + \text{減価償却費}$$
-  ※試験ではこの3要素簡易型が鉄板。問題文に賃借料や租税公課等の指示があれば加算する。</li>
+  ※問題文に賃借料や租税公課等の指示があれば加算する。</li>
 <li><strong>日銀方式（控除法）</strong>:
   $$\text{付加価値額} = \text{売上高} - \text{外部購入価値（材料費・外注費・仕入原価など）}$$</li>
 <li><strong>労働生産性（2分解公式）</strong>:
   $$\text{労働生産性} = \frac{\text{付加価値額}}{\text{従業員数}} = \frac{\text{売上高}}{\text{従業員数}} \times \frac{\text{付加価値額}}{\text{売上高（付加価値率）}}$$</li>
 <li><strong>労働分配率</strong>:
-  $$\text{労働分配率} = \frac{\text{人件費}}{\text{付加価値額}} \times 100\%$$
-  ※稼いだ付加価値のうち、どれだけ従業員に還元されたかを示す指標。</li>
+  $$\text{労働分配率} = \frac{\text{人件費}}{\text{付加価値額}} \times 100\%$$</li>
 </ul>
 <hr />
-<h3>3. CVP・営業レバレッジ・感応度</h3>
+<h3>6. 経営分析・財務比率の盲点と単位即死トラップ防止表</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">指標名</th>
+<th style="text-align: left;">計算公式</th>
+<th style="text-align: center;">単位</th>
+<th style="text-align: left;">判定基準・意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>棚卸資産回転率</strong></td>
+<td style="text-align: left;">$\text{売上高} \div \text{棚卸資産}$</td>
+<td style="text-align: center;"><strong>回</strong></td>
+<td style="text-align: left;">高いほど鮮度管理・在庫効率が良好（生鮮スーパー等）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>売上債権回転期間</strong></td>
+<td style="text-align: left;">$\text{売上債権} \div (\text{売上高} / 365)$</td>
+<td style="text-align: center;"><strong>日（月）</strong></td>
+<td style="text-align: left;">短いほど売掛金の回収が速く資金繰りが健全</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>負債比率</strong></td>
+<td style="text-align: left;">$\text{負債合計} \div \text{自己資本（純資産）} \times 100$</td>
+<td style="text-align: center;"><strong>％</strong></td>
+<td style="text-align: left;">100%以下が健全。400%超は過大な借入金リスク</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>当座比率</strong></td>
+<td style="text-align: left;">$\text{当座資産} \div \text{流動負債} \times 100$</td>
+<td style="text-align: center;"><strong>％</strong></td>
+<td style="text-align: left;">100%以上が望ましい。棚卸資産を除いた超短期支払能力</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>固定長期適合率</strong></td>
+<td style="text-align: left;">$\text{固定資産} \div (\text{自己資本} + \text{固定負債}) \times 100$</td>
+<td style="text-align: center;"><strong>％</strong></td>
+<td style="text-align: left;">100%以下が必須。固定資産を長期安定資金で賄えているか</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>インタレスト・カバレッジ</strong></td>
+<td style="text-align: left;">$(\text{営業利益} + \text{受取利息配当金}) \div \text{支払利息}$</td>
+<td style="text-align: center;"><strong>倍</strong></td>
+<td style="text-align: left;">1.0倍未満は営業利益で利息すら払えない危険水準</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>所要運転資金</strong></td>
+<td style="text-align: left;">$\text{売上債権} + \text{棚卸資産} - \text{仕入債務}$</td>
+<td style="text-align: center;"><strong>円/千円</strong></td>
+<td style="text-align: left;">売上急増時にこれが膨らむと「黒字倒産」の危機</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[!CAUTION]
+<strong>【単位の即死トラップ】</strong>
+- 回転率の欄に「％」と書いたら一発ゼロ点！必ず「<strong>回</strong>」と書く。
+- 回転期間の欄には「<strong>日</strong>」または「<strong>ヶ月</strong>」（問題文指定に従う）。
+- 金額単位は「<strong>円</strong>」「<strong>千円</strong>」「<strong>百万円</strong>」を絶対に問題文と見比べること！</p>
+</blockquote>
+<hr />
+<h2>📝 【超実戦】たまに出て知らんと詰む記述問題・模範フレーズ集（40字・80字仕様）</h2>
+<h3>① 赤字事業・店舗撤退の意思決定（令和3年・令和5年）</h3>
 <ul>
-<li><strong>営業レバレッジ（DOL: Degree of Operating Leverage）</strong>:
-  $$DOL = \frac{\text{限界利益}}{\text{営業利益}} = \frac{\text{売上高} - \text{変動費}}{\text{売上高} - \text{変動費} - \text{固定費}} = \frac{1}{\text{安全余裕率}}$$</li>
-<li><strong>意味</strong>: 売上高が1%変化した時に、営業利益が何%変化するかを示す感応度指標。</li>
-<li><strong>解釈</strong>: 固定費比率が高い企業ほどDOLが大きくなり、売上増加時の利益増大効果が高い反面、減収時の赤字リスクが高い（ハイリスク・ハイリターン構造）。</li>
-<li><strong>安全余裕率</strong>:
-  $$\text{安全余裕率} = \frac{\text{売上高} - \text{損益分岐点売上高}}{\text{売上高}} \times 100\% = 1 - \text{損益分岐点比率}$$</li>
-<li><strong>目標営業利益を達成する売上高</strong>:
-  $$\text{目標売上高} = \frac{\text{固定費} + \text{目標営業利益}}{\text{限界利益率}}$$
-  ※税引後当期純利益が指定された場合は、$\frac{\text{目標純利益}}{1 - t}$ で目標営業利益に換算してから分子に足す！</li>
+<li><strong>Q. 赤字部門の撤退を判断する際の財務的注意点は？</strong></li>
+<li><strong>【40字】</strong>:
+    &gt; 「共通費の配賦額に惑わされず、当該部門の個別固定費と貢献利益の多寡で判断する点。」（39字）</li>
+<li><strong>【80字】</strong>:
+    &gt; 「注意点は、部門撤退後も残余する全社共通固定費の配賦額を除外し、当該部門が稼ぎ出している貢献利益が部門個別固定費を上回っている（部門利益プラス）か否かで判断する点。」（80字）</li>
+<li><strong>Q. 赤字事業を継続することが企業価値を低下させない理由は？（令和3年第4問）</strong></li>
+<li><strong>【40字】</strong>:
+    &gt; 「顧客との接点維持による地域信頼獲得と、主力事業への送客シナジーが期待できる点。」（39字）</li>
 </ul>
 <hr />
-<h3>4. 意思決定会計・取替投資NPVの「知らんと即死」トラップ</h3>
-<ol>
-<li><strong>既存設備の売却損タックスシールド（CFプラス）</strong>:
-   $$\text{売却時CF} = \text{売却価額} + (\text{残存簿価} - \text{売却価額}) \times \text{税率 } t$$
-   ※「残存簿価 $&gt;$ 売却額」のとき売却損が発生し、税金が安くなるため<strong>必ずキャッシュイン（プラス）</strong>として計算する！</li>
-<li><strong>初期投資時の運転資本増加と「最終年の全額回収」</strong>:</li>
-<li>初期（0年目）または増産時：運転資本増加額は<strong>キャッシュアウト（マイナス）</strong>。</li>
-<li>プロジェクト終了時（最終年）：投じた運転資本は在庫の換金や売掛金回収により、<strong>同額がキャッシュイン（プラス）</strong>として戻ってくる！忘れずに足すこと。</li>
-<li><strong>減価償却費の「二重控除」の罠</strong>:
-   税引後利益を出す時に減価償却費を引いた後、CFを求める際には<strong>「＋減価償却費」で足し戻す</strong>こと（非資金費用のため）。</li>
-</ol>
-<hr />
-<h3>5. 経営分析・財務比率の盲点</h3>
+<h3>② 自動化・省力化設備（セルフレジ等）導入の財務的影響（令和3年第2問）</h3>
 <ul>
-<li><strong>インタレスト・カバレッジ・レシオ（ICR）</strong>:
-  $$ICR = \frac{\text{営業利益} + \text{受取利息配当金}}{\text{支払利息割引料}} \quad (\text{倍})$$
-  ※1.0倍未満は営業利益で利息すら払えていない危険状態。借入過大企業の分析で必須。</li>
-<li><strong>固定長期適合率（100%以下が健全）</strong>:
-  $$\text{固定長期適合率} = \frac{\text{固定資産}}{\text{自己資本} + \text{固定負債}} \times 100\%$$
-  ※固定比率（固定資産 / 自己資本）が100%を超えていても、固定長期適合率が100%以内なら長期資金でカバーできている。</li>
-<li><strong>所要運転資金（正味運転資本）</strong>:
-  $$\text{運転資金} = \text{売上債権} + \text{棚卸資産} - \text{仕入債務}$$
-  ※売上急増時にこれが膨らむと「黒字倒産・資金ショート」の危機に陥る。</li>
+<li><strong>Q. 自動化設備導入による財務的メリットは？</strong></li>
+<li><strong>【40字】</strong>:
+    &gt; 「変動費である人件費を削減し限界利益率を高め、損益分岐点比率を引き下げる点。」（38字）</li>
+<li><strong>Q. 自動化設備導入の財務的リスク（営業レバレッジ）は？</strong></li>
+<li><strong>【80字】</strong>:
+    &gt; 「設備の減価償却費等の固定費が増加し営業レバレッジが高まるため、売上高が減少した際に利益が急激に悪化し、固定費を回収できず赤字に転落しやすいリスクがある。」（77字）</li>
+<li><strong>Q. フルセルフレジ導入の定性的リスクは？（令和3年第2問設問3）</strong></li>
+<li><strong>【80字】</strong>:
+    &gt; 「高齢顧客の操作戸惑いに伴うレジ混雑・客離れリスク、未精算や盗難に伴う商品ロスの増加、および機器トラブルや釣銭切れ対応に伴う現場従業員のオペレーション負担増である。」（80字）</li>
 </ul>
 <hr />
-<h2>📝 【超実戦】たまに出て知らんと詰む記述問題・模範フレーズ集（本番40字・80字仕様）</h2>
-<h3>① 事業部制・業績評価・管理可能利益</h3>
+<h3>③ 事業部制・業績評価・管理可能利益（令和5年・令和6年）</h3>
 <ul>
 <li><strong>Q. 事業部の業績評価を全社営業利益ではなく「管理可能利益」とするメリットは？</strong></li>
 <li><strong>【40字】</strong>:
     &gt; 「事業部長の裁量・統制範囲に限定して公正に評価し、責任の明確化と士気向上を図る点。」（40字）</li>
 <li><strong>【80字】</strong>:
     &gt; 「事業部長が統制できない全社共通費の配賦額を除外し、自己の裁量範囲の実績のみで公正に評価することで、事業部長のモラール向上と権限・責任の一致を図れるメリットがある。」（80字）</li>
-<li><strong>Q. 事業部評価に「ROI（投下資本利益率）」を用いるメリット・デメリットは？</strong></li>
-<li><strong>【40字メリット】</strong>:
-    &gt; 「事業部規模の大小に関わらず、投下資本に対する収益性を客観的に比較評価できる点。」（39字）</li>
-<li><strong>【80字デメリット（投資の過小インセンティブ）】</strong>:
-    &gt; 「全社的には資本コストを上回る有利な投資であっても、自事業部の現行ＲＯＩを下回る場合は事業部長が投資を却下してしまう、全社最適と事業部最適の不一致を招く点である。」（80字）</li>
-<li><strong>Q. 「残余利益（RI ＝ 事業部利益 − 投下資本×資本コスト）」を用いるメリットは？</strong></li>
-<li><strong>【40字】</strong>:
-    &gt; 「資本コストを上回る投資の採択を促し、事業部目標と全社最適を完全に一致させる点。」（39字）</li>
+<li><strong>Q. 事業部評価に「ROI」ではなく「残余利益（RI）」を用いるメリットは？</strong></li>
 <li><strong>【80字】</strong>:
-    &gt; 「資本コストを超える絶対額の利益創出を促すため、自事業部の利益率低下を理由とする優良投資の却下を防ぎ、事業部の投資判断を全社最適の企業価値向上に連動させられる点。」（80字）</li>
+    &gt; 「資本コストを超える絶対額の利益創出を促すため、自事業部の利益率低下を理由とする優良投資の却下（投資の過小インセンティブ）を防ぎ、全社最適な投資判断を促せる点。」（80字）</li>
 </ul>
 <hr />
-<h3>② 内部振替価格（トランスファー・プライシング）</h3>
+<h3>④ 内部振替価格（市価基準・原価基準）</h3>
 <ul>
 <li><strong>Q. 内部振替価格を「市価基準」とするメリット・デメリットは？</strong></li>
 <li><strong>【40字メリット】</strong>:
@@ -141,7 +255,7 @@
     &gt; 「外部市場が存在しない独自部品では適用できず、事業部間で利益配分を巡る対立が生じ、全社最適な購買・販売行動が阻害されるセクショナリズムを生むデメリットがある。」（79字）</li>
 </ul>
 <hr />
-<h3>③ 海外進出・国際財務・為替リスク</h3>
+<h3>⑤ 海外進出・国際財務・為替リスク</h3>
 <ul>
 <li><strong>Q. 海外進出（現地工場設立・海外子会社）に伴う財務的リスクは？</strong></li>
 <li><strong>【40字】</strong>:
@@ -151,60 +265,46 @@
 <li><strong>Q. 為替変動リスクを低減するための財務的対応策は？</strong></li>
 <li><strong>【40字】</strong>:
     &gt; 「先物為替予約や通貨オプションの締結、同一通貨間でのマリーやネッティングである。」（39字）</li>
-<li><strong>【80字】</strong>:
-    &gt; 「対応策は、先物為替予約や通貨オプション等の金融取引によるヘッジと、同一通貨間での債権債務の相殺（マリー・ネッティング）や外貨建て決済比率の調整等の内部管理である。」（79字）</li>
 </ul>
 <hr />
-<h3>④ 省力化投資・固定費化の財務的影響（セルフレジ・自動化設備等）</h3>
-<ul>
-<li><strong>Q. 自動化設備（セルフレジ等）導入による財務的メリットとリスクは？</strong></li>
-<li><strong>【40字メリット】</strong>:
-    &gt; 「変動費である人件費を削減し限界利益率を高め、損益分岐点比率を引き下げる点。」（38字）</li>
-<li><strong>【80字リスク（固定費増加・営業レバレッジ増大）】</strong>:
-    &gt; 「設備の減価償却費等の固定費が増加し営業レバレッジが高まるため、売上高が減少した際に利益が急激に悪化し、固定費を回収できず赤字に転落しやすいリスクがある。」（77字）</li>
-</ul>
-<hr />
-<h3>⑤ 赤字事業・店舗撤退の意思決定</h3>
-<ul>
-<li><strong>Q. 赤字部門の撤退を判断する際の財務的注意点は？</strong></li>
-<li><strong>【40字】</strong>:
-    &gt; 「共通費の配賦額に惑わされず、当該部門の個別固定費と貢献利益の多寡で判断する点。」（39字）</li>
-<li><strong>【80字】</strong>:
-    &gt; 「注意点は、部門撤退後も残余する全社共通固定費の配賦額を除外し、当該部門が稼ぎ出している貢献利益が部門個別固定費を上回っている（部門利益プラス）か否かで判断する点。」（80字）</li>
-</ul>
-<hr />
-<h2>⏱️ 【試験開始3分間の行動様式】電卓・タイムライン・見直しの鉄則</h2>
-<h3>1. 問題冊子を開いたら最初に行う「3つのルーティン」</h3>
-<ol>
-<li><strong>第1問〜第4問の配点とテーマの俯瞰（1分）</strong>:</li>
-<li>第1問：経営分析（20〜25点）</li>
-<li>第2問：CVP・最適セールスミックス・業務的意思決定（20〜30点）</li>
-<li>第3問：設備投資NPV・取替投資・意思決定（25〜35点）</li>
-<li>第4問：財務記述・戦略的助言（15〜20点）</li>
-<li><strong>「端数処理」と「単位」を赤ペンで二重丸（30秒）</strong>:</li>
-<li>「小数点第3位を四捨五入して第2位まで」「千円未満四捨五入」「百万円単位」「％表示」など。<strong>事例Ⅳ失点の3割は端数処理ルール違反</strong>です！</li>
-<li><strong>時間配分の決定</strong>:</li>
-<li>経営分析：15分〜20分強制完答</li>
-<li>記述問題：先に骨子メモ（10分）</li>
-<li>残り50分を計算大問（第2問・第3問）に配分。</li>
-</ol>
-<h3>2. NPVタイムラインの神速描画ルール</h3>
-<p>計算用紙の上部に、必ず以下の縦軸ラインを描く：</p>
-<pre><code class="language-text">年数:      0年目       1年目       2年目       ...      最終N年目
-----------------------------------------------------------------------
-投資/回収: [-初期投資]                               [+運転資本回収]
-税引後利益:            [営業利益(1-t)]                [営業利益(1-t)]
-タックスS:             [+減価償却×t]                  [+減価償却×t]
-残存売却:                                            [+売却額+(簿価-売却)×t]
-----------------------------------------------------------------------
-合計CF:    [ -CF0 ]    [ +CF1 ]    [ +CF2 ]           [ +CF_N ]
-現価係数:  ×1.0        ×(1+r)^-1   ×(1+r)^-2          ×(1+r)^-N
+<h2>⏱️ 【本番80分で確実に70点を死守する】安全航路プロトコル</h2>
+<p>多くの受験生が事例Ⅳで爆死する原因は、<strong>「第2問の難問NPVに突っ込み、計算が合わずにパニックになって40分浪費し、後半のCVPや記述が白紙になること」</strong>です。
+コウジさんが総合72点を叩き出した以下の「安全航路プロトコル」を忠実に実行してください：</p>
+<pre><code class="language-mermaid">graph TD
+    A[&quot;開始0〜20分：第1問 経営分析&quot;] --&gt;|指標15点＋記述12点＝27点確保| B[&quot;20〜40分：第3問 CVP分析&quot;]
+    B --&gt;|定型計算を完走し20点満点確保| C[&quot;40〜55分：第4問 財務記述&quot;]
+    C --&gt;|管理会計用語を散りばめ15点確保| D[&quot;★開始55分で計62点（合格確定！）&quot;]
+    D --&gt; E[&quot;55〜75分：第2問 難問NPV&quot;]
+    E --&gt;|部分点（売却損TS・投資判定等）で10点回収| F[&quot;75〜80分：見直し（単位・端数・符号）&quot;]
+    F --&gt; G[&quot;【合計72点】堂々のA判定合格！&quot;]
 </code></pre>
-<h3>3. 電卓の3大ミス撲滅手順</h3>
+<h3>1. 開始直後の3分間ルーティン</h3>
+<ol>
+<li><strong>配点とテーマの俯瞰（1分）</strong>: 全問をパラパラめくり、CVPや記述の位置を確認。</li>
+<li><strong>端数処理と単位の蛍光ペンマーク（30秒）</strong>: 「小数点第3位四捨五入」「切り上げ」「千円単位」に二重丸。</li>
+<li><strong>電卓のAC連打とGTクリア（30秒）</strong>: 画面に不要なメモリー（M）や定数（K）が残っていないか指差し確認。</li>
+<li><strong>深呼吸（1分）</strong>: 脈拍を整え、第1問のB/S・P/Lをぼんやり眺めてビジネスの業種・規模を把握する。</li>
+</ol>
+<hr />
+<h2>🧮 【電卓神速チートシート】ミスをゼロにするメモリ＆定数操作法</h2>
+<h3>1. 複利割引係数の定数計算（割引率6%の場合）</h3>
 <ul>
-<li><strong>GT（グランドトータル）キーのクリア確認</strong>: 計算開始前に必ず <code>AC</code> を2回、<code>GT</code> クリア。</li>
-<li><strong>定数計算機能の活用</strong>: 複利割引係数（例: $1.05$ の場合 $\to$ <code>1.05</code> <code>÷</code> <code>÷</code> <code>1</code> <code>=</code> で $0.9524$、さらに <code>=</code> で $0.9070$）。</li>
-<li><strong>検算は逆算で行う</strong>: 足し算した結果から引き算してゼロになるかで確かめる。</li>
+<li><strong>シャープ製電卓</strong>:</li>
+<li><code>1.06</code> <code>÷</code> <code>＝</code>（1年後現価係数：$0.9434$） $\to$ <code>＝</code>（2年後：$0.8900$） $\to$ <code>＝</code>（3年後：$0.8396$）</li>
+<li><strong>カシオ製電卓</strong>:</li>
+<li><code>1.06</code> <code>÷</code> <code>÷</code> <code>1</code> <code>＝</code>（1年後：$0.9434$） $\to$ <code>＝</code>（2年後：$0.8900$） $\to$ <code>＝</code>（3年後：$0.8396$）</li>
+</ul>
+<h3>2. 現在価値合計の神速メモリ集計</h3>
+<p>途中の小数をメモ用紙に書き写してはいけない（転記ミス・端数ズレの原因）！
+1. 1年目CFを入力 $\to$ <code>×</code> $0.9434$ $\to$ <code>M+</code>
+2. 2年目CFを入力 $\to$ <code>×</code> $0.8900$ $\to$ <code>M+</code>
+3. 3年目CFを入力 $\to$ <code>×</code> $0.8396$ $\to$ <code>M+</code>
+4. 最後に <code>RM</code>（リコールメモリー）を押すだけで、現在価値合計が一発で表示される！</p>
+<h3>3. フェルミ推定・概算検算チェック</h3>
+<ul>
+<li>営業利益率がスーパーで10%を超えていたら電卓ミスを疑え（通常0.5〜3%）。</li>
+<li>NPVの現在価値が初期投資額の10倍になっていたら割引計算ミスを疑え。</li>
+<li>負債比率がパーセント表記で100%未満か400%超か、B/Sの総額感を直感で照合せよ。</li>
 </ul>
 </div>
 </body>
