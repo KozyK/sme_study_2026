@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="robots" content="noindex, nofollow">
+<title>Jirei2 2021 Mastery</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var blocks = document.querySelectorAll('pre code.language-mermaid');
+    if (blocks.length === 0) return;
+    
+    blocks.forEach(function(block) {
+      var pre = block.parentElement;
+      var container = document.createElement('div');
+      container.className = 'mermaid-container';
+      var div = document.createElement('div');
+      div.className = 'mermaid';
+      div.textContent = block.textContent;
+      container.appendChild(div);
+      pre.replaceWith(container);
+    });
+    
+    if (window.mermaid) {
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: 'default',
+        securityLevel: 'loose'
+      });
+      mermaid.run();
+    }
+  });
+</script>
+</head>
+<body>
+<a href="index.html" class="back-link">← ポータルに戻る</a>
+<div class="content">
+<h1>令和3年度（2021年度） 事例Ⅱ 完全攻略マスター講義＆SWOT・FC役割分担・与件の伏線回収のセオリー</h1>
+<div class="podcast-player-card">
+  <div class="podcast-header">
+    <span class="podcast-badge">🎧 AUDIO OVERVIEW</span>
+    <span class="podcast-title">この資料の対話型ポッドキャスト解説</span>
+  </div>
+  <audio controls preload="metadata" src="audio/jirei2_2021_mastery.mp3" style="width: 100%; margin-top: 10px;"></audio>
+</div>
+
+<hr />
+<h2>🎧 解説ポッドキャスト（特大ディープダイブ60分講義）</h2>
+<blockquote>
+<p><strong>講義時間</strong>: 約60分（等速） / 約30分（2倍速推奨）<br />
+<strong>出演</strong>: ケイタ（中小企業診断士）、ナナミ（受験生ナビゲーター）<br />
+<strong>音声ファイル</strong>: <code>docs/audio/jirei2_2021_mastery.mp3</code></p>
+</blockquote>
+<p><audio controls src="audio/jirei2_2021_mastery.mp3" style="width: 100%; margin: 15px 0;"></audio></p>
+<hr />
+<h2>目次</h2>
+<ul>
+<li><a href="#はじめに令和3年度-事例ⅱの全体構造とコウジさんの68点a判定の真相">はじめに：令和3年度 事例Ⅱの全体構造とコウジさんの「68点A判定」の真相</a></li>
+<li><a href="#第1部全問思考プロセス解剖とコウジさん答案検証第1問第4問">第1部：全問思考プロセス解剖とコウジさん答案検証（第1問〜第4問）</a></li>
+<li><a href="#第2部最大の失点トラップターゲットチャネルのミスマッチと制約フラグ">第2部：最大の失点トラップ「ターゲット×チャネルのミスマッチ」と「制約フラグ」</a></li>
+<li><a href="#第3部超特訓講義フランチャイズfcの役割分担と高齢者crm">第3部：【超特訓講義①】フランチャイズ（FC）の役割分担と高齢者CRM</a></li>
+<li><a href="#第4部超特訓講義地域連携農商工商商連携とブランド価値構造">第4部：【超特訓講義②】地域連携（農商工・商商連携）とブランド価値構造</a></li>
+<li><a href="#第5部耳で解く実践特訓ドリル全8問">第5部：耳で解く実践特訓ドリル（全8問）</a></li>
+<li><a href="#第6部近年系譜比較r2r7と事例ⅱ不変の合格アルゴリズム">第6部：近年系譜比較（R2〜R7）と事例Ⅱ不変の合格アルゴリズム</a></li>
+</ul>
+<hr />
+<h2>はじめに：令和3年度 事例Ⅱの全体構造とコウジさんの「68点A判定」の真相</h2>
+<p>令和3年度（2021年度）の事例Ⅱは、清流が流れる小京都・地方都市X市で豆腐の製造販売を営むB社（従業員15名）が舞台でした。</p>
+<p>地場スーパーPB失注から移動販売FCへの転換、そしてコロナ禍による対面接触敬遠・試食自粛で売上3割減という苦境に対し、<strong>「置き配の導入」「主婦層向け菓子開発」「全国向けEC展開」</strong>という3大打ち手をどう組み立てるかが問われました。</p>
+<h3>コウジさんの得点サマリー</h3>
+<ul>
+<li><strong>第1問（SWOT分析）</strong>: <strong>20点 / 20点（満点・得点率100%！）</strong></li>
+<li><strong>第2問（全国向けネット販売助言）</strong>: <strong>19点 / 25点</strong>（得点率76.0%・上位水準！）</li>
+<li><strong>第3問（置き配での高齢者対応）</strong>: <strong>15点 / 30点</strong>（得点率50.0%）</li>
+<li><strong>第4問（主婦層向け菓子開発・移動販売）</strong>: <strong>14点 / 25点</strong>（得点率56.0%）</li>
+<li><strong>総合得点</strong>: <strong>【68点 / 100点】（A判定・合格水準クリア！）</strong></li>
+</ul>
+<p>コウジさんは前半の第1問SWOT（20点満点）と第2問（19点）で<strong>39点という圧倒的リード</strong>を築き、見事にA判定合格を勝ち取っています。</p>
+<p>特に第4問で書かれた<strong>「地元の人気和菓子店との共同開発」</strong>は、大手予備校の得点開示・『ふぞろいな合格答案 エピソード15』において、合格者が実際に記述して加点をもぎ取った<strong>公認のキラーキーワード（+4点加点）</strong>でした！</p>
+<p>後半の伸びしろは、第4問で見られた<strong>「ターゲット（主婦層）×チャネル（移動販売）の指定に対するECサイト混同」</strong>と、与件文の<strong>「試食自粛フラグの見落とし」</strong>、そして第3問加盟店の<strong>「高齢者対応から経営効率論への脱線」</strong>の3点です。ここを修正すれば、78〜82点の超上位合格圏に到達します。</p>
+<hr />
+<h2>第1部：全問思考プロセス解剖とコウジさん答案検証（第1問〜第4問）</h2>
+<h3>第1問：SWOT分析（配点20点・各30字以内） ⇒ 【獲得点：20点（満点！）】</h3>
+<h4>設問要求</h4>
+<p>2021年8月末時点のB社の状況を、移動販売の拡大およびネット販売の立ち上げを目的としてSWOT分析せよ（各30字以内）。</p>
+<h4>コウジさんの答案検証</h4>
+<ul>
+<li><strong>① 強み（S）（29字）</strong>：①地元産にこだわった豆腐②手作り豆腐セット人気③豆腐丼</li>
+<li><strong>② 弱み（W）（22字）</strong>：①ネット販売の立ち遅れ②主婦層顧客の少なさ</li>
+<li><strong>③ 機会（O）（26字）</strong>：①Y社でのEC売上拡大②宅食・置き配ニーズの高まり。</li>
+<li>
+<p><strong>④ 脅威（T）（29字）</strong>：①コロナ禍での対面販売機会減少②収穫祭後の食事会の中止。</p>
+</li>
+<li>
+<p><strong>採点：20点 / 20点（満点！）</strong></p>
+</li>
+<li><strong>講評</strong>:</li>
+<li>30字という極小枠に対し、番号を振って重要名詞を凝縮する最高効率のテクニックを発揮。</li>
+<li>設問の2大目的「移動販売拡大」と「ネット販売立ち上げ」に完全に連動した要素を、一分の無駄もなく抽出し切った文句なしの満点答案です。</li>
+</ul>
+<hr />
+<h3>第2問：全国向けネット販売助言（配点25点・100字以内） ⇒ 【獲得点：19点】</h3>
+<h4>設問要求</h4>
+<p>地元産大豆の魅力を全国に伝えるための商品・販売方法を、ターゲットを明確にして助言せよ（100字以内）。</p>
+<h4>コウジさんの答案検証</h4>
+<blockquote>
+<p>ターゲットは自宅での食事にこだわりを持つ家庭と主婦層。商品はY社新米とコラボした出来立てを味わえる豆腐丼セット。Y社サイト上で販売し、X市の歴史と地元産食材を訴求し付加価値高めて差別化しファン化図る。（101字）</p>
+</blockquote>
+<ul>
+<li><strong>採点：19点 / 25点（極めて優秀）</strong></li>
+<li><strong>講評</strong>:</li>
+<li>与件文の重要伏線である「Y社新米」「良質な地下水」と自社の看板「出来立て豆腐」を組み合わせた<strong>「Y社新米コラボの豆腐丼セット」</strong>、および<strong>「Y社サイト上での販売」</strong>をズバリ特定した点が圧巻の加点要因。</li>
+<li>ターゲットを「全国の食通層」と明記し、「豆腐に旅をさせるな（遠方配送不可）」を解決する「手作り豆腐セット」というキーワードを補完すると満点（25点）になります。</li>
+</ul>
+<h4>満点リライト（100字以内）</h4>
+<blockquote>
+<p>ターゲットはY社サイトを利用する全国の食通。商品は手作り豆腐セットにY社の新米と同じ地下水を組み合わせた豆腐丼セット。Y社サイトのコラボ企画で販売し、出来たてを自宅で味わえる価値と豆腐丼の由来を発信。（100字）</p>
+</blockquote>
+<hr />
+<h3>第3問：置き配での高齢者対応（配点30点・各50字以内） ⇒ 【獲得点：15点】</h3>
+<h4>設問要求</h4>
+<p>フランチャイズ移動販売で置き配を導入する際、高齢者顧客に対して⒜本部（B社）、⒝加盟者が実施すべき取り組みを助言せよ（各50字以内）。</p>
+<h4>コウジさんの答案検証</h4>
+<ul>
+<li><strong>⒜ フランチャイザー（50字）</strong>：<blockquote>
+<p>冷蔵ボックスの貸出や商品説明用のチラシ・次回購入用クーポンの配布により、フランチャイジーの営業を支援。</p>
+</blockquote>
+</li>
+<li><strong>採点：10点 / 15点</strong>：専用冷蔵ボックスの貸与・販促支援は的確。</li>
+<li><strong>⒝ フランチャイジー（48字）</strong>：<blockquote>
+<p>注文は電話予約で受け、近隣住民のまとめ注文での割引を提供し配送コスト抑えつつ注文増を図る。</p>
+</blockquote>
+</li>
+<li><strong>採点：5点 / 15点</strong>：電話予約の受付は良好。しかし「まとめ注文割引・配送コスト削減」という経営効率論に脱線し、設問が求める<strong>「対面接触が減る高齢者顧客への見守り・安否確認・丁寧なコミュニケーション」</strong>が脱落した点が減点。</li>
+</ul>
+<h4>満点リライト（各50字以内）</h4>
+<ul>
+<li><strong>⒜ フランチャイザー（49字）</strong>:<blockquote>
+<p>電話での注文手順や置き配の流れを示す高齢者向け案内を作り、保冷力の高い冷蔵ボックスを貸与する。（49字）</p>
+</blockquote>
+</li>
+<li><strong>⒝ フランチャイジー（49字）</strong>:<blockquote>
+<p>来店前の電話で注文と在宅状況を確認し、食べ方の提案や体調の声掛けを行い、関係を維持し売上を高める。（49字）</p>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h3>第4問：主婦向け菓子開発・移動販売（配点25点・100字以内） ⇒ 【獲得点：14点】</h3>
+<h4>設問要求</h4>
+<p>X市周辺の主婦層の顧客獲得に向けた、菓子類の新規開発・移動販売について、製品戦略とコミュニケーション戦略を助言せよ（100字以内）。</p>
+<h4>コウジさんの答案検証</h4>
+<blockquote>
+<p>製品はX市の人気和菓子店と共同開発しX市の歴史と地元産で付加価値高め差別化。コミュニケーションは①Y社サイトでの掲載で認知高め②移動販売での試食品配布で主婦層の声を製品開発に還元し需要獲得に繋げる。（104字）</p>
+</blockquote>
+<ul>
+<li><strong>採点：14点 / 25点</strong></li>
+<li><strong>光る着眼点（ふぞろい公認キーワード獲得！）</strong>:</li>
+<li>与件文第1段落に隠された伏線<strong>「新しい素材を使った菓子で人気を博す和菓子店の店主」</strong>を逃さず拾い、<strong>「人気和菓子店との共同開発」</strong>と書いたのは見事（ふぞろい加点+4点！）。</li>
+<li><strong>改善ポイント（制約違反とチャネル混同）</strong>:</li>
+<li>コミュニケーションで「Y社サイト掲載」と書いたが、設問指定は<strong>「移動販売」</strong>（Y社ECは全国食通向けでチャネル違い）。</li>
+<li>「試食品配布」と書いたが、与件文第6段落に<strong>「新型コロナウイルス感染症のまん延に伴い、以降、試食を自粛した」</strong>と明記されているため制約違反。</li>
+<li>正しくは、若年層・主婦層が好む<strong>「IM（インスタント・メッセンジャー）での写真・レシピ配信」</strong>、および手作りセット購入者・収穫祭参加家族へのアプローチ。</li>
+</ul>
+<h4>満点リライト（100字以内）</h4>
+<blockquote>
+<p>製品は、新素材の菓子で人気の和菓子店と共同開発した、地元産大豆のおからを使う健康的な菓子。コミュニケーションは、IMで主婦層に新商品と販売日時を発信し、手作り豆腐セット購入者や収穫祭の家族客に案内。（100字）</p>
+</blockquote>
+<hr />
+<h2>第2部：最大の失点トラップ「ターゲット×チャネルのミスマッチ」と「制約フラグ」</h2>
+<h3>1. 設問間マトリクス（混同完全防止シート）</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">設問</th>
+<th style="text-align: center;">ターゲット（誰に）</th>
+<th style="text-align: center;">チャネル（どこで）</th>
+<th style="text-align: center;">連絡手段（どのように）</th>
+<th style="text-align: center;">厳格な制約条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>第2問</strong></td>
+<td style="text-align: center;">全国の食通層</td>
+<td style="text-align: center;"><strong>Y社ECサイト</strong></td>
+<td style="text-align: center;">Webサイト上の情報発信</td>
+<td style="text-align: center;">豆腐に旅をさせるな（遠方不可）</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>第3問</strong></td>
+<td style="text-align: center;"><strong>地元の高齢者層</strong></td>
+<td style="text-align: center;"><strong>移動販売（置き配）</strong></td>
+<td style="text-align: center;"><strong>電話（通話主体）</strong></td>
+<td style="text-align: center;">IMは敬遠、対面接触回避</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>第4問</strong></td>
+<td style="text-align: center;"><strong>X市周辺の主婦層</strong></td>
+<td style="text-align: center;"><strong>移動販売（冷蔵車）</strong></td>
+<td style="text-align: center;"><strong>IM（テキスト主体）</strong></td>
+<td style="text-align: center;"><strong>試食は自粛中（厳禁！）</strong></td>
+</tr>
+</tbody>
+</table>
+<h3>2. 「制約フラグ」の自動置換ルール</h3>
+<ul>
+<li>与件文の<strong>「〜を自粛した」「〜を見送った」「〜は敬遠された」</strong>は、試験委員からの<strong>「この手段を書いたら0点にする」という地雷警告</strong>である。</li>
+<li>「試食自粛」 $\to$ <strong>「IMによる写真・調理例配信」「手書きレシピチラシ同封」</strong>へ自動置換せよ。</li>
+</ul>
+<hr />
+<h2>第3部：【超特訓講義①】フランチャイズ（FC）の役割分担と高齢者CRM</h2>
+<ol>
+<li><strong>FC本部（フランチャイザー）の鉄則</strong>:</li>
+<li>個別の接客には手を出さない。「全加盟店共通のインフラ・ツール・制度」を整備する。</li>
+<li>例：保冷ボックス貸与、紙カタログ・利用マニュアル整備、決済システム。</li>
+<li><strong>FC加盟店（フランチャイジー）の鉄則</strong>:</li>
+<li>本部が作ったツールを使い、「地域顧客とのパーソナルな関係性」を深める。</li>
+<li>高齢者への電話での安否確認・見守り、世間話を通じたニーズ吸い上げ。</li>
+</ol>
+<hr />
+<h2>第4部：【超特訓講義②】地域連携（農商工・商商連携）とブランド価値構造</h2>
+<ol>
+<li><strong>なぜ「和菓子店とのコラボ」が満点キーになるのか？</strong>:</li>
+<li>B社の強み＝良質な大豆・おから・地下水。</li>
+<li>B社の弱み＝菓子づくりのノウハウ皆無、主婦層への知名度不足。</li>
+<li>和菓子店の強み＝新素材菓子の開発ノウハウ、主婦層の顧客基盤。</li>
+<li><strong>「自社の強み」×「他社の強み」で「自社の弱み」を一瞬で補完する</strong>。これが診断士のアライアンス設計である。</li>
+</ol>
+<hr />
+<h2>第5部：耳で解く実践特訓ドリル（全8問）</h2>
+<ul>
+<li><strong>第1問</strong>: なぜB社の完成品豆腐をそのまま全国ECで販売してはならないのか？</li>
+<li><strong>第2問</strong>: 「豆腐に旅をさせるな」の制約を克服したB社の画期的新製品とは？</li>
+<li><strong>第3問</strong>: 第3問で高齢者への連絡手段としてIMではなく「電話」を指定すべき与件の根拠は？</li>
+<li><strong>第4問</strong>: 置き配を利用する高齢者に対し、加盟店がコスト削減ではなく提供すべき本質的価値は何か？</li>
+<li><strong>第5問</strong>: 第4問で「試食販売」を提案した瞬間に大幅減点される与件の事実は？</li>
+<li><strong>第6問</strong>: 試食ができない状況下で、主婦層に菓子の魅力を伝える最強の代替手段は？</li>
+<li><strong>第7問</strong>: なぜ第4問のコミュニケーションで「Y社ECサイト」を書いてはならないのか？</li>
+<li><strong>第8問</strong>: B社が和菓子店と連携することで得られる、商品開発面と販売面の2大メリットは？</li>
+</ul>
+<hr />
+<h2>第6部：近年系譜比較（R2〜R7）と事例Ⅱ不変の合格アルゴリズム</h2>
+<h3>🧭 事例Ⅱ 不変の合格アルゴリズム</h3>
+<ol>
+<li><strong>「誰に×どこで」を指差し確認する</strong>: ターゲットとチャネルが1ミリでもズレたら即死。</li>
+<li><strong>マイナス表現（自粛・敬遠・見送り）にバツをつける</strong>: 使えない手段を排除し、代替手段で書く。</li>
+<li><strong>地域連携は相手の「顧客・技術・知名度」を借りる</strong>: 単なる仲良しではなく、経営資源の相互補完。</li>
+<li><strong>ダナドコで骨子を整える</strong>: 誰に（ターゲット）×何を（強み商品）×どのように（チャネル・販促）×効果（売上・ファン化）。</li>
+</ol>
+</div>
+</body>
+</html>
