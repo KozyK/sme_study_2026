@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="robots" content="noindex, nofollow">
+<title>Jirei4 15Years Descriptive Mastery</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var blocks = document.querySelectorAll('pre code.language-mermaid');
+    if (blocks.length === 0) return;
+    
+    blocks.forEach(function(block) {
+      var pre = block.parentElement;
+      var container = document.createElement('div');
+      container.className = 'mermaid-container';
+      var div = document.createElement('div');
+      div.className = 'mermaid';
+      div.textContent = block.textContent;
+      container.appendChild(div);
+      pre.replaceWith(container);
+    });
+    
+    if (window.mermaid) {
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: 'default',
+        securityLevel: 'loose'
+      });
+      mermaid.run();
+    }
+  });
+</script>
+</head>
+<body>
+<a href="index.html" class="back-link">← ポータルに戻る</a>
+<div class="content">
+<h1>事例Ⅳ 過去15年の記述・知識系設問 完全体系化と本年度予想</h1>
+<div class="podcast-player-card">
+  <div class="podcast-header">
+    <span class="podcast-badge">🎧 AUDIO OVERVIEW</span>
+    <span class="podcast-title">この資料の対話型ポッドキャスト解説</span>
+  </div>
+  <audio controls preload="metadata" src="audio/jirei4_15years_descriptive_mastery.mp3" style="width: 100%; margin-top: 10px;"></audio>
+</div>
+
+<p>中小企業診断士2次試験・事例Ⅳにおいて、計算問題（CVP、NPV、CF計算書）の難化や部分点の不確実性を乗り越え、確実に合格ライン（60点〜A評価）を確保するための最大の鍵は、配点の30〜40点を占める「記述・知識系設問」を取りこぼさないことにある。</p>
+<p>本書は、2010年度から2025年度までの過去15年間に本試験で出題された事例Ⅳの全記述設問・理論設問を分析・分類し、背後にある財務理論、設問要求の解釈手順、文字数に応じた因果構成テンプレート、および本年度に警戒すべき出題予想トピックを体系的に整理したものである。</p>
+<hr />
+<h2>1. 事例Ⅳにおける記述・知識系設問の配点構造と得点戦略</h2>
+<h3>1-1. 配点比率と合格戦略上の位置づけ</h3>
+<p>事例Ⅳの配点（100点）の内訳は、おおむね以下の構造で定着している。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">設問区分</th>
+<th style="text-align: left;">配点目安</th>
+<th style="text-align: left;">主たる出題形式</th>
+<th style="text-align: left;">求められる能力</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>第1問</strong></td>
+<td style="text-align: left;">20〜25点</td>
+<td style="text-align: left;">財務指標の選定・計算＋要因・課題記述</td>
+<td style="text-align: left;">経営分析、与件の事業特性と財務数値の因果結びつけ</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>第2問・第3問</strong></td>
+<td style="text-align: left;">50〜60点</td>
+<td style="text-align: left;">CVP・NPV・CF計算＋理由・条件記述</td>
+<td style="text-align: left;">管理会計、投資意思決定、制度会計の理論的背景の理解</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>第4問</strong></td>
+<td style="text-align: left;">15〜25点</td>
+<td style="text-align: left;">財務戦略・リスク管理・組織業績評価</td>
+<td style="text-align: left;">定性助言、事業構造転換に伴う財務的利害・リスクの特定</td>
+</tr>
+</tbody>
+</table>
+<p>計算問題（特に第2問・第3問の後半）は、計算前提の見落としや電卓の打鍵ミスによりゼロ点となるリスクが常につきまとう。これに対し、記述・知識系設問は、<strong>与件文に明記された経営事実</strong>と<strong>一次試験の財務理論</strong>を正しく接続して論理的に構成すれば、確実に安定した部分点を積み上げることができる。</p>
+<h3>1-2. 採点官が評価する記述の3大要件</h3>
+<p>事例Ⅳの記述採点において、加点・満点を獲得するための要件は以下の3点に集約される。</p>
+<ol>
+<li><strong>財務概念の明示</strong>: 「利益」「コスト」といった曖昧な一般語ではなく、「限界利益率」「固定費負担」「売上債権回転期間」「安全余裕率」「自己資本比率」など、具体的な財務・管理会計用語を用いること。</li>
+<li><strong>与件の事業特性との因果結合</strong>: 単なる数値の増減の言い換え（例:「売上高が減少し費用が増加したため」）ではなく、与件文にある具体的なビジネスの動き（設備投資、販路変更、OEM委託、大口顧客の動向等）を原因として結びつけること。</li>
+<li><strong>設問制約（文字数・視点）への厳格な適合</strong>: 「財務的利点」「経営上の影響」「留意すべき点」など、設問が問うている切り口（収益性、効率性、安全性、リスク管理、業績評価など）から外れないこと。</li>
+</ol>
+<hr />
+<h2>2. 第1問：財務指標の定性評価・要因・課題記述の完全体系（2010〜2025年）</h2>
+<p>第1問の記述は、単なる数値の増減をなぞる作業ではない。<strong>「外部環境・顧客動向・事業構造（原因）」×「内部の経営行動・リソース配置（対応）」→「財務数値・比率の帰結（結果）」</strong>の因果構造を40〜80字で簡潔にまとめる能力が試される。</p>
+<h3>2-1. 過去15年の第1問 設問要求の変遷</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">年度</th>
+<th style="text-align: left;">設問形式</th>
+<th style="text-align: left;">文字数</th>
+<th style="text-align: left;">問われた本質</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>2025</strong></td>
+<td style="text-align: left;">同業他社比較（劣っている点）</td>
+<td style="text-align: left;">80字</td>
+<td style="text-align: left;">経営戦略上の違い（直営展開・自社投資等）がもたらす固定費・資本効率の差異</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2024</strong></td>
+<td style="text-align: left;">同業他社比較（特徴記述）</td>
+<td style="text-align: left;">80字</td>
+<td style="text-align: left;">事業部制・内製化に伴う固定資産保有と利益率の特性</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2023</strong></td>
+<td style="text-align: left;">過年度比較（悪化指標の要因）</td>
+<td style="text-align: left;">80字</td>
+<td style="text-align: left;">急激な外部環境変化・投資拡大に伴う費用先行と効率性低下</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2022</strong></td>
+<td style="text-align: left;">同業他社比較（劣っている点）</td>
+<td style="text-align: left;">80字</td>
+<td style="text-align: left;">特定資産の滞留（在庫・固定資産）と資金効率・安全性の悪化</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2021</strong></td>
+<td style="text-align: left;">同業他社比較（特徴と課題）</td>
+<td style="text-align: left;">80字</td>
+<td style="text-align: left;">店舗展開・移動販売等のビジネスモデルが売上高総利益率や資本回転率に与える影響</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2020</strong></td>
+<td style="text-align: left;">同業他社比較（特徴記述）</td>
+<td style="text-align: left;">60字</td>
+<td style="text-align: left;">高い収益性とそれに伴う固定資産投資・借入負担のトレードオフ</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2019</strong></td>
+<td style="text-align: left;">前期比較（特徴記述）</td>
+<td style="text-align: left;">50字</td>
+<td style="text-align: left;">売上拡大に伴う運転資本負担増および利益率の変動</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2018</strong></td>
+<td style="text-align: left;">同業他社比較（優れている点と課題）</td>
+<td style="text-align: left;">50字</td>
+<td style="text-align: left;">高付加価値化による粗利益率の高さと、資産保有に伴う効率性の課題</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2017</strong></td>
+<td style="text-align: left;">同業他社比較（特徴記述）</td>
+<td style="text-align: left;">40字</td>
+<td style="text-align: left;">安定した収益基盤と自己資本の充実</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2016</strong></td>
+<td style="text-align: left;">前期比較（課題が生じた原因）</td>
+<td style="text-align: left;">70字</td>
+<td style="text-align: left;">新規出店に伴う借入金増加と売上不振による固定比率・回転率の悪化</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2015</strong></td>
+<td style="text-align: left;">同業他社比較（特徴記述）</td>
+<td style="text-align: left;">60字</td>
+<td style="text-align: left;">収益性の優位と大口取引先依存に伴う安全性・効率性の歪み</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2014</strong></td>
+<td style="text-align: left;">同業他社比較（長所・課題記述）</td>
+<td style="text-align: left;">各30字</td>
+<td style="text-align: left;">収益性・効率性・安全性の各領域におけるビジネス背景</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2013</strong></td>
+<td style="text-align: left;">出資直後の財務指標への影響</td>
+<td style="text-align: left;">80字</td>
+<td style="text-align: left;">資本金増加に伴う自己資本比率の上昇と総資産回転率の変化</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2011</strong></td>
+<td style="text-align: left;">財務上の問題点（原因と改善策）</td>
+<td style="text-align: left;">各60字</td>
+<td style="text-align: left;">売上債権の回収遅延、過大在庫の発生原因と管理体制の是正</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2010</strong></td>
+<td style="text-align: left;">長所・短所の経営状況に照らした説明</td>
+<td style="text-align: left;">60字</td>
+<td style="text-align: left;">過去の積極投資の成果（技術力）と借入負担の二面性</td>
+</tr>
+</tbody>
+</table>
+<h3>2-2. 評価領域別の因果構成パターン</h3>
+<h4>① 収益性の要因記述</h4>
+<ul>
+<li><strong>優位要因</strong>: 高付加価値製品・独自技術による高い販売単価（売上高総利益率の優位）、直販・直営による中間マージン排除、固定費抑制による営業利益率の優位。</li>
+<li><strong>課題要因</strong>: 原材料・仕入価格の高騰に伴う売上原価率の上昇、値引き販売・競争激化による粗利益率低下、新規展開・出店に伴う人件費・地代家賃・減価償却費等の固定費負担増（売上高販管費率の上昇）。</li>
+</ul>
+<h4>② 効率性の要因記述</h4>
+<ul>
+<li><strong>優位要因</strong>: 受注生産による在庫極小化（棚卸資産回転期間の短縮）、与信管理・早期回収体制（売上債権回転期間の短縮）、設備の効率的稼働・外注活用（有形固定資産回転率の優位）。</li>
+<li><strong>課題要因</strong>: 需要予測の不備・見込み生産による滞留在庫の発生（棚卸資産回転期間の長期化）、大口取引先の回収条件長期化（売上債権回転期間の長期化）、過大設備投資・遊休資産の存在（有形固定資産回転率の低下）。</li>
+</ul>
+<h4>③ 安全性の要因記述</h4>
+<ul>
+<li><strong>優位要因</strong>: 内部留保の蓄積・無借金経営（自己資本比率の高さ）、短期支払能力の確保（流動比率・当座比率の高さ）。</li>
+<li><strong>課題要因</strong>: 設備投資資金を短期借入金で調達（固定長期適合率の悪化、流動比率の低下）、多額の有利子負債依存による過大な財務レバレッジ、手元資金不足による資金繰りリスク。</li>
+</ul>
+<hr />
+<h2>3. 第2問・第3問：管理会計・意思決定における知識・理由記述の完全網羅</h2>
+<p>計算問題の合間に問われる「理由記述」「条件判断」「理論の妥当性」は、公式暗記だけでは対応できない。管理会計・ファイナンス理論の前提条件を言語化する力が求められる。</p>
+<h3>3-1. CVP・損益分岐点分析に関する理論設問</h3>
+<h4>損益分岐点分析を利益計画に用いる際の問題点・前提制約（2019年 第2問設問2: 30字）</h4>
+<ul>
+<li><strong>問われた本質</strong>: CVP分析が置いている理論的仮定と現実の乖離。</li>
+<li><strong>正解ロジック</strong>:</li>
+<li>費用を固定費と変動費に厳密に二分することが困難（固変分解の恣意性）。</li>
+<li>販売単価、単位当たり変動費、固定費総額が操業度に関わらず一定であるという前提が非現実的。</li>
+<li>複数製品を扱う場合、売上高構成比（セールスミックス）が一定でなければ損益分岐点は一意に定まらない。</li>
+<li><strong>模範骨子（30字）</strong>:
+  「費用分解の仮定や、販売単価・売上構成比が一定という前提が非現実的な点。」（34字）</li>
+</ul>
+<h4>共通費配賦の妥当性と事業撤退の判断（2023年 第2問設問2・3: 20字/80字、2016年 第3問: 50字）</h4>
+<ul>
+<li><strong>問われた本質</strong>: 全部原価計算に基づく共通費配賦の弊害と、直接原価計算に基づく貢献利益管理。</li>
+<li><strong>正解ロジック</strong>:</li>
+<li><strong>事業・製品の廃止判断</strong>: 営業利益が赤字であっても、「売上高 − 個別変動費 − 個別固定費 ＝ 貢献利益」がプラスである限り、共通固定費の回収に貢献しているため、廃止すると全社利益はかえって減少する。</li>
+<li><strong>売上高基準の共通費配賦の妥当性</strong>: 各部門・製品が実際に消費した経営資源（占有面積、作業時間、受注件数等）を反映しておらず、売上高が大きい部門に過大なコストが配賦され、不公平感や誤った経営判断を招く。</li>
+<li><strong>模範骨子</strong>:</li>
+<li>廃止判断（20字）: 「貢献利益が正で共通費の回収に寄与するため。」（22字）</li>
+<li>配賦の妥当性（80字）: 「妥当でない。共通費の発生原因や活動実績を反映せず売上高で機械的に配賦すると、各製品の真の採算性が歪み、業績評価や製品継続の判断を誤る恐れがあるため。」（76字）</li>
+</ul>
+<h4>内部振替価格（原価加算方式）の問題点（2024年 第2問: 80字）</h4>
+<ul>
+<li><strong>問われた本質</strong>: 分権的組織における振替価格の設定基準（市価基準 vs 原価加算基準）と事業部モラール。</li>
+<li><strong>正解ロジック</strong>:</li>
+<li>供給部門が「実際原価＋利益マークアップ」で振り替える場合、供給部門の非効率性（コスト超過）がそのまま購買部門に転嫁され、供給部門のコスト削減インセンティブが削がれる。また、購買部門の採算が悪化し、部門間対立を招く。</li>
+<li><strong>模範骨子（80字）</strong>:
+  「製造側の非効率やコスト増が振替価格を通じて加工側に転嫁されるため、製造側の原価低減インセンティブが損なわれ、加工側の業績や意欲を不当に圧迫する問題がある。」（77字）</li>
+</ul>
+<hr />
+<h3>3-2. NPV・投資意思決定・ファイナンスに関する理論設問</h3>
+<h4>回収期間法の短所と、流動性評価としての併用意義（2015年 第3問設問2）</h4>
+<ul>
+<li><strong>問われた本質</strong>: 正味現在価値法（NPV）と回収期間法の長短比較。</li>
+<li><strong>正解ロジック</strong>:</li>
+<li><strong>NPV法の長所</strong>: 貨幣の時間価値を考慮し、全期間のキャッシュフローを評価するため、企業価値最大化の基準として理論的に最も優れる。</li>
+<li><strong>回収期間法を併用すべき理由</strong>: 中小企業において手元資金・流動性が枯渇している場合、いくら長期的なNPVが正であっても、投下資本の回収が遅いと資金ショートを起こすリスクがある。資金制約下では「投資額を何年で回収できるか」という流動性・安全性の視点が不可欠となる。</li>
+</ul>
+<h4>投資の延期・時期決定（2023年 第3問設問2: 50字）</h4>
+<ul>
+<li><strong>問われた本質</strong>: リアルオプションの考え方（今すぐ実行するか、1年待って不確実性が減少してから実行するか）。</li>
+<li><strong>正解ロジック</strong>: 初年度期首に実行する場合のNPVと、2年度期首に実行する場合の現在価値（t=0への割引後NPV）を比較し、延期した方が高い価値を生む場合は投資を延期すべきである。</li>
+<li><strong>模範骨子（50字）</strong>:
+  「２年度期首に実行すべき。初年度実行より割引後NPVが〇〇万円高く、投資価値が最大化するため。」（46字）</li>
+</ul>
+<h4>資金調達手段の比較（銀行借入 vs 社債・少人数私募債）（2013年 第3問設問2: 30字）</h4>
+<ul>
+<li><strong>問われた本質</strong>: 返済条件とキャッシュフローへの影響。</li>
+<li><strong>正解ロジック</strong>: 銀行借入は元金均等・元利均等返済により期中・期末に元本流出が生じるが、満期一括償還の社債（少人数私募債等）であれば期間中のキャッシュ流出は利息のみに抑えられ、期末の手元資金を厚く維持できる。</li>
+<li><strong>模範骨子（30字）</strong>:
+  「社債は満期一括償還のため、毎期の元本返済負担が生じないため。」（29字）</li>
+</ul>
+<h4>品質リスク・不良コストの構造（2013年 第3問設問3: 90字）</h4>
+<ul>
+<li><strong>問われた本質</strong>: ジュランの品質コスト分類（PAFモデル: 予防コスト、評価コスト、失敗コスト）。</li>
+<li><strong>正解ロジック</strong>:</li>
+<li><strong>内部失敗コスト</strong>: 出荷前に発見された不良の廃棄・手戻りコスト。</li>
+<li><strong>外部失敗コスト</strong>: 納品後に発見された不良のクレーム対応、損害賠償、回収コスト、信用の失墜。</li>
+<li><strong>予防・評価コスト</strong>: 不良を出さないための検査体制・教育コスト。
+  コスト規模および企業への打撃は「外部失敗コスト ＞ 内部失敗コスト ＞ 予防・評価コスト」の順に大きくなる。</li>
+</ul>
+<hr />
+<h2>4. 第4問：経営戦略・財務戦略・リスク管理の過去15年全問網羅分析</h2>
+<p>第4問は、企業の経営戦略の転換（新規事業、M&amp;A、外注化、海外展開、事業承継など）に伴う「財務的メリット」「財務的リスク」「その防止・管理策」を論述させる、事例Ⅳの総まとめである。</p>
+<h3>4-1. 過去15年の第4問テーマ一覧</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">年度</th>
+<th style="text-align: left;">テーマ・対象事業</th>
+<th style="text-align: left;">設問要求</th>
+<th style="text-align: left;">問われた財務・経営論点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>2025</strong></td>
+<td style="text-align: left;">海外展開（EU向け販売）</td>
+<td style="text-align: left;">ライン増設の資金調達手段（80字）／直面する財務リスクと対処（60字）</td>
+<td style="text-align: left;">自己資本・借入金のバランス、為替変動リスク・為替予約等のヘッジ</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2024</strong></td>
+<td style="text-align: left;">権限構造と業績評価</td>
+<td style="text-align: left;">社長が投資権限を持つ場合の事業部長業績評価の留意点（60字）</td>
+<td style="text-align: left;">管理可能利益による評価、ROIとセグメント利益、責任会計</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2023</strong></td>
+<td style="text-align: left;">OEM生産と事業多角化</td>
+<td style="text-align: left;">OEM活用の財務的利点（50字）／新製品（男性向け）開発の財務的利点（50字）</td>
+<td style="text-align: left;">固定資産・固定費圧縮、損益分岐点比率低下、固定費レバレッジ、収益多角化</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2022</strong></td>
+<td style="text-align: left;">新規事業展開（中古車販売）</td>
+<td style="text-align: left;">直面する財務リスク2点とマネジメント助言（100字）</td>
+<td style="text-align: left;">在庫滞留・陳腐化リスク、運転資金負担と借入過大、回転期間管理</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2021</strong></td>
+<td style="text-align: left;">業態一本化と事業継続</td>
+<td style="text-align: left;">移動販売撤退・通販一本化の短期メリット（40字）／移動販売継続の理由（40字）</td>
+<td style="text-align: left;">固定費削減による営業利益率向上、顧客接点維持・LTV向上・送客効果</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2020</strong></td>
+<td style="text-align: left;">M&amp;A（買収）と役員評価</td>
+<td style="text-align: left;">買収差額の会計処理（40字）／買収前リスク助言（60字）／役員評価改善（40字）</td>
+<td style="text-align: left;">のれんの計上・償却、財務DD・偶発債務、短期利益偏重是正と中長期指標</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2019</strong></td>
+<td style="text-align: left;">分社化とIT投資（EDI）</td>
+<td style="text-align: left;">配送子会社化のメリット・デメリット（各30字）／EDI導入の財務効果（60字）</td>
+<td style="text-align: left;">コスト意識向上 vs 管理費増、事務工数削減とリードタイム短縮による在庫削減</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2018</strong></td>
+<td style="text-align: left;">拠点展開と業務委託（外注）</td>
+<td style="text-align: left;">賃貸出店の費用構造と成長性（各60字）／業務委託の悪影響と防止策（70字）</td>
+<td style="text-align: left;">固定資産圧縮・固定費増、稼働率向上、品質低下・信用失墜リスクと委託先監査</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2017</strong></td>
+<td style="text-align: left;">関連会社の子会社化</td>
+<td style="text-align: left;">子会社化の連結指標への影響（30字）／経営上の影響・重要事項（60字）</td>
+<td style="text-align: left;">のれん・自己資本比率への影響、グループシナジー、意思決定迅速化、ガバナンス</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2016</strong></td>
+<td style="text-align: left;">外部システムと自社IT導入</td>
+<td style="text-align: left;">ネット予約システム利用の収支影響（60字）／自社システム導入の損益分岐点</td>
+<td style="text-align: left;">送客手数料負担と集客増の比較、変動費から固定費への置換とCVP変動</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2015</strong></td>
+<td style="text-align: left;">大口顧客依存と新事業</td>
+<td style="text-align: left;">大口依存のデメリット（30字）／自社製品製造販売の意義（30字）</td>
+<td style="text-align: left;">価格交渉力低下・業績連動リスク、収益源の分散と高付加価値化</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2014</strong></td>
+<td style="text-align: left;">為替リスクの管理</td>
+<td style="text-align: left;">為替リスク軽減手段2点と円安・円高時の影響（各手段の損益影響）</td>
+<td style="text-align: left;">為替予約（確実性確保と機会損失）、通貨オプション（ヘッジとプレミアム負担）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2013</strong></td>
+<td style="text-align: left;">品質リスクとコスト</td>
+<td style="text-align: left;">品質不適合リスクに伴うコスト分類（90字）</td>
+<td style="text-align: left;">予防・評価・内部失敗・外部失敗コストの体系と影響度比較</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2012</strong></td>
+<td style="text-align: left;">事業承継</td>
+<td style="text-align: left;">承継先の相手と診断士としての留意点（200字）</td>
+<td style="text-align: left;">親族内・従業員・M&amp;A、自社株評価・納税資金、個人保証、理念承継</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2010</strong></td>
+<td style="text-align: left;">金利上昇と債券価値</td>
+<td style="text-align: left;">金利上昇による債券価格下落（20字）と軽減方策（30字）</td>
+<td style="text-align: left;">金利リスク、デュレーション短縮、早期売却、資産配分の見直し</td>
+</tr>
+</tbody>
+</table>
+<h3>4-2. 頻出6大パターンの定型解答ロジック</h3>
+<h4>パターン1: 「OEM・ファブレス活用」の財務的利害</h4>
+<ul>
+<li><strong>財務的利点</strong>: 自社工場・設備投資が不要なため、<strong>固定資産を圧縮し総資産回転率を向上</strong>させられる。また、減価償却費等の固定費が発生せず<strong>変動費化できるため、損益分岐点比率を引き下げ</strong>、売上減少時の赤字転落リスクを低減できる。</li>
+<li><strong>リスク・短所</strong>: 外注加工費が上乗せされるため単位当たり製造原価が高くなり、操業度が上昇しても<strong>規模の経済（固定費レバレッジ）が働かず、売上高限界利益率が頭打ち</strong>になる。また製造ノウハウが蓄積しない。</li>
+</ul>
+<h4>パターン2: 「新規事業・設備投資」に伴う固定費化とリスクマネジメント</h4>
+<ul>
+<li><strong>財務的利害</strong>: 自社設備・直営店舗を構えることで限界利益率は向上するが、初期投資に伴う借入金増加と減価償却費・地代家賃等の固定費が増加する。</li>
+<li><strong>リスク</strong>: 売上が計画通り伸長しなかった場合、営業レバレッジ（固定費負担）が仇となって利益が急減し、資金繰りを圧迫する。</li>
+<li><strong>マネジメント助言</strong>: 段階的な投資（スモールスタート）、遊休資産の売却や自己資金の優先充当による有利子負債抑制、損益分岐点売上高の厳密なモニタリング、明確な撤退基準（例: 3期連続目標未達で撤退）の設定。</li>
+</ul>
+<h4>パターン3: 「M&amp;A・事業買収」の会計処理とリスク</h4>
+<ul>
+<li><strong>会計処理</strong>: 買収価格と被買収企業の受入純資産簿価（または時価）との差額を「のれん」として資産計上し、20年以内の合理的な期間で定額法等により規則的に償却する。</li>
+<li><strong>財務的リスク</strong>:</li>
+<li><strong>買収前</strong>: 簿外債務や偶発債務の存在、過大な買収プレミアムの支払い。</li>
+<li><strong>買収後</strong>: 計画したシナジーが創出されず業績が低迷した場合、のれんの減損損失を一括計上し、自己資本を毀損するリスク。</li>
+<li><strong>助言</strong>: 厳密な財務・法務デューデリジェンスの実施、買収価格の客観的算定、統合作業（PMI）による早期の業務・管理体制の一体化。</li>
+</ul>
+<h4>パターン4: 「海外展開・輸出入」と為替リスク管理</h4>
+<ul>
+<li><strong>リスク</strong>: 為替相場の変動により、円高時の輸出売上減少、円安時の輸入原材料コスト増（為替差損の計上）が生じ、営業利益・経常利益が大きく変動する。</li>
+<li><strong>対策手段</strong>:</li>
+<li><strong>為替予約</strong>: 将来の取引レートをあらかじめ確定させる。為替変動リスクを完全に排除できるが、有利な方向に為替が動いた場合の利益獲得機会を放棄することになる。</li>
+<li><strong>通貨オプション</strong>: 権利行使価格であらかじめ売買する権利を購入する。不利な為替変動は権利行使で回避し、有利な変動時は権利放棄して市場レートで取引できるが、オプション料（プレミアム）の支払いが発生する。</li>
+<li><strong>通貨建ての工夫・ネッティング</strong>: 円建て決済比率の引き上げ、グループ内輸出入の相殺。</li>
+</ul>
+<h4>パターン5: 「業務委託・外注依存」の財務的リスクと統制</h4>
+<ul>
+<li><strong>リスク</strong>: 委託先の品質管理不備による不良発生、納期遅延、情報漏洩等による信用失墜（外部失敗コストの増大と売上減少）。</li>
+<li><strong>マネジメント策</strong>: 委託先の選定基準の厳格化、作業マニュアル・品質基準の策定と共有、定期的な現場監査・モニタリング体制の構築、複数社購買によるBCP確保。</li>
+</ul>
+<h4>パターン6: 「事業部制・権限委譲」と責任会計・業績評価</h4>
+<ul>
+<li><strong>問題点</strong>: 設備投資などの全社的決定権限を社長が握っている場合、事業部長に「投下資本利益率（ROI）」や「全社共通費配賦後の事業部純利益」で責任を負わせると、自らの権限でコントロールできない要素（管理不能費）で評価されることになり、不公平感からモチベーションが著しく低下する。</li>
+<li><strong>留意点・改善案</strong>: 業績評価には、事業部長の裁量で管理可能な項目のみを対象とする「管理可能利益（売上高 − 事業部管理可能変動費 − 事業部管理可能固定費）」を用いる。投資権限がない事業部には利益目標のみを課し、全社共通費の配賦結果で責任を問わない「責任会計の原則」を徹底する。</li>
+</ul>
+<hr />
+<h2>5. 本年度（最新）出題予想トピック徹底対策</h2>
+<p>近年のマクロ経済環境の変化（金利復活、インフレ、人手不足、地政学リスク、事業承継の本格化）を受け、本年度の事例Ⅳ第4問・記述設問で狙われる可能性が極めて高い6つの論点と模範解答骨子を提示する。</p>
+<h3>予想論点1: 金利上昇局面における資金調達・財務戦略</h3>
+<ul>
+<li><strong>背景</strong>: マイナス金利解除に伴い、企業の調達金利・支払利息が増加傾向にある。</li>
+<li><strong>問われ方</strong>: 「金利上昇がD社の収益・財務に与える影響と、とるべき財務戦略について助言せよ。」</li>
+<li><strong>解答骨子</strong>:</li>
+<li><strong>影響</strong>: 有利子負債の利払負担増により経常利益および当期純利益が圧迫され、インタレスト・カバレッジ・レシオ（ICR）が低下して財務安全性が悪化する。</li>
+<li><strong>戦略</strong>: 変動金利借入から固定金利への借換、遊休資産や過大在庫の圧縮によるキャッシュ創出と有利子負債の繰上返済、資本性劣後ローンや自己資本比率の引き上げによる財務基盤の強化。</li>
+</ul>
+<h3>予想論点2: インフレ・仕入原価高騰に対する価格転嫁（マークアップ）とCVP</h3>
+<ul>
+<li><strong>背景</strong>: 原材料・エネルギー価格の上昇に対し、価格改定が追いつかない中小企業の収益悪化。</li>
+<li><strong>問われ方</strong>: 「原材料高騰に対し製品価格を引き上げた場合の財務的メリットと留意点について述べよ。」</li>
+<li><strong>解答骨子</strong>:</li>
+<li><strong>メリット</strong>: 製品単価の上昇により限界利益率を維持・向上させ、損益分岐点比率を引き下げて収益体質を改善できる。</li>
+<li><strong>留意点</strong>: 価格引き上げによる顧客離反・販売数量減少リスクがあるため、付加価値の向上や差別化を同時に推進し、値上げによる限界利益総額の減少を防ぐ必要がある。</li>
+</ul>
+<h3>予想論点3: 人手不足に伴う省力化投資（自動化・DX）と営業レバレッジ</h3>
+<ul>
+<li><strong>背景</strong>: 人件費高騰・採用難を背景とした、産業ロボットや自動化システムの導入。</li>
+<li><strong>問われ方</strong>: 「自動化設備を導入することによる費用構造の変化と、経営上のリスクについて説明せよ。」</li>
+<li><strong>解答骨子</strong>:</li>
+<li><strong>費用構造の変化</strong>: 労務費・外注費（変動費）が減少し、設備の減価償却費・保守費（固定費）が増加するため、限界利益率は上昇するが損益分岐点売上高は上昇する。</li>
+<li><strong>リスク</strong>: 営業レバレッジが高まるため、需要減少時に利益が急激に悪化するリスクを抱える。設備稼働率の維持と安定的な受注確保が不可欠となる。</li>
+</ul>
+<h3>予想論点4: 運転資本（CCC）の適正化とサプライチェーンBCP</h3>
+<ul>
+<li><strong>背景</strong>: 供給網混乱に備えた在庫積み増しと、手元キャッシュ枯渇のトレードオフ。</li>
+<li><strong>問われ方</strong>: 「サプライチェーン寸断リスクに備えて在庫を増やした場合の財務的課題と、その改善策を助言せよ。」</li>
+<li><strong>解答骨子</strong>:</li>
+<li><strong>課題</strong>: 棚卸資産回転期間が長期化し、キャッシュ・コンバージョン・サイクル（CCC）が悪化して運転資金負担が増加、手元流動性が圧迫される。</li>
+<li><strong>改善策</strong>: ABC分析による重要部材のみの重点保有、共通部材の規格化・集約、サプライヤーとの情報共有による発注適正化、売上債権の早期回収（ファクタリング・電子記録債権）による資金繰り維持。</li>
+</ul>
+<h3>予想論点5: 後継者不在に伴うM&amp;A・事業承継の財務的留意点</h3>
+<ul>
+<li><strong>背景</strong>: 中小企業の高齢化に伴う親族外承継・スモールM&amp;Aの急増。</li>
+<li><strong>問われ方</strong>: 「第三者への事業譲渡（M&amp;A）を検討する際の財務的留意点について助言せよ。」</li>
+<li><strong>解答骨子</strong>:</li>
+<li><strong>留意点</strong>: 自社株式の適正評価（DCF法や時価純資産法等による客観的算定）、役員借入金の整理や簿外債務の解消、経営者保証（個人保証）の解除に向けた金融機関との交渉、譲渡益に対する税務負担の平準化。</li>
+</ul>
+<h3>予想論点6: 共通費配賦と活動基準原価計算（ABC）による適正評価</h3>
+<ul>
+<li><strong>背景</strong>: 多品種少量生産や複合事業化に伴う間接費の急増と採算誤認。</li>
+<li><strong>問われ方</strong>: 「間接部門の費用配賦方法を見直すことの財務管理上の意義を説明せよ。」</li>
+<li><strong>解答骨子</strong>:</li>
+<li><strong>意義</strong>: 単純な売上高や作業時間基準ではなく、コスト発生の要因（アクティビティ）に基づく配賦を行うことで、製品・顧客ごとの真の原価・収益性を把握し、不採算取引の是正や適正な価格交渉を実現できる。</li>
+</ul>
+<hr />
+<h2>6. 文字数別（30字/40字/60字/80字/100字）記述フレームワークと定型パーツ集</h2>
+<p>文字数制限に応じて、記述に盛り込む情報密度を厳密にコントロールする技術を身につける。</p>
+<h3>6-1. 30〜40字型（端的な結論と直接的理由）</h3>
+<ul>
+<li><strong>構成</strong>: 「【理由・原因】のため、【財務的帰結】。」</li>
+<li><strong>実戦パーツ</strong>:</li>
+<li><code>30字</code>: 「固定資産を圧縮し、固定比率と損益分岐点比率を引き下げる利点。」（31字）</li>
+<li><code>30字</code>: 「共通費回収に貢献する製品の廃止により、全社利益が減少する問題。」（31字）</li>
+<li><code>40字</code>: 「初期投資不要で固定費負担を抑制し、売上減少時の赤字リスクを低減できる利点。」（38字）</li>
+<li><code>40字</code>: 「顧客接点を維持してブランド価値を高め、他事業への送客効果を創出するため。」（37字）</li>
+</ul>
+<h3>6-2. 60字型（因果の2段展開：原因 → 財務変化 → 経営影響）</h3>
+<ul>
+<li><strong>構成</strong>: 「【原因（事業施策）】により【財務指標・構造の変化】が生じ、【最終的な経営・リスク影響】。」</li>
+<li><strong>実戦パーツ</strong>:</li>
+<li><code>60字</code>: 「賃貸出店により初期投資と固定資産を抑えつつ、固定費負担の増加に伴い、損益分岐点比率が上昇して当面の収益性を圧迫する特徴。」（60字）</li>
+<li><code>60字</code>: 「社長が決定権を持つ設備投資の減価償却費等の管理不能費を除外し、事業部長が統制可能な管理可能利益に基づいて業績評価を行う点。」（60字）</li>
+<li><code>60字</code>: 「買収価格と純資産時価の差額をのれんとして資産計上し、20年以内の合理的な期間にわたり定額法等で規則的に償却処理する。」（57字）</li>
+</ul>
+<h3>6-3. 80字型（3要素網羅型：外部/戦略背景 → 内部要因 → 財務帰結・課題）</h3>
+<ul>
+<li><strong>構成</strong>: 「要因は、【事業・戦略の動き】に伴い【資産・費用の具体的な変動】が生じ、【収益性・効率性・安全性の指標】が【悪化/改善】したため。」</li>
+<li><strong>実戦パーツ</strong>:</li>
+<li><code>80字（第1問悪化要因）</code>: 「要因は、直営店舗展開に伴う設備投資により固定資産と借入金が増加し減価償却費負担が生じた一方、売上高が伸び悩み、有形固定資産回転率と固定長期適合率が悪化したため。」（80字）</li>
+<li><code>80字（第1問劣後要因）</code>: 「同業他社がOEMを活用し資産を圧縮しているのに対し、D社は自社工場での内製化を推進したため固定資産と固定費が過大となり、総資産回転率と売上高営業利益率が劣る点。」（79字）</li>
+<li><code>80字（第4問資金調達助言）</code>: 「手元流動性が乏しく自己資本比率が低いため借入依存は避け、内部留保の蓄積を優先しつつ、返済猶予期間のある公的融資や少人数私募債を活用して財務安全性を維持すべき。」（78字）</li>
+</ul>
+<h3>6-4. 100字超型（リスク列挙 ＋ マネジメント助言）</h3>
+<ul>
+<li><strong>構成</strong>: 「リスクは①【リスク1の発生機序と財務影響】、②【リスク2の発生機序と財務影響】。対策として、【管理指標・基準の設定】と【具体的統制施策】により対応する。」</li>
+<li><strong>実戦パーツ</strong>:</li>
+<li><code>100字（新規事業リスクとマネジメント）</code>: 「リスクは①在庫滞留による資金固定化と棚卸資産回転期間の長期化、②仕入資金に伴う借入過大による安全性悪化。対策は在庫回転率の厳格管理、相場連動の価格設定、早期現金化ルールの徹底により運転資金を適正化する。」（100字）</li>
+<li><code>100字（外注依存リスクとマネジメント）</code>: 「リスクは委託先の品質不備や納期遅延による信用失墜と売上減少、および製造ノウハウ流出である。対策として、委託先選定基準の明確化、工程・品質マニュアルの共有と定期監査、複数購買による安定調達体制を構築する。」（100字）</li>
+</ul>
+<hr />
+<h2>7. まとめ：記述・知識系設問で確実に合格点を勝ち取るためのチェックリスト</h2>
+<ol>
+<li><strong>財務用語を主語にしているか</strong>: 「問題がある」ではなく「固定長期適合率が悪化している」「貢献利益がマイナスである」と表現しているか。</li>
+<li><strong>与件文の固有名詞・事業事実を根拠にしているか</strong>: 一般論ではなく、D社の製品、設備、顧客、取引形態に言及しているか。</li>
+<li><strong>設問の要求レイヤー（利点・欠点・助言・留意点）に正対しているか</strong>: 理由を聞かれているのに施策を書いたり、財務的利点を聞かれているのに営業面のメリットだけで終わっていないか。</li>
+<li><strong>文字数枠の8割以上を埋め、指定文字数ジャストで因果を収めているか</strong>: 簡潔すぎず、冗長すぎず、指定文字数の枠内で論理を完結させているか。</li>
+</ol>
+</div>
+</body>
+</html>
