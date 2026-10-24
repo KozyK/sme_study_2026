@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>事例Ⅱ 後半助言設問（第2〜4問）直前速攻パターンシート</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 5mm;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "BIZ UDPGothic", Meiryo, sans-serif;
+      font-size: 7.2pt;
+      line-height: 1.26;
+      color: #1a1a1a;
+      background-color: #fff;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page {
+      width: 200mm;
+      height: 287mm;
+      max-height: 287mm;
+      overflow: hidden;
+      margin: 0 auto;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    /* ヘッダー */
+    .header {
+      border-bottom: 2px solid #881337;
+      padding-bottom: 2px;
+      margin-bottom: 3px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .title {
+      font-size: 10.8pt;
+      font-weight: 800;
+      color: #881337;
+      letter-spacing: -0.3px;
+    }
+    .subtitle {
+      font-size: 7pt;
+      color: #475569;
+      font-weight: 600;
+    }
+    .tag {
+      background: #881337;
+      color: #fff;
+      font-size: 6.5pt;
+      font-weight: 700;
+      padding: 1px 5px;
+      border-radius: 2px;
+    }
+
+    /* 2カラム構成 */
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4.5mm;
+      flex: 1;
+    }
+    .col {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    /* セクションブロック */
+    .section-card {
+      border: 1px solid #cbd5e1;
+      border-radius: 3px;
+      background: #fff;
+      padding: 3.5px 5px;
+    }
+    .section-title {
+      font-size: 7.6pt;
+      font-weight: 800;
+      color: #881337;
+      background: #fff1f2;
+      padding: 1.5px 4px;
+      margin: -3.5px -5px 3px -5px;
+      border-bottom: 1px solid #fecdd3;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .section-title span.sub {
+      font-size: 6.3pt;
+      font-weight: 600;
+      color: #475569;
+    }
+
+    /* テーブル共通 */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 6.8pt;
+      margin-bottom: 2px;
+    }
+    th, td {
+      border: 1px solid #e2e8f0;
+      padding: 1.8px 3px;
+      vertical-align: top;
+    }
+    th {
+      background: #f8fafc;
+      color: #334155;
+      font-weight: 700;
+      text-align: left;
+    }
+
+    /* リスト・ステップ */
+    .step-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .step-item {
+      display: flex;
+      gap: 3px;
+      align-items: baseline;
+      font-size: 6.8pt;
+    }
+    .step-badge {
+      background: #881337;
+      color: #fff;
+      font-size: 6pt;
+      font-weight: 800;
+      padding: 0 3px;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .step-title {
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    /* パーツブロック */
+    .block-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2px;
+    }
+    .block-item {
+      border-left: 2.5px solid #be123c;
+      background: #fdf2f8;
+      padding: 2px 4px;
+      font-size: 6.6pt;
+    }
+    .block-head {
+      font-weight: 800;
+      color: #881337;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5px;
+    }
+    .block-head .chars {
+      font-size: 6pt;
+      color: #475569;
+      font-weight: 700;
+    }
+    .block-text {
+      color: #1e293b;
+      letter-spacing: -0.2px;
+      font-family: monospace, sans-serif;
+    }
+
+    /* 構文ボックス */
+    .template-box {
+      background: #f1f5f9;
+      border: 1px dashed #94a3b8;
+      padding: 2.5px 4px;
+      margin-bottom: 2px;
+      font-size: 6.6pt;
+    }
+    .template-title {
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 1px;
+    }
+    .template-text {
+      color: #0f172a;
+      letter-spacing: -0.2px;
+    }
+
+    /* ハイライト */
+    .hl {
+      color: #9f1239;
+      font-weight: 700;
+    }
+    .badge-sub {
+      display: inline-block;
+      font-size: 5.8pt;
+      font-weight: 700;
+      padding: 0 2px;
+      background: #e2e8f0;
+      color: #334155;
+      border-radius: 2px;
+      margin-right: 2px;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <!-- ヘッダー -->
+  <div class="header">
+    <div>
+      <div class="title">事例Ⅱ 後半助言設問（第2〜4問）直前速攻パターンシート</div>
+      <div class="subtitle">ターゲット立体定義（3変数）×自社固有資源×4P連動×カニバリ完全回避の因果フレーム</div>
+    </div>
+    <div class="tag">事例Ⅱ 助言特化 A4・1枚</div>
+  </div>
+
+  <div class="main-grid">
+    <!-- 左カラム -->
+    <div class="col">
+      <!-- 1. 本番緊急脱出 5ステップ・プロトコル -->
+      <div class="section-card">
+        <div class="section-title">
+          1. 緊急脱出 5ステップ・プロトコル
+          <span class="sub">白紙病・ポエム答案の完全撲滅</span>
+        </div>
+        <div class="step-list">
+          <div class="step-item">
+            <span class="step-badge">1</span>
+            <div><span class="step-title">設問制約特定</span>：ターゲット（誰に）・チャネル（どこで）・文字数を峻別。ターゲットとチャネルの混同を厳禁とする。</div>
+          </div>
+          <div class="step-item">
+            <span class="step-badge">2</span>
+            <div><span class="step-title">ターゲット立体定義</span>：<span class="hl">ジオ</span>（商圏・来街）、<span class="hl">デモ</span>（年代・家族構成）、<span class="hl">サイコ</span>（こだわり・健康・時短）の3変数を掛け合わせる。</div>
+          </div>
+          <div class="step-item">
+            <span class="step-badge">3</span>
+            <div><span class="step-title">与件固有資源特定</span>：社長のこだわり、職人技、伝統製法、地元特産素材、契約農家との信頼を特定し主語にする。</div>
+          </div>
+          <div class="step-item">
+            <span class="step-badge">4</span>
+            <div><span class="step-title">4P逆引き配線</span>：P（高付加価値品・コト消費）×P（プレミアム価格・非価格競争）×P（直営・EC・住み分け）×P（SNS・動画・CRM）。</div>
+          </div>
+          <div class="step-item">
+            <span class="step-badge">5</span>
+            <div><span class="step-title">高解像度効果着地</span>：単なる売上拡大ではなく「客単価向上」「リピート率向上」「LTV最大化」「口コミ誘発」に着地。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. 過去10年 出題パターン即応マトリクス -->
+      <div class="section-card">
+        <div class="section-title">
+          2. 過去10年 出題パターン即応マトリクス
+          <span class="sub">4大類型×病理×処方箋</span>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 25%;">パターン・年度</th>
+              <th style="width: 32%;">組織・市場の病理</th>
+              <th style="width: 43%;">必須マーケティング理論・処方箋</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>① 新市場開拓型</strong><br><span class="badge-sub">R7スポーツ</span><span class="badge-sub">R6陶磁器</span><span class="badge-sub">H30日本酒</span></td>
+              <td>既存客高齢化・減少、若年層・女性層の未開拓、需要縮小。</td>
+              <td>未開拓層インサイト特定、自社技術×新用途開発、体験型コト消費、SNSショート動画発信、新規顧客層獲得。</td>
+            </tr>
+            <tr>
+              <td><strong>② 直販協業・D2C</strong><br><span class="badge-sub">R4食肉</span><span class="badge-sub">R3豆腐</span><span class="badge-sub">R1ネイル</span></td>
+              <td>卸売依存、中抜き・価格決定権欠如、大手スーパー価格競争。</td>
+              <td>直営店・自社EC・移動販売展開、<span class="hl">既存卸先との住み分け（カニバリ完全回避）</span>、地域連携送客、適正利益確保。</td>
+            </tr>
+            <tr>
+              <td><strong>③ 既存客深耕・CRM</strong><br><span class="badge-sub">R7スポーツ</span><span class="badge-sub">R5蕎麦</span><span class="badge-sub">H29温泉</span></td>
+              <td>一見客・単発利用の多さ、顧客情報死蔵、リピート施策不足。</td>
+              <td>顧客DB一元管理（属性・履歴）、FSP（非金銭的優遇）、パーソナライズDM・LINE配信、ファン化、<span class="hl">LTV最大化</span>。</td>
+            </tr>
+            <tr>
+              <td><strong>④ ブランド価値構築</strong><br><span class="badge-sub">R5蕎麦</span><span class="badge-sub">R4食肉</span><span class="badge-sub">H28醤油</span></td>
+              <td>コモディティ化、安売り競争、ブランドロイヤルティ希薄。</td>
+              <td><span class="hl">感覚価値</span>（シズル感・意匠）×<span class="hl">観念価値</span>（伝統・安心・物語）の融合、高価格帯設定、非価格競争、客単価向上。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 5. 直前チェック：頻出応用パターン骨子 -->
+      <div class="section-card">
+        <div class="section-title">
+          5. 直前チェック：頻出応用パターン骨子
+          <span class="sub">落とすと即死の3大必須論点</span>
+        </div>
+        <div style="font-size: 6.6pt; line-height: 1.25;">
+          <div style="margin-bottom: 2px;">
+            <strong style="color: #881337;">❶ カニバリゼーション回避の3大手法（直販・新チャネル時の鉄則）</strong><br>
+            直営やEC、協業を始める際は既存卸先・既存店との競合を必ず防ぐ。①商品仕様差別化（卸は普及品・直販は限定品）、②用途差別化（自家消費用vs贈答用）、③価格帯差別化（プレミアム高価格vs定番価格）を明記する。
+          </div>
+          <div style="margin-bottom: 2px;">
+            <strong style="color: #881337;">❷ 感覚価値と観念価値の融合（ブランド構築・非価格競争）</strong><br>
+            見た目や美味しさ等の五感（感覚価値）に加え、職人のこだわり、歴史、産地の安心安全というストーリー（観念価値）をパッケージやSNSで発信。大手との価格競争を完全脱却し、高価格帯で客単価を引き上げる。
+          </div>
+          <div>
+            <strong style="color: #881337;">❸ 顧客DB分析に基づくFSP（真のリピート・LTV最大化）</strong><br>
+            単なるポイント値引き（自滅行為）を避け、顧客DB（属性・購買履歴）を活用。上位優良顧客に限定イベント招待、先行予約権、社長の手紙等の「非金銭的特別待遇（FSP）」を付与し、愛着心を高め口コミ紹介を誘発。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 右カラム -->
+    <div class="col">
+      <!-- 3. マーケティング・流通 16大黄金パーツブロック -->
+      <div class="section-card">
+        <div class="section-title">
+          3. マーケティング・流通 16大黄金パーツブロック
+          <span class="sub">字数カウント済</span>
+        </div>
+        <div class="block-grid">
+          <!-- ターゲット系 -->
+          <div class="block-item">
+            <div class="block-head"><span>① 健康・本格志向層特定</span><span class="chars">28字</span></div>
+            <div class="block-text">健康志向の高いシニア層や本格的な味を求める共働き世帯を標的とし、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>② 観光客・来街者ターゲット</span><span class="chars">27字</span></div>
+            <div class="block-text">地域を訪れる観光客や来街者のうち、特別感や非日常を求める層を標的とし、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>③ 若年・女性層の未開拓需要</span><span class="chars">27字</span></div>
+            <div class="block-text">SNS利用頻度が高く、トレンドや体験を重視する若年・女性層を標的とし、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>④ 地元住民・常連客の特定</span><span class="chars">26字</span></div>
+            <div class="block-text">近隣商圏に居住し、利便性と対面での安心感を重視する高齢者世帯を標的とし、</div>
+          </div>
+
+          <!-- 製品・価格系 -->
+          <div class="block-item">
+            <div class="block-head"><span>⑤ 固有資源×高付加価値商品</span><span class="chars">30字</span></div>
+            <div class="block-text">自社の職人技と地域特産素材を融合させ、高付加価値な限定商品を開発し、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑥ コト消費・体験価値の付加</span><span class="chars">28字</span></div>
+            <div class="block-text">製造工程見学や手作り体験を組み込み、記憶に残るコト消費価値を提供し、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑦ ギフト・セットメニュー化</span><span class="chars">28字</span></div>
+            <div class="block-text">看板商品と関連商品を組み合わせたギフトセットや食べ比べ商品を開発し、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑧ プレミアム価格・非価格競争</span><span class="chars">29字</span></div>
+            <div class="block-text">厳選素材に見合う高価格帯を設定し、大手との不毛な価格競争を回避して、</div>
+          </div>
+
+          <!-- チャネル・住み分け系 -->
+          <div class="block-item">
+            <div class="block-head"><span>⑨ 直営・自社EC・D2C展開</span><span class="chars">30字</span></div>
+            <div class="block-text">自社直営店舗および公式ECサイトを開設し、直接対話と迅速な配送体制を整え、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑩ チャネル住み分け・競合回避</span><span class="chars">32字</span></div>
+            <div class="block-text">既存卸先には普及品、直営・自社販路には限定専用品を配して競合を完全回避し、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑪ 地域事業者連携・共同販路</span><span class="chars">30字</span></div>
+            <div class="block-text">近隣の観光施設や宿泊施設と協業し、相互送客や共同プロモーションを展開し、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑫ 移動販売・定期巡回サービス</span><span class="chars">29字</span></div>
+            <div class="block-text">買い物困難地域への定期巡回移動販売や出張サービスにより利便性を提供し、</div>
+          </div>
+
+          <!-- 販促・CRM系 -->
+          <div class="block-item">
+            <div class="block-head"><span>⑬ SNS・ショート動画発信</span><span class="chars">29字</span></div>
+            <div class="block-text">公式SNSで製造工程のこだわりやシズル感ある動画を発信し、認知と共感を広げ、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑭ 顧客情報DB化・CRM分析</span><span class="chars">30字</span></div>
+            <div class="block-text">購入履歴や顧客属性を一元管理するDBを構築し、個々のニーズを詳細に分析し、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑮ パーソナライズ販促・FSP</span><span class="chars">30字</span></div>
+            <div class="block-text">顧客DBに基づく個別DMや特典進呈、優良顧客向け先行案内等のFSPを実施し、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑯ ファン化・口コミ紹介促進</span><span class="chars">28字</span></div>
+            <div class="block-text">双方向の交流やコミュニティ形成を促し、愛着心を高めて口コミ紹介を誘発し、</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. 文字数別 黄金構文テンプレート -->
+      <div class="section-card">
+        <div class="section-title">
+          4. 文字数別 黄金構文テンプレート
+          <span class="sub">本番即応マス目配分</span>
+        </div>
+        <div class="template-box">
+          <div class="template-title">【パターンA：80〜100字（単一施策・短文助言）】</div>
+          <div class="template-text">
+            標的は［①ターゲット定義］。施策は自社の［②強み・素材］を活かした［③高付加価値商品］を開発し、［④チャネル・プロモーション］を展開する。これにより［⑤客単価向上と売上拡大］を図る。（80〜100字）
+          </div>
+        </div>
+        <div class="template-box">
+          <div class="template-title">【パターンB：100〜120字（4Pフルセット助言）】</div>
+          <div class="template-text">
+            標的は［①ターゲット］。施策は、①自社強みを活かした［②製品］を高価格帯で提供し、②［③チャネル・住み分け］で既存競合を回避し、③［④プロモ・顧客DB活用］で関係性を深める。以上で［⑤客単価向上・LTV最大化］を実現。（110〜120字）
+          </div>
+        </div>
+        <div class="template-box">
+          <div class="template-title">【パターンC：140〜160字（直販展開・地域協業・新事業）】</div>
+          <div class="template-text">
+            標的は［①ターゲット層］。施策は製品面で［②自社強み］を活かした［③限定品・コト消費］を開発し、価格面で［④プレミアム価格］を設定。流通面で［⑤直営/EC/協業］を用い既存店と住み分け、販促面で［⑥SNS動画/顧客DB分析］を講じる。以上により［⑦愛着向上と持続的収益拡大］を図る。（140〜160字）
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

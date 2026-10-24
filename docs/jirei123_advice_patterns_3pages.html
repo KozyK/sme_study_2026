@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>事例Ⅰ〜Ⅲ 後半助言設問 直前速攻パターンシート（3ページ統合版）</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 5mm;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "BIZ UDPGothic", Meiryo, sans-serif;
+      font-size: 7.2pt;
+      line-height: 1.26;
+      color: #1a1a1a;
+      background-color: #fff;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page {
+      width: 200mm;
+      height: 287mm;
+      max-height: 287mm;
+      overflow: hidden;
+      margin: 0 auto;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      page-break-after: always;
+    }
+    .page:last-child {
+      page-break-after: avoid;
+    }
+
+    /* 共通ヘッダー */
+    .header {
+      padding-bottom: 2px;
+      margin-bottom: 3px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .title {
+      font-size: 10.8pt;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+    }
+    .subtitle {
+      font-size: 7pt;
+      color: #475569;
+      font-weight: 600;
+    }
+    .tag {
+      color: #fff;
+      font-size: 6.5pt;
+      font-weight: 700;
+      padding: 1px 5px;
+      border-radius: 2px;
+    }
+
+    /* テーマ別カラー */
+    /* 事例Ⅰ（ネイビー） */
+    .theme-j1 .header { border-bottom: 2px solid #1e3a8a; }
+    .theme-j1 .title { color: #1e3a8a; }
+    .theme-j1 .tag { background: #1e3a8a; }
+    .theme-j1 .section-title { color: #1e3a8a; background: #eff6ff; border-bottom: 1px solid #bfdbfe; }
+    .theme-j1 .step-badge { background: #1e3a8a; }
+    .theme-j1 .block-item { border-left: 2.5px solid #2563eb; background: #f8fafc; }
+    .theme-j1 .block-head { color: #1e3a8a; }
+    .theme-j1 .hl { color: #1d4ed8; font-weight: 700; }
+
+    /* 事例Ⅱ（ワインレッド） */
+    .theme-j2 .header { border-bottom: 2px solid #881337; }
+    .theme-j2 .title { color: #881337; }
+    .theme-j2 .tag { background: #881337; }
+    .theme-j2 .section-title { color: #881337; background: #fff1f2; border-bottom: 1px solid #fecdd3; }
+    .theme-j2 .step-badge { background: #881337; }
+    .theme-j2 .block-item { border-left: 2.5px solid #be123c; background: #fdf2f8; }
+    .theme-j2 .block-head { color: #881337; }
+    .theme-j2 .hl { color: #9f1239; font-weight: 700; }
+
+    /* 事例Ⅲ（フォレストグリーン） */
+    .theme-j3 .header { border-bottom: 2px solid #064e3b; }
+    .theme-j3 .title { color: #064e3b; }
+    .theme-j3 .tag { background: #064e3b; }
+    .theme-j3 .section-title { color: #064e3b; background: #ecfdf5; border-bottom: 1px solid #a7f3d0; }
+    .theme-j3 .step-badge { background: #064e3b; }
+    .theme-j3 .block-item { border-left: 2.5px solid #059669; background: #f0fdf4; }
+    .theme-j3 .block-head { color: #064e3b; }
+    .theme-j3 .hl { color: #047857; font-weight: 700; }
+
+    /* 2カラム構成 */
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4.5mm;
+      flex: 1;
+    }
+    .col {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    /* セクションブロック */
+    .section-card {
+      border: 1px solid #cbd5e1;
+      border-radius: 3px;
+      background: #fff;
+      padding: 3.5px 5px;
+    }
+    .section-title {
+      font-size: 7.6pt;
+      font-weight: 800;
+      padding: 1.5px 4px;
+      margin: -3.5px -5px 3px -5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .section-title span.sub {
+      font-size: 6.3pt;
+      font-weight: 600;
+      color: #475569;
+    }
+
+    /* テーブル共通 */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 6.8pt;
+      margin-bottom: 2px;
+    }
+    th, td {
+      border: 1px solid #e2e8f0;
+      padding: 1.8px 3px;
+      vertical-align: top;
+    }
+    th {
+      background: #f8fafc;
+      color: #334155;
+      font-weight: 700;
+      text-align: left;
+    }
+
+    /* リスト・ステップ */
+    .step-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .step-item {
+      display: flex;
+      gap: 3px;
+      align-items: baseline;
+      font-size: 6.8pt;
+    }
+    .step-badge {
+      color: #fff;
+      font-size: 6pt;
+      font-weight: 800;
+      padding: 0 3px;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .step-title {
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    /* パーツブロック */
+    .block-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2px;
+    }
+    .block-item {
+      padding: 2px 4px;
+      font-size: 6.6pt;
+    }
+    .block-head {
+      font-weight: 800;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5px;
+    }
+    .block-head .chars {
+      font-size: 6pt;
+      color: #475569;
+      font-weight: 700;
+    }
+    .block-text {
+      color: #1e293b;
+      letter-spacing: -0.2px;
+      font-family: monospace, sans-serif;
+    }
+
+    /* 構文ボックス */
+    .template-box {
+      background: #f1f5f9;
+      border: 1px dashed #94a3b8;
+      padding: 2.5px 4px;
+      margin-bottom: 2px;
+      font-size: 6.6pt;
+    }
+    .template-title {
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 1px;
+    }
+    .template-text {
+      color: #0f172a;
+      letter-spacing: -0.2px;
+    }
+
+    .badge-sub {
+      display: inline-block;
+      font-size: 5.8pt;
+      font-weight: 700;
+      padding: 0 2px;
+      background: #e2e8f0;
+      color: #334155;
+      border-radius: 2px;
+      margin-right: 2px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========================================== -->
+<!-- ページ 1: 事例Ⅰ（組織・人事） -->
+<!-- ========================================== -->
+<div class="page theme-j1">
+  <div class="header">
+    <div>
+      <div class="title">事例Ⅰ 後半助言設問（第3〜5問）直前速攻パターンシート</div>
+      <div class="subtitle">与件ヒント極小時の一次組織理論逆引き想起×因果構造化（白紙病・一般論の完全撲滅）</div>
+    </div>
+    <div class="tag">事例Ⅰ 助言特化 [Page 1/3]</div>
+  </div>
+
+  <div class="main-grid">
+    <!-- 左カラム -->
+    <div class="col">
+      <div class="section-card">
+        <div class="section-title">
+          1. 緊急脱出 5ステップ・プロトコル
+          <span class="sub">白紙病・ポエム答案の完全撲滅</span>
+        </div>
+        <div class="step-list">
+          <div class="step-item">
+            <span class="step-badge">1</span>
+            <div><span class="step-title">設問制約特定</span>：誰への助言か（後継者/現経営陣/新事業担当）、何の助言か（組織体制/人事施策/事業展開）、字数制限（80/100/150字）を画定。</div>
+          </div>
+          <div class="step-item">
+            <span class="step-badge">2</span>
+            <div><span class="step-title">与件強み・弱み照合</span>：活用可能な内部リソース（熟練社員、若手、顧客基盤、ブランド）と組織課題（属人化、高齢化、権限集中）を特定。</div>
+          </div>
+          <div class="step-item">
+            <span class="step-badge">3</span>
+            <div><span class="step-title">組織・人事病理特定</span>：属人化、セクショナリズム、動機づけ低下、権限未委譲、文化摩擦のいずれかを見極める。</div>
+          </div>
+          <div class="step-item">
+            <span class="step-badge">4</span>
+            <div><span class="step-title">一次理論パーツ逆引き</span>：病理に対応する一次理論（組織構造/評価処遇/能力開発/動機づけ）の黄金パーツブロックを想起し配線。</div>
+          </div>
+          <div class="step-item">
+            <span class="step-badge">5</span>
+            <div><span class="step-title">効果の経営指標着地</span>：施策単体で終わらせず「収益性向上」「組織活性化」「円滑な事業承継」「持続的競争優位」に着地。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-title">
+          2. 過去10年 出題パターン即応マトリクス
+          <span class="sub">4大類型×病理×処方箋</span>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 25%;">パターン・年度</th>
+              <th style="width: 32%;">組織・人事の病理</th>
+              <th style="width: 43%;">必須一次理論・処方箋</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>① 新事業推進型</strong><br><span class="badge-sub">R7</span><span class="badge-sub">R3</span><span class="badge-sub">H30</span></td>
+              <td>既存事業の常識への固執、リソース分散・セクショナリズム。</td>
+              <td>専任PT/社内ベンチャー設置、専門人材の中途採用、複線型人事制度、新事業への権限委譲、プロセス重視評価。</td>
+            </tr>
+            <tr>
+              <td><strong>② 事業承継・PMI</strong><br><span class="badge-sub">R5</span><span class="badge-sub">R4</span><span class="badge-sub">R2</span></td>
+              <td>文化摩擦、ベテラン反発、暗黙知消失、買収後のシナジー不全。</td>
+              <td>集団指導体制、段階的権限委譲、暗黙知の形式知化・マニュアル化、合同ミーティングによる企業風土融和、理念共有。</td>
+            </tr>
+            <tr>
+              <td><strong>③ ワンマン脱却型</strong><br><span class="badge-sub">R4</span><span class="badge-sub">H29</span><span class="badge-sub">H27</span></td>
+              <td>トップへの意思決定集中、管理職層の不在・未成熟、指示待ち。</td>
+              <td>機能別組織から事業部制への移行、中間管理職への権限委譲、経営陣の意思決定迅速化、自律的組織文化の醸成。</td>
+            </tr>
+            <tr>
+              <td><strong>④ 技能承継・処遇</strong><br><span class="badge-sub">R6</span><span class="badge-sub">R1</span><span class="badge-sub">H28</span></td>
+              <td>ベテラン高齢化、技術属人化、若手の定着率低迷、不公平感。</td>
+              <td>OJT・メンター制度、多能工化、公正な評価制度（透明性確保）、モチベーション向上（キャリアパス明示）。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section-card">
+        <div class="section-title">
+          5. 直前チェック：頻出応用パターン骨子
+          <span class="sub">落とすと即死の2大特論</span>
+        </div>
+        <div style="font-size: 6.6pt; line-height: 1.25;">
+          <div style="margin-bottom: 2px;">
+            <strong style="color: #1e3a8a;">❶ 成果主義導入の留意点（安易な個人成果主義への警鐘）</strong><br>
+            個人成果主義への偏重は、チームワーク阻害、ノウハウ抱え込み、短期志向を招く。処方箋として、①チーム業績連動給、②プロセス評価の併用、③客観的・透明な評価基準、④定期的な多面評価（360度）とフィードバック面談を必ずセットで助言する。
+          </div>
+          <div>
+            <strong style="color: #1e3a8a;">❷ 既存事業縮小に伴う業態転換の組織摩擦防止（チェンジマネジメント）</strong><br>
+            既存部門のベテランへの配慮、新規部門との交流会、トップによる将来ビジョンの丁寧な対話と共有で社内融和を図る。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 右カラム -->
+    <div class="col">
+      <div class="section-card">
+        <div class="section-title">
+          3. 組織・人事 16大黄金パーツブロック
+          <span class="sub">字数カウント済</span>
+        </div>
+        <div class="block-grid">
+          <div class="block-item">
+            <div class="block-head"><span>① 権限委譲・分業の確立</span><span class="chars">29字</span></div>
+            <div class="block-text">日常業務の権限を現場管理職へ委譲し、経営陣が戦略的意思決定に専念できる体制を整え、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>② 組織改編・PT設置</span><span class="chars">30字</span></div>
+            <div class="block-text">全社横断型プロジェクトチームを設置し、部門間の連携強化と迅速な意思決定を可能とし、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>③ 情報共有インフラ構築</span><span class="chars">28字</span></div>
+            <div class="block-text">ITツールを活用した情報共有プラットフォームを導入し、業務の属人化を排除して、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>④ 経営陣の機能分担</span><span class="chars">27字</span></div>
+            <div class="block-text">各役員の専門分野に応じた明確な役割分担を定め、集団指導体制への円滑な移行を図り、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑤ 複線型人事制度の導入</span><span class="chars">29字</span></div>
+            <div class="block-text">マネジメント職と専門職のキャリアパスを分けた複線型人事制度を導入し、多様な人材の、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑥ プロセス重視評価の適用</span><span class="chars">29字</span></div>
+            <div class="block-text">短期的な成果だけでなく挑戦や取り組みプロセスを評価基準に組み込み、試行錯誤を促し、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑦ インセンティブ設計</span><span class="chars">28字</span></div>
+            <div class="block-text">業績向上や新規事業創出に貢献した社員への特別報奨制度を創設し、挑戦意欲を高めて、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑧ 公平性・透明性の確保</span><span class="chars">29字</span></div>
+            <div class="block-text">評価基準を明文化して全社に開示し、定期的な評価面談を実施することで評価の納得感を、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑨ 暗黙知の形式知化・マニュアル</span><span class="chars">29字</span></div>
+            <div class="block-text">熟練社員のノウハウを作業手順書やチェックリストに落とし込んで形式知化を推進し、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑩ OJT・メンター制度の運用</span><span class="chars">30字</span></div>
+            <div class="block-text">若手社員に対しベテラン社員を指導役とする計画的OJTやメンター制度を導入し、実務を通じた、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑪ 多能工化・ジョブローテ</span><span class="chars">28字</span></div>
+            <div class="block-text">定期的なジョブローテーションを実施して多能工化を図り、急な欠員時にも柔軟に対応できる、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑫ 後継者教育・権限委譲</span><span class="chars">29字</span></div>
+            <div class="block-text">後継者に対して新規事業や主要部門の統括を段階的に任せ、リーダーシップと経営判断力を、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑬ 経営ビジョンの浸透</span><span class="chars">28字</span></div>
+            <div class="block-text">全社ミーティング等を通じて将来ビジョンや経営理念を共有し、組織としての一体感を醸成し、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑭ 自律的挑戦文化の醸成</span><span class="chars">29字</span></div>
+            <div class="block-text">ボトムアップでの提案制度を導入し、失敗を許容する風土を築くことで社員の自発的行動を、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑮ 円滑なコミュニケーション</span><span class="chars">29字</span></div>
+            <div class="block-text">部門横断の定例ミーティングや1on1面談を制度化し、風通しの良い職場環境を構築して、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑯ 心理的安全性の確保</span><span class="chars">30字</span></div>
+            <div class="block-text">率直な意見交換ができる心理的安全性を高め、部門間のセクショナリズムや不信感を解消し、</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-title">
+          4. 文字数別 黄金構文テンプレート
+          <span class="sub">本番即応マス目配分</span>
+        </div>
+        <div class="template-box">
+          <div class="template-title">【パターンA：60〜80字（単一論点助言）】</div>
+          <div class="template-text">
+            助言内容は、①［与件課題］に対し［具体的施策］を実施し、②［組織的効果］を図り、［経営効果］に繋げること。（60〜80字）
+          </div>
+        </div>
+        <div class="template-box">
+          <div class="template-title">【パターンB：100〜120字（2軸構成：組織面＋人事面）】</div>
+          <div class="template-text">
+            助言内容は、組織面で①［組織施策］により［組織効果］を図る。人事面で②［人事施策］を実施し［人的効果］を促す。以上により［最終効果］を実現する。（100〜120字）
+          </div>
+        </div>
+        <div class="template-box">
+          <div class="template-title">【パターンC：150〜200字（3軸・詳細助言）】</div>
+          <div class="template-text">
+            助言内容は、①組織体制の［再編施策］、②人材育成として［育成施策］、③人事制度で［評価施策］を講じる。これにより［短期的改善］と［長期的企業価値］を図る。（150〜200字）
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========================================== -->
+<!-- ページ 2: 事例Ⅱ（マーケティング・流通） -->
+<!-- ========================================== -->
+<div class="page theme-j2">
+  <div class="header">
+    <div>
+      <div class="title">事例Ⅱ 後半助言設問（第2〜4問）直前速攻パターンシート</div>
+      <div class="subtitle">ターゲット立体定義（3変数）×自社固有資源×4P連動×カニバリ完全回避の因果フレーム</div>
+    </div>
+    <div class="tag">事例Ⅱ 助言特化 [Page 2/3]</div>
+  </div>
+
+  <div class="main-grid">
+    <!-- 左カラム -->
+    <div class="col">
+      <div class="section-card">
+        <div class="section-title">
+          1. 緊急脱出 5ステップ・プロトコル
+          <span class="sub">白紙病・ポエム答案の完全撲滅</span>
+        </div>
+        <div class="step-list">
+          <div class="step-item">
+            <span class="step-badge">1</span>
+            <div><span class="step-title">設問制約特定</span>：ターゲット（誰に）・チャネル（どこで）・文字数を峻別。ターゲットとチャネルの混同を厳禁とする。</div>
+          </div>
+          <div class="step-item">
+            <span class="step-badge">2</span>
+            <div><span class="step-title">ターゲット立体定義</span>：<span class="hl">ジオ</span>（商圏・来街）、<span class="hl">デモ</span>（年代・家族構成）、<span class="hl">サイコ</span>（こだわり・健康・時短）の3変数を掛け合わせる。</div>
+          </div>
+          <div class="step-item">
+            <span class="step-badge">3</span>
+            <div><span class="step-title">与件固有資源特定</span>：社長のこだわり、職人技、伝統製法、地元特産素材、契約農家との信頼を特定し主語にする。</div>
+          </div>
+          <div class="step-item">
+            <span class="step-badge">4</span>
+            <div><span class="step-title">4P逆引き配線</span>：P（高付加価値品・コト消費）×P（プレミアム価格・非価格競争）×P（直営・EC・住み分け）×P（SNS・動画・CRM）。</div>
+          </div>
+          <div class="step-item">
+            <span class="step-badge">5</span>
+            <div><span class="step-title">高解像度効果着地</span>：単なる売上拡大ではなく「客単価向上」「リピート率向上」「LTV最大化」「口コミ誘発」に着地。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-title">
+          2. 過去10年 出題パターン即応マトリクス
+          <span class="sub">4大類型×病理×処方箋</span>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 25%;">パターン・年度</th>
+              <th style="width: 32%;">組織・市場の病理</th>
+              <th style="width: 43%;">必須マーケティング理論・処方箋</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>① 新市場開拓型</strong><br><span class="badge-sub">R7スポーツ</span><span class="badge-sub">R6陶磁器</span><span class="badge-sub">H30日本酒</span></td>
+              <td>既存客高齢化・減少、若年層・女性層の未開拓、需要縮小。</td>
+              <td>未開拓層インサイト特定、自社技術×新用途開発、体験型コト消費、SNSショート動画発信、新規顧客層獲得。</td>
+            </tr>
+            <tr>
+              <td><strong>② 直販協業・D2C</strong><br><span class="badge-sub">R4食肉</span><span class="badge-sub">R3豆腐</span><span class="badge-sub">R1ネイル</span></td>
+              <td>卸売依存、中抜き・価格決定権欠如、大手スーパー価格競争。</td>
+              <td>直営店・自社EC・移動販売展開、<span class="hl">既存卸先との住み分け（カニバリ完全回避）</span>、地域連携送客、適正利益確保。</td>
+            </tr>
+            <tr>
+              <td><strong>③ 既存客深耕・CRM</strong><br><span class="badge-sub">R7スポーツ</span><span class="badge-sub">R5蕎麦</span><span class="badge-sub">H29温泉</span></td>
+              <td>一見客・単発利用の多さ、顧客情報死蔵、リピート施策不足。</td>
+              <td>顧客DB一元管理（属性・履歴）、FSP（非金銭的優遇）、パーソナライズDM・LINE配信、ファン化、<span class="hl">LTV最大化</span>。</td>
+            </tr>
+            <tr>
+              <td><strong>④ ブランド価値構築</strong><br><span class="badge-sub">R5蕎麦</span><span class="badge-sub">R4食肉</span><span class="badge-sub">H28醤油</span></td>
+              <td>コモディティ化、安売り競争、ブランドロイヤルティ希薄。</td>
+              <td><span class="hl">感覚価値</span>（シズル感・意匠）×<span class="hl">観念価値</span>（伝統・安心・物語）の融合、高価格帯設定、非価格競争、客単価向上。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section-card">
+        <div class="section-title">
+          5. 直前チェック：頻出応用パターン骨子
+          <span class="sub">落とすと即死の3大必須論点</span>
+        </div>
+        <div style="font-size: 6.6pt; line-height: 1.25;">
+          <div style="margin-bottom: 2px;">
+            <strong style="color: #881337;">❶ カニバリゼーション回避の3大手法（直販・新チャネル時の鉄則）</strong><br>
+            直営やEC、協業を始める際は既存卸先・既存店との競合を必ず防ぐ。①商品仕様差別化（卸は普及品・直販は限定品）、②用途差別化（自家消費用vs贈答用）、③価格帯差別化（プレミアム高価格vs定番価格）を明記する。
+          </div>
+          <div style="margin-bottom: 2px;">
+            <strong style="color: #881337;">❷ 感覚価値と観念価値の融合（ブランド構築・非価格競争）</strong><br>
+            見た目や美味しさ等の五感（感覚価値）に加え、職人のこだわり、歴史、産地の安心安全というストーリー（観念価値）をパッケージやSNSで発信。大手との価格競争を完全脱却し、高価格帯で客単価を引き上げる。
+          </div>
+          <div>
+            <strong style="color: #881337;">❸ 顧客DB分析に基づくFSP（真のリピート・LTV最大化）</strong><br>
+            単なるポイント値引き（自滅行為）を避け、顧客DB（属性・購買履歴）を活用。上位優良顧客に限定イベント招待、先行予約権、社長の手紙等の「非金銭的特別待遇（FSP）」を付与し、愛着心を高め口コミ紹介を誘発。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 右カラム -->
+    <div class="col">
+      <div class="section-card">
+        <div class="section-title">
+          3. マーケティング・流通 16大黄金パーツブロック
+          <span class="sub">字数カウント済</span>
+        </div>
+        <div class="block-grid">
+          <div class="block-item">
+            <div class="block-head"><span>① 健康・本格志向層特定</span><span class="chars">28字</span></div>
+            <div class="block-text">健康志向の高いシニア層や本格的な味を求める共働き世帯を標的とし、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>② 観光客・来街者ターゲット</span><span class="chars">27字</span></div>
+            <div class="block-text">地域を訪れる観光客や来街者のうち、特別感や非日常を求める層を標的とし、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>③ 若年・女性層の未開拓需要</span><span class="chars">27字</span></div>
+            <div class="block-text">SNS利用頻度が高く、トレンドや体験を重視する若年・女性層を標的とし、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>④ 地元住民・常連客の特定</span><span class="chars">26字</span></div>
+            <div class="block-text">近隣商圏に居住し、利便性と対面での安心感を重視する高齢者世帯を標的とし、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑤ 固有資源×高付加価値商品</span><span class="chars">30字</span></div>
+            <div class="block-text">自社の職人技と地域特産素材を融合させ、高付加価値な限定商品を開発し、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑥ コト消費・体験価値の付加</span><span class="chars">28字</span></div>
+            <div class="block-text">製造工程見学や手作り体験を組み込み、記憶に残るコト消費価値を提供し、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑦ ギフト・セットメニュー化</span><span class="chars">28字</span></div>
+            <div class="block-text">看板商品と関連商品を組み合わせたギフトセットや食べ比べ商品を開発し、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑧ プレミアム価格・非価格競争</span><span class="chars">29字</span></div>
+            <div class="block-text">厳選素材に見合う高価格帯を設定し、大手との不毛な価格競争を回避して、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑨ 直営・自社EC・D2C展開</span><span class="chars">30字</span></div>
+            <div class="block-text">自社直営店舗および公式ECサイトを開設し、直接対話と迅速な配送体制を整え、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑩ チャネル住み分け・競合回避</span><span class="chars">32字</span></div>
+            <div class="block-text">既存卸先には普及品、直営・自社販路には限定専用品を配して競合を完全回避し、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑪ 地域事業者連携・共同販路</span><span class="chars">30字</span></div>
+            <div class="block-text">近隣の観光施設や宿泊施設と協業し、相互送客や共同プロモーションを展開し、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑫ 移動販売・定期巡回サービス</span><span class="chars">29字</span></div>
+            <div class="block-text">買い物困難地域への定期巡回移動販売や出張サービスにより利便性を提供し、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑬ SNS・ショート動画発信</span><span class="chars">29字</span></div>
+            <div class="block-text">公式SNSで製造工程のこだわりやシズル感ある動画を発信し、認知と共感を広げ、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑭ 顧客情報DB化・CRM分析</span><span class="chars">30字</span></div>
+            <div class="block-text">購入履歴や顧客属性を一元管理するDBを構築し、個々のニーズを詳細に分析し、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑮ パーソナライズ販促・FSP</span><span class="chars">30字</span></div>
+            <div class="block-text">顧客DBに基づく個別DMや特典進呈、優良顧客向け先行案内等のFSPを実施し、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑯ ファン化・口コミ紹介促進</span><span class="chars">28字</span></div>
+            <div class="block-text">双方向の交流やコミュニティ形成を促し、愛着心を高めて口コミ紹介を誘発し、</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-title">
+          4. 文字数別 黄金構文テンプレート
+          <span class="sub">本番即応マス目配分</span>
+        </div>
+        <div class="template-box">
+          <div class="template-title">【パターンA：80〜100字（単一施策・短文助言）】</div>
+          <div class="template-text">
+            標的は［①ターゲット定義］。施策は自社の［②強み・素材］を活かした［③高付加価値商品］を開発し、［④チャネル・プロモーション］を展開する。これにより［⑤客単価向上と売上拡大］を図る。（80〜100字）
+          </div>
+        </div>
+        <div class="template-box">
+          <div class="template-title">【パターンB：100〜120字（4Pフルセット助言）】</div>
+          <div class="template-text">
+            標的は［①ターゲット］。施策は、①自社強みを活かした［②製品］を高価格帯で提供し、②［③チャネル・住み分け］で既存競合を回避し、③［④プロモ・顧客DB活用］で関係性を深める。以上で［⑤客単価向上・LTV最大化］を実現。（110〜120字）
+          </div>
+        </div>
+        <div class="template-box">
+          <div class="template-title">【パターンC：140〜160字（直販展開・地域協業・新事業）】</div>
+          <div class="template-text">
+            標的は［①ターゲット層］。施策は製品面で［②自社強み］を活かした［③限定品・コト消費］を開発し、価格面で［④プレミアム価格］を設定。流通面で［⑤直営/EC/協業］を用い既存店と住み分け、販促面で［⑥SNS動画/顧客DB分析］を講じる。以上により［⑦愛着向上と持続的収益拡大］を図る。（140〜160字）
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========================================== -->
+<!-- ページ 3: 事例Ⅲ（生産・技術） -->
+<!-- ========================================== -->
+<div class="page theme-j3">
+  <div class="header">
+    <div>
+      <div class="title">事例Ⅲ 後半助言設問（第3〜5問）直前速攻パターンシート</div>
+      <div class="subtitle">管理と作業の峻別×現場整流化（SMED/U字）×人的応援体制×新事業4大因果（QCD着地）</div>
+    </div>
+    <div class="tag">事例Ⅲ 助言特化 [Page 3/3]</div>
+  </div>
+
+  <div class="main-grid">
+    <!-- 左カラム -->
+    <div class="col">
+      <div class="section-card">
+        <div class="section-title">
+          1. 緊急脱出 5ステップ・プロトコル
+          <span class="sub">事例Ⅱ化・精神論答案の完全撲滅</span>
+        </div>
+        <div class="step-list">
+          <div class="step-item">
+            <span class="step-badge">1</span>
+            <div><span class="step-title">管理と現場の峻別</span>：課題が「計画・情報・営業連携（管理）」か「段取・動線・属人化（現場作業）」かを切り分ける。</div>
+          </div>
+          <div class="step-item">
+            <span class="step-badge">2</span>
+            <div><span class="step-title">現場ボトルネック特定</span>：段取時間の長さ、特定熟練工の停滞、紙・口頭伝達の手戻り、混在ラインの混乱を特定。</div>
+          </div>
+          <div class="step-item">
+            <span class="step-badge">3</span>
+            <div><span class="step-title">自社固有リソース特定</span>：熟練工の加工技術、既存成形機・設備、CADデータ、地元ネットワークを活用する。</div>
+          </div>
+          <div class="step-item">
+            <span class="step-badge">4</span>
+            <div><span class="step-title">生産管理パーツ配線</span>：小日程日次化×SMED外段取化×スキルマップ多能工化×CAD/CAM一元DBを配線。</div>
+          </div>
+          <div class="step-item">
+            <span class="step-badge">5</span>
+            <div><span class="step-title">QCD因果着地</span>：<span class="hl">D（短納期・納期遵守）</span>、<span class="hl">C（段取短縮・仕掛品削減）</span>、<span class="hl">Q（クレームゼロ）</span>に着地。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-title">
+          2. 過去10年 出題パターン即応マトリクス
+          <span class="sub">4大類型×病理×処方箋</span>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 25%;">パターン・年度</th>
+              <th style="width: 32%;">組織・現場の病理</th>
+              <th style="width: 43%;">必須生産管理理論・処方箋</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>① 生産計画・工程統制</strong><br><span class="badge-sub">R7紙パイプ</span><span class="badge-sub">R4金型</span><span class="badge-sub">H30熱処理</span></td>
+              <td>月次計画固定、飛び込み対応不能、納期遅延常態化、仕掛品滞留。</td>
+              <td>小日程計画の<span class="hl">日次化</span>、確定期間短縮、負荷山積み山崩し、製番管理・バーコード進捗把握、営業工場定例会議。</td>
+            </tr>
+            <tr>
+              <td><strong>② 段取改善・現場整流化</strong><br><span class="badge-sub">R7紙パイプ</span><span class="badge-sub">R4金型</span><span class="badge-sub">R3革バッグ</span></td>
+              <td>段取替えの長期化・機械停止、属人化、工程間ジグザグ運搬・停滞。</td>
+              <td><span class="hl">内段取の外段取化（SMED）</span>、治工具規格統一・ワンタッチ化、U字ライン化、スキルマップ運用・多能工応援体制。</td>
+            </tr>
+            <tr>
+              <td><strong>③ デジタル化・BPR</strong><br><span class="badge-sub">R6機械部品</span><span class="badge-sub">R4金型</span><span class="badge-sub">R1乾燥機</span></td>
+              <td>図面・指示書の紙伝達、口頭連絡ミス、設計と製造のセクショナリズム。</td>
+              <td>生産管理システム（ERP/MES）導入、CAD/CAM連動、全社一元DB構築、<span class="hl">コンカレントエンジニアリング</span>、全社横断PT。</td>
+            </tr>
+            <tr>
+              <td><strong>④ 新分野参入・下請脱却</strong><br><span class="badge-sub">R7新分野</span><span class="badge-sub">R5食品</span><span class="badge-sub">R4アウトドア</span></td>
+              <td>下請特化・価格決定権欠如、親企業依存、混在ライン混乱、クレーム。</td>
+              <td><span class="hl">新事業4大因果フレーム</span>（開発・製造・品証・組織）、専任PT、試作力強化、既存設備活用、全数検査、展示会・直販体制。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section-card">
+        <div class="section-title">
+          5. 直前チェック：頻出応用パターン骨子
+          <span class="sub">落とすと即死の3大必須論点</span>
+        </div>
+        <div style="font-size: 6.6pt; line-height: 1.25;">
+          <div style="margin-bottom: 2px;">
+            <strong style="color: #064e3b;">❶ 新事業4大因果展開フレーム（ヒント極小・第4問型の絶対骨子）</strong><br>
+            事例Ⅱ化（SNSやEC）を厳禁とし、製造業のバリューチェーンで書く。①【開発】：顧客ニーズ反映の試作開発体制、②【製造】：既存設備活用・金型共通化・混在ライン同期化、③【品証】：検査基準策定・全数検査・トレーサビリティ、④【組織】：社長直轄専任PT設置。
+          </div>
+          <div style="margin-bottom: 2px;">
+            <strong style="color: #064e3b;">❷ 全業種共通の製造業4大リスクマネジメント（新分野参入・脱下請）</strong><br>
+            ①カネ（過大投資回避・既存設備活用）、②ヒト（本業熟練工流出防止・専任PT・多能工応援）、③モノ（受託と自社の混在ミス防止・作業標準化・初期クレームゼロ）、④情報（営業製造同行・展示会での直接ニーズ収集）。
+          </div>
+          <div>
+            <strong style="color: #064e3b;">❸ 暗黙知の形式知化から応援体制への4段階ステップ（技能承継）</strong><br>
+            熟練工の勘やコツを動画・作業標準書へ落とし込み（形式知化）→全作業員の習熟度を一覧化（スキルマップ）→計画的ジョブローテーションとOJT（多能工化）→ボトルネック工程への応援体制確立（余力均等化）。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 右カラム -->
+    <div class="col">
+      <div class="section-card">
+        <div class="section-title">
+          3. 生産・技術 16大黄金パーツブロック
+          <span class="sub">字数カウント済</span>
+        </div>
+        <div class="block-grid">
+          <div class="block-item">
+            <div class="block-head"><span>① 小日程日次化・サイクル短縮</span><span class="chars">30字</span></div>
+            <div class="block-text">生産計画を月次から週次・日次化し、確定期間を短縮して即応体制を整え、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>② 負荷山積み山崩し・余力管理</span><span class="chars">30字</span></div>
+            <div class="block-text">工程ごとの負荷と能力を把握し、負荷山積み・山崩しで余力を均等化させ、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>③ リアルタイム進捗・製番管理</span><span class="chars">28字</span></div>
+            <div class="block-text">製番管理を徹底し、バーコード等の導入でリアルタイムに進捗を把握し、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>④ 発注方式見直し・適正在庫化</span><span class="chars">29字</span></div>
+            <div class="block-text">共通部材の発注方式を定期から定量に見直し、安全在庫を維持して欠品を防ぎ、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑤ SMED法による外段取化</span><span class="chars">29字</span></div>
+            <div class="block-text">内段取の外段取化を進め、金型や治工具の事前準備徹底で機械停止を削減し、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑥ 治工具共通化・ワンタッチ化</span><span class="chars">27字</span></div>
+            <div class="block-text">治工具の規格統一やワンタッチ化を推進し、段取替え作業を大幅に簡素化し、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑦ 直線的一方向動線・U字ライン</span><span class="chars">29字</span></div>
+            <div class="block-text">工場内レイアウトを直線的一方向動線やU字型に再編し、運搬距離を短縮させ、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑧ 5S徹底と目で見る管理</span><span class="chars">27字</span></div>
+            <div class="block-text">5Sを徹底し、置き場表示や限度見本等の目で見る管理で探すムダを排除し、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑨ 暗黙知形式知化・マニュアル化</span><span class="chars">30字</span></div>
+            <div class="block-text">熟練工の勘やコツ等の暗黙知を作業標準書や動画に落とし込んで形式知化し、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑩ 多能工化・スキルマップ運用</span><span class="chars">29字</span></div>
+            <div class="block-text">スキルマップを活用したジョブローテーションとOJTにより多能工化を促し、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑪ 工程間応援体制の確立</span><span class="chars">28字</span></div>
+            <div class="block-text">多能工化に基づき、ボトルネック工程へ柔軟に応援派遣できる体制を構築し、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑫ 営業製造定例ミーティング</span><span class="chars">30字</span></div>
+            <div class="block-text">営業と製造の合同ミーティングを定例化し、納期変更や特急品情報を即座に共有し、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑬ 専任プロジェクトチーム設置</span><span class="chars">29字</span></div>
+            <div class="block-text">社長直轄の全社横断型プロジェクトチームを設置し、部門間の連携を緊密化し、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑭ 試作開発力・共同開発体制</span><span class="chars">30字</span></div>
+            <div class="block-text">顧客ニーズを反映した試作開発体制を強化し、顧客との共同開発を加速させ、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑮ 品質保証・全数検査体制</span><span class="chars">29字</span></div>
+            <div class="block-text">新規工程の検査基準を策定し、全数検査体制とトレーサビリティを確立して、</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑯ 生産管理システム一元化（BPR）</span><span class="chars">31字</span></div>
+            <div class="block-text">生産管理システムを導入して設計・製造・営業の情報を一元データベース化し、</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-title">
+          4. 文字数別 黄金構文テンプレート
+          <span class="sub">本番即応マス目配分</span>
+        </div>
+        <div class="template-box">
+          <div class="template-title">【パターンA：80〜100字（単一工程・現場作業改善）】</div>
+          <div class="template-text">
+            助言内容は、①［現場課題］に対し［SMED/治工具共通化/標準化］を実施し、②［多能工化/応援体制］を構築する。これにより［段取短縮/仕掛品削減］を図り、［短納期化/納期遵守］を実現する。（80〜100字）
+          </div>
+        </div>
+        <div class="template-box">
+          <div class="template-title">【パターンB：100〜120字（管理＋現場の2軸助言）】</div>
+          <div class="template-text">
+            助言内容は、管理面で①［小日程日次化/リアルタイム進捗管理］により工程統制を徹底する。現場面で②［内段取の外段取化/作業標準化/多能工化］を推進する。以上により［停滞削減とリードタイム短縮］を図り、［納期遵守とコスト低減］を達成。（110〜120字）
+          </div>
+        </div>
+        <div class="template-box">
+          <div class="template-title">【パターンC：140〜160字（新事業参入・下請脱却・高付加価値化）】</div>
+          <div class="template-text">
+            助言内容は、①組織面で［専任PT設置］し営業と製造の情報共有を密にする。②開発・製造面で自社の［固有技術/設備］を活かして［試作体制/混在生産同期化］を構築する。③品質面で［検査基準策定/全数検査］を整える。以上により［トラブル防止と高付加価値化］を図り、［収益基盤の多角化］を実現。（140〜160字）
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

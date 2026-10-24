@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="robots" content="noindex, nofollow">
+<title>Jirei3 Advice Patterns Sheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var blocks = document.querySelectorAll('pre code.language-mermaid');
+    if (blocks.length === 0) return;
+    
+    blocks.forEach(function(block) {
+      var pre = block.parentElement;
+      var container = document.createElement('div');
+      container.className = 'mermaid-container';
+      var div = document.createElement('div');
+      div.className = 'mermaid';
+      div.textContent = block.textContent;
+      container.appendChild(div);
+      pre.replaceWith(container);
+    });
+    
+    if (window.mermaid) {
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: 'default',
+        securityLevel: 'loose'
+      });
+      mermaid.run();
+    }
+  });
+</script>
+</head>
+<body>
+<a href="index.html" class="back-link">← ポータルに戻る</a>
+<div class="content">
+<h1>⚙️ 事例Ⅲ 後半助言設問（第3〜5問）直前速攻パターンシート</h1>
+<hr />
+<h2>1. 本番緊急脱出 5ステップ・プロトコル</h2>
+<ol>
+<li><strong>管理と現場の峻別</strong>：課題が「計画・情報・営業連携（管理）」か「段取・動線・属人化（現場作業）」かを切り分ける。</li>
+<li><strong>現場ボトルネック特定</strong>：段取時間の長さ、特定熟練工の停滞、紙・口頭伝達の手戻り、混在ラインの混乱を特定。</li>
+<li><strong>自社固有リソース特定</strong>：熟練工の加工技術、既存成形機・設備、CADデータ、地元ネットワークを活用する。</li>
+<li><strong>生産管理パーツ配線</strong>：小日程日次化×SMED外段取化×スキルマップ多能工化×CAD/CAM一元DBを配線。</li>
+<li><strong>QCD因果着地</strong>：<strong>D（短納期・納期遵守）</strong>、<strong>C（段取短縮・仕掛品削減）</strong>、<strong>Q（クレームゼロ）</strong>に着地。</li>
+</ol>
+<hr />
+<h2>2. 過去10年 出題パターン即応マトリクス</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">パターン・該当年度</th>
+<th style="text-align: left;">組織・現場の病理</th>
+<th style="text-align: left;">必須生産管理理論・処方箋</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>① 生産計画・工程統制</strong><br>（R7紙パイプ、R4金型、H30熱処理）</td>
+<td style="text-align: left;">月次計画固定、飛び込み対応不能、納期遅延常態化、仕掛品滞留。</td>
+<td style="text-align: left;">小日程計画の<strong>日次化</strong>、確定期間短縮、負荷山積み山崩し、製番管理・バーコード進捗把握、営業工場定例会議。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>② 段取改善・現場整流化</strong><br>（R7紙パイプ、R4金型、R3革バッグ）</td>
+<td style="text-align: left;">段取替えの長期化・機械停止、属人化、工程間ジグザグ運搬・停滞。</td>
+<td style="text-align: left;"><strong>内段取の外段取化（SMED）</strong>、治工具規格統一・ワンタッチ化、U字ライン化、スキルマップ運用・多能工応援体制。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>③ デジタル化・BPR</strong><br>（R6機械部品、R4金型、R1乾燥機）</td>
+<td style="text-align: left;">図面・指示書の紙伝達、口頭連絡ミス、設計と製造のセクショナリズム。</td>
+<td style="text-align: left;">生産管理システム（ERP/MES）導入、CAD/CAM連動、全社一元DB構築、<strong>コンカレントエンジニアリング</strong>、全社横断PT。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>④ 新分野参入・下請脱却</strong><br>（R7新分野、R5食品、R4アウトドア）</td>
+<td style="text-align: left;">下請特化・価格決定権欠如、親企業依存、混在ライン混乱、クレーム。</td>
+<td style="text-align: left;"><strong>新事業4大因果フレーム</strong>（開発・製造・品証・組織）、専任PT、試作力強化、既存設備活用、全数検査、展示会・直販体制。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>3. 生産・技術 16大黄金パーツブロック（文字数カウント済み）</h2>
+<h3>【生産計画・統制系（管理レイヤー）】</h3>
+<ol>
+<li><strong>小日程日次化・サイクル短縮（30字）</strong>：<code>生産計画を月次から週次・日次化し、確定期間を短縮して即応体制を整え、</code></li>
+<li><strong>負荷山積み山崩し・余力管理（30字）</strong>：<code>工程ごとの負荷と能力を把握し、負荷山積み・山崩しで余力を均等化させ、</code></li>
+<li><strong>リアルタイム進捗・製番管理（28字）</strong>：<code>製番管理を徹底し、バーコード等の導入でリアルタイムに進捗を把握し、</code></li>
+<li><strong>発注方式見直し・適正在庫化（29字）</strong>：<code>共通部材の発注方式を定期から定量に見直し、安全在庫を維持して欠品を防ぎ、</code></li>
+</ol>
+<h3>【現場作業・段取系（現場レイヤー）】</h3>
+<ol>
+<li><strong>SMED法による外段取化（29字）</strong>：<code>内段取の外段取化を進め、金型や治工具の事前準備徹底で機械停止を削減し、</code></li>
+<li><strong>治工具共通化・ワンタッチ化（27字）</strong>：<code>治工具の規格統一やワンタッチ化を推進し、段取替え作業を大幅に簡素化し、</code></li>
+<li><strong>直線的一方向動線・U字ライン（29字）</strong>：<code>工場内レイアウトを直線的一方向動線やU字型に再編し、運搬距離を短縮させ、</code></li>
+<li><strong>5S徹底と目で見る管理（27字）</strong>：<code>5Sを徹底し、置き場表示や限度見本等の目で見る管理で探すムダを排除し、</code></li>
+</ol>
+<h3>【人的資源・技術伝承系（人的レイヤー）】</h3>
+<ol>
+<li><strong>暗黙知形式知化・マニュアル化（30字）</strong>：<code>熟練工の勘やコツ等の暗黙知を作業標準書や動画に落とし込んで形式知化し、</code></li>
+<li><strong>多能工化・スキルマップ運用（29字）</strong>：<code>スキルマップを活用したジョブローテーションとOJTにより多能工化を促し、</code></li>
+<li><strong>工程間応援体制の確立（28字）</strong>：<code>多能工化に基づき、ボトルネック工程へ柔軟に応援派遣できる体制を構築し、</code></li>
+<li><strong>営業製造定例ミーティング（30字）</strong>：<code>営業と製造の合同ミーティングを定例化し、納期変更や特急品情報を即座に共有し、</code></li>
+</ol>
+<h3>【新事業・戦略IT系（戦略レイヤー）】</h3>
+<ol>
+<li><strong>専任プロジェクトチーム設置（29字）</strong>：<code>社長直轄の全社横断型プロジェクトチームを設置し、部門間の連携を緊密化し、</code></li>
+<li><strong>試作開発力・共同開発体制（30字）</strong>：<code>顧客ニーズを反映した試作開発体制を強化し、顧客との共同開発を加速させ、</code></li>
+<li><strong>品質保証・全数検査体制（29字）</strong>：<code>新規工程の検査基準を策定し、全数検査体制とトレーサビリティを確立して、</code></li>
+<li><strong>生産管理システム一元化（BPR）（31字）</strong>：<code>生産管理システムを導入して設計・製造・営業の情報を一元データベース化し、</code></li>
+</ol>
+<hr />
+<h2>4. 文字数別 黄金構文テンプレート</h2>
+<h3>【パターンA：80〜100字（単一工程・現場作業改善）】</h3>
+<blockquote>
+<p><strong>構文</strong>：助言内容は、①［現場課題］に対し［SMED/治工具共通化/標準化］を実施し、②［多能工化/応援体制］を構築する。これにより［段取短縮/仕掛品削減］を図り、［短納期化/納期遵守］を実現する。（80〜100字）</p>
+</blockquote>
+<h3>【パターンB：100〜120字（管理＋現場の2軸助言）】</h3>
+<blockquote>
+<p><strong>構文</strong>：助言内容は、管理面で①［小日程日次化/リアルタイム進捗管理］により工程統制を徹底する。現場面で②［内段取の外段取化/作業標準化/多能工化］を推進する。以上により［停滞削減とリードタイム短縮］を図り、［納期遵守とコスト低減］を達成。（110〜120字）</p>
+</blockquote>
+<h3>【パターンC：140〜160字（新事業参入・下請脱却・高付加価値化）】</h3>
+<blockquote>
+<p><strong>構文</strong>：助言内容は、①組織面で［専任PT設置］し営業と製造の情報共有を密にする。②開発・製造面で自社の［固有技術/設備］を活かして［試作体制/混在生産同期化］を構築する。③品質面で［検査基準策定/全数検査］を整える。以上により［トラブル防止と高付加価値化］を図り、［収益基盤の多角化］を実現。（140〜160字）</p>
+</blockquote>
+<hr />
+<h2>5. 直前チェック：頻出応用パターン骨子</h2>
+<ol>
+<li><strong>新事業4大因果展開フレーム（ヒント極小・第4問型の絶対骨子）</strong>：
+   事例Ⅱ化（SNSやEC）を厳禁とし、製造業のバリューチェーンで書く。①【開発】：顧客ニーズ反映の試作開発体制、②【製造】：既存設備活用・金型共通化・混在ライン同期化、③【品証】：検査基準策定・全数検査・トレーサビリティ、④【組織】：社長直轄専任PT設置。</li>
+<li><strong>全業種共通の製造業4大リスクマネジメント（新分野参入・脱下請）</strong>：
+   ①カネ（過大投資回避・既存設備活用）、②ヒト（本業熟練工流出防止・専任PT・多能工応援）、③モノ（受託と自社の混在ミス防止・作業標準化・初期クレームゼロ）、④情報（営業製造同行・展示会での直接ニーズ収集）。</li>
+<li><strong>暗黙知の形式知化から応援体制への4段階ステップ（技能承継）</strong>：
+   熟練工の勘やコツを動画・作業標準書へ落とし込み（形式知化）→全作業員の習熟度を一覧化（スキルマップ）→計画的ジョブローテーションとOJT（多能工化）→ボトルネック工程への応援体制確立（余力均等化）。</li>
+</ol>
+</div>
+</body>
+</html>
