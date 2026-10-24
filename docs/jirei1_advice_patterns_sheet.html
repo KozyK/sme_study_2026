@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="robots" content="noindex, nofollow">
+<title>Jirei1 Advice Patterns Sheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var blocks = document.querySelectorAll('pre code.language-mermaid');
+    if (blocks.length === 0) return;
+    
+    blocks.forEach(function(block) {
+      var pre = block.parentElement;
+      var container = document.createElement('div');
+      container.className = 'mermaid-container';
+      var div = document.createElement('div');
+      div.className = 'mermaid';
+      div.textContent = block.textContent;
+      container.appendChild(div);
+      pre.replaceWith(container);
+    });
+    
+    if (window.mermaid) {
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: 'default',
+        securityLevel: 'loose'
+      });
+      mermaid.run();
+    }
+  });
+</script>
+</head>
+<body>
+<a href="index.html" class="back-link">← ポータルに戻る</a>
+<div class="content">
+<h1>事例Ⅰ 後半助言設問（第3〜5問）直前速攻パターンシート</h1>
+<p>〜与件ヒント極小問題を一次組織理論で突破する高密度チェックシート〜</p>
+<p>本シートは、事例Ⅰの後半（第3問・第4問・第5問）で出題される「与件文に直接の答えが書かれていない助言系設問」に対し、試験直前や休憩時間の5分間で頭の引き出しを整理し、本番で機械的に満点答案を組み立てるための高密度リファレンスである。</p>
+<hr />
+<h2>1. 緊急脱出 5ステップ・プロトコル（試験開始後の思考手順）</h2>
+<pre><code>【Step 1: 設問制約の確定】
+・文字数確認（80字 / 100字 / 150字）
+・要求内容（「課題と解決策」か「組織体制」か「人事施策」か）
+・レイヤー特定（組織構造・権限 / 人的資源管理 / 企業理念・文化）
+
+【Step 2: 与件文から「病理（制約・ボトルネック）」を1〜2点抽出】
+※与件文に解決策を探さない。探すのは「何が問題か」「誰と誰が対立しているか」「何が不足しているか」のみ。
+・新旧の対立、部門の壁、社長への業務集中、熟練技能の属人化、非正規の離職など。
+
+【Step 3: 4大パターンのモジュールを脳内逆引き】
+① 新事業推進型   → 「既存兼任 ＋ 社長直轄横断PJ ＋ プロセス評価 ＋ リスキリング」
+② 事業承継PMI型  → 「理念再定義・浸透 ＋ 混成PJ ＋ ベテラン指導役 ＋ 評価公正化」
+③ ワンマン脱却型 → 「戦略特化と日常執行委譲 ＋ 経営会議定例化（合議制） ＋ 幹部育成」
+④ 技能承継処遇型 → 「SECI形式知化（動画・手順書） ＋ ペアOJT ＋ スキルマップ多能工化」
+
+【Step 4: 黄金構文への流し込み】
+・構文: 「課題は【病理A】である。施策は①【施策B】、②【施策C】、③【施策D】により、【効果E】を実現する。」
+
+【Step 5: 文字数調整（マス目充填率95%以上）】
+・体言止め、接続詞の増減で指定文字数マイナス2〜5文字で美しく着地。
+</code></pre>
+<hr />
+<h2>2. 4大出題パターンの即応マトリクス（病理シグナル → 処方箋 → 満点答案）</h2>
+<h3>パターン1: 新事業・多角化推進型（令和7年第3問、令和2年第4問、平成28年第4問）</h3>
+<ul>
+<li><strong>与件シグナル（病理）</strong>: 従業員20〜30名規模、新事業立ち上げ、既存本業が多忙、専任部署を作る余裕がない。</li>
+<li><strong>初学者の失点トラップ</strong>: 「専任の新規事業部を新設して人員を配置する」（小規模企業30名トラップを無視、本業破綻で減点）。</li>
+<li><strong>熟練者の処方箋</strong>: 専任新設ではなく「既存人員の兼任体制」「社長直轄の部門横断プロジェクトチーム」「挑戦を促すプロセス評価」「リスキリング」。</li>
+<li><strong>実戦満点答案（令和7年第3問・木製知育玩具・99字）</strong>:<blockquote>
+<p>「体制は、開発・製造・営業を束ねる社長直轄のプロジェクトチーム体制とする。理由は、既存家具事業の業務と兼務させリソース制約を克服しつつ、部門間連携による迅速な製品開発と全社ノウハウの共有を図るため。」（99字）</p>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h3>パターン2: 事業承継・世代交代・PMI型（令和5年第4問、令和3年第5問、平成30年第3問）</h3>
+<ul>
+<li><strong>与件シグナル（病理）</strong>: 後継者の代替わり、他社M&amp;A（買収統合）、新旧社員の価値観相違、古参ベテランの反発懸念。</li>
+<li><strong>初学者の失点トラップ</strong>: 「後継者が強力なリーダーシップで改革を断行する」「全社で協力してモチベーションを高める」（具体策ゼロのポエム）。</li>
+<li><strong>熟練者の処方箋</strong>: PMIの3要素（制度・業務・文化）の統合、新理念の再定義・浸透、両社混成プロジェクト、ベテランの顧問・指導役化によるリスペクト。</li>
+<li><strong>実戦満点答案（令和3年第5問・印刷とデザインの承継統合・98字）</strong>:<blockquote>
+<p>「課題は新旧部門の文化統合とシナジー創出、全社的統率力の確立。解決策は①印刷とデザインを融合した新企業理念の策定・浸透、②部門横断組織の設置による協働推進、③連携を評価する人事処遇の導入である。」（98字）</p>
+</blockquote>
+</li>
+<li><strong>実戦満点答案（令和5年第4問設問1・M&amp;A経営統合マネジメント・80字）</strong>:<blockquote>
+<p>「施策は、①丁寧な対話を通じた経営理念の共有、②両社混成のプロジェクトチーム設置による文化融和、③人事評価・賃金体系の公正な一本化により、従業員の不安を解消する。」（80字）</p>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h3>パターン3: 組織構造改革・権限委譲・集団指導体制型（令和4年第4問、平成29年第5問）</h3>
+<ul>
+<li><strong>与件シグナル（病理）</strong>: 創業社長への権限集中（ワンマン）、社長不在時の業務停滞、現場の指示待ち化、後継者・幹部が未育ち。</li>
+<li><strong>初学者の失点トラップ</strong>: 「社長がもっと部下に仕事を任せて信頼関係を築く」（経営管理の仕組みが皆無）。</li>
+<li><strong>熟練者の処方箋</strong>: トップ業務（全社戦略特化）と日常執行業務（現場委譲）の分離、経営会議の定例化による合議制（集団指導体制）、権限と責任の一致。</li>
+<li><strong>実戦満点答案（令和4年第4問設問2・権限委譲と人員配置・100字）</strong>:<blockquote>
+<p>「施策は、社長が全社戦略策定に特化し、日常の業務執行権限を部門長や後継者に大幅委譲する。また、経営会議を定例化して合議制の集団指導体制を構築し、適材適所の人員配置と権限と責任の明確化により幹部を育成する。」（100字）</p>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h3>パターン4: 暗黙知承継・能力開発・人事処遇型（令和6年第4問、平成30年第4問、平成27年第4・5問）</h3>
+<ul>
+<li><strong>与件シグナル（病理）</strong>: 熟練職人の高齢化、作業の属人化（勘・コツ）、若手・非正規の採用・定着難、単線型昇進コースの不満。</li>
+<li><strong>初学者の失点トラップ</strong>: 「ベテランが若手に熱心に仕事を教える」「成果主義を導入して給料を上げる」（短期成果主義の弊害で自滅）。</li>
+<li><strong>熟練者の処方箋</strong>: SECIモデル（動画・作業標準書による形式知化）、ペアリングOJT、スキルマップによる多能工化と評価連動、専門職エキスパートコース（複線型人事）。</li>
+<li><strong>実戦満点答案（平成30年第4問・ベテラン技能承継・98字）</strong>:<blockquote>
+<p>「施策は、①熟練職人の勘やコツを動画や作業手順書として形式知化、②若手とのペアリングによる計画的OJTの実施、③スキルマップによる進捗管理と評価連動を行い、全社的な多能工化と技術承継を推進する。」（98字）</p>
+</blockquote>
+</li>
+<li><strong>実戦満点答案（平成27年第4問・成果主義見送り理由・99字）</strong>:<blockquote>
+<p>「理由は、①個人主義の蔓延により社員間の連携やチームワークが阻害される点、②短期的な成果の追求により中長期的な人材育成や新事業への挑戦が軽視される点、③中小企業では成果基準の客観的測定が困難な点である。」（99字）</p>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h2>3. 16大黄金パーツブロック（文字数カウント済み）</h2>
+<p>必要に応じて2〜3個を選択し、接続詞で結合して指定文字数（80字・100字・120字）を構成する。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">領域</th>
+<th style="text-align: left;">パーツ名称</th>
+<th style="text-align: center;">文字数</th>
+<th style="text-align: left;">定型記述フレーズ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>組織・権限</strong></td>
+<td style="text-align: left;">社長の権限委譲</td>
+<td style="text-align: center;">33字</td>
+<td style="text-align: left;">社長が全社戦略に特化し、日常の業務執行権限を部門長に大幅委譲する。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>組織・権限</strong></td>
+<td style="text-align: left;">集団指導体制</td>
+<td style="text-align: center;">36字</td>
+<td style="text-align: left;">定例の経営会議を制度化し、合議制に基づく組織的意思決定ルールを確立する。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>組織・権限</strong></td>
+<td style="text-align: left;">部門横断組織</td>
+<td style="text-align: center;">36字</td>
+<td style="text-align: left;">部門横断プロジェクトチームを設置し、部門間の壁を打破して連携を強化する。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>組織・権限</strong></td>
+<td style="text-align: left;">兼任体制</td>
+<td style="text-align: center;">35字</td>
+<td style="text-align: left;">既存人員の兼務体制により、経営資源の制約を克服しつつ機動的に推進する。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>評価・処遇</strong></td>
+<td style="text-align: left;">複線型人事制度</td>
+<td style="text-align: center;">38字</td>
+<td style="text-align: left;">管理職昇進以外の専門職コースを新設し、高度専門人材を適正に処遇・定着させる。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>評価・処遇</strong></td>
+<td style="text-align: left;">プロセス評価</td>
+<td style="text-align: center;">36字</td>
+<td style="text-align: left;">短期の数値結果だけでなく、挑戦姿勢や業務プロセスを評価項目に組み入れる。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>評価・処遇</strong></td>
+<td style="text-align: left;">非正規の戦力化</td>
+<td style="text-align: center;">38字</td>
+<td style="text-align: left;">スキルマップに基づく公正な処遇改善と、意欲ある者の正社員登用制度を導入する。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>評価・処遇</strong></td>
+<td style="text-align: left;">評価基準の公正化</td>
+<td style="text-align: center;">40字</td>
+<td style="text-align: left;">評価基準を明確化して社員に公開し、処遇の納得感と公平性を高めて士気を向上させる。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>育成・承継</strong></td>
+<td style="text-align: left;">暗黙知の形式知化</td>
+<td style="text-align: center;">40字</td>
+<td style="text-align: left;">ベテランの勘やコツをヒアリングし、作業手順書や動画マニュアルとして形式知化する。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>育成・承継</strong></td>
+<td style="text-align: left;">計画的OJT</td>
+<td style="text-align: center;">37字</td>
+<td style="text-align: left;">若手とベテランをペアリングし、実務を通じた計画的OJTにより技能を承継する。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>育成・承継</strong></td>
+<td style="text-align: left;">多能工化推進</td>
+<td style="text-align: center;">40字</td>
+<td style="text-align: left;">スキルマップを活用した工程間ローテーションを実施し、全社的な多能工化を推進する。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>育成・承継</strong></td>
+<td style="text-align: left;">リスキリング</td>
+<td style="text-align: center;">35字</td>
+<td style="text-align: left;">新事業に必要な専門知識の習得に向け、外部講習受講や資格取得を支援する。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>理念・文化</strong></td>
+<td style="text-align: left;">理念の再定義</td>
+<td style="text-align: center;">37字</td>
+<td style="text-align: left;">創業の精神を継承しつつ、新事業と顧客価値を包含した新経営理念を再定義する。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>理念・文化</strong></td>
+<td style="text-align: left;">インナーブランディング</td>
+<td style="text-align: center;">38字</td>
+<td style="text-align: left;">クレドカードの配布や社内説明会、1on1面談を通じて新理念の社内浸透を図る。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>理念・文化</strong></td>
+<td style="text-align: left;">文化の融和</td>
+<td style="text-align: center;">43字</td>
+<td style="text-align: left;">両社混成のプロジェクトチームを立ち上げ、共同開発や新規事業を推進して一体感を醸成する。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>理念・文化</strong></td>
+<td style="text-align: left;">ベテランの処遇</td>
+<td style="text-align: center;">48字</td>
+<td style="text-align: left;">ベテランには顧問や相談役、後進の指導役としての役割を付与し、自尊心を保ちつつ円滑な承継を図る。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>4. 文字数別・黄金構文テンプレート</h2>
+<h3>① 80字型（課題1点 ＋ 施策2点）</h3>
+<ul>
+<li><strong>骨子</strong>: 「課題は【病理】である。施策は①【施策パーツ1（約35字）】、②【施策パーツ2（約35字）】により組織を活性化する。」</li>
+<li><strong>配分目安</strong>: 課題（15〜20字） ＋ 施策（55〜60字） ＝ 計75〜79字</li>
+</ul>
+<h3>② 100字型（課題1〜2点 ＋ 施策3点）</h3>
+<ul>
+<li><strong>骨子</strong>: 「課題は【病理A】と【病理B】。解決策は①【施策パーツ1】、②【施策パーツ2】、③【施策パーツ3】により【目的】を実現する。」</li>
+<li><strong>配分目安</strong>: 課題（25〜30字） ＋ 施策3点（65〜70字） ＝ 計95〜99字</li>
+</ul>
+<h3>③ 150字型（背景・理念再定義 ＋ 社内浸透 ＋ 社外浸透）</h3>
+<ul>
+<li><strong>骨子</strong>: 「再定義は【伝統技術の継承】と【新価値の包含】を統合した新理念を策定する。浸透策は、社内向けには【クレド・研修・評価連動】でベクトルを共有し、社外向けには【Web・SNSでのストーリー発信】によりブランドを確立する。」</li>
+<li><strong>配分目安</strong>: 理念再定義（60〜70字） ＋ 社内浸透（40〜45字） ＋ 社外浸透（40〜45字） ＝ 計145〜149字</li>
+</ul>
+</div>
+</body>
+</html>
