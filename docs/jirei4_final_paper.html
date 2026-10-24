@@ -60,7 +60,93 @@
   ※$r_f$: 安全資産利子率、$r_m$: 市場期待収益率、$(r_m - r_f)$: マーケット・リスクプレミアム。</li>
 </ul>
 <hr />
-<h3>2. 取替投資（設備更新）差額キャッシュフローの黄金マトリクス（令和3年猛反省論点）</h3>
+<h3>2. 間接法キャッシュフロー計算書＆指示なし時の機械的振分マトリクス（A4神速圧縮）</h3>
+<h4>📊 営業キャッシュフロー（間接法）完全フォーマット</h4>
+<pre><code class="language-text">［税引前当期純利益］
+  ＋ 減価償却費（非資金費用：お金が出ていかない費用を足し戻す）
+  ＋ 特別損失（固定資産売却損等：営業外の損を足し戻して投資CFへ振替）
+  − 特別利益（固定資産売却益等：営業外の得を差し引いて投資CFへ振替）
+  − 営業外収益（※特段の指定がなければ全額「受取利息・配当金」として小計後へ振替）
+  ＋ 営業外費用（※特段の指定がなければ全額「支払利息」として小計後へ振替）
+  --------------------------------------------------------------------------
+  − 売上債権の増加（＋ 減少）   ← 【運転資本調整：資産増はマイナス！】
+  − 棚卸資産の増加（＋ 減少）   ← 【運転資本調整：資産増はマイナス！】
+  ＋ 仕入債務の増加（− 減少）   ← 【運転資本調整：負債増はプラス！】
+  − その他流動資産の増加（＋ 減少）  ← 【指示なし時：営業CF小計前へ！】
+  ＋ その他流動負債の増加（− 減少）  ← 【指示なし時：営業CF小計前へ！】
+  ＋ その他固定負債の増加（− 減少）  ← 【指示なし時：営業CF小計前へ！引当金等】
+  ==========================================================================
+  【小 計】
+  ＋ 受取利息及び配当金（※営業外収益の全額をここに反映）
+  − 支払利息（※営業外費用の全額をここに反映）
+  − 法人税等の支払額（＝ P/L法人税等 ＋ 前期末未払法人税等 − 当期末未払法人税等）
+  ==========================================================================
+  【営業活動によるキャッシュフロー】
+</code></pre>
+<h4>🧭 問題文に特段の指定がないときの【機械的判断・デフォルト振分ルール】</h4>
+<p>試験当日、B/S・P/L項目の扱いに迷ったら以下の<strong>機械的配分原則</strong>を迷わず適用せよ：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">B/S・P/L項目</th>
+<th style="text-align: left;">C/F上の配分区分</th>
+<th style="text-align: center;">符号（増減ルール）</th>
+<th style="text-align: left;">機械的処理の根拠・実務原則</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>特別利益・特別損失</strong></td>
+<td style="text-align: left;"><strong>投資活動CF</strong></td>
+<td style="text-align: center;">営業CFから排除 $\to$ <strong>投資CFへ</strong></td>
+<td style="text-align: left;">固定資産売却損益等は投資活動に集約する</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>その他流動資産の増減</strong></td>
+<td style="text-align: left;"><strong>営業活動CF（小計前）</strong></td>
+<td style="text-align: center;"><strong>増＝− / 減＝＋</strong></td>
+<td style="text-align: left;">前払費用・立替金等の本業営業関連資産とみなす</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>その他流動負債の増減</strong></td>
+<td style="text-align: left;"><strong>営業活動CF（小計前）</strong></td>
+<td style="text-align: center;"><strong>増＝＋ / 減＝−</strong></td>
+<td style="text-align: left;">未払費用・預り金等の本業営業関連負債とみなす</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>その他固定資産の増減</strong></td>
+<td style="text-align: left;"><strong>投資活動CF</strong></td>
+<td style="text-align: center;"><strong>増＝− / 減＝＋</strong></td>
+<td style="text-align: left;">投資有価証券や長期貸付金等の投資活動とみなす</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>その他固定負債の増減</strong></td>
+<td style="text-align: left;"><strong>営業活動CF（小計前）</strong></td>
+<td style="text-align: center;"><strong>増＝＋ / 減＝−</strong></td>
+<td style="text-align: left;">退職給付引当金・長期未払金等の営業関連債務とみなす</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>営業外収益</strong></td>
+<td style="text-align: left;"><strong>営業CF（小計後）</strong></td>
+<td style="text-align: center;"><strong>＋（受取額）</strong></td>
+<td style="text-align: left;">指示がなければ<strong>「その全てが受取利息・配当金」</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>営業外費用</strong></td>
+<td style="text-align: left;"><strong>営業CF（小計後）</strong></td>
+<td style="text-align: center;"><strong>−（支払額）</strong></td>
+<td style="text-align: left;">指示がなければ<strong>「その全てが支払利息」</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>短期・長期借入金の増減</strong></td>
+<td style="text-align: left;"><strong>財務活動CF</strong></td>
+<td style="text-align: center;"><strong>増＝＋ / 減＝−</strong></td>
+<td style="text-align: left;">借入実行による流入（＋）、返済による流出（−）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>3. 取替投資（設備更新）差額キャッシュフローの黄金マトリクス（令和3年猛反省論点）</h3>
 <p>取替投資は「新設備を導入した世界線」と「旧設備を継続使用した世界線」の<strong>【差額（増分CF）】</strong>で計算する！
 頭の中だけで解かず、必ず下書き用紙に以下の<strong>2列マトリクス</strong>を書くこと：</p>
 <table>
@@ -106,7 +192,7 @@
 2. <strong>売却損タックスシールド</strong>: 「簿価 $&gt;$ 売却額」のとき、売却損により税金が安くなるため<strong>必ず初年度CFにキャッシュイン（プラス）</strong>として加算する！</p>
 </blockquote>
 <hr />
-<h3>3. CVP・営業レバレッジ・段階的価格変動モデル</h3>
+<h3>4. CVP・営業レバレッジ・段階的価格変動モデル</h3>
 <ul>
 <li><strong>営業レバレッジ（DOL: Degree of Operating Leverage）</strong>:
   $$DOL = \frac{\text{限界利益}}{\text{営業利益}} = \frac{\text{売上高} - \text{変動費}}{\text{売上高} - \text{変動費} - \text{固定費}} = \frac{1}{\text{安全余裕率}}$$</li>
@@ -122,7 +208,7 @@
 <li>端数処理指示が「切り上げ」なら、1kgでも端数が出たら切り上げる（例: $38,571.42 \to \mathbf{38,572\text{kg}}$）。</li>
 </ul>
 <hr />
-<h3>4. 制約条件下の最適セールスミックス（令和4年・令和7年頻出）</h3>
+<h3>5. 制約条件下の最適セールスミックス（令和4年・令和7年頻出）</h3>
 <ul>
 <li><strong>判定基準</strong>: 「製品単価」や「製品1個あたり限界利益」ではなく、<strong>【制約条件1単位あたりの限界利益】</strong>が高い順に優先生産する！
   $$\text{優先度} = \frac{\text{製品1個あたり限界利益}}{\text{製品1個あたり制約資源使用量（機械時間・職人作業時間など）}}$$</li>
@@ -132,7 +218,7 @@
 <li>固定費は埋没原価として扱い、セールスミックスの順位付けには一切影響させない。</li>
 </ul>
 <hr />
-<h3>5. 付加価値額・生産性指標（H29・R1頻出）</h3>
+<h3>6. 付加価値額・生産性指標（H29・R1頻出）</h3>
 <ul>
 <li><strong>中小企業庁方式（加算法）★最頻出</strong>:
   $$\text{付加価値額} = \text{営業利益} + \text{人件費} + \text{減価償却費}$$
@@ -145,7 +231,7 @@
   $$\text{労働分配率} = \frac{\text{人件費}}{\text{付加価値額}} \times 100\%$$</li>
 </ul>
 <hr />
-<h3>6. 経営分析・財務比率の盲点と単位即死トラップ防止表</h3>
+<h3>7. 経営分析・財務比率の盲点と単位即死トラップ防止表</h3>
 <table>
 <thead>
 <tr>
