@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>事例Ⅳ 記述・知識系設問 直前速攻パターンシート</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 5mm;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "BIZ UDPGothic", Meiryo, sans-serif;
+      font-size: 7.2pt;
+      line-height: 1.26;
+      color: #1a1a1a;
+      background-color: #fff;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page {
+      width: 200mm;
+      height: 287mm;
+      max-height: 287mm;
+      overflow: hidden;
+      margin: 0 auto;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    /* ヘッダー */
+    .header {
+      border-bottom: 2px solid #581c87;
+      padding-bottom: 2px;
+      margin-bottom: 3px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .title {
+      font-size: 10.8pt;
+      font-weight: 800;
+      color: #581c87;
+      letter-spacing: -0.3px;
+    }
+    .subtitle {
+      font-size: 7pt;
+      color: #475569;
+      font-weight: 600;
+    }
+    .tag {
+      background: #581c87;
+      color: #fff;
+      font-size: 6.5pt;
+      font-weight: 700;
+      padding: 1px 5px;
+      border-radius: 2px;
+    }
+
+    /* 2カラム構成 */
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4.5mm;
+      flex: 1;
+    }
+    .col {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    /* セクションブロック */
+    .section-card {
+      border: 1px solid #cbd5e1;
+      border-radius: 3px;
+      background: #fff;
+      padding: 3.5px 5px;
+    }
+    .section-title {
+      font-size: 7.6pt;
+      font-weight: 800;
+      color: #581c87;
+      background: #faf5ff;
+      padding: 1.5px 4px;
+      margin: -3.5px -5px 3px -5px;
+      border-bottom: 1px solid #e9d5ff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .section-title span.sub {
+      font-size: 6.3pt;
+      font-weight: 600;
+      color: #475569;
+    }
+
+    /* テーブル共通 */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 6.8pt;
+      margin-bottom: 2px;
+    }
+    th, td {
+      border: 1px solid #e2e8f0;
+      padding: 1.8px 3px;
+      vertical-align: top;
+    }
+    th {
+      background: #f8fafc;
+      color: #334155;
+      font-weight: 700;
+      text-align: left;
+    }
+
+    /* リスト・ステップ */
+    .step-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .step-item {
+      display: flex;
+      gap: 3px;
+      align-items: baseline;
+      font-size: 6.8pt;
+    }
+    .step-badge {
+      background: #581c87;
+      color: #fff;
+      font-size: 6pt;
+      font-weight: 800;
+      padding: 0 3px;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .step-title {
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    /* パーツブロック */
+    .block-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2px;
+    }
+    .block-item {
+      border-left: 2.5px solid #7e22ce;
+      background: #faf5ff;
+      padding: 2px 4px;
+      font-size: 6.6pt;
+    }
+    .block-head {
+      font-weight: 800;
+      color: #581c87;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5px;
+    }
+    .block-head .chars {
+      font-size: 6pt;
+      color: #475569;
+      font-weight: 700;
+    }
+    .block-text {
+      color: #1e293b;
+      letter-spacing: -0.2px;
+      font-family: monospace, sans-serif;
+    }
+
+    /* 構文ボックス */
+    .template-box {
+      background: #f1f5f9;
+      border: 1px dashed #94a3b8;
+      padding: 2.5px 4px;
+      margin-bottom: 2px;
+      font-size: 6.6pt;
+    }
+    .template-title {
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 1px;
+    }
+    .template-text {
+      color: #0f172a;
+      letter-spacing: -0.2px;
+    }
+
+    /* ハイライト */
+    .hl {
+      color: #7e22ce;
+      font-weight: 700;
+    }
+    .badge-sub {
+      display: inline-block;
+      font-size: 5.8pt;
+      font-weight: 700;
+      padding: 0 2px;
+      background: #e2e8f0;
+      color: #334155;
+      border-radius: 2px;
+      margin-right: 2px;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <!-- ヘッダー -->
+  <div class="header">
+    <div>
+      <div class="title">事例Ⅳ 記述・知識系設問 直前速攻パターンシート</div>
+      <div class="subtitle">配点35点を完全死守する「経営分析要因」「管理会計理論」「第4問財務戦略・リスク7類型」</div>
+    </div>
+    <div class="tag">事例Ⅳ 記述特化 A4・1枚</div>
+  </div>
+
+  <div class="main-grid">
+    <!-- 左カラム -->
+    <div class="col">
+      <!-- 1. 本番緊急脱出 5ステップ・プロトコル -->
+      <div class="section-card">
+        <div class="section-title">
+          1. 緊急脱出 5ステップ・プロトコル
+          <span class="sub">計算爆死を防ぎ35点を確実に拾う</span>
+        </div>
+        <div class="step-list">
+          <div class="step-item">
+            <span class="step-badge">1</span>
+            <div><span class="step-title">設問視点の厳格画定</span>：収益・効率・安全・財務リスク・管理会計理論のどれを問われているか制約を特定。</div>
+          </div>
+          <div class="step-item">
+            <span class="step-badge">2</span>
+            <div><span class="step-title">与件ビジネス構造照合</span>：OEM、直営化、海外展開、設備投資、大口依存、事業承継の事実を特定し原因にする。</div>
+          </div>
+          <div class="step-item">
+            <span class="step-badge">3</span>
+            <div><span class="step-title">一次財務理論の逆引き</span>：固定費変動費化、営業レバレッジ、責任会計、流動性制約、品質コスト理論を想起。</div>
+          </div>
+          <div class="step-item">
+            <span class="step-badge">4</span>
+            <div><span class="step-title">財務的二面性の対比</span>：メリット（利益率向上・固定資産圧縮）とデメリット（固定費増・資金繰り圧迫）を対置。</div>
+          </div>
+          <div class="step-item">
+            <span class="step-badge">5</span>
+            <div><span class="step-title">財務指標・効果着地</span>：損益分岐点比率低下、自己資本比率、総資産回転率、キャッシュフロー安定に着地。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. 過去15年 第4問 財務戦略・リスク即応マトリクス -->
+      <div class="section-card">
+        <div class="section-title">
+          2. 過去15年 第4問 財務戦略・リスク即応マトリクス
+          <span class="sub">7大類型×利害×処方箋</span>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 25%;">パターン・年度</th>
+              <th style="width: 32%;">財務的メリット（利点）</th>
+              <th style="width: 43%;">財務的リスク・留意点・処方箋</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>① OEM・ファブレス</strong><br><span class="badge-sub">2023</span><span class="badge-sub">2015</span></td>
+              <td>自社設備不要、固定資産圧縮、総資産回転率向上、<span class="hl">損益分岐点比率低下</span>。</td>
+              <td>外注マージン上乗せで限界利益率低下、規模の経済不全。製造ノウハウ蓄積しない。</td>
+            </tr>
+            <tr>
+              <td><strong>② 設備投資・直営化</strong><br><span class="badge-sub">2022</span><span class="badge-sub">2018</span></td>
+              <td>粗利益率・限界利益率向上、直接対話による顧客情報蓄積。</td>
+              <td>借入金増、減価償却費・地代等の<span class="hl">固定費増加</span>、売上減少時の営業レバレッジ悪化。<span class="hl">段階的投資</span>。</td>
+            </tr>
+            <tr>
+              <td><strong>③ M&A・事業買収</strong><br><span class="badge-sub">2020</span><span class="badge-sub">2017</span></td>
+              <td>新規市場即時参入、事業多角化、シナジー創出、規模拡大。</td>
+              <td>簿外・偶発債務リスク、業績低迷時の<span class="hl">のれん減損損失</span>による自己資本毀損。財務法務DD。</td>
+            </tr>
+            <tr>
+              <td><strong>④ 海外展開・為替</strong><br><span class="badge-sub">2025</span><span class="badge-sub">2014</span></td>
+              <td>市場開拓、売上分散、円安時の円換算売上拡大。</td>
+              <td>為替相場変動リスク（円高時売上減・円安時コスト増）。<span class="hl">為替予約</span>、通貨オプション活用。</td>
+            </tr>
+            <tr>
+              <td><strong>⑤ 業務委託・外注</strong><br><span class="badge-sub">2018</span><span class="badge-sub">2013</span></td>
+              <td>固定費の変動費化、コア業務への経営資源集中。</td>
+              <td>品質不良・納期遅延による信用失墜（外部失敗コスト増大）。委託先監査・品質基準共有。</td>
+            </tr>
+            <tr>
+              <td><strong>⑥ 組織権限・業績評価</strong><br><span class="badge-sub">2024</span></td>
+              <td>権限委譲による現場の自律的意思決定迅速化。</td>
+              <td>投資権限なき部門に全社共通費・ROI責任を課す不公平。<span class="hl">管理可能利益</span>による適正評価。</td>
+            </tr>
+            <tr>
+              <td><strong>⑦ 事業撤退・一本化</strong><br><span class="badge-sub">2021</span><span class="badge-sub">2016</span></td>
+              <td>固定費削減、不採算解消、営業利益率の短期向上。</td>
+              <td><span class="hl">貢献利益が正</span>の場合全社利益減少、顧客接点喪失・LTV低下。送客効果を考慮し慎重判断。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 5. 本年度予想トピック即応骨子 -->
+      <div class="section-card">
+        <div class="section-title">
+          5. 本年度予想トピック即応骨子
+          <span class="sub">最新マクロ環境4大論点</span>
+        </div>
+        <div style="font-size: 6.6pt; line-height: 1.25;">
+          <div style="margin-bottom: 2px;">
+            <strong style="color: #581c87;">❶ 金利上昇局面における資金調達・財務戦略</strong><br>
+            借入金利上昇による支払利息増・経常利益圧迫。対策：変動金利から固定金利への借換、遊休資産売却による有利子負債圧縮、CCC短縮による所要運転資金圧縮で手元流動性を確保。
+          </div>
+          <div style="margin-bottom: 2px;">
+            <strong style="color: #581c87;">❷ インフレ・原材料高騰と価格転嫁（収益性防衛）</strong><br>
+            仕入原価高騰による売上高総利益率低下。対策：コスト連動型フォーミュラ価格制の導入、高付加価値商品へのシフトによる価格転嫁、歩留まり向上による原材料ロス削減。
+          </div>
+          <div style="margin-bottom: 2px;">
+            <strong style="color: #581c87;">❸ 人手不足下の省力化投資（自動化・IT化の財務的評価）</strong><br>
+            人件費（変動費）から機械減価償却費・保守費（固定費）への置換。損益分岐点比率は上昇するため、稼働率維持が前提。安全余裕率モニタリングと回収期間の厳格管理。
+          </div>
+          <div>
+            <strong style="color: #581c87;">❹ 事業承継と自社株式・資金調達（財務ガバナンス）</strong><br>
+            後継者への自社株承継に伴う納税資金負担。対策：事業承継税制の特例活用、退職金支給による株価一時引き下げ、持株会社化、金融機関の個人保証解除（経営者保証ガイドライン）。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 右カラム -->
+    <div class="col">
+      <!-- 3. 事例Ⅳ 記述・知識 16大黄金パーツブロック -->
+      <div class="section-card">
+        <div class="section-title">
+          3. 事例Ⅳ 記述・知識 16大黄金パーツブロック
+          <span class="sub">字数カウント済</span>
+        </div>
+        <div class="block-grid">
+          <!-- 財務分析要因系 -->
+          <div class="block-item">
+            <div class="block-head"><span>① 収益性優位（高付加価値化）</span><span class="chars">29字</span></div>
+            <div class="block-text">独自技術による高付加価値化と直販展開により、売上高総利益率が優位。</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>② 収益性課題（固定費負担増）</span><span class="chars">28字</span></div>
+            <div class="block-text">原材料高騰と新規展開に伴う減価償却費・人件費増で売上高営業利益率低下。</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>③ 効率性課題（資産滞留）</span><span class="chars">29字</span></div>
+            <div class="block-text">需要予測不備による過大在庫と回収長期化で、棚卸資産回転期間が悪化。</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>④ 安全性課題（借入金依存）</span><span class="chars">30字</span></div>
+            <div class="block-text">設備投資資金を短期借入金で調達したため流動比率と自己資本比率が低下。</div>
+          </div>
+
+          <!-- 管理会計理論系 -->
+          <div class="block-item">
+            <div class="block-head"><span>⑤ CVP分析の前提制約</span><span class="chars">29字</span></div>
+            <div class="block-text">固変分解の恣意性や、販売単価・売上構成比が一定という前提が非現実的。</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑥ 貢献利益と撤退判断</span><span class="chars">29字</span></div>
+            <div class="block-text">営業赤字でも貢献利益が正である限り共通費回収に寄与するため存続すべき。</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑦ 共通費配賦の妥当性</span><span class="chars">28字</span></div>
+            <div class="block-text">売上高基準の機械的配賦は発生原因を無視し各部門の真の採算性を歪める。</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑧ 振替価格（原価加算の弊害）</span><span class="chars">29字</span></div>
+            <div class="block-text">供給側の非効率が購買側に転嫁され、供給側の原価低減意欲を阻害する点。</div>
+          </div>
+
+          <!-- 財務戦略・意思決定系 -->
+          <div class="block-item">
+            <div class="block-head"><span>⑨ OEM活用の財務的利点</span><span class="chars">30字</span></div>
+            <div class="block-text">自社設備投資が不要で固定資産を圧縮し、変動費化で損益分岐点比率が低下。</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑩ 投資リスクマネジメント</span><span class="chars">29字</span></div>
+            <div class="block-text">段階的投資（スモールスタート）と遊休資産売却、明確な撤退基準を設定。</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑪ 回収期間法の併用意義</span><span class="chars">29字</span></div>
+            <div class="block-text">NPVで企業価値を最大化しつつ、資金枯渇を防ぐため流動性・安全性を評価。</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑫ 為替ヘッジ（予約・オプション）</span><span class="chars">31字</span></div>
+            <div class="block-text">為替予約でレートを確定させリスクを排除するが、有利変動の機会は逸失。</div>
+          </div>
+
+          <!-- 組織業績・リスク管理系 -->
+          <div class="block-item">
+            <div class="block-head"><span>⑬ 責任会計と管理可能利益</span><span class="chars">29字</span></div>
+            <div class="block-text">投資権限なき部門には管理不能な共通費を除き、管理可能利益で業績評価。</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑭ M&Aと財務デューデリ</span><span class="chars">30字</span></div>
+            <div class="block-text">買収前の財務DDで簿外債務を把握し、買収後ののれん減損損失リスクを抑制。</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑮ 品質リスクと外部失敗コスト</span><span class="chars">29字</span></div>
+            <div class="block-text">出荷後クレームは損害賠償や信用失墜等、内部失敗より巨額の損失をもたらす。</div>
+          </div>
+          <div class="block-item">
+            <div class="block-head"><span>⑯ CCC短縮と資金繰り安定</span><span class="chars">30字</span></div>
+            <div class="block-text">売上債権の早期回収と棚卸資産圧縮を進め、所要運転資金と借入金を削減。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. 文字数別 黄金構文テンプレート -->
+      <div class="section-card">
+        <div class="section-title">
+          4. 文字数別 黄金構文テンプレート
+          <span class="sub">本番即応マス目配分</span>
+        </div>
+        <div class="template-box">
+          <div class="template-title">【パターンA：30〜40字（理由・メリット単発記述）】</div>
+          <div class="template-text">
+            理由は、自社設備投資を伴わず固定費を変動費化し、損益分岐点比率を引き下げられるため。（39字）
+          </div>
+        </div>
+        <div class="template-box">
+          <div class="template-title">【パターンB：60〜80字（経営分析要因・第4問助言）】</div>
+          <div class="template-text">
+            要因は、［①事業要因］により［②具体的コスト増減］が生じ、［③財務指標名］が同業他社より悪化（優位）したため。改善策は［④財務・経営施策］により財務健全化を図ること。（78字）
+          </div>
+        </div>
+        <div class="template-box">
+          <div class="template-title">【パターンC：100字（リスク2点とマネジメント助言）】</div>
+          <div class="template-text">
+            財務リスクは、①［在庫滞留・回収長期化］に伴う運転資金逼迫、②［初期投資増］による固定費負担増と営業レバレッジ悪化。対策は［回転期間の厳格管理と段階的投資］で資金繰りを安定させること。（98字）
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

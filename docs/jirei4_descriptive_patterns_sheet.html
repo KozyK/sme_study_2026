@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="robots" content="noindex, nofollow">
+<title>Jirei4 Descriptive Patterns Sheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var blocks = document.querySelectorAll('pre code.language-mermaid');
+    if (blocks.length === 0) return;
+    
+    blocks.forEach(function(block) {
+      var pre = block.parentElement;
+      var container = document.createElement('div');
+      container.className = 'mermaid-container';
+      var div = document.createElement('div');
+      div.className = 'mermaid';
+      div.textContent = block.textContent;
+      container.appendChild(div);
+      pre.replaceWith(container);
+    });
+    
+    if (window.mermaid) {
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: 'default',
+        securityLevel: 'loose'
+      });
+      mermaid.run();
+    }
+  });
+</script>
+</head>
+<body>
+<a href="index.html" class="back-link">← ポータルに戻る</a>
+<div class="content">
+<h1>事例IV 記述・知識系設問 直前速攻パターンシート</h1>
+<blockquote>
+<p><strong>配点35点を完全死守する「経営分析要因」「管理会計理論」「第4問財務戦略・リスク7類型」</strong>
+（A4・1枚 印刷最適化／直前確認用クイックリファレンス）</p>
+</blockquote>
+<hr />
+<h2>1. 緊急脱出5ステップ・プロトコル（計算爆死を防ぎ記述35点を確実に拾う）</h2>
+<ol>
+<li><strong>設問視点の厳格画定</strong>: 収益・効率・安全・財務リスク・管理会計理論のどれを問われているか制約を特定。</li>
+<li><strong>与件ビジネス構造照合</strong>: OEM、直営化、海外展開、設備投資、大口依存、事業承継の事実を特定し原因にする。</li>
+<li><strong>一次財務理論の逆引き</strong>: 固定費変動費化、営業レバレッジ、責任会計、流動性制約、品質コスト理論を想起。</li>
+<li><strong>財務的二面性の対比</strong>: メリット（利益率向上・固定資産圧縮）とデメリット（固定費増・資金繰り圧迫）を対置。</li>
+<li><strong>財務指標・効果着地</strong>: 損益分岐点比率低下、自己資本比率、総資産回転率、キャッシュフロー安定に着地。</li>
+</ol>
+<hr />
+<h2>2. 過去15年 第4問 財務戦略・リスク即応マトリクス（7大類型×利害×処方箋）</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">パターン・年度</th>
+<th style="text-align: left;">財務的メリット（利点）</th>
+<th style="text-align: left;">財務的リスク・留意点・処方箋</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>① OEM・ファブレス</strong><br><code>2023</code> <code>2015</code></td>
+<td style="text-align: left;">自社設備不要、固定資産圧縮、総資産回転率向上、<strong>損益分岐点比率低下</strong>。</td>
+<td style="text-align: left;">外注マージン上乗せで限界利益率低下、規模の経済不全。製造ノウハウ蓄積しない。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>② 設備投資・直営化</strong><br><code>2022</code> <code>2018</code></td>
+<td style="text-align: left;">粗利益率・限界利益率向上、直接対話による顧客情報蓄積。</td>
+<td style="text-align: left;">借入金増、減価償却費・地代等の<strong>固定費増加</strong>、売上減少時の営業レバレッジ悪化。<strong>段階的投資</strong>。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>③ M&amp;A・事業買収</strong><br><code>2020</code> <code>2017</code></td>
+<td style="text-align: left;">新規市場即時参入、事業多角化、シナジー創出、規模拡大。</td>
+<td style="text-align: left;">簿外・偶発債務リスク、業績低迷時の<strong>のれん減損損失</strong>による自己資本毀損。財務法務DD。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>④ 海外展開・為替</strong><br><code>2025</code> <code>2014</code></td>
+<td style="text-align: left;">市場開拓、売上分散、円安時の円換算売上拡大。</td>
+<td style="text-align: left;">為替相場変動リスク（円高時売上減・円安時コスト増）。<strong>為替予約</strong>、通貨オプション活用。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>⑤ 業務委託・外注</strong><br><code>2018</code> <code>2013</code></td>
+<td style="text-align: left;">固定費の変動費化、コア業務への経営資源集中。</td>
+<td style="text-align: left;">品質不良・納期遅延による信用失望（外部失敗コスト増大）。委託先監査・品質基準共有。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>⑥ 組織権限・業績評価</strong><br><code>2024</code></td>
+<td style="text-align: left;">権限委譲による現場の自律的意思決定迅速化。</td>
+<td style="text-align: left;">投資権限なき部門に全社共通費・ROI責任を課す不公平。<strong>管理可能利益</strong>による適正評価。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>⑦ 事業撤退・一本化</strong><br><code>2021</code> <code>2016</code></td>
+<td style="text-align: left;">固定費削減、不採算解消、営業利益率の短期向上。</td>
+<td style="text-align: left;"><strong>貢献利益が正</strong>の場合全社利益減少、顧客接点喪失・LTV低下。送客効果を考慮し慎重判断。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>3. 事例IV 記述・知識 16大黄金パーツブロック（字数カウント済）</h2>
+<h3>【収益性・効率性・安全性（経営分析要因）】</h3>
+<ol>
+<li><strong>収益性優位（高付加価値化）</strong>（29字）<br />
+<code>独自技術による高付加価値化と直販展開により、売上高総利益率が優位。</code></li>
+<li><strong>収益性課題（固定費負担増）</strong>（28字）<br />
+<code>原材料高騰と新規展開に伴う減価償却費・人件費増で売上高営業利益率低下。</code></li>
+<li><strong>効率性課題（資産滞留）</strong>（29字）<br />
+<code>需要予測不備による過大在庫と回収長期化で、棚卸資産回転期間が悪化。</code></li>
+<li><strong>安全性課題（借入金依存）</strong>（30字）<br />
+<code>設備投資資金を短期借入金で調達したため流動比率と自己資本比率が低下。</code></li>
+</ol>
+<h3>【CVP・管理会計・原価計算理論】</h3>
+<ol>
+<li><strong>CVP分析の前提制約</strong>（29字）<br />
+<code>固変分解の恣意性や、販売単価・売上構成比が一定という前提が非現実的。</code></li>
+<li><strong>貢献利益と撤退判断</strong>（29字）<br />
+<code>営業赤字でも貢献利益が正である限り共通費回収に寄与するため存続すべき。</code></li>
+<li><strong>共通費配賦の妥当性</strong>（28字）<br />
+<code>売上高基準の機械的配賦は発生原因を無視し各部門の真の採算性を歪める。</code></li>
+<li><strong>振替価格（原価加算の弊害）</strong>（29字）<br />
+<code>供給側の非効率が購買側に転嫁され、供給側の原価低減意欲を阻害する点。</code></li>
+</ol>
+<h3>【設備投資・財務戦略・意思決定】</h3>
+<ol>
+<li><strong>OEM活用の財務的利点</strong>（30字）<br />
+<code>自社設備投資が不要で固定資産を圧縮し、変動費化で損益分岐点比率が低下。</code></li>
+<li><strong>投資リスクマネジメント</strong>（29字）<br />
+<code>段階的投資（スモールスタート）と遊休資産売却、明確な撤退基準を設定。</code></li>
+<li><strong>回収期間法の併用意義</strong>（29字）<br />
+<code>NPVで企業価値を最大化しつつ、資金枯渇を防ぐため流動性・安全性を評価。</code></li>
+<li><strong>為替ヘッジ（予約・オプション）</strong>（31字）<br />
+<code>為替予約でレートを確定させリスクを排除するが、有利変動の機会は逸失。</code></li>
+</ol>
+<h3>【責任会計・組織・事業リスク】</h3>
+<ol>
+<li><strong>責任会計と管理可能利益</strong>（29字）<br />
+<code>投資権限なき部門には管理不能な共通費を除き、管理可能利益で業績評価。</code></li>
+<li><strong>M&amp;Aと財務デューデリ</strong>（30字）<br />
+<code>買収前の財務DDで簿外債務を把握し、買収後ののれん減損損失リスクを抑制。</code><ol>
+<li><strong>品質リスクと外部失敗コスト</strong>（29字）<br />
+<code>出荷後クレームは損害賠償や信用失望等、内部失敗より巨額の損失をもたらす。</code></li>
+</ol>
+</li>
+<li><strong>CCC短縮と資金繰り安定</strong>（30字）<br />
+<code>売上債権の早期回収と棚卸資産圧縮を進め、所要運転資金と借入金を削減。</code></li>
+</ol>
+<hr />
+<h2>4. 文字数別 黄金構文テンプレート（本番即応マス目配分）</h2>
+<h3>【パターンA：30〜40字（理由・メリット単発記述）】</h3>
+<pre><code class="language-text">理由は、自社設備投資を伴わず固定費を変動費化し、損益分岐点比率を引き下げられるため。（39字）
+</code></pre>
+<h3>【パターンB：60〜80字（経営分析要因・第4問助言）】</h3>
+<pre><code class="language-text">要因は、[①事業要因] により [②具体的コスト増減] が生じ、[③財務指標名] が同業他社より悪化（優位）したため。改善策は [④財務・経営施策] により財務健全化を図ること。（78字）
+</code></pre>
+<h3>【パターンC：100字（リスク2点とマネジメント助言）】</h3>
+<pre><code class="language-text">財務リスクは、① [在庫滞留・回収長期化] に伴う運転資金逼迫、② [初期投資増] による固定費負担増と営業レバレッジ悪化。対策は [回転期間の厳格管理と段階的投資] で資金繰りを安定させること。（98字）
+</code></pre>
+<hr />
+<h2>5. 本年度予想トピック即応骨子（最新マクロ環境4大論点）</h2>
+<ol>
+<li><strong>金利上昇局面における資金調達・財務戦略</strong><br />
+   借入金利上昇による支払利息増・経常利益圧迫。対策：変動金利から固定金利への借換、遊休資産売却による有利子負債圧縮、CCC短縮による所要運転資金圧縮で手元流動性を確保。</li>
+<li><strong>インフレ・原材料高騰と価格転嫁（収益性防衛）</strong><br />
+   仕入原価高騰による売上高総利益率低下。対策：コスト連動型フォーミュラ価格制の導入、高付加価値商品へのシフトによる価格転嫁、歩留まり向上による原材料ロス削減。</li>
+<li><strong>人手不足下の省力化投資（自動化・IT化の財務的評価）</strong><br />
+   人件費（変動費）から機械減価償却費・保守費（固定費）への置換。損益分岐点比率は上昇するため、稼働率維持が前提。安全余裕率モニタリングと回収期間の厳格管理。</li>
+<li><strong>事業承継と自社株式・資金調達（財務ガバナンス）</strong><br />
+   後継者への自社株承継に伴う納税資金負担。対策：事業承継税制の特例活用、退職金支給による株価一時引き下げ、持株会社化、金融機関の個人保証解除（経営者保証ガイドライン）。</li>
+</ol>
+</div>
+</body>
+</html>
